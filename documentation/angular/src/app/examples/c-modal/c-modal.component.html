@@ -19,9 +19,12 @@
 </app-example>
 
 <app-example title="Custom width" name="maxWidth" component="c-modal">
-  <c-button (click)="maxWidthModal = true">Open modal</c-button>
+  <c-row gap="8">
+    <c-button (click)="numericWidthModal = true">Open modal with a numeric width</c-button>
+    <c-button (click)="stringWidthModal = true">Open modal with a width defined as string</c-button>
+  </c-row>
 
-  <c-modal cControl [(ngModel)]="maxWidthModal" width="400">
+  <c-modal cControl [(ngModel)]="numericWidthModal" width="400">
     <c-card>
       <c-card-title>Modal (400px)</c-card-title>
 
@@ -32,7 +35,23 @@
       </c-card-content>
 
       <c-card-actions>
-        <c-button (click)="maxWidthModal = false">Close</c-button>
+        <c-button (click)="numericWidthModal = false">Close</c-button>
+      </c-card-actions>
+    </c-card>
+  </c-modal>
+
+  <c-modal cControl [(ngModel)]="stringWidthModal" width="60%">
+    <c-card>
+      <c-card-title>Modal (60%)</c-card-title>
+
+      <c-card-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </c-card-content>
+
+      <c-card-actions>
+        <c-button (click)="stringWidthModal = false">Close</c-button>
       </c-card-actions>
     </c-card>
   </c-modal>
