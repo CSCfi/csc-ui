@@ -46,6 +46,11 @@ export class CTextField {
   @Prop({ attribute: 'id' }) hostId: string;
 
   /**
+   * Trim whitespace from the return value
+   */
+  @Prop() trimWhitespace = false;
+
+  /**
    * Label of the input
    */
   @Prop() label: string;
@@ -177,7 +182,9 @@ export class CTextField {
   private _handleChange = (event) => {
     this.value = event.target.value;
 
-    this.changeValue.emit(event.target.value);
+    this.changeValue.emit(
+      this.trimWhitespace ? event.target.value.trim() : event.target.value,
+    );
   };
 
   private _renderInputElement() {

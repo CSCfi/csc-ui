@@ -1062,6 +1062,10 @@ export namespace Components {
          */
         "step": number;
         /**
+          * Trim whitespace from the return value
+         */
+        "trimWhitespace": boolean;
+        /**
           * Type of the input
          */
         "type": string;
@@ -2729,6 +2733,10 @@ declare namespace LocalJSX {
           * Step size on a numeric input
          */
         "step"?: number;
+        /**
+          * Trim whitespace from the return value
+         */
+        "trimWhitespace"?: boolean;
         /**
           * Type of the input
          */
