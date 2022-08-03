@@ -55,6 +55,9 @@
   grid-auto-columns: auto;
   grid-auto-flow: column;
   grid-template-columns: 24px 1fr;
+}
+
+.c-toast__item, .c-toast__custom-item {
   font-weight: 300;
 }
 
