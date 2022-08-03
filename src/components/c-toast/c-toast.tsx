@@ -155,6 +155,8 @@ export class CToast {
             {!!this.message.title && <p>{this.message.title}</p>}
 
             {this.message.message}
+
+            <slot></slot>
           </div>
 
           {!this.message.indeterminate && this._renderCloseButton()}
