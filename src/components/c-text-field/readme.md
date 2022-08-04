@@ -25,6 +25,7 @@
 | `rows`           | `rows`             | Rows on the input                                                                                | `number`  | `1`                |
 | `shadow`         | `shadow`           | Shadow variant of the input                                                                      | `boolean` | `false`            |
 | `step`           | `step`             | Step size on a numeric input                                                                     | `number`  | `null`             |
+| `trimWhitespace` | `trim-whitespace`  | Trim whitespace from the return value                                                            | `boolean` | `false`            |
 | `type`           | `type`             | Type of the input                                                                                | `string`  | `undefined`        |
 | `valid`          | `valid`            | Set the validíty of the input                                                                    | `boolean` | `true`             |
 | `validate`       | `validate`         | Manual validation                                                                                | `boolean` | `false`            |

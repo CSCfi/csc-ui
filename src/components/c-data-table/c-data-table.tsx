@@ -11,11 +11,11 @@ import {
   Element,
   Event,
   EventEmitter,
+  Prop,
   State,
   Fragment,
   Watch,
 } from '@stencil/core';
-import { Prop } from '../../../dist/types/stencil-public-runtime';
 import {
   CDataTableData,
   CDataTableDataItem,

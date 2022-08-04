@@ -15,7 +15,9 @@ export class CModalComponent implements OnInit {
   // @example-end
 
   // @example-start|maxWidth
-  maxWidthModal = false;
+  numericWidthModal = false;
+
+  stringWidthModal = false;
   // @example-end
 
   constructor() {}

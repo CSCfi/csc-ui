@@ -607,9 +607,9 @@ export namespace Components {
          */
         "value": boolean;
         /**
-          * Width of the dialog in pixels
+          * Width of the dialog. Numeric value is considered as pixel value (400 -> 400px)
          */
-        "width": number;
+        "width": string | number;
     }
     interface CNavigationbutton {
     }
@@ -1061,6 +1061,10 @@ export namespace Components {
           * Step size on a numeric input
          */
         "step": number;
+        /**
+          * Trim whitespace from the return value
+         */
+        "trimWhitespace": boolean;
         /**
           * Type of the input
          */
@@ -2228,9 +2232,9 @@ declare namespace LocalJSX {
          */
         "value"?: boolean;
         /**
-          * Width of the dialog in pixels
+          * Width of the dialog. Numeric value is considered as pixel value (400 -> 400px)
          */
-        "width"?: number;
+        "width"?: string | number;
     }
     interface CNavigationbutton {
     }
@@ -2729,6 +2733,10 @@ declare namespace LocalJSX {
           * Step size on a numeric input
          */
         "step"?: number;
+        /**
+          * Trim whitespace from the return value
+         */
+        "trimWhitespace"?: boolean;
         /**
           * Type of the input
          */

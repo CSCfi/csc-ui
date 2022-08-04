@@ -31,10 +31,10 @@ export class CModal {
   @Prop() dismissable = false;
 
   /**
-   * Width of the dialog in pixels
+   * Width of the dialog. Numeric value is considered as pixel value (400 -> 400px)
    *
    */
-  @Prop() width = 600;
+  @Prop() width: string | number = 600;
 
   /**
    * Triggered when value is changed
@@ -64,7 +64,9 @@ export class CModal {
   componentDidLoad() {
     this.innerValue = this.value;
 
-    this.el.style.setProperty('--c-modal-width', `${this.width}px`);
+    const width = isNaN(this.width as number) ? this.width : `${this.width}px`;
+
+    this.el.style.setProperty('--c-modal-width', `${width}`);
   }
 
   render() {
