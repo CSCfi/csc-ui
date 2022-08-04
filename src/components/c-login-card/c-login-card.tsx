@@ -1,5 +1,4 @@
-import { Component, Element, h, Prop, Host } from '@stencil/core';
-import { State } from '../../../dist/types/stencil-public-runtime';
+import { Component, Element, h, Prop, State, Host } from '@stencil/core';
 
 export type CLoginCardBlendMode =
   | 'normal'
