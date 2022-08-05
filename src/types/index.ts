@@ -106,6 +106,7 @@ export interface CToastMessage {
   closeText?: string;
   indeterminate?: boolean;
   progress?: boolean;
+  custom?: boolean;
 }
 
 export enum CAlertType {

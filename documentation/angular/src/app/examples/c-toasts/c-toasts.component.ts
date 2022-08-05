@@ -13,11 +13,15 @@ import {
 })
 export class CToastsComponent {
   // @example-start|basic
+  custom = false;
+
   title = '';
 
   message = 'A toast message';
 
   closeText = '';
+
+  customContent: string;
 
   type = 'info';
 
@@ -62,6 +66,7 @@ export class CToastsComponent {
       persistent: this.persistent,
       progress: this.progress,
       closeText: this.closeText,
+      custom: this.custom,
     };
 
     const toasts = document.querySelector('#toasts') as HTMLCToastsElement;

@@ -146,19 +146,27 @@ export class CToast {
       >
         <span class="visuallyhidden">{this.message.type} notification</span>
 
-        <div class="c-toast__item">
-          <svg viewBox="0 0 24 24">
-            <path d={this._icons[this.message.type]}></path>
-          </svg>
-
-          <div class="c-toast__content">
-            {!!this.message.title && <p>{this.message.title}</p>}
-
-            {this.message.message}
+        {this.message.custom ? (
+          <div class="c-toast__custom-item">
+            <div class="c-toast__content">
+              <slot></slot>
+            </div>
           </div>
+        ) : (
+          <div class="c-toast__item">
+            <svg viewBox="0 0 24 24">
+              <path d={this._icons[this.message.type]}></path>
+            </svg>
 
-          {!this.message.indeterminate && this._renderCloseButton()}
-        </div>
+            <div class="c-toast__content">
+              {!!this.message.title && <p>{this.message.title}</p>}
+
+              {this.message.message}
+            </div>
+
+            {!this.message.indeterminate && this._renderCloseButton()}
+          </div>
+        )}
 
         {showProgressBar && (
           <div

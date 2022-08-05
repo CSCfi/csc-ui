@@ -4,21 +4,39 @@
       <c-card-content>
         <h5>Per toast options</h5>
 
-        <c-text-field [(ngModel)]="message" label="Message" hide-details cControl></c-text-field>
+        <c-switch [value]="custom" (changeValue)="custom = !custom">
+          Bypass default content
+        </c-switch>
 
-        <c-text-field
-          [(ngModel)]="title"
-          label="Title (optional)"
-          hide-details
-          cControl
-        ></c-text-field>
+        <ng-container *ngIf="!custom; else customContentTemplate">
+          <c-text-field [(ngModel)]="message" label="Message" hide-details cControl></c-text-field>
 
-        <c-text-field
-          [(ngModel)]="closeText"
-          label="Close text (optional)"
-          hide-details
-          cControl
-        ></c-text-field>
+          <c-text-field
+            [(ngModel)]="title"
+            label="Title (optional)"
+            hide-details
+            cControl
+          ></c-text-field>
+
+          <c-text-field
+            [(ngModel)]="closeText"
+            label="Close text (optional)"
+            hide-details
+            cControl
+          ></c-text-field>
+        </ng-container>
+
+        <ng-template #customContentTemplate>
+          <span>Toasts with custom content are restricted to one (1) visible toast.</span>
+
+          <c-text-field
+            [(ngModel)]="customContent"
+            label="Custom content"
+            rows="10"
+            hint="Text or HTML"
+            cControl
+          ></c-text-field>
+        </ng-template>
 
         <c-text-field
           [(ngModel)]="duration"
@@ -45,7 +63,13 @@
           Show progress (optional)
         </c-checkbox>
 
-        <c-button fit [disabled]="!message" (click)="onAddToast()">Add toast</c-button>
+        <c-button
+          fit
+          [disabled]="(!custom && !message) || (custom && !customContent)"
+          (click)="onAddToast()"
+        >
+          Add toast
+        </c-button>
       </c-card-content>
     </c-card>
 
@@ -96,7 +120,9 @@
           [absolute]="absolute"
           [vertical]="vertical"
           [horizontal]="horizontal"
-        ></c-toasts>
+        >
+          <div *ngIf="customContent" [innerHTML]="customContent | safeHtml"></div>
+        </c-toasts>
       </div>
     </div>
   </c-row>
