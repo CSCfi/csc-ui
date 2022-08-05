@@ -146,10 +146,10 @@ export class CToast {
       >
         <span class="visuallyhidden">{this.message.type} notification</span>
 
-        {this.message.customContent ? (
+        {this.message.custom ? (
           <div class="c-toast__custom-item">
             <div class="c-toast__content">
-              <div innerHTML={this.message.customContent}></div>
+              <slot></slot>
             </div>
           </div>
         ) : (

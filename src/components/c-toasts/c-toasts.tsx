@@ -53,6 +53,18 @@ export class CToasts {
    */
   @Method()
   async addToast(message: CToastMessage) {
+    const customMessages = this.messages.filter((message) => message.custom);
+
+    if (message.custom && customMessages.length > 0) {
+      for (const customMessage of customMessages) {
+        this.removeToast(customMessage.id);
+      }
+
+      console.warn(
+        `Custom toast messages are restricted to 1 visible message due to slot reflection limitations.`,
+      );
+    }
+
     requestAnimationFrame(() => {
       const defaultOptions = this._getDefaultOptions();
 
@@ -102,10 +114,9 @@ export class CToasts {
 
   private _renderMessage(message: CToastMessage) {
     return (
-      <c-toast
-        message={message}
-        onClose={(e) => this._onMessageClose(e)}
-      ></c-toast>
+      <c-toast message={message} onClose={(e) => this._onMessageClose(e)}>
+        {message.custom && <slot />}
+      </c-toast>
     );
   }
 
