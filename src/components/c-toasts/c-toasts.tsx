@@ -56,30 +56,26 @@ export class CToasts {
     const customMessages = this.messages.filter((message) => message.custom);
 
     if (message.custom && customMessages.length > 0) {
-      for (const customMessage of customMessages) {
-        this.removeToast(customMessage.id);
-      }
-
       console.warn(
         `Custom toast messages are restricted to 1 visible message due to slot reflection limitations.`,
       );
+    } else {
+      requestAnimationFrame(() => {
+        const defaultOptions = this._getDefaultOptions();
+
+        this.messages = [
+          ...this.messages,
+          {
+            ...defaultOptions,
+            ...message,
+            duration:
+              +message?.duration > 0
+                ? +message.duration
+                : defaultOptions.duration,
+          },
+        ];
+      });
     }
-
-    requestAnimationFrame(() => {
-      const defaultOptions = this._getDefaultOptions();
-
-      this.messages = [
-        ...this.messages,
-        {
-          ...defaultOptions,
-          ...message,
-          duration:
-            +message?.duration > 0
-              ? +message.duration
-              : defaultOptions.duration,
-        },
-      ];
-    });
   }
 
   /**

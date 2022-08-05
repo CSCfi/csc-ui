@@ -121,7 +121,7 @@
           [vertical]="vertical"
           [horizontal]="horizontal"
         >
-          <div *ngIf="customContent" [innerHTML]="customContent"></div>
+          <div *ngIf="customContent" [innerHTML]="customContent | safeHtml"></div>
         </c-toasts>
       </div>
     </div>
