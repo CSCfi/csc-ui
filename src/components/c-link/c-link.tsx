@@ -21,17 +21,23 @@ export class CLink {
   @Prop() underline = false;
 
   /**
+   * Display link as CSC primary color
+   */
+  @Prop() primary = false;
+
+  /**
    * regular target attribute of a hyperlink
    */
   @Prop() target: string = null;
 
   render() {
+    const classList = {
+      underline: this.underline,
+      primary: this.primary,
+    };
+
     return (
-      <a
-        class={this.underline && 'underline'}
-        href={this.href}
-        target={this.target}
-      >
+      <a class={classList} href={this.href} target={this.target}>
         <slot></slot>
       </a>
     );

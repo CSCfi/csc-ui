@@ -10,3 +10,7 @@ a {
 a.underline {
   text-decoration: underline;
 }
+
+a.primary {
+  color: var(--csc-primary);
+}

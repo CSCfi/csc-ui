@@ -500,6 +500,10 @@ export namespace Components {
          */
         "href": string;
         /**
+          * Display link as CSC primary color
+         */
+        "primary": boolean;
+        /**
           * regular target attribute of a hyperlink
          */
         "target": string;
@@ -2142,6 +2146,10 @@ declare namespace LocalJSX {
           * Url of link
          */
         "href"?: string;
+        /**
+          * Display link as CSC primary color
+         */
+        "primary"?: boolean;
         /**
           * regular target attribute of a hyperlink
          */
