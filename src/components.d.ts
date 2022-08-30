@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CPaginationOptions, CRadioGroupItem, CSelectItem, CToastMessage } from "./types";
+import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuItem, CPaginationOptions, CRadioGroupItem, CSelectItem, CToastMessage } from "./types";
 import { CardBackground } from "./components/c-card/c-card";
 import { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
 export namespace Components {
@@ -589,13 +589,7 @@ export namespace Components {
         /**
           * Menu items
          */
-        "items": {
-    name: string;
-    action: () => void;
-    disabled?: boolean;
-    icon?: string;
-    iconPosition?: 'start' | 'end';
-  }[];
+        "items": CMenuItem[];
         /**
           * No hover background
          */
@@ -604,16 +598,6 @@ export namespace Components {
           * Simple variant without chevron and background, E.g. when a button is the activator
          */
         "simple": boolean;
-        /**
-          * Small variant
-         */
-        "small": boolean;
-    }
-    interface CMenuItem {
-        /**
-          * Is the item the active selection
-         */
-        "active": boolean;
         /**
           * Small variant
          */
@@ -1401,12 +1385,6 @@ declare global {
         prototype: HTMLCMenuElement;
         new (): HTMLCMenuElement;
     };
-    interface HTMLCMenuItemElement extends Components.CMenuItem, HTMLStencilElement {
-    }
-    var HTMLCMenuItemElement: {
-        prototype: HTMLCMenuItemElement;
-        new (): HTMLCMenuItemElement;
-    };
     interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {
     }
     var HTMLCModalElement: {
@@ -1585,7 +1563,6 @@ declare global {
         "c-login-card-title": HTMLCLoginCardTitleElement;
         "c-main": HTMLCMainElement;
         "c-menu": HTMLCMenuElement;
-        "c-menu-item": HTMLCMenuItemElement;
         "c-modal": HTMLCModalElement;
         "c-navigationbutton": HTMLCNavigationbuttonElement;
         "c-notification": HTMLCNotificationElement;
@@ -2236,13 +2213,7 @@ declare namespace LocalJSX {
         /**
           * Menu items
          */
-        "items"?: {
-    name: string;
-    action: () => void;
-    disabled?: boolean;
-    icon?: string;
-    iconPosition?: 'start' | 'end';
-  }[];
+        "items"?: CMenuItem[];
         /**
           * No hover background
          */
@@ -2251,16 +2222,6 @@ declare namespace LocalJSX {
           * Simple variant without chevron and background, E.g. when a button is the activator
          */
         "simple"?: boolean;
-        /**
-          * Small variant
-         */
-        "small"?: boolean;
-    }
-    interface CMenuItem {
-        /**
-          * Is the item the active selection
-         */
-        "active"?: boolean;
         /**
           * Small variant
          */
@@ -2874,7 +2835,6 @@ declare namespace LocalJSX {
         "c-login-card-title": CLoginCardTitle;
         "c-main": CMain;
         "c-menu": CMenu;
-        "c-menu-item": CMenuItem;
         "c-modal": CModal;
         "c-navigationbutton": CNavigationbutton;
         "c-notification": CNotification;
@@ -2933,7 +2893,6 @@ declare module "@stencil/core" {
             "c-login-card-title": LocalJSX.CLoginCardTitle & JSXBase.HTMLAttributes<HTMLCLoginCardTitleElement>;
             "c-main": LocalJSX.CMain & JSXBase.HTMLAttributes<HTMLCMainElement>;
             "c-menu": LocalJSX.CMenu & JSXBase.HTMLAttributes<HTMLCMenuElement>;
-            "c-menu-item": LocalJSX.CMenuItem & JSXBase.HTMLAttributes<HTMLCMenuItemElement>;
             "c-modal": LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
             "c-navigationbutton": LocalJSX.CNavigationbutton & JSXBase.HTMLAttributes<HTMLCNavigationbuttonElement>;
             "c-notification": LocalJSX.CNotification & JSXBase.HTMLAttributes<HTMLCNotificationElement>;
