@@ -73,6 +73,14 @@ module.exports = async (filename) => {
         return;
       }
 
+      if (line.trim().startsWith('|') && line.endsWith(';')) {
+        writeline(`  ${line}`);
+        writeline('`,');
+        writeline('');
+
+        return
+      }
+
       if (isExample) {
         writeline(`  ${line}`);
       }

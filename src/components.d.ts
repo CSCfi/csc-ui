@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuItem, CPaginationOptions, CRadioGroupItem, CSelectItem, CToastMessage } from "./types";
+import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuItem, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
 import { CardBackground } from "./components/c-card/c-card";
 import { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
 export namespace Components {
@@ -496,9 +496,21 @@ export namespace Components {
     }
     interface CLink {
         /**
+          * Use another CSC color
+         */
+        "color": CSCColor;
+        /**
           * Url of link
          */
         "href": string;
+        /**
+          * Fill color for the svg icon
+         */
+        "iconFill": CSCColor;
+        /**
+          * Path for the svg icon
+         */
+        "path": string;
         /**
           * regular target attribute of a hyperlink
          */
@@ -507,6 +519,10 @@ export namespace Components {
           * Display line under the link
          */
         "underline": boolean;
+        /**
+          * Use different font weight
+         */
+        "weight": string;
     }
     interface CLoader {
         /**
@@ -2120,9 +2136,21 @@ declare namespace LocalJSX {
     }
     interface CLink {
         /**
+          * Use another CSC color
+         */
+        "color"?: CSCColor;
+        /**
           * Url of link
          */
         "href"?: string;
+        /**
+          * Fill color for the svg icon
+         */
+        "iconFill"?: CSCColor;
+        /**
+          * Path for the svg icon
+         */
+        "path"?: string;
         /**
           * regular target attribute of a hyperlink
          */
@@ -2131,6 +2159,10 @@ declare namespace LocalJSX {
           * Display line under the link
          */
         "underline"?: boolean;
+        /**
+          * Use different font weight
+         */
+        "weight"?: string;
     }
     interface CLoader {
         /**

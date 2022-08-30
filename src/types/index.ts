@@ -133,3 +133,22 @@ export interface CMenuItem {
   icon?: string;
   iconPosition?: 'start' | 'end';
 }
+
+export type CSCColor =
+  | 'primary'
+  | 'primary-ghost'
+  | 'primary-ghost-hover'
+  | 'primary-hover'
+  | 'primary-text-hover'
+  | 'primary-hover'
+  | 'primary-text-hover'
+  | 'dark-grey'
+  | 'mid-grey'
+  | 'light-grey'
+  | 'light-grey-blue'
+  | 'lightest-grey'
+  | 'link'
+  | 'error'
+  | 'warning'
+  | 'success'
+  | 'info';
