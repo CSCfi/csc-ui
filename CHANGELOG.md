@@ -1,3 +1,20 @@
+# v0.6.72 (Fri Feb 24 2023)
+
+#### 🐛 Bug Fix
+
+- Attempt to fix releasing in Github actions [#182](https://github.com/CSCfi/csc-ui/pull/182) ([@csc-design-system-team](https://github.com/csc-design-system-team) [@villeerikssoncsc](https://github.com/villeerikssoncsc))
+
+#### ⚠️ Pushed to `release/v0.6.73`
+
+- 0.6.73 ([@csc-design-system-team](https://github.com/csc-design-system-team))
+
+#### Authors: 2
+
+- [@csc-design-system-team](https://github.com/csc-design-system-team)
+- [@villeerikssoncsc](https://github.com/villeerikssoncsc)
+
+---
+
 # v0.6.69 (Tue Feb 21 2023)
 
 #### 🐛 Bug Fix
