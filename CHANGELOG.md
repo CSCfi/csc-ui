@@ -1,3 +1,20 @@
+# v0.6.76 (Mon Mar 06 2023)
+
+#### 🐛 Bug Fix
+
+- Replace example cdn source for the npm library [#188](https://github.com/CSCfi/csc-ui/pull/188) ([@villeerikssoncsc](https://github.com/villeerikssoncsc) [@csc-design-system-team](https://github.com/csc-design-system-team))
+
+#### ⚠️ Pushed to `release/v0.6.76`
+
+- 0.6.76 ([@csc-design-system-team](https://github.com/csc-design-system-team))
+
+#### Authors: 2
+
+- [@csc-design-system-team](https://github.com/csc-design-system-team)
+- [@villeerikssoncsc](https://github.com/villeerikssoncsc)
+
+---
+
 # v0.6.75 (Wed Mar 01 2023)
 
 #### 🐛 Bug Fix
