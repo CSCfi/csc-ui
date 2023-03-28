@@ -1,3 +1,15 @@
+# v0.6.77 (Tue Mar 28 2023)
+
+#### 🐛 Bug Fix
+
+- Replace csc-ui-vue-directive references with new scoped packages [#194](https://github.com/CSCfi/csc-ui/pull/194) ([@razorfever](https://github.com/razorfever))
+
+#### Authors: 1
+
+- Oskari Väistö ([@razorfever](https://github.com/razorfever))
+
+---
+
 # v0.6.76 (Mon Mar 06 2023)
 
 #### 🐛 Bug Fix
