@@ -91,7 +91,7 @@ export class CModal {
     this.changeValue.emit(this.value);
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.innerValue = this.value;
 
     const width = isNaN(this.width as number) ? this.width : `${this.width}px`;

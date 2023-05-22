@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-modal closes when clicked outside the area 1`] = `
+<c-modal dismissable="{true}" value="{true}" style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div class="c-modal c-modal--show" style="z-index: 11;">
+        <slot></slot>
+      </div>
+      <div class="c-overlay c-overlay--show" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    Test
+  </p>
+</c-modal>
+`;
+
+exports[`c-modal closes when clicked outside the area 2`] = `
+<c-modal dismissable="{true}" value="{true}" style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div aria-hidden="" class="c-modal" style="z-index: 11;">
+        <slot></slot>
+      </div>
+      <div class="c-overlay" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    Test
+  </p>
+</c-modal>
+`;
+
+exports[`c-modal does not close when clicked outside the area if not dismissable 1`] = `
+<c-modal value="{true}" style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div class="c-modal c-modal--show" style="z-index: 11;">
+        <slot></slot>
+      </div>
+      <div class="c-overlay c-overlay--show" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    Test
+  </p>
+</c-modal>
+`;
+
+exports[`c-modal does not close when clicked outside the area if not dismissable 2`] = `
+<c-modal value="{true}" style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div class="c-modal c-modal--animate c-modal--show" style="z-index: 11;">
+        <slot></slot>
+      </div>
+      <div class="c-overlay c-overlay--show" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    Test
+  </p>
+</c-modal>
+`;
+
+exports[`c-modal renders custom width 1`] = `
+<c-modal width="800" style="--c-modal-width: 800px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div aria-hidden="" class="c-modal c-modal--hide" style="z-index: 11;"></div>
+      <div class="c-overlay c-overlay--hide" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+</c-modal>
+`;
+
+exports[`c-modal renders default html 1`] = `
+<c-modal style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div aria-hidden="" class="c-modal c-modal--hide" style="z-index: 11;"></div>
+      <div class="c-overlay c-overlay--hide" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+</c-modal>
+`;
+
+exports[`c-modal renders hidden slot content 1`] = `
+<c-modal style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div aria-hidden="" class="c-modal c-modal--hide" style="z-index: 11;"></div>
+      <div class="c-overlay c-overlay--hide" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    Test
+  </p>
+</c-modal>
+`;
+
+exports[`c-modal renders visible slot content 1`] = `
+<c-modal value="{true}" style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div class="c-modal c-modal--show" style="z-index: 11;">
+        <slot></slot>
+      </div>
+      <div class="c-overlay c-overlay--show" style="z-index: 10;"></div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    Test
+  </p>
+</c-modal>
+`;
+
+exports[`c-modal renders with custom z-index 1`] = `
+<c-modal z-index="30" style="--c-modal-width: 600px;">
+  <mock:shadow-root>
+    <div class="modal-wrapper">
+      <div aria-hidden="" class="c-modal c-modal--hide" style="z-index: 31;"></div>
+      <div class="c-overlay c-overlay--hide" style="z-index: 30;"></div>
+    </div>
+  </mock:shadow-root>
+</c-modal>
+`;
