@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-card opens fullscreen when button pressed 1`] = `
+<c-card class="c-card" fullscreen="{true}" style="background-color: white;">
+  <mock:shadow-root>
+    <c-icon-button aria-hidden="true" class="c-card__fullscreen-toggle" size="small" text="" title="Enter fullscreen">
+      <c-icon path="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z"></c-icon>
+    </c-icon-button>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card opens fullscreen when button pressed 2`] = `
+<c-card class="c-card c-card--fullscreen" fullscreen="{true}" style="background-color: white;">
+  <mock:shadow-root>
+    <c-icon-button aria-hidden="true" class="c-card__fullscreen-toggle" size="small" text="" title="Exit fullscreen">
+      <c-icon path="M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z"></c-icon>
+    </c-icon-button>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card render another chosen background-photo, called mahti 1`] = `
+<c-card background="mahti" class="c-card" style="background-color: white; background-image: url(/assets/mahti.gif; background-size: cover; background-position-y: bottom;">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card render chosen background-photo, called allas 1`] = `
+<c-card background="allas" class="c-card" style="background-color: white; background-image: url(/assets/allas.gif; background-size: cover; background-position-y: bottom;">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card render custom background-color 1`] = `
+<c-card background-color="red" class="c-card" style="background-color: red;">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card render custom background-photo 1`] = `
+<c-card background="dog" class="c-card" style="background-color: white;">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card renders default html 1`] = `
+<c-card class="c-card" style="background-color: white;">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card shrinks back to normal when button pressed in fullscreen-mode 1`] = `
+<c-card class="c-card" fullscreen="{true}" style="background-color: white;">
+  <mock:shadow-root>
+    <c-icon-button aria-hidden="true" class="c-card__fullscreen-toggle" size="small" text="" title="Enter fullscreen">
+      <c-icon path="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z"></c-icon>
+    </c-icon-button>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card shrinks back to normal when button pressed in fullscreen-mode 2`] = `
+<c-card class="c-card c-card--fullscreen" fullscreen="{true}" style="background-color: white;">
+  <mock:shadow-root>
+    <c-icon-button aria-hidden="true" class="c-card__fullscreen-toggle" size="small" text="" title="Exit fullscreen">
+      <c-icon path="M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z"></c-icon>
+    </c-icon-button>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card shrinks back to normal when button pressed in fullscreen-mode 3`] = `
+<c-card class="c-card" fullscreen="{true}" style="background-color: white;">
+  <mock:shadow-root>
+    <c-icon-button aria-hidden="true" class="c-card__fullscreen-toggle" size="small" text="" title="Enter fullscreen">
+      <c-icon path="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z"></c-icon>
+    </c-icon-button>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
+
+exports[`c-card with fullscreen button 1`] = `
+<c-card class="c-card" fullscreen="{true}" style="background-color: white;">
+  <mock:shadow-root>
+    <c-icon-button aria-hidden="true" class="c-card__fullscreen-toggle" size="small" text="" title="Enter fullscreen">
+      <c-icon path="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z"></c-icon>
+    </c-icon-button>
+    <slot></slot>
+  </mock:shadow-root>
+</c-card>
+`;
