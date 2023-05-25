@@ -205,4 +205,48 @@ describe('button', () => {
 
     expect(page.root).toMatchSnapshot();
   });
+
+  it('with only visible text', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button text={true}>
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('render type: button', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button type="button">
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('render type: submit', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button type="submit">
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('add value', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button value="first">
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
 });

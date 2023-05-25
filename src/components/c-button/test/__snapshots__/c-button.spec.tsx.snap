@@ -94,6 +94,22 @@ exports[`button add target 1`] = `
 </c-button>
 `;
 
+exports[`button add value 1`] = `
+<c-button value="first">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
 exports[`button inverted button style for dark mode 1`] = `
 <c-button class="inverted" inverted="{true}">
   <mock:shadow-root>
@@ -181,6 +197,38 @@ exports[`button render icon by attribute, not slot 1`] = `
 </c-button>
 `;
 
+exports[`button render type: button 1`] = `
+<c-button type="button">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button render type: submit 1`] = `
+<c-button type="submit">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
 exports[`button renders button with filled slots 1`] = `
 <c-button>
   <mock:shadow-root>
@@ -262,6 +310,22 @@ exports[`button renders ghost button 1`] = `
       </div>
     </button>
   </mock:shadow-root>
+</c-button>
+`;
+
+exports[`button with only visible text 1`] = `
+<c-button text="{true}">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button c-button--text">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
 </c-button>
 `;
 
