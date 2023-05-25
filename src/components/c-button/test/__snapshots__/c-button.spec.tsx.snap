@@ -30,6 +30,70 @@ exports[`button add id 1`] = `
 </c-button>
 `;
 
+exports[`button add size: default 1`] = `
+<c-button size="default">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button add size: large 1`] = `
+<c-button size="large">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button c-button--large">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button add size: small 1`] = `
+<c-button size="small">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button c-button--small">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button add target 1`] = `
+<c-button target="_blank">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
 exports[`button inverted button style for dark mode 1`] = `
 <c-button class="inverted" inverted="{true}">
   <mock:shadow-root>

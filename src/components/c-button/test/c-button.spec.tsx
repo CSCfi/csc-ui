@@ -161,4 +161,48 @@ describe('button', () => {
 
     expect(page.root).toMatchSnapshot();
   });
+
+  it('add size: large', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button size="large">
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('add size: small', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button size="small">
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('add size: default', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button size="default">
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('add target', async () => {
+    const page = await newSpecPage({
+      components: [CButton],
+      html: `<c-button target="_blank">
+      ButtonText
+      </c-button>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
 });
