@@ -30,6 +30,59 @@ exports[`button add id 1`] = `
 </c-button>
 `;
 
+exports[`button inverted button style for dark mode 1`] = `
+<c-button class="inverted" inverted="{true}">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button c-button--inverted">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button loading 1`] = `
+<c-button loading="{true}">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="spinner_wrapper">
+          <svg class="spinner" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle class="spinner__circle" cx="50" cy="50" r="45"></circle>
+          </svg>
+        </div>
+        <div class="c-button__content hide-text">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button remove border 1`] = `
+<c-button no-radius="{true}">
+  <mock:shadow-root>
+    <button class="no-radius" role="button" tabindex="0">
+      <div class="c-button c-button--no-radius">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
 exports[`button render icon after text 1`] = `
 <c-button icon-end="{true}">
   <mock:shadow-root>
@@ -145,5 +198,61 @@ exports[`button renders ghost button 1`] = `
       </div>
     </button>
   </mock:shadow-root>
+</c-button>
+`;
+
+exports[`button with outline 1`] = `
+<c-button outlined="{true}">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button c-button--outlined">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button with path to svg-icon 1`] = `
+<c-button path="path to my svg">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot name="icon">
+            <svg class="icon-by-path" height="24" viewBox="0 0 24 24" width="24">
+              <path d="path to my svg"></path>
+            </svg>
+          </slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
+</c-button>
+`;
+
+exports[`button with path to svg-icon and icon after text 1`] = `
+<c-button icon-end="{true}" path="path to my svg">
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot></slot>
+          <slot name="icon">
+            <svg class="icon-by-path" height="24" viewBox="0 0 24 24" width="24">
+              <path d="path to my svg"></path>
+            </svg>
+          </slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  ButtonText
 </c-button>
 `;
