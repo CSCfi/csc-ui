@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-flex renders default html 1`] = `
+<c-flex>
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <div>
+    <p>
+      Hello world!
+    </p>
+  </div>
+</c-flex>
+`;
