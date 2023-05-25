@@ -54,6 +54,20 @@ exports[`c-card render custom background-photo 1`] = `
 </c-card>
 `;
 
+exports[`c-card render default with text 1`] = `
+<c-card class="c-card" style="background-color: white;">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <c-card-title>
+    The title
+  </c-card-title>
+  <c-card-content>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </c-card-content>
+</c-card>
+`;
+
 exports[`c-card renders default html 1`] = `
 <c-card class="c-card" style="background-color: white;">
   <mock:shadow-root>

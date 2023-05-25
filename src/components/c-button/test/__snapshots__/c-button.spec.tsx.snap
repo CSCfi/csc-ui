@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button renders default html 1`] = `
+<c-button>
+  <mock:shadow-root>
+    <button role="button" tabindex="0">
+      <div class="c-button">
+        <div class="c-button__content">
+          <slot name="icon"></slot>
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+  </mock:shadow-root>
+  Default
+</c-button>
+`;
