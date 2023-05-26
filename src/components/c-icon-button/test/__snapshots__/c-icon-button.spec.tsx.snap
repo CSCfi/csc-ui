@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-icon-button renders badge 1`] = `
+<c-icon-button badge="10">
+  <mock:shadow-root>
+    <button class="icon-button">
+      <div class="inner-container">
+        <slot></slot>
+      </div>
+      <div class="icon-button-badge">
+        10
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders default html 1`] = `
+<c-icon-button>
+  <mock:shadow-root>
+    <button class="icon-button">
+      <div class="inner-container">
+        <slot></slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders disabled icon 1`] = `
+<c-icon-button disabled="true">
+  <mock:shadow-root>
+    <button class="disabled icon-button">
+      <div class="inner-container">
+        <slot></slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders ghosted icon 1`] = `
+<c-icon-button ghost="true">
+  <mock:shadow-root>
+    <button class="ghost icon-button">
+      <div class="inner-container">
+        <slot></slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders inverted icon 1`] = `
+<c-icon-button inverted="true">
+  <mock:shadow-root>
+    <button class="icon-button inverted">
+      <div class="inner-container">
+        <slot></slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders outlined icon 1`] = `
+<c-icon-button outlined="true">
+  <mock:shadow-root>
+    <button class="icon-button outlined">
+      <div class="inner-container">
+        <slot></slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders path to svg-icon 1`] = `
+<c-icon-button path="path-to-svg">
+  <mock:shadow-root>
+    <button class="icon-button">
+      <div class="inner-container">
+        <slot>
+          <svg height="24" viewBox="0 0 24 24" width="24">
+            <path d="path-to-svg"></path>
+          </svg>
+        </slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders size:default 1`] = `
+<c-icon-button path="path-to-svg" size="default">
+  <mock:shadow-root>
+    <button class="icon-button">
+      <div class="inner-container">
+        <slot>
+          <svg height="24" viewBox="0 0 24 24" width="24">
+            <path d="path-to-svg"></path>
+          </svg>
+        </slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders size:small 1`] = `
+<c-icon-button path="path-to-svg" size="small">
+  <mock:shadow-root>
+    <button class="icon-button icon-button--small">
+      <div class="inner-container">
+        <slot>
+          <svg height="24" viewBox="0 0 24 24" width="24">
+            <path d="path-to-svg"></path>
+          </svg>
+        </slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders size:x-small 1`] = `
+<c-icon-button path="path-to-svg" size="x-small">
+  <mock:shadow-root>
+    <button class="icon-button icon-button--x-small">
+      <div class="inner-container">
+        <slot>
+          <svg height="24" viewBox="0 0 24 24" width="24">
+            <path d="path-to-svg"></path>
+          </svg>
+        </slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
+
+exports[`c-icon-button renders text variant for the button 1`] = `
+<c-icon-button text="true">
+  <mock:shadow-root>
+    <button class="icon-button text">
+      <div class="inner-container">
+        <slot></slot>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-icon-button>
+`;
