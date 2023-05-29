@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-login-card add source to background-image 1`] = `
+<c-login-card src="mahti">
+  <!---->
+  <svg height="0" width="0">
+    <defs>
+      <clipPath clipPathUnits="objectBoundingBox" id="cLoginClipPath">
+        <path d="m1,1 h-1 v-0.213 c0,0,0.209,-0.046,0.337,-0.109 c0.191,-0.096,0.413,-0.183,0.629,-0.608 c0.028,-0.055,0.034,-0.069,0.034,-0.069"></path>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__image" style="background-image: url(mahti); background-position: bottom right; height: 0px; --c-login-overlay-mode: false;"></div>
+    <div class="c-login-card__content">
+      This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders colored overlay 1`] = `
+<c-login-card background-position="top left" overlay="true" overlay-blend-mode="hue" src="mahti">
+  <!---->
+  <svg height="0" width="0">
+    <defs>
+      <clipPath clipPathUnits="objectBoundingBox" id="cLoginClipPath">
+        <path d="m1,1 h-1 v-0.213 c0,0,0.209,-0.046,0.337,-0.109 c0.191,-0.096,0.413,-0.183,0.629,-0.608 c0.028,-0.055,0.034,-0.069,0.034,-0.069"></path>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__image c-login-card__image--overlay" style="background-image: url(mahti); background-position: top left; height: 0px; --c-login-overlay-mode: hue;"></div>
+    <div class="c-login-card__content">
+      This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders custom background-position 1`] = `
+<c-login-card background-position="top left" src="mahti">
+  <!---->
+  <svg height="0" width="0">
+    <defs>
+      <clipPath clipPathUnits="objectBoundingBox" id="cLoginClipPath">
+        <path d="m1,1 h-1 v-0.213 c0,0,0.209,-0.046,0.337,-0.109 c0.191,-0.096,0.413,-0.183,0.629,-0.608 c0.028,-0.055,0.034,-0.069,0.034,-0.069"></path>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__image" style="background-image: url(mahti); background-position: top left; height: 0px; --c-login-overlay-mode: false;"></div>
+    <div class="c-login-card__content">
+      This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders custom background-position 2`] = `
+<c-login-card background-position="25% 50%" src="mahti">
+  <!---->
+  <svg height="0" width="0">
+    <defs>
+      <clipPath clipPathUnits="objectBoundingBox" id="cLoginClipPath">
+        <path d="m1,1 h-1 v-0.213 c0,0,0.209,-0.046,0.337,-0.109 c0.191,-0.096,0.413,-0.183,0.629,-0.608 c0.028,-0.055,0.034,-0.069,0.034,-0.069"></path>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__image" style="background-image: url(mahti); background-position: 25% 50%; height: 0px; --c-login-overlay-mode: false;"></div>
+    <div class="c-login-card__content">
+      This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders custom breakpoint for mobile 1`] = `
+<c-login-card mobile-breakpoint="500">
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders default html 1`] = `
+<c-login-card>
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
