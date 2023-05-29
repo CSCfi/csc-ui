@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-sidenavigation renders default html 1`] = `
+<c-sidenavigation class="desktop">
+  <mock:shadow-root>
+    <div class="c-sidenavigation__content c-sidenavigation__content--desktop c-sidenavigation__content--hidden">
+      <nav class="c-sidenavigation desktop hide-menu" role="menubar">
+        <slot></slot>
+        <div class="vertical-spacer"></div>
+        <slot name="bottom"></slot>
+      </nav>
+    </div>
+  </mock:shadow-root>
+</c-sidenavigation>
+`;
+
+exports[`c-sidenavigation renders visible menu 1`] = `
+<c-sidenavigation class="desktop" menu-visible="true">
+  <mock:shadow-root>
+    <div class="c-sidenavigation__content c-sidenavigation__content--desktop">
+      <nav class="c-sidenavigation desktop" role="menubar">
+        <slot></slot>
+        <div class="vertical-spacer"></div>
+        <slot name="bottom"></slot>
+      </nav>
+    </div>
+  </mock:shadow-root>
+</c-sidenavigation>
+`;
+
+exports[`c-sidenavigation renders visible mobile-size-menu 1`] = `
+<c-sidenavigation mobile="true">
+  <mock:shadow-root>
+    <div class="c-sidenavigation__content c-sidenavigation__content--hidden c-sidenavigation__content--mobile">
+      <div class="c-sidenavigation__burger">
+        <c-icon-button inverted="" text="">
+          <span class="visuallyhidden">
+            Close sidemenu
+          </span>
+          <svg height="24" viewBox="0 0 24 24" width="24">
+            <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+          </svg>
+        </c-icon-button>
+      </div>
+      <nav class="c-sidenavigation hide-menu mobile" role="menubar">
+        <slot></slot>
+        <div class="vertical-spacer"></div>
+        <slot name="bottom"></slot>
+      </nav>
+    </div>
+  </mock:shadow-root>
+</c-sidenavigation>
+`;
