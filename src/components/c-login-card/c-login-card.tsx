@@ -13,7 +13,7 @@ export type CLoginCardBlendMode =
   | 'soft-light'
   | 'difference'
   | 'exclusion'
-  | 'hue'
+  | 'hue'5
   | 'saturation'
   | 'color'
   | 'luminosity';

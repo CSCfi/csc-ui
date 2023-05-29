@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-switch renders default html 1`] = `
+<c-switch>
+  <mock:shadow-root>
+    <label class="c-switch">
+      <div class="c-switch__input">
+        <input role="switch" type="checkbox">
+        <span class="c-switch__slider"></span>
+      </div>
+    </label>
+  </mock:shadow-root>
+</c-switch>
+`;
+
+exports[`c-switch renders disabled switch 1`] = `
+<c-switch disabled="true">
+  <mock:shadow-root>
+    <label class="c-switch c-switch--disabled">
+      <div class="c-switch__input">
+        <input disabled="" role="switch" type="checkbox">
+        <span class="c-switch__slider"></span>
+      </div>
+    </label>
+  </mock:shadow-root>
+</c-switch>
+`;
+
+exports[`c-switch renders id-attribute 1`] = `
+<c-switch id="switching">
+  <mock:shadow-root>
+    <label class="c-switch" htmlfor="switching">
+      <div class="c-switch__input">
+        <input id="switching" role="switch" type="checkbox">
+        <span class="c-switch__slider"></span>
+      </div>
+    </label>
+  </mock:shadow-root>
+</c-switch>
+`;
+
+exports[`c-switch set as required 1`] = `
+<c-switch required="true">
+  <mock:shadow-root>
+    <label class="c-switch">
+      <div class="c-switch__input">
+        <input role="switch" type="checkbox">
+        <span class="c-switch__slider"></span>
+      </div>
+    </label>
+  </mock:shadow-root>
+</c-switch>
+`;
+
+exports[`c-switch set value 1`] = `
+<c-switch value="true">
+  <mock:shadow-root>
+    <label class="c-switch">
+      <div class="c-switch__input">
+        <input aria-checked="" checked="" role="switch" type="checkbox">
+        <span class="c-switch__slider"></span>
+      </div>
+    </label>
+  </mock:shadow-root>
+</c-switch>
+`;
