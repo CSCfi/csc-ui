@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-status renders default html 1`] = `
+<c-status>
+  <mock:shadow-root>
+    <div class="c-status">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-status>
+`;
+
+exports[`c-status renders type: error 1`] = `
+<c-status type="error">
+  <mock:shadow-root>
+    <div class="c-status c-status--error">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-status>
+`;
+
+exports[`c-status renders type: info 1`] = `
+<c-status type="info">
+  <mock:shadow-root>
+    <div class="c-status c-status--info">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-status>
+`;
+
+exports[`c-status renders type: success 1`] = `
+<c-status type="success">
+  <mock:shadow-root>
+    <div class="c-status c-status--success">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-status>
+`;
+
+exports[`c-status renders type: warning 1`] = `
+<c-status type="warning">
+  <mock:shadow-root>
+    <div class="c-status c-status--warning">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-status>
+`;
