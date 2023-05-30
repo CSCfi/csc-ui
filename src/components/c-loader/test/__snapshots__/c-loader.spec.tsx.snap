@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-loader renders content delay 1`] = `
+<c-loader class="active" contentdelay="10">
+  <mock:shadow-root>
+    <div class="c-loader" style="--c-loader-size: 48px;">
+      <svg class="c-loader__loader" viewBox="25 25 50 50">
+        <circle class="c-loader__loader-path" cx="50" cy="50" r="20"></circle>
+      </svg>
+      <div class="c-loader__slot" style="animation-delay: 10s;">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-loader>
+`;
+
+exports[`c-loader renders custom size 1`] = `
+<c-loader class="active" size="30">
+  <mock:shadow-root>
+    <div class="c-loader" style="--c-loader-size: 30px;">
+      <svg class="c-loader__loader" viewBox="25 25 50 50">
+        <circle class="c-loader__loader-path" cx="50" cy="50" r="20"></circle>
+      </svg>
+      <div class="c-loader__slot" style="animation-delay: 0s;">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-loader>
+`;
+
+exports[`c-loader renders default html 1`] = `
+<c-loader class="active">
+  <mock:shadow-root>
+    <div class="c-loader" style="--c-loader-size: 48px;">
+      <svg class="c-loader__loader" viewBox="25 25 50 50">
+        <circle class="c-loader__loader-path" cx="50" cy="50" r="20"></circle>
+      </svg>
+    </div>
+  </mock:shadow-root>
+</c-loader>
+`;
+
+exports[`c-loader renders hidden loader 1`] = `
+<c-loader class="active" hide="true">
+  <mock:shadow-root>
+    <div class="c-loader" style="--c-loader-size: 48px;">
+      <svg class="c-loader__loader" viewBox="25 25 50 50">
+        <circle class="c-loader__loader-path" cx="50" cy="50" r="20"></circle>
+      </svg>
+      <div class="c-loader__slot" style="animation-delay: 0s;">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-loader>
+`;
