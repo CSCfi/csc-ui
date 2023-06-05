@@ -122,12 +122,12 @@ export class CDataTable {
   /**
    * Sort data by
    */
-  @Prop() sortBy = null;
+  @Prop({ mutable: true }) sortBy = null;
 
   /**
    * Sorting direction
    */
-  @Prop() sortDirection: 'asc' | 'desc' | null = null;
+  @Prop({ mutable: true }) sortDirection: 'asc' | 'desc' | null = null;
 
   /**
    * Use sticky header
@@ -551,7 +551,9 @@ export class CDataTable {
       }
     });
 
-    return !!this.pagination && !this.hideFooter
+    return !!this.pagination?.startFrom &&
+      !!this.pagination?.endTo &&
+      !this.hideFooter
       ? sorted.slice(this.pagination.startFrom, this.pagination.endTo + 1)
       : sorted;
   }

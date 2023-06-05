@@ -89,7 +89,7 @@ export class CPagination {
     return true;
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     this._setRange();
   }
 

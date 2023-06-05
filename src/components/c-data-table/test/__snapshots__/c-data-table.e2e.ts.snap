@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-data-table displays hidden data on row click 1`] = `
+<tr class="active additional-data">
+  <td colspan="100">
+    <div>
+      <ul>
+        <li>
+          <div class="title">
+            <span>
+              Unemployment (%):
+            </span>
+            4.8
+          </div>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>
+`;

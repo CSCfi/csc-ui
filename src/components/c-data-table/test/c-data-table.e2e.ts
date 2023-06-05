@@ -36,5 +36,7 @@ describe('c-data-table', () => {
     await page.waitForChanges();
 
     expect(await additionalDataRow.isVisible()).toBe(true);
+
+    expect(additionalDataRow).toMatchSnapshot();
   });
 });

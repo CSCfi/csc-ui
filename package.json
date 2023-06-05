@@ -32,12 +32,12 @@
     "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\""
   },
   "devDependencies": {
-    "@auto-it/all-contributors": "^10.43.0",
-    "@stencil/angular-output-target": "^0.5.0",
+    "@auto-it/all-contributors": "^10.46.0",
+    "@stencil/angular-output-target": "^0.7.1",
     "@stencil/eslint-plugin": "^0.4.0",
-    "@stencil/sass": "^3.0.2",
+    "@stencil/sass": "^3.0.4",
     "@types/jest": "^27.0.3",
-    "auto": "^10.43.0",
+    "auto": "^10.46.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.8.0",
@@ -48,17 +48,17 @@
     "jest": "^27.0.3",
     "jest-cli": "^27.4.5",
     "prettier": "^2.8.8",
-    "puppeteer": "^19.11.1",
-    "style-dictionary": "^3.7.2"
+    "puppeteer": "^20.5.0",
+    "style-dictionary": "^3.8.0"
   },
   "license": "MIT",
   "dependencies": {
     "@mdi/js": "^7.2.96",
-    "@stencil/core": "^3.2.2",
-    "@types/node": "^18.15.5",
+    "@stencil/core": "^3.3.1",
+    "@types/node": "^20.2.5",
     "stencil-click-outside": "^1.8.0",
-    "swiper": "^8.2.1",
-    "uuid": "^8.3.2"
+    "swiper": "^9.3.2",
+    "uuid": "^9.0.0"
   },
   "repository": "CSCfi/csc-ui",
   "author": "mycsc team <suiteamsui@gmail.com>",
