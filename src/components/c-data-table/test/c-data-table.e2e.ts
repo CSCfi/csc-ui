@@ -1,5 +1,6 @@
 import { E2EElement, E2EPage, newE2EPage } from '@stencil/core/testing';
 import { basicData, basicHeaders } from './data';
+import { Viewport } from 'puppeteer';
 
 describe('c-data-table', () => {
   let page: E2EPage;
@@ -38,5 +39,91 @@ describe('c-data-table', () => {
     expect(await additionalDataRow.isVisible()).toBe(true);
 
     expect(additionalDataRow).toMatchSnapshot();
+  });
+
+  it('allows row selection', async () => {
+    table.setProperty('selectable', true);
+    table.setProperty('headers', basicHeaders);
+    table.setProperty('data', basicData);
+
+    await page.waitForChanges();
+
+    let countOfSelectedRows = await page.$$eval(
+      'c-data-table >>> tr.selected',
+      (rows: HTMLTableRowElement[]) => {
+        return rows.length;
+      },
+    );
+
+    expect(countOfSelectedRows).toEqual(0);
+
+    const checkBox = await page.find('c-data-table >>> tbody c-checkbox');
+    const headerCheckBox = await page.find('c-data-table >>> thead c-checkbox');
+
+    await headerCheckBox.click();
+
+    await page.waitForChanges();
+
+    countOfSelectedRows = await page.$$eval(
+      'c-data-table >>> tr.selected',
+      (rows: HTMLTableRowElement[]) => {
+        return rows.length;
+      },
+    );
+
+    expect(countOfSelectedRows).toEqual(basicData.length);
+
+    await headerCheckBox.click();
+
+    await page.waitForChanges();
+
+    countOfSelectedRows = await page.$$eval(
+      'c-data-table >>> tr.selected',
+      (rows: HTMLTableRowElement[]) => {
+        return rows.length;
+      },
+    );
+
+    expect(countOfSelectedRows).toEqual(0);
+
+    await checkBox.click();
+
+    await page.waitForChanges();
+
+    countOfSelectedRows = await page.$$eval(
+      'c-data-table >>> tr.selected',
+      (rows: HTMLTableRowElement[]) => {
+        return rows.length;
+      },
+    );
+    expect(countOfSelectedRows).toEqual(1);
+
+    await table.callMethod('clearSelections');
+
+    await page.waitForChanges();
+
+    countOfSelectedRows = await page.$$eval(
+      'c-data-table >>> tr.selected',
+      (rows: HTMLTableRowElement[]) => {
+        return rows.length;
+      },
+    );
+
+    expect(countOfSelectedRows).toEqual(0);
+  });
+
+  it('allows pinning columns', async () => {
+    const headers = JSON.parse(JSON.stringify(basicHeaders));
+    headers[2].pinned = true;
+
+    table.setProperty('headers', headers);
+    table.setProperty('data', basicData);
+
+    const viewport: Viewport = { width: 400, height: 600 };
+    page.setViewport(viewport);
+
+    await page.waitForChanges();
+
+    expect(table).toMatchSnapshot();
   });
 });
