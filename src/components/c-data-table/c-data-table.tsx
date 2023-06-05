@@ -210,13 +210,19 @@ export class CDataTable {
   private _isVisible = false;
 
   @Watch('hiddenHeaders')
-  onHeaderChange() {
+  onHiddenHeaderChange() {
     this._getData();
   }
 
   @Watch('data')
   onDataChange() {
     this._getData();
+    this._handleInitialHeaders();
+  }
+
+  @Watch('headers')
+  onHeaderChange() {
+    this._handleInitialHeaders();
   }
 
   @Watch('singleSelection')
@@ -245,14 +251,7 @@ export class CDataTable {
     this.sortDirection = this.sortDirection ?? 'asc';
     this._getData();
 
-    this.initiallyHiddenHeaders = this.headers
-      .filter((header) => !!header.hidden)
-      .map((header) => header.key);
-
-    // Hide the initially hidden headers
-    this.hiddenHeaders = [
-      ...new Set([...this.hiddenHeaders, ...this.initiallyHiddenHeaders]),
-    ];
+    this._handleInitialHeaders();
   }
 
   componentDidLoad() {
@@ -309,6 +308,17 @@ export class CDataTable {
     this._rootIntersectionObserver?.disconnect();
     this._firstCellIntersectionObserver?.disconnect();
     this._lastCellIntersectionObserver?.disconnect();
+  }
+
+  private _handleInitialHeaders() {
+    this.initiallyHiddenHeaders = this.headers
+      .filter((header) => !!header.hidden)
+      .map((header) => header.key);
+
+    // Hide the initially hidden headers
+    this.hiddenHeaders = [
+      ...new Set([...this.hiddenHeaders, ...this.initiallyHiddenHeaders]),
+    ];
   }
 
   private _handleHeaderVisibility(

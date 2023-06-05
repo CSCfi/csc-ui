@@ -22,6 +22,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --watchAll",
+    "test.e2e": "stencil test --e2e --watchAll",
     "generate": "stencil generate",
     "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.js",
     "style-dictionary:build:prod": "style-dictionary build --config ./style-dictionary.production.config.js",
@@ -47,6 +48,7 @@
     "jest": "^27.0.3",
     "jest-cli": "^27.4.5",
     "prettier": "^2.8.8",
+    "puppeteer": "^19.11.1",
     "style-dictionary": "^3.7.2"
   },
   "license": "MIT",
