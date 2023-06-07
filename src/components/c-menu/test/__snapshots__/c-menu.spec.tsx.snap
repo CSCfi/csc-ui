@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-menu renders custom amount of pages before adding scroll 1`] = `
+<c-menu class="c-menu" items-per-page="3">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-b10756fc-77cb-4bf3-8795-9c9246121b10" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders default html 1`] = `
+<c-menu class="c-menu">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-2ed3f9cb-db4f-4d87-87a6-82980fdabd0d" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders no-hover background 1`] = `
+<c-menu class="c-menu c-menu--no-hover" nohover="true">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-80f4a6f8-93eb-4db1-b2fc-d17e9cff0a93" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders simple variant 1`] = `
+<c-menu class="c-menu c-menu--simple" simple="true">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-f324d871-1a9d-46fb-8bdd-e154218c47d4" aria-expanded="false" aria-haspopup="listbox" class="simple" tabindex="0" type="button">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders small variant 1`] = `
+<c-menu class="c-menu c-menu--small" small="true">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-0bd1a52a-58f5-403e-a4d7-d252bcb78918" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="16" viewBox="0 0 24 24" width="16">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
