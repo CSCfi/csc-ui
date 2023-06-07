@@ -6,6 +6,12 @@ exports[`c-toasts renders absolute positioning 1`] = `
 </c-toasts>
 `;
 
+exports[`c-toasts renders custom position: center-center 1`] = `
+<c-toasts class="center" horizontal="center" vertical="center">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
+
 exports[`c-toasts renders default html 1`] = `
 <c-toasts class="bottom center">
   <mock:shadow-root></mock:shadow-root>
@@ -30,14 +36,14 @@ exports[`c-toasts renders horizontal positioning: right 1`] = `
 </c-toasts>
 `;
 
-exports[`c-toasts renders horizontal positioning: right 2`] = `
-<c-toasts class="left top" horizontal="left" vertical="top">
+exports[`c-toasts renders vertical positioning: bottom 1`] = `
+<c-toasts class="bottom right" horizontal="right" vertical="bottom">
   <mock:shadow-root></mock:shadow-root>
 </c-toasts>
 `;
 
-exports[`c-toasts renders vertical positioning: bottom 1`] = `
-<c-toasts class="bottom right" horizontal="right" vertical="bottom">
+exports[`c-toasts renders vertical positioning: top 1`] = `
+<c-toasts class="left top" horizontal="left" vertical="top">
   <mock:shadow-root></mock:shadow-root>
 </c-toasts>
 `;

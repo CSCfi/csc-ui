@@ -56,10 +56,18 @@ describe('c-toasts', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('renders horizontal positioning: right', async () => {
+  it('renders vertical positioning: top', async () => {
     const page = await newSpecPage({
       components: [CToasts],
       html: `<c-toasts horizontal="left" vertical="top"></c-toasts>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+  it('renders custom position: center-center', async () => {
+    const page = await newSpecPage({
+      components: [CToasts],
+      html: `<c-toasts horizontal="center" vertical="center"></c-toasts>`,
     });
 
     expect(page.root).toMatchSnapshot();
