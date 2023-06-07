@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-toasts renders absolute positioning 1`] = `
+<c-toasts absolute="true" class="absolute bottom center">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
+
+exports[`c-toasts renders default html 1`] = `
+<c-toasts class="bottom center">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
+
+exports[`c-toasts renders horizontal positioning: center 1`] = `
+<c-toasts class="bottom center" horizontal="center">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
+
+exports[`c-toasts renders horizontal positioning: left 1`] = `
+<c-toasts class="bottom left" horizontal="left">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
+
+exports[`c-toasts renders horizontal positioning: right 1`] = `
+<c-toasts class="bottom right" horizontal="right">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
+
+exports[`c-toasts renders horizontal positioning: right 2`] = `
+<c-toasts class="left top" horizontal="left" vertical="top">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
+
+exports[`c-toasts renders vertical positioning: bottom 1`] = `
+<c-toasts class="bottom right" horizontal="right" vertical="bottom">
+  <mock:shadow-root></mock:shadow-root>
+</c-toasts>
+`;
