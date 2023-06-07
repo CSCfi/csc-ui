@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-tag make tag active on click 1`] = `
+<c-tag active="false" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag make tag active on click 2`] = `
+<c-tag active="false" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag renders active tag 1`] = `
+<c-tag active="true" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="active c-tag">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag renders default html 1`] = `
+<c-tag role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
