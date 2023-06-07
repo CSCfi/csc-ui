@@ -1,0 +1,752 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-data-table renders default html 1`] = `
+<c-data-table>
+  <mock:shadow-root>
+    <table class="c-data-table">
+      <colgroup>
+        <col class="sorted-column">
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th data-id="country">
+            <div class="sortable">
+              Country
+              <svg height="24" tabindex="0" viewBox="0 0 24 24" width="24">
+                <path d="M7.03 9.97H11.03V18.89L13.04 18.92V9.97H17.03L12.03 4.97Z"></path>
+              </svg>
+            </div>
+          </th>
+          <th data-id="population">
+            <div class="sortable">
+              Population (2020)
+              <svg height="24" tabindex="0" viewBox="0 0 24 24" width="24">
+                <path d="M9,3L5,7H8V14H10V7H13M16,17V10H14V17H11L15,21L19,17H16Z"></path>
+              </svg>
+            </div>
+          </th>
+          <th data-id="unemployment">
+            <div class="sortable">
+              Unemployment (%)
+              <svg height="24" tabindex="0" viewBox="0 0 24 24" width="24">
+                <path d="M9,3L5,7H8V14H10V7H13M16,17V10H14V17H11L15,21L19,17H16Z"></path>
+              </svg>
+            </div>
+          </th>
+          <th data-id="actions">
+            <div></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="loader" colspan="100"></td>
+        </tr>
+        <tr>
+          <td>
+            <div data-align="center">
+              <div class="children">
+                <p style="margin: 0;">
+                  Denmark
+                </p>
+                <c-icon path="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"></c-icon>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div>
+              5831404
+            </div>
+          </td>
+          <td>
+            <div>
+              4.8
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div data-align="center">
+              Finland
+            </div>
+          </td>
+          <td>
+            <div>
+              5529543
+            </div>
+          </td>
+          <td>
+            <div>
+              7.5
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div data-align="center">
+              Iceland
+            </div>
+          </td>
+          <td>
+            <div>
+              366463
+            </div>
+          </td>
+          <td>
+            <div>
+              5.4
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div data-align="center">
+              Norway
+            </div>
+          </td>
+          <td>
+            <div>
+              5379475
+            </div>
+          </td>
+          <td>
+            <div>
+              5
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div data-align="center">
+              Sweden
+            </div>
+          </td>
+          <td>
+            <div>
+              10353442
+            </div>
+          </td>
+          <td>
+            <div>
+              8.7
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="100">
+            <div class="c-data-table__footer">
+              <c-pagination size="default"></c-pagination>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </mock:shadow-root>
+</c-data-table>
+`;
+
+exports[`c-data-table renders specific columns as hidden and expands on click 1`] = `
+<c-data-table>
+  <mock:shadow-root>
+    <table class="c-data-table c-data-table--hoverable">
+      <colgroup>
+        <col>
+        <col class="sorted-column">
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="indicator"></th>
+          <th data-id="country">
+            <div class="sortable">
+              Country
+              <svg height="24" tabindex="0" viewBox="0 0 24 24" width="24">
+                <path d="M7.03 9.97H11.03V18.89L13.04 18.92V9.97H17.03L12.03 4.97Z"></path>
+              </svg>
+            </div>
+          </th>
+          <th data-id="population">
+            <div class="sortable">
+              Population (2020)
+              <svg height="24" tabindex="0" viewBox="0 0 24 24" width="24">
+                <path d="M9,3L5,7H8V14H10V7H13M16,17V10H14V17H11L15,21L19,17H16Z"></path>
+              </svg>
+            </div>
+          </th>
+          <th data-id="actions">
+            <div></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="loader" colspan="100"></td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              <div class="children">
+                <p style="margin: 0;">
+                  Denmark
+                </p>
+                <c-icon path="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"></c-icon>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div>
+              5831404
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    4.8
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Finland
+            </div>
+          </td>
+          <td>
+            <div>
+              5529543
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    7.5
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Iceland
+            </div>
+          </td>
+          <td>
+            <div>
+              366463
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    5.4
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Norway
+            </div>
+          </td>
+          <td>
+            <div>
+              5379475
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    5
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Sweden
+            </div>
+          </td>
+          <td>
+            <div>
+              10353442
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    8.7
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="100">
+            <div class="c-data-table__footer">
+              <c-pagination size="default"></c-pagination>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </mock:shadow-root>
+</c-data-table>
+`;
+
+exports[`c-data-table renders specific columns as hidden and expands on click 2`] = `
+<c-data-table>
+  <mock:shadow-root>
+    <table class="c-data-table c-data-table--hoverable">
+      <colgroup>
+        <col>
+        <col class="sorted-column">
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="indicator"></th>
+          <th data-id="country">
+            <div class="sortable">
+              Country
+              <svg height="24" tabindex="0" viewBox="0 0 24 24" width="24">
+                <path d="M7.03 9.97H11.03V18.89L13.04 18.92V9.97H17.03L12.03 4.97Z"></path>
+              </svg>
+            </div>
+          </th>
+          <th data-id="population">
+            <div class="sortable">
+              Population (2020)
+              <svg height="24" tabindex="0" viewBox="0 0 24 24" width="24">
+                <path d="M9,3L5,7H8V14H10V7H13M16,17V10H14V17H11L15,21L19,17H16Z"></path>
+              </svg>
+            </div>
+          </th>
+          <th data-id="actions">
+            <div></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="loader" colspan="100"></td>
+        </tr>
+        <tr class="active parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              <div class="children">
+                <p style="margin: 0;">
+                  Denmark
+                </p>
+                <c-icon path="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"></c-icon>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div>
+              5831404
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="active additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    4.8
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Finland
+            </div>
+          </td>
+          <td>
+            <div>
+              5529543
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    7.5
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Iceland
+            </div>
+          </td>
+          <td>
+            <div>
+              366463
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    5.4
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Norway
+            </div>
+          </td>
+          <td>
+            <div>
+              5379475
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    5
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Sweden
+            </div>
+          </td>
+          <td>
+            <div>
+              10353442
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    8.7
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="100">
+            <div class="c-data-table__footer">
+              <c-pagination size="default"></c-pagination>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </mock:shadow-root>
+</c-data-table>
+`;

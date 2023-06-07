@@ -90,7 +90,7 @@ describe('c-data-table', () => {
   it('renders horizontal scroll', async () => {
     const page = await newSpecPage({
       components: [CDataTable],
-      html: `<c-data-table></c-data-table>`,
+      html: `<c-data-table ></c-data-table>`,
     });
 
     expect(page.root).toMatchSnapshot();
