@@ -23,21 +23,38 @@ describe('c-tag', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('make tag active on click', async () => {
+  it('renders badge', async () => {
     const page = await newSpecPage({
       components: [CTag],
-      html: `
-      <c-tag active=${false}></c-tag>`,
+      html: `<c-tag badge="2"></c-tag>`,
     });
+
     expect(page.root).toMatchSnapshot();
+  });
 
-    const tagToggle = page.root.shadowRoot.querySelector(
-      '.c-tag',
-    ) as HTMLElement;
+  it('renders closeable tag', async () => {
+    const page = await newSpecPage({
+      components: [CTag],
+      html: `<c-tag closeable=${true}></c-tag>`,
+    });
 
-    tagToggle.click();
+    expect(page.root).toMatchSnapshot();
+  });
 
-    await page.waitForChanges();
+  it('renders fit tag', async () => {
+    const page = await newSpecPage({
+      components: [CTag],
+      html: `<c-tag fit=${true}></c-tag>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('renders flat tag', async () => {
+    const page = await newSpecPage({
+      components: [CTag],
+      html: `<c-tag flat=${true}></c-tag>`,
+    });
 
     expect(page.root).toMatchSnapshot();
   });
