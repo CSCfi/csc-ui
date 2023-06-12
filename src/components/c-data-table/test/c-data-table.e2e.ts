@@ -41,6 +41,35 @@ describe('c-data-table', () => {
     expect(additionalDataRow).toMatchSnapshot();
   });
 
+  it('displays single row at a time', async () => {
+    const headers = JSON.parse(JSON.stringify(basicHeaders));
+    headers[2].hidden = true;
+
+    table.setProperty('headers', headers);
+    table.setProperty('data', basicData);
+    table.setProperty('singleExpansion', true);
+
+    await page.waitForChanges();
+
+    const parentRows = await page.findAll('c-data-table >>> tr.parent');
+    const additionalDataRows = await page.findAll(
+      'c-data-table >>> tr.additional-data',
+    );
+
+    await parentRows[0].click();
+
+    await page.waitForChanges();
+
+    await parentRows[1].click();
+
+    await page.waitForChanges();
+
+    expect(await additionalDataRows[0].isVisible()).toBe(false);
+    expect(await additionalDataRows[1].isVisible()).toBe(true);
+
+    expect(additionalDataRows).toMatchSnapshot();
+  });
+
   it('allows row selection', async () => {
     table.setProperty('selectable', true);
     table.setProperty('headers', basicHeaders);
@@ -57,7 +86,7 @@ describe('c-data-table', () => {
 
     expect(countOfSelectedRows).toEqual(0);
 
-    const checkBox = await page.find('c-data-table >>> tbody c-checkbox');
+    const checkBoxes = await page.findAll('c-data-table >>> tbody c-checkbox');
     const headerCheckBox = await page.find('c-data-table >>> thead c-checkbox');
 
     await headerCheckBox.click();
@@ -86,7 +115,8 @@ describe('c-data-table', () => {
 
     expect(countOfSelectedRows).toEqual(0);
 
-    await checkBox.click();
+    await checkBoxes[0].click();
+    await checkBoxes[1].click();
 
     await page.waitForChanges();
 
@@ -96,7 +126,7 @@ describe('c-data-table', () => {
         return rows.length;
       },
     );
-    expect(countOfSelectedRows).toEqual(1);
+    expect(countOfSelectedRows).toEqual(2);
 
     await table.callMethod('clearSelections');
 
@@ -110,6 +140,42 @@ describe('c-data-table', () => {
     );
 
     expect(countOfSelectedRows).toEqual(0);
+  });
+
+  it('forces single selection', async () => {
+    table.setProperty('selectable', true);
+    table.setProperty('singleSelection', true);
+    table.setProperty('headers', basicHeaders);
+    table.setProperty('data', basicData);
+
+    await page.waitForChanges();
+
+    let countOfSelectedRows = await page.$$eval(
+      'c-data-table >>> tr.selected',
+      (rows: HTMLTableRowElement[]) => {
+        return rows.length;
+      },
+    );
+
+    expect(countOfSelectedRows).toEqual(0);
+
+    const checkBoxes = await page.findAll('c-data-table >>> tbody c-checkbox');
+    const headerCheckBox = await page.find('c-data-table >>> thead c-checkbox');
+
+    expect(headerCheckBox).toBeNull();
+
+    await checkBoxes[0].click();
+    await checkBoxes[1].click();
+
+    await page.waitForChanges();
+
+    countOfSelectedRows = await page.$$eval(
+      'c-data-table >>> tr.selected',
+      (rows: HTMLTableRowElement[]) => {
+        return rows.length;
+      },
+    );
+    expect(countOfSelectedRows).toEqual(1);
   });
 
   it('allows pinning columns', async () => {

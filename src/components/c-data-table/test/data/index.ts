@@ -58,6 +58,12 @@ export const basicData: CDataTableData[] = [
     unemployment: { value: 8.7 },
     code: { value: 'SE' },
   },
+  {
+    country: { value: 'Kermany' },
+    population: { value: 18353442 },
+    unemployment: { value: 100.1 },
+    code: { value: 'KE' },
+  },
 ];
 
 export const basicHeaders: CDataTableHeader[] = [

@@ -249,6 +249,48 @@ exports[`c-data-table allows pinning columns 1`] = `
             </div>
           </td>
         </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Kermany
+            </div>
+          </td>
+          <td>
+            <div>
+              100.1
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Population (2020):
+                    </span>
+                    18353442
+                  </div>
+                </li>
+                <li>
+                  <div class="children">
+                    <c-button class="hydrated" title="Show Code">
+                      Show Code
+                    </c-button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </tbody>
       <tfoot>
         <tr>
@@ -281,4 +323,105 @@ exports[`c-data-table displays hidden data on row click 1`] = `
     </div>
   </td>
 </tr>
+`;
+
+exports[`c-data-table displays single row at a time 1`] = `
+Array [
+  <tr class="additional-data">
+  <td colspan="100">
+    <div>
+      <ul>
+        <li>
+          <div class="title">
+            <span>
+              Unemployment (%):
+            </span>
+            4.8
+          </div>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>,
+  <tr class="active additional-data">
+  <td colspan="100">
+    <div>
+      <ul>
+        <li>
+          <div class="title">
+            <span>
+              Unemployment (%):
+            </span>
+            7.5
+          </div>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>,
+  <tr class="additional-data">
+  <td colspan="100">
+    <div>
+      <ul>
+        <li>
+          <div class="title">
+            <span>
+              Unemployment (%):
+            </span>
+            5.4
+          </div>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>,
+  <tr class="additional-data">
+  <td colspan="100">
+    <div>
+      <ul>
+        <li>
+          <div class="title">
+            <span>
+              Unemployment (%):
+            </span>
+            5
+          </div>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>,
+  <tr class="additional-data">
+  <td colspan="100">
+    <div>
+      <ul>
+        <li>
+          <div class="title">
+            <span>
+              Unemployment (%):
+            </span>
+            8.7
+          </div>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>,
+  <tr class="additional-data">
+  <td colspan="100">
+    <div>
+      <ul>
+        <li>
+          <div class="title">
+            <span>
+              Unemployment (%):
+            </span>
+            100.1
+          </div>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>,
+]
 `;
