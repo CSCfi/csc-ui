@@ -215,6 +215,11 @@ export class CInput {
     if (!value) this._onReset();
   }
 
+  @Watch('placeholder')
+  onPlaceholderChange(placeholder) {
+    if (placeholder) this._onReset();
+  }
+
   private _hasBlurred = false;
 
   private _labelRef: HTMLLabelElement;
