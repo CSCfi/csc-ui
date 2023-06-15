@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-steps renders default html 1`] = `
+<c-steps tabindex="0">
+  <mock:shadow-root>
+    <div aria-hidden="true" class="c-steps">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-steps>
+`;
+
+exports[`c-steps renders steps 1`] = `
+<c-steps tabindex="0">
+  <mock:shadow-root>
+    <div aria-hidden="true" class="c-steps">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <c-step>
+    <mock:shadow-root>
+      <div class="c-step">
+        <div class="c-step__indicator">
+          <div class="dot"></div>
+        </div>
+        <div class="c-step__label">
+          <slot></slot>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </c-step>
+  <c-step>
+    <mock:shadow-root>
+      <div class="c-step">
+        <div class="c-step__indicator">
+          <div class="dot"></div>
+        </div>
+        <div class="c-step__label">
+          <slot></slot>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </c-step>
+  <c-step>
+    <mock:shadow-root>
+      <div class="c-step">
+        <div class="c-step__indicator">
+          <div class="dot"></div>
+        </div>
+        <div class="c-step__label">
+          <slot></slot>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </c-step>
+</c-steps>
+`;
+
+exports[`c-steps renders steps with value of current step 1`] = `
+<c-steps tabindex="0" value="2">
+  <mock:shadow-root>
+    <div aria-hidden="true" class="c-steps">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <c-step>
+    <mock:shadow-root>
+      <div class="c-step c-step--complete">
+        <div class="c-step__indicator">
+          <div class="complete">
+            <svg viewBox="0 0 100 100">
+              <path class="path" d="M 12 52 l 24 24 l 47 -47 l -3 -3 l -44 44 l -21 -21 l -3 3"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="c-step__label">
+          <slot></slot>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </c-step>
+  <c-step>
+    <mock:shadow-root>
+      <div class="c-step">
+        <div class="c-step__indicator">
+          <div class="current dot"></div>
+        </div>
+        <div class="c-step__label">
+          <slot></slot>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </c-step>
+  <c-step>
+    <mock:shadow-root>
+      <div class="c-step">
+        <div class="c-step__indicator">
+          <div class="dot"></div>
+        </div>
+        <div class="c-step__label">
+          <slot></slot>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </c-step>
+</c-steps>
+`;
