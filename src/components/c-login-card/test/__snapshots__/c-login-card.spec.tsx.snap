@@ -19,6 +19,57 @@ exports[`c-login-card add source to background-image 1`] = `
 </c-login-card>
 `;
 
+exports[`c-login-card renders actions 1`] = `
+<c-login-card>
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      <c-login-card-actions>
+        <mock:shadow-root>
+          <c-card-actions align="center" justify="start" style="padding: 0px;">
+            <slot></slot>
+          </c-card-actions>
+        </mock:shadow-root>
+      </c-login-card-actions>
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders actions, custom align: end 1`] = `
+<c-login-card>
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      <c-login-card-actions align="end">
+        <mock:shadow-root>
+          <c-card-actions align="end" justify="start" style="padding: 0px;">
+            <slot></slot>
+          </c-card-actions>
+        </mock:shadow-root>
+      </c-login-card-actions>
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders actions, custom justification: space-around 1`] = `
+<c-login-card>
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      <c-login-card-actions justify="space-around">
+        <mock:shadow-root>
+          <c-card-actions align="center" justify="space-around" style="padding: 0px;">
+            <slot></slot>
+          </c-card-actions>
+        </mock:shadow-root>
+      </c-login-card-actions>
+    </div>
+  </div>
+</c-login-card>
+`;
+
 exports[`c-login-card renders colored overlay 1`] = `
 <c-login-card background-position="top left" overlay="true" overlay-blend-mode="hue" src="mahti">
   <!---->
@@ -33,6 +84,22 @@ exports[`c-login-card renders colored overlay 1`] = `
     <div class="c-login-card__image c-login-card__image--overlay" style="background-image: url(mahti); background-position: top left; height: 0px; --c-login-overlay-mode: hue;"></div>
     <div class="c-login-card__content">
       This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders content 1`] = `
+<c-login-card>
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      <c-login-card-content>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
+        This is a login card
+      </c-login-card-content>
     </div>
   </div>
 </c-login-card>
@@ -93,6 +160,51 @@ exports[`c-login-card renders default html 1`] = `
   <div class="c-login-card c-login-card--mobile">
     <div class="c-login-card__content c-login-card__content--no-image">
       This is a login card
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders title 1`] = `
+<c-login-card>
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      <c-login-card-title>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
+        Login title
+      </c-login-card-title>
+    </div>
+  </div>
+</c-login-card>
+`;
+
+exports[`c-login-card renders title, content, actions 1`] = `
+<c-login-card>
+  <!---->
+  <div class="c-login-card c-login-card--mobile">
+    <div class="c-login-card__content c-login-card__content--no-image">
+      <c-login-card-title>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
+        Login title
+      </c-login-card-title>
+      <c-login-card-content>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
+        This is a login card
+      </c-login-card-content>
+      <c-login-card-actions>
+        <mock:shadow-root>
+          <c-card-actions align="center" justify="start" style="padding: 0px;">
+            <slot></slot>
+          </c-card-actions>
+        </mock:shadow-root>
+      </c-login-card-actions>
     </div>
   </div>
 </c-login-card>

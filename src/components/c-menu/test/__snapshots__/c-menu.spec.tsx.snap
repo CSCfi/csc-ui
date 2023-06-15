@@ -3,7 +3,7 @@
 exports[`c-menu renders custom amount of pages before adding scroll 1`] = `
 <c-menu class="c-menu" items-per-page="3">
   <mock:shadow-root>
-    <button aria-controls="c-menu-items-0b16afc8-60a0-408e-a43b-3aa247d8aead" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+    <button aria-controls="c-menu-items-90f4b8e9-e371-4680-9966-82a686aed26e" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
       <div class="c-menu__header">
         <slot></slot>
         <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
@@ -18,7 +18,7 @@ exports[`c-menu renders custom amount of pages before adding scroll 1`] = `
 exports[`c-menu renders default html 1`] = `
 <c-menu class="c-menu">
   <mock:shadow-root>
-    <button aria-controls="c-menu-items-a7b2be8f-2a25-4200-b215-f5bebe3018dd" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+    <button aria-controls="c-menu-items-aec83960-a0bb-48ed-94b5-7c3100070e08" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
       <div class="c-menu__header">
         <slot></slot>
         <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
@@ -33,7 +33,7 @@ exports[`c-menu renders default html 1`] = `
 exports[`c-menu renders no-hover background 1`] = `
 <c-menu class="c-menu c-menu--no-hover" nohover="true">
   <mock:shadow-root>
-    <button aria-controls="c-menu-items-3cd3be11-9270-4130-a658-c81884e3482f" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+    <button aria-controls="c-menu-items-b13d5021-171d-4771-99c4-4c17143fa9c1" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
       <div class="c-menu__header">
         <slot></slot>
         <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
@@ -48,7 +48,7 @@ exports[`c-menu renders no-hover background 1`] = `
 exports[`c-menu renders simple variant 1`] = `
 <c-menu class="c-menu c-menu--simple" simple="true">
   <mock:shadow-root>
-    <button aria-controls="c-menu-items-2609cbf8-279a-4687-b134-2f05ed38f1fb" aria-expanded="false" aria-haspopup="listbox" class="simple" tabindex="0" type="button">
+    <button aria-controls="c-menu-items-e9a07129-5645-4382-b13f-0a90fe0debe6" aria-expanded="false" aria-haspopup="listbox" class="simple" tabindex="0" type="button">
       <slot></slot>
     </button>
   </mock:shadow-root>
@@ -58,7 +58,7 @@ exports[`c-menu renders simple variant 1`] = `
 exports[`c-menu renders small variant 1`] = `
 <c-menu class="c-menu c-menu--small" small="true">
   <mock:shadow-root>
-    <button aria-controls="c-menu-items-605776e9-e53f-4dde-8870-e8f8f7c6efcc" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+    <button aria-controls="c-menu-items-8c5b33f8-5d0e-4b6a-b02a-6949a39e8ddc" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
       <div class="c-menu__header">
         <slot></slot>
         <svg class="c-menu__icon" height="16" viewBox="0 0 24 24" width="16">
