@@ -131,6 +131,32 @@ exports[`c-data-table renders default html 1`] = `
         <tr>
           <td>
             <div data-align="center">
+              Kermany
+            </div>
+          </td>
+          <td>
+            <div>
+              18353442
+            </div>
+          </td>
+          <td>
+            <div>
+              100.1
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div data-align="center">
               Norway
             </div>
           </td>
@@ -364,6 +390,50 @@ exports[`c-data-table renders specific columns as hidden and expands on click 1`
                       Unemployment (%):
                     </span>
                     5.4
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Kermany
+            </div>
+          </td>
+          <td>
+            <div>
+              18353442
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    100.1
                   </div>
                 </li>
               </ul>
@@ -642,6 +712,50 @@ exports[`c-data-table renders specific columns as hidden and expands on click 2`
                       Unemployment (%):
                     </span>
                     5.4
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr class="parent">
+          <td>
+            <div tabindex="0">
+              <svg height="22" viewBox="0 0 24 24" width="22">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              </svg>
+            </div>
+          </td>
+          <td>
+            <div data-align="center">
+              Kermany
+            </div>
+          </td>
+          <td>
+            <div>
+              18353442
+            </div>
+          </td>
+          <td>
+            <div data-align="end">
+              <div class="children">
+                <c-button size="small" text="" title="Show Code">
+                  Show Code
+                </c-button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="additional-data">
+          <td colspan="100">
+            <div>
+              <ul>
+                <li>
+                  <div class="title">
+                    <span>
+                      Unemployment (%):
+                    </span>
+                    100.1
                   </div>
                 </li>
               </ul>

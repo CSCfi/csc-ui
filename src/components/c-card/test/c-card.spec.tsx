@@ -1,28 +1,92 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { CCard } from '../c-card';
+import { CCardActions } from '../c-card-actions';
+import { CCardContent } from '../c-card-content';
+import { CCardTitle } from '../c-card-title';
 
 describe('c-card', () => {
+  const title = 'Quis porro id?';
+  const content = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, harum pariatur deserunt
+  obcaecati maiores cupiditate magnam! Minima omnis libero sequi consectetur nesciunt. Facilis
+  maxime ratione molestiae expedita quis porro id?`;
   it('renders default html', async () => {
     const page = await newSpecPage({
       components: [CCard],
-      html: `<c-card></c-card>`,
+      html: `
+      <c-card></c-card>`,
     });
 
     expect(page.root).toMatchSnapshot();
   });
 
-  it('render default with text', async () => {
+  it('renders c-card-title', async () => {
     const page = await newSpecPage({
-      components: [CCard],
+      components: [CCard, CCardTitle],
       html: `
       <c-card>
-        <c-card-title>The title</c-card-title>
-        <c-card-content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </c-card-content>
+        <c-card-title>${title}</c-card-title>
+      </c-card>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('renders c-card-content', async () => {
+    const page = await newSpecPage({
+      components: [CCard, CCardContent],
+      html: `
+      <c-card>
+        <c-card-content>${content}</c-card-content>
+      </c-card>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('renders c-card-actions', async () => {
+    const page = await newSpecPage({
+      components: [CCard, CCardActions],
+      html: `
+      <c-card>
+        <c-card-actions></c-card-actions>
+      </c-card>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('renders title, content and actions', async () => {
+    const page = await newSpecPage({
+      components: [CCard, CCardTitle, CCardContent, CCardActions],
+      html: `
+      <c-card>
+        <c-card-title>${title}</c-card-title>
+        <c-card-content>${content}</c-card-content>
+        <c-card-actions></c-card-actions>
+      </c-card>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('renders c-card-actions, custom alignment: end', async () => {
+    const page = await newSpecPage({
+      components: [CCard, CCardActions],
+      html: `
+      <c-card>
+        <c-card-actions align="end"></c-card-actions>
+      </c-card>`,
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('renders c-card-actions, custom justification: space-between', async () => {
+    const page = await newSpecPage({
+      components: [CCard, CCardActions],
+      html: `
+      <c-card>
+        <c-card-actions justify="space-between"></c-card-actions>
       </c-card>`,
     });
 
