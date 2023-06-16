@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-tabs disables bottom border 1`] = `
+<c-tabs borderless="true" class="c-tabs c-tabs--borderless" role="tablist" value="tab2">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="1" aria-selected="false" aria-setsize="3" class="c-tab" role="tab" tabindex="-1" value="tab1">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    One
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="2" aria-selected="true" aria-setsize="3" class="c-tab c-tab--active" role="tab" tabindex="0" value="tab2">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Two
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="3" aria-selected="false" aria-setsize="3" class="c-tab" role="tab" tabindex="-1" value="tab3">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Three
+  </c-tab>
+</c-tabs>
+`;
+
+exports[`c-tabs render active tab 1`] = `
+<c-tabs class="c-tabs" role="tablist" value="tab1">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="1" aria-selected="true" aria-setsize="3" class="c-tab c-tab--active" role="tab" tabindex="0" value="tab1">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    One
+  </c-tab>
+  <c-tab active="true" aria-disabled="false" aria-hidden="false" aria-posinset="2" aria-selected="false" aria-setsize="3" class="c-tab" role="tab" tabindex="-1" value="tab2">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Two
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="3" aria-selected="false" aria-setsize="3" class="c-tab" role="tab" tabindex="-1" value="tab3">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Three
+  </c-tab>
+</c-tabs>
+`;
+
+exports[`c-tabs render disabled tab 1`] = `
+<c-tabs class="c-tabs" role="tablist" value="tab1">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="1" aria-selected="true" aria-setsize="2" class="c-tab c-tab--active" role="tab" tabindex="0" value="tab1">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    One
+  </c-tab>
+  <c-tab aria-disabled="true" aria-hidden="true" aria-selected="false" class="c-tab c-tab--disabled" disabled="true" role="tab" tabindex="-1" value="tab2">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Two
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="2" aria-selected="false" aria-setsize="2" class="c-tab" role="tab" tabindex="-1" value="tab3">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Three
+  </c-tab>
+</c-tabs>
+`;
+
+exports[`c-tabs render id 1`] = `
+<c-tabs class="c-tabs" role="tablist" value="tab1">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="1" aria-selected="true" aria-setsize="3" class="c-tab c-tab--active" role="tab" tabindex="0" value="tab1">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    One
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="2" aria-selected="false" aria-setsize="3" class="c-tab" id="second" role="tab" tabindex="-1" value="tab2">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Two
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="3" aria-selected="false" aria-setsize="3" class="c-tab" role="tab" tabindex="-1" value="tab3">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Three
+  </c-tab>
+</c-tabs>
+`;
+
+exports[`c-tabs renders c-tab 1`] = `
+<c-tabs class="c-tabs" role="tablist">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="1" aria-selected="true" aria-setsize="3" class="c-tab c-tab--active" role="tab" tabindex="0">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    One
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="2" aria-selected="true" aria-setsize="3" class="c-tab c-tab--active" role="tab" tabindex="0">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Two
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="3" aria-selected="true" aria-setsize="3" class="c-tab c-tab--active" role="tab" tabindex="0">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Three
+  </c-tab>
+</c-tabs>
+`;
+
+exports[`c-tabs renders default html 1`] = `
+<c-tabs class="c-tabs" role="tablist">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-tabs>
+`;
+
+exports[`c-tabs renders value of current actibe tab 1`] = `
+<c-tabs class="c-tabs" role="tablist" value="tab2">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="1" aria-selected="false" aria-setsize="3" class="c-tab" role="tab" tabindex="-1" value="tab1">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    One
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="2" aria-selected="true" aria-setsize="3" class="c-tab c-tab--active" role="tab" tabindex="0" value="tab2">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Two
+  </c-tab>
+  <c-tab aria-disabled="false" aria-hidden="false" aria-posinset="3" aria-selected="false" aria-setsize="3" class="c-tab" role="tab" tabindex="-1" value="tab3">
+    <mock:shadow-root>
+      <slot></slot>
+    </mock:shadow-root>
+    Three
+  </c-tab>
+</c-tabs>
+`;
