@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-progress-bar hides percentage display 1`] = `
+<c-progress-bar aria-busy="true" hide-details="true" title="0 %">
+  <mock:shadow-root>
+    <label class="c-progress" style="--value: 0%;">
+      <progress aria-valuenow="0" max="100" role="progressbar" value="0">
+        0%
+      </progress>
+    </label>
+  </mock:shadow-root>
+</c-progress-bar>
+`;
+
+exports[`c-progress-bar make progress indeterminate 1`] = `
+<c-progress-bar aria-busy="false" indeterminate="true" title="0 %">
+  <mock:shadow-root>
+    <label class="c-progress c-progress--indeterminate" style="--value: 0%;">
+      <progress max="100" role="progressbar"></progress>
+    </label>
+  </mock:shadow-root>
+</c-progress-bar>
+`;
+
+exports[`c-progress-bar render details next to progress bar 1`] = `
+<c-progress-bar aria-busy="true" single-line="true" title="0 %">
+  <mock:shadow-root>
+    <label class="adjacent-details c-progress" style="--value: 0%;">
+      <progress aria-valuenow="0" max="100" role="progressbar" value="0">
+        0%
+      </progress>
+    </label>
+    <div class="adjacent-details c-progress__percentage">
+      0 %
+    </div>
+  </mock:shadow-root>
+</c-progress-bar>
+`;
+
+exports[`c-progress-bar renders custom color 1`] = `
+<c-progress-bar aria-busy="true" color="var(--csc-error)" title="0 %">
+  <mock:shadow-root>
+    <label class="c-progress" style="--value: 0%; --bar-color: var(--csc-error);">
+      <progress aria-valuenow="0" max="100" role="progressbar" value="0">
+        0%
+      </progress>
+    </label>
+    <div class="c-progress__percentage">
+      0 %
+    </div>
+  </mock:shadow-root>
+</c-progress-bar>
+`;
+
+exports[`c-progress-bar renders custom value 1`] = `
+<c-progress-bar aria-busy="true" title="46 %" value="46">
+  <mock:shadow-root>
+    <label class="c-progress" style="--value: 46%;">
+      <progress aria-valuenow="46" max="100" role="progressbar" value="46">
+        46%
+      </progress>
+    </label>
+    <div class="c-progress__percentage">
+      46 %
+    </div>
+  </mock:shadow-root>
+</c-progress-bar>
+`;
+
+exports[`c-progress-bar renders default html 1`] = `
+<c-progress-bar aria-busy="true" title="0 %">
+  <mock:shadow-root>
+    <label class="c-progress" style="--value: 0%;">
+      <progress aria-valuenow="0" max="100" role="progressbar" value="0">
+        0%
+      </progress>
+    </label>
+    <div class="c-progress__percentage">
+      0 %
+    </div>
+  </mock:shadow-root>
+</c-progress-bar>
+`;
+
+exports[`c-progress-bar renders label-text 1`] = `
+<c-progress-bar aria-busy="true" label="This is label" title="0 %">
+  <mock:shadow-root>
+    <label class="c-progress" style="--value: 0%;">
+      <progress aria-valuenow="0" max="100" role="progressbar" value="0">
+        0%
+      </progress>
+    </label>
+    <div class="c-progress__percentage">
+      0 % This is label
+    </div>
+  </mock:shadow-root>
+</c-progress-bar>
+`;
