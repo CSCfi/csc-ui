@@ -128,7 +128,7 @@ export class CTextField {
   @Prop() type: string;
 
   /**
-   * Set the validíty of the input
+   * Set the validity of the input
    */
   @Prop() valid = true;
 
@@ -247,8 +247,8 @@ export class CTextField {
     const textInput = (
       <input
         class={props.classes}
-        {...props.shared}
         {...props.input}
+        {...props.shared}
         ref={(el) => (this._inputElement = el)}
       />
     );
