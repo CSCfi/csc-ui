@@ -1,6 +1,6 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { CSwiper } from '../c-swiper';
-import { CSwiperTab } from '../c-swiper-tab';
+import { CSwiperTab } from '../../c-swiper-tab/c-swiper-tab';
 
 describe('c-swiper', () => {
   it('renders default html', async () => {

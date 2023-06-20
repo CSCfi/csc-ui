@@ -1,6 +1,6 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { CSteps } from '../c-steps';
-import { CStep } from '../c-step';
+import { CStep } from '../../c-step/c-step';
 
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),

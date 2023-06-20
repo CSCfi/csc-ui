@@ -1,6 +1,6 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { CTabs } from '../c-tabs';
-import { CTab } from '../c-tab';
+import { CTab } from '../../c-tab/c-tab';
 
 describe('c-tabs', () => {
   it('renders default html', async () => {

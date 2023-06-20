@@ -1,8 +1,8 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { CLoginCard } from '../c-login-card';
-import { CLoginCardTitle } from '../c-login-card-title';
-import { CLoginCardContent } from '../c-login-card-content';
-import { CLoginCardActions } from '../c-login-card-actions';
+import { CLoginCardTitle } from '../../c-login-card-title/c-login-card-title';
+import { CLoginCardContent } from '../../c-login-card-content/c-login-card-content';
+import { CLoginCardActions } from '../../c-login-card-actions/c-login-card-actions';
 
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),

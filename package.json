@@ -22,7 +22,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --watchAll",
-    "test.e2e": "stencil test --e2e --watchAll",
+    "test.e2e": "stencil test --e2e --screenshot --watchAll",
     "generate": "stencil generate",
     "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.js",
     "style-dictionary:build:prod": "style-dictionary build --config ./style-dictionary.production.config.js",
@@ -54,7 +54,7 @@
   "license": "MIT",
   "dependencies": {
     "@mdi/js": "^7.2.96",
-    "@stencil/core": "^3.3.1",
+    "@stencil/core": "^3.4.0",
     "@types/node": "^20.2.5",
     "stencil-click-outside": "^1.8.0",
     "swiper": "^9.3.2",
