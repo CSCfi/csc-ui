@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-checkbox renders default html 1`] = `
+<c-checkbox>
+  <mock:shadow-root>
+    <div class="c-checkbox">
+      <input aria-checked="false" aria-disabled="false" class="visuallyhidden" id="checkbox" type="checkbox">
+      <label class="c-checkbox__label" htmlfor="checkbox">
+        <div class="ripple">
+          <svg viewBox="0 0 100 100"></svg>
+        </div>
+        <div class="c-checkbox__label-content">
+          <slot></slot>
+        </div>
+      </label>
+    </div>
+    <div class="c-checkbox__details">
+      <div class="c-checkbox__message c-checkbox__message--hint"></div>
+    </div>
+  </mock:shadow-root>
+</c-checkbox>
+`;

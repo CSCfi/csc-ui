@@ -5,7 +5,7 @@ describe('c-text-field', () => {
   it('renders default html', async () => {
     const page = await newSpecPage({
       components: [CTextField],
-      html: `<c-text-field>Here is text</c-text-field>`,
+      html: `<c-text-field value="Here is text"></c-text-field>`,
     });
 
     expect(page.root).toMatchSnapshot();

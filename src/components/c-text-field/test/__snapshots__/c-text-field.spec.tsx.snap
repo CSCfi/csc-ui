@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-text-field renders default html 1`] = `
+<c-text-field value="Here is text">
+  <!---->
+  <c-input hint="" input-id="_f680afd0-ce31-41f8-85b0-cbddaac3718b" rows="1" valid="" validation="Required field" value="Here is text">
+    <input class="c-input__input c-input__input--filled" id="_f680afd0-ce31-41f8-85b0-cbddaac3718b" type="text" value="Here is text">
+  </c-input>
+</c-text-field>
+`;

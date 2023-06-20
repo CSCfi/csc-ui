@@ -182,10 +182,12 @@ export class CTextField {
   componentWillLoad() {
     this._originalType = this.type;
 
-    this._inputId = `${(this.hostId || this.label || this.placeholder).replace(
-      /[^a-zA-Z0-9-_]/g,
-      '',
-    )}_${this._uniqueId}`;
+    this._inputId = `${(
+      this.hostId ||
+      this.label ||
+      this.placeholder ||
+      ''
+    ).replace(/[^a-zA-Z0-9-_]/g, '')}_${this._uniqueId}`;
   }
 
   get isActive() {
