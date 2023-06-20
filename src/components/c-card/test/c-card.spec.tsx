@@ -1,8 +1,8 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { CCard } from '../c-card';
-import { CCardActions } from '../c-card-actions';
-import { CCardContent } from '../c-card-content';
-import { CCardTitle } from '../c-card-title';
+import { CCardActions } from '../../c-card-actions/c-card-actions';
+import { CCardContent } from '../../c-card-content/c-card-content';
+import { CCardTitle } from '../../c-card-title/c-card-title';
 
 describe('c-card', () => {
   const title = 'Quis porro id?';
