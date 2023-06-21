@@ -90,7 +90,7 @@ export class CCard {
 
   render() {
     const style = {
-      'background-color': 'red',
+      'background-color': this.backgroundColor,
     };
 
     const hostClasses = {

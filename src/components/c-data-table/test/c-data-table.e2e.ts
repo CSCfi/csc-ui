@@ -1,6 +1,7 @@
 import { E2EElement, E2EPage, newE2EPage } from '@stencil/core/testing';
 import { basicData, basicHeaders } from './data';
 import { Viewport } from 'puppeteer';
+import { takeScreenshot } from '../../../utils/test/takeScreenshot';
 
 describe('c-data-table', () => {
   let page: E2EPage;
@@ -14,6 +15,8 @@ describe('c-data-table', () => {
 
   it('renders correctly', async () => {
     expect(table).toHaveClass('hydrated');
+
+    await takeScreenshot(page);
   });
 
   it('displays hidden data on row click', async () => {
@@ -30,6 +33,8 @@ describe('c-data-table', () => {
       'c-data-table >>> tr.additional-data',
     );
 
+    await takeScreenshot(page);
+
     expect(await additionalDataRow.isVisible()).toBe(false);
 
     await parentRow.click();
@@ -39,6 +44,8 @@ describe('c-data-table', () => {
     expect(await additionalDataRow.isVisible()).toBe(true);
 
     expect(additionalDataRow).toMatchSnapshot();
+
+    await takeScreenshot(page, 'Expanded');
   });
 
   it('displays single row at a time', async () => {
@@ -56,6 +63,8 @@ describe('c-data-table', () => {
       'c-data-table >>> tr.additional-data',
     );
 
+    await takeScreenshot(page);
+
     await parentRows[0].click();
 
     await page.waitForChanges();
@@ -63,6 +72,8 @@ describe('c-data-table', () => {
     await parentRows[1].click();
 
     await page.waitForChanges();
+
+    await takeScreenshot(page, 'Expanded');
 
     expect(await additionalDataRows[0].isVisible()).toBe(false);
     expect(await additionalDataRows[1].isVisible()).toBe(true);
@@ -93,6 +104,8 @@ describe('c-data-table', () => {
 
     await page.waitForChanges();
 
+    await takeScreenshot(page);
+
     countOfSelectedRows = await page.$$eval(
       'c-data-table >>> tr.selected',
       (rows: HTMLTableRowElement[]) => {
@@ -113,6 +126,8 @@ describe('c-data-table', () => {
       },
     );
 
+    await takeScreenshot(page, 'Deselected');
+
     expect(countOfSelectedRows).toEqual(0);
 
     await checkBoxes[0].click();
@@ -128,6 +143,8 @@ describe('c-data-table', () => {
     );
     expect(countOfSelectedRows).toEqual(2);
 
+    await takeScreenshot(page, 'Two selected');
+
     await table.callMethod('clearSelections');
 
     await page.waitForChanges();
@@ -138,6 +155,8 @@ describe('c-data-table', () => {
         return rows.length;
       },
     );
+
+    await takeScreenshot(page, 'Cleared');
 
     expect(countOfSelectedRows).toEqual(0);
   });
@@ -169,6 +188,8 @@ describe('c-data-table', () => {
 
     await page.waitForChanges();
 
+    await takeScreenshot(page, 'Single selection');
+
     countOfSelectedRows = await page.$$eval(
       'c-data-table >>> tr.selected',
       (rows: HTMLTableRowElement[]) => {
@@ -191,5 +212,7 @@ describe('c-data-table', () => {
     await page.waitForChanges();
 
     expect(table).toMatchSnapshot();
+
+    await takeScreenshot(page);
   });
 });
