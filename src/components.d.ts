@@ -1420,7 +1420,7 @@ export namespace Components {
          */
         "type": string;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -3661,7 +3661,7 @@ declare namespace LocalJSX {
          */
         "type"?: string;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**
