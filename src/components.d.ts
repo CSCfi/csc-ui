@@ -316,9 +316,9 @@ export namespace Components {
          */
         "hint": string;
         /**
-          * Intermediate state
+          * Indeterminate state
          */
-        "intermediate": boolean;
+        "indeterminate": boolean;
         /**
           * Element label
          */
@@ -328,7 +328,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -2467,9 +2467,9 @@ declare namespace LocalJSX {
          */
         "hint"?: string;
         /**
-          * Intermediate state
+          * Indeterminate state
          */
-        "intermediate"?: boolean;
+        "indeterminate"?: boolean;
         /**
           * Element label
          */
@@ -2483,7 +2483,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**

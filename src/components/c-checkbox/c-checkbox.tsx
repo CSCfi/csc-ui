@@ -37,9 +37,9 @@ export class CCheckbox {
   @Prop() hint = '';
 
   /**
-   * Intermediate state
+   * Indeterminate state
    */
-  @Prop() intermediate = false;
+  @Prop() indeterminate = false;
 
   /**
    * Element label
@@ -52,7 +52,7 @@ export class CCheckbox {
   @Prop() required = false;
 
   /**
-   * Set the validíty of the input
+   * Set the validity of the input
    */
   @Prop() valid = true;
 
@@ -173,7 +173,7 @@ export class CCheckbox {
 
     const labelClasses = {
       'c-checkbox__label': true,
-      'c-checkbox__label--intermediate': this.intermediate,
+      'c-checkbox__label--indeterminate': this.indeterminate,
     };
 
     return (
@@ -196,13 +196,13 @@ export class CCheckbox {
               ref={(el) => (this._container = el as HTMLDivElement)}
             >
               <svg viewBox="0 0 100 100">
-                {!this.intermediate && !!this.value && (
+                {!this.indeterminate && !!this.value && (
                   <path
                     class="path"
                     d="M 12 52 l 24 24 l 47 -47 l -3 -3 l -44 44 l -21 -21 l -3 3"
                   />
                 )}
-                {this.intermediate && (
+                {this.indeterminate && (
                   <path class="path" d="M20 56 h60 v-8 h-60 z" />
                 )}
               </svg>
