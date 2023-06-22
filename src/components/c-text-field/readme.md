@@ -30,7 +30,7 @@
 | `step`           | `step`             | Step size on a numeric input                                                                     | `number`  | `null`             |
 | `trimWhitespace` | `trim-whitespace`  | Trim whitespace from the return value                                                            | `boolean` | `false`            |
 | `type`           | `type`             | Type of the input                                                                                | `string`  | `undefined`        |
-| `valid`          | `valid`            | Set the validíty of the input                                                                    | `boolean` | `true`             |
+| `valid`          | `valid`            | Set the validity of the input                                                                    | `boolean` | `true`             |
 | `validate`       | `validate`         | Manual validation                                                                                | `boolean` | `false`            |
 | `validateOnBlur` | `validate-on-blur` | Validate the input on blur                                                                       | `boolean` | `false`            |
 | `validation`     | `validation`       | Custom validation message                                                                        | `string`  | `'Required field'` |

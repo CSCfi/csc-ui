@@ -1,4 +1,4 @@
-import { newE2EPage, newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from '@stencil/core/testing';
 import { CDataTable } from '../c-data-table';
 import { basicData, basicHeaders } from './data';
 import { h } from '@stencil/core';

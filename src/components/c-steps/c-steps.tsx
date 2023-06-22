@@ -66,7 +66,7 @@ export class CSteps {
         if (!this._isInitialized) {
           div.classList.add('divider');
 
-          //item.after(div);
+          item.after(div);
         }
       }
 

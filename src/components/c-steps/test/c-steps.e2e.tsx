@@ -1,9 +1,8 @@
-import { E2EElement, E2EPage, newE2EPage } from '@stencil/core/testing';
+import { E2EPage, newE2EPage } from '@stencil/core/testing';
+import { takeScreenshot } from '../../../utils/test/takeScreenshot';
 
 describe('c-steps', () => {
   let page: E2EPage;
-
-  let steps: E2EElement;
 
   beforeEach(async () => {
     page = await newE2EPage({
@@ -14,22 +13,36 @@ describe('c-steps', () => {
         <c-step>Step 3</c-step>
     </c-steps>`,
     });
-    steps = await page.find('c-steps');
   });
 
   it('renders correctly', async () => {
+    const steps = await page.find('c-steps');
+
     expect(steps).toHaveClass('hydrated');
   });
 
   it('renders completed steps', async () => {
-    let completedSteps = await page.findAll('c-steps >>> c-step--complete');
+    let completedSteps = await page.findAll('c-step >>> .c-step--complete');
     expect(completedSteps.length).toBe(0);
 
-    // steps.setProperty('value', 3);
+    await takeScreenshot(page);
+
+    const steps = await page.find('c-steps');
+
+    steps.setProperty('value', 3);
+
     await page.waitForChanges();
 
-    completedSteps = await page.findAll('c-step');
-    expect(completedSteps).toMatchSnapshot();
+    completedSteps = await page.findAll('c-step >>> .c-step--complete');
     expect(completedSteps.length).toBe(2);
+
+    await takeScreenshot(page, 'Completed steps');
+
+    steps.setProperty('value', 2);
+
+    await page.waitForChanges();
+
+    completedSteps = await page.findAll('c-step >>> .c-step--complete');
+    expect(completedSteps.length).toBe(1);
   });
 });
