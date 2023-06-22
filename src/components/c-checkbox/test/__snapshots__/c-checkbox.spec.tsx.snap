@@ -1,5 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`c-checkbox hides hint message 1`] = `
+<c-checkbox hide-details="" hint="Check this out">
+  <mock:shadow-root>
+    <div class="c-checkbox">
+      <input aria-checked="false" aria-disabled="false" class="visuallyhidden" id="checkbox" type="checkbox">
+      <label class="c-checkbox__label" htmlfor="checkbox">
+        <div class="ripple">
+          <svg viewBox="0 0 100 100"></svg>
+        </div>
+        <div class="c-checkbox__label-content">
+          <slot></slot>
+        </div>
+      </label>
+    </div>
+  </mock:shadow-root>
+</c-checkbox>
+`;
+
+exports[`c-checkbox render indeterminate 1`] = `
+<c-checkbox indeterminate="true">
+  <mock:shadow-root>
+    <div class="c-checkbox">
+      <input aria-checked="false" aria-disabled="false" class="visuallyhidden" id="checkbox" type="checkbox">
+      <label class="c-checkbox__label c-checkbox__label--indeterminate" htmlfor="checkbox">
+        <div class="ripple">
+          <svg viewBox="0 0 100 100">
+            <path class="path" d="M20 56 h60 v-8 h-60 z"></path>
+          </svg>
+        </div>
+        <div class="c-checkbox__label-content">
+          <slot></slot>
+        </div>
+      </label>
+    </div>
+    <div class="c-checkbox__details">
+      <div class="c-checkbox__message c-checkbox__message--hint"></div>
+    </div>
+  </mock:shadow-root>
+</c-checkbox>
+`;
+
 exports[`c-checkbox renders default html 1`] = `
 <c-checkbox>
   <mock:shadow-root>
@@ -11,6 +52,72 @@ exports[`c-checkbox renders default html 1`] = `
         </div>
         <div class="c-checkbox__label-content">
           <slot></slot>
+        </div>
+      </label>
+    </div>
+    <div class="c-checkbox__details">
+      <div class="c-checkbox__message c-checkbox__message--hint"></div>
+    </div>
+  </mock:shadow-root>
+</c-checkbox>
+`;
+
+exports[`c-checkbox renders hint message 1`] = `
+<c-checkbox hint="Check this out">
+  <mock:shadow-root>
+    <div class="c-checkbox">
+      <input aria-checked="false" aria-disabled="false" class="visuallyhidden" id="checkbox" type="checkbox">
+      <label class="c-checkbox__label" htmlfor="checkbox">
+        <div class="ripple">
+          <svg viewBox="0 0 100 100"></svg>
+        </div>
+        <div class="c-checkbox__label-content">
+          <slot></slot>
+        </div>
+      </label>
+    </div>
+    <div class="c-checkbox__details">
+      <div class="c-checkbox__message c-checkbox__message--hint"></div>
+    </div>
+  </mock:shadow-root>
+</c-checkbox>
+`;
+
+exports[`c-checkbox renders label 1`] = `
+<c-checkbox label="This is a label">
+  <mock:shadow-root>
+    <div class="c-checkbox">
+      <input aria-checked="false" aria-disabled="false" class="visuallyhidden" id="checkbox" type="checkbox">
+      <label class="c-checkbox__label" htmlfor="checkbox">
+        <div class="ripple">
+          <svg viewBox="0 0 100 100"></svg>
+        </div>
+        <div class="c-checkbox__label-content">
+          This is a label
+        </div>
+      </label>
+    </div>
+    <div class="c-checkbox__details">
+      <div class="c-checkbox__message c-checkbox__message--hint"></div>
+    </div>
+  </mock:shadow-root>
+</c-checkbox>
+`;
+
+exports[`c-checkbox renders required -marking 1`] = `
+<c-checkbox label="This is a label" required="true">
+  <mock:shadow-root>
+    <div class="c-checkbox">
+      <input aria-checked="false" aria-disabled="false" class="visuallyhidden" id="checkbox" type="checkbox">
+      <label class="c-checkbox__label" htmlfor="checkbox">
+        <div class="ripple">
+          <svg viewBox="0 0 100 100"></svg>
+        </div>
+        <div class="c-checkbox__label-content">
+          This is a label
+          <span class="required">
+            *
+          </span>
         </div>
       </label>
     </div>
