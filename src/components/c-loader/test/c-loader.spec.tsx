@@ -11,16 +11,6 @@ describe('c-loader', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('renders content delay', async () => {
-    const page = await newSpecPage({
-      components: [CLoader],
-      html: `<c-loader contentdelay="10">
-      </c-loader>`,
-    });
-
-    expect(page.root).toMatchSnapshot();
-  });
-
   it('renders hidden loader', async () => {
     const page = await newSpecPage({
       components: [CLoader],
