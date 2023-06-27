@@ -103,27 +103,3 @@ exports[`c-checkbox renders label 1`] = `
   </mock:shadow-root>
 </c-checkbox>
 `;
-
-exports[`c-checkbox renders required -marking 1`] = `
-<c-checkbox label="This is a label" required="true">
-  <mock:shadow-root>
-    <div class="c-checkbox">
-      <input aria-checked="false" aria-disabled="false" class="visuallyhidden" id="checkbox" type="checkbox">
-      <label class="c-checkbox__label" htmlfor="checkbox">
-        <div class="ripple">
-          <svg viewBox="0 0 100 100"></svg>
-        </div>
-        <div class="c-checkbox__label-content">
-          This is a label
-          <span class="required">
-            *
-          </span>
-        </div>
-      </label>
-    </div>
-    <div class="c-checkbox__details">
-      <div class="c-checkbox__message c-checkbox__message--hint"></div>
-    </div>
-  </mock:shadow-root>
-</c-checkbox>
-`;

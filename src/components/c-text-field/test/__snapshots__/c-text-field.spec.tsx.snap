@@ -3,8 +3,8 @@
 exports[`c-text-field renders default html 1`] = `
 <c-text-field label="Label" value="Here is text">
   <!---->
-  <c-input hint="" input-id="Label_ffe13fd5-8f69-4479-8b04-b724be4e6c8b" label="Label" rows="1" valid="" validation="Required field" value="Here is text">
-    <input class="c-input__input c-input__input--filled" id="Label_ffe13fd5-8f69-4479-8b04-b724be4e6c8b" type="text" value="Here is text">
+  <c-input hint="" input-id="Label_a927c209-47a0-4399-a543-93c1eadc2404" label="Label" rows="1" valid="" validation="Required field" value="Here is text">
+    <input class="c-input__input c-input__input--filled" id="Label_a927c209-47a0-4399-a543-93c1eadc2404" type="text" value="Here is text">
   </c-input>
 </c-text-field>
 `;
@@ -12,8 +12,8 @@ exports[`c-text-field renders default html 1`] = `
 exports[`c-text-field renders number input 1`] = `
 <c-text-field hint="Insert number between 1-10" label="Label" max="10" min="1" required="" step="1" type="number" value="5">
   <!---->
-  <c-input hint="Insert number between 1-10" input-id="Label_1d6284ff-31d0-4218-9eee-acf88deb6bb6" label="Label" required="" rows="1" type="number" valid="" validation="Required field" value="5">
-    <input class="c-input__input c-input__input--filled" id="Label_1d6284ff-31d0-4218-9eee-acf88deb6bb6" max="10" min="1" step="1" type="number" value="5">
+  <c-input hint="Insert number between 1-10" input-id="Label_aefd2536-1ca5-4539-8f40-6246564995a4" label="Label" required="" rows="1" type="number" valid="" validation="Required field" value="5">
+    <input class="c-input__input c-input__input--filled" id="Label_aefd2536-1ca5-4539-8f40-6246564995a4" max="10" min="1" step="1" type="number" value="5">
   </c-input>
 </c-text-field>
 `;
@@ -21,8 +21,8 @@ exports[`c-text-field renders number input 1`] = `
 exports[`c-text-field renders required asterisk 1`] = `
 <c-text-field label="Label" required="" value="Here is text">
   <!---->
-  <c-input hint="" input-id="Label_68670535-61fe-489e-a1be-9a256e780ef7" label="Label" required="" rows="1" valid="" validation="Required field" value="Here is text">
-    <input class="c-input__input c-input__input--filled" id="Label_68670535-61fe-489e-a1be-9a256e780ef7" type="text" value="Here is text">
+  <c-input hint="" input-id="Label_feef8834-d9fa-4243-a8e9-bfeadaa491b9" label="Label" required="" rows="1" valid="" validation="Required field" value="Here is text">
+    <input class="c-input__input c-input__input--filled" id="Label_feef8834-d9fa-4243-a8e9-bfeadaa491b9" type="text" value="Here is text">
   </c-input>
 </c-text-field>
 `;
@@ -30,8 +30,8 @@ exports[`c-text-field renders required asterisk 1`] = `
 exports[`c-text-field renders shadow variant 1`] = `
 <c-text-field placeholder="Title" shadow="" value="Here is text">
   <!---->
-  <c-input hint="" input-id="Title_7b97940e-e735-46d3-8b98-79b2a1491c0e" placeholder="Title" rows="1" shadow="" valid="" validation="Required field" value="Here is text">
-    <input class="c-input__input c-input__input--filled" id="Title_7b97940e-e735-46d3-8b98-79b2a1491c0e" type="text" value="Here is text">
+  <c-input hint="" input-id="Title_a24f3248-5530-434c-b255-d77c525b01f5" placeholder="Title" rows="1" shadow="" valid="" validation="Required field" value="Here is text">
+    <input class="c-input__input c-input__input--filled" id="Title_a24f3248-5530-434c-b255-d77c525b01f5" type="text" value="Here is text">
   </c-input>
 </c-text-field>
 `;
