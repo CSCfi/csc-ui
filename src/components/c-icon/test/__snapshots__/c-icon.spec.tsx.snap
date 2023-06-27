@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-icon renders default html 1`] = `
+<c-icon color="blue" path="path-to-my-svg" size="30" style="height: 30px;">
+  <mock:shadow-root>
+    <svg height="30" viewBox="0 0 24 24" width="30">
+      <path d="path-to-my-svg" style="fill: blue;"></path>
+    </svg>
+  </mock:shadow-root>
+</c-icon>
+`;
