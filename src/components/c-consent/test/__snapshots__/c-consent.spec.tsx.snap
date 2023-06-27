@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-consent renders default html 1`] = `
+<c-consent>
+  <mock:shadow-root>
+    <c-row align="center" gap="8">
+      <slot></slot>
+    </c-row>
+  </mock:shadow-root>
+  <span>
+    Show your consent
+  </span>
+</c-consent>
+`;
