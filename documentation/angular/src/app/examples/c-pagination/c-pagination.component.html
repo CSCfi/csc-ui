@@ -1,6 +1,6 @@
 <app-example title="Basic example (Angular)" name="basic" component="c-pagination">
   <div class="pb-4">
-    <c-tag *ngFor="let country of countries | slice: options.startFrom:options.endTo + 1">
+    <c-tag *ngFor="let country of countries | slice : options.startFrom : options.endTo + 1">
       {{ country }}
     </c-tag>
   </div>
@@ -11,7 +11,7 @@
 <app-example title="Simple version with hidden details" name="simple" component="c-pagination">
   <div class="pb-4">
     <c-tag
-      *ngFor="let country of countries | slice: optionsSimple.startFrom:optionsSimple.endTo + 1"
+      *ngFor="let country of countries | slice : optionsSimple.startFrom : optionsSimple.endTo + 1"
     >
       {{ country }}
     </c-tag>
@@ -30,7 +30,7 @@
 
     <c-card-content>
       <div>
-        <c-tag *ngFor="let country of countries | slice: options2.startFrom:options2.endTo + 1">
+        <c-tag *ngFor="let country of countries | slice : options2.startFrom : options2.endTo + 1">
           {{ country }}
         </c-tag>
       </div>
