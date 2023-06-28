@@ -200,6 +200,45 @@
       "isMobile": false
     },
     {
+      "id": "745b992b",
+      "image": "ad170cefee526e5c0973717efe443c8a.png",
+      "userAgent": "default",
+      "desc": "c-pagination renders correctly",
+      "testPath": "./src/components/c-pagination/test/c-pagination.e2e.tsx",
+      "width": 600,
+      "height": 600,
+      "deviceScaleFactor": 1,
+      "hasTouch": false,
+      "isLandscape": false,
+      "isMobile": false
+    },
+    {
+      "id": "21be334d",
+      "image": "b35aad7d37bf68b56a33ae176eac6f8f.png",
+      "userAgent": "default",
+      "desc": "c-steps renders completed steps",
+      "testPath": "./src/components/c-steps/test/c-steps.e2e.tsx",
+      "width": 600,
+      "height": 600,
+      "deviceScaleFactor": 1,
+      "hasTouch": false,
+      "isLandscape": false,
+      "isMobile": false
+    },
+    {
+      "id": "7e2cc2be",
+      "image": "16e3a7b29f5db27d477039502e954d57.png",
+      "userAgent": "default",
+      "desc": "c-steps renders completed steps, Completed steps",
+      "testPath": "./src/components/c-steps/test/c-steps.e2e.tsx",
+      "width": 600,
+      "height": 600,
+      "deviceScaleFactor": 1,
+      "hasTouch": false,
+      "isLandscape": false,
+      "isMobile": false
+    },
+    {
       "id": "19e39034",
       "image": "e728d58d224e0be3100cf40354ae8e61.png",
       "userAgent": "default",
