@@ -25,7 +25,9 @@ export class CPagination {
    *
    * Note! startFrom and endTo are assigned automatically to the object based on other values
    */
-  @Prop() value: CPaginationOptions;
+  @Prop() value: CPaginationOptions = {
+    itemCount: 0,
+  };
 
   /**
    * Hide details (per page dropdown and the 'x - y of n pages' text)
@@ -176,7 +178,7 @@ export class CPagination {
   }
 
   private _getRange() {
-    if (this.hideRange) return;
+    if (this.hideRange || !this.value.itemCount) return;
 
     const end = Math.min(
       this._currentPage * this._itemsPerPage,
@@ -356,14 +358,26 @@ export class CPagination {
     return this._buttons;
   }
 
+  private _renderButtons() {
+    if (!this.value.itemCount) return '';
+
+    const buttonsize = this.size === 'small' ? 'x-small' : 'small';
+
+    return (
+      <ul>
+        {this._getArrowLeft(buttonsize)}
+        {!this.simple && this._getPageButtons(buttonsize)}
+        {this._getArrowRight(buttonsize)}
+      </ul>
+    );
+  }
+
   render() {
     const classes = {
       'c-pagination': true,
       'c-pagination--small': this.size === 'small',
       'c-pagination--simple': this.simple,
     };
-
-    const buttonsize = this.size === 'small' ? 'x-small' : 'small';
 
     return (
       <nav class={classes} role="navigation" aria-label="pagination">
@@ -375,11 +389,7 @@ export class CPagination {
           </div>
         )}
 
-        <ul>
-          {this._getArrowLeft(buttonsize)}
-          {!this.simple && this._getPageButtons(buttonsize)}
-          {this._getArrowRight(buttonsize)}
-        </ul>
+        {this._renderButtons()}
       </nav>
     );
   }

@@ -163,7 +163,7 @@ export class CDataTable {
 
   @State() _data: CDataTableDataItemPrivate[] = [];
 
-  @State() _isIntermediate = false;
+  @State() _isIndeterminate = false;
 
   @State() _isPaginationSimple = false;
 
@@ -233,7 +233,7 @@ export class CDataTable {
   @Watch('loading')
   onLoadingChange(loading: boolean) {
     if (!loading) {
-      this._setIntermediateStatus();
+      this._setIndeterminateStatus();
     }
   }
 
@@ -518,9 +518,9 @@ export class CDataTable {
     this.selection.emit(this._selections);
   }
 
-  private _setIntermediateStatus() {
+  private _setIndeterminateStatus() {
     requestAnimationFrame(() => {
-      this._isIntermediate = this._isPageIntermediate();
+      this._isIndeterminate = this._isPageIndeterminate();
       this._refresh();
     });
   }
@@ -600,7 +600,7 @@ export class CDataTable {
     return this._getSelectionsForPage().length > 0;
   }
 
-  private _isPageIntermediate() {
+  private _isPageIndeterminate() {
     const selectionsInPage = this._getSelectionsForPage();
 
     return (
@@ -638,7 +638,7 @@ export class CDataTable {
           ),
         ];
 
-        this._setIntermediateStatus();
+        this._setIndeterminateStatus();
         this._emitChange();
 
         this._tableElement;
@@ -655,7 +655,7 @@ export class CDataTable {
         ]),
       ];
 
-      this._setIntermediateStatus();
+      this._setIndeterminateStatus();
       this._emitChange();
     }, 200);
   }
@@ -672,7 +672,7 @@ export class CDataTable {
       ...event.detail,
     };
 
-    this._setIntermediateStatus();
+    this._setIndeterminateStatus();
 
     this._getData();
   }
@@ -697,7 +697,7 @@ export class CDataTable {
 
     this._emitChange();
 
-    this._setIntermediateStatus();
+    this._setIndeterminateStatus();
   }
 
   private _onSort(key: string) {
@@ -713,7 +713,7 @@ export class CDataTable {
 
     this._getData();
 
-    this._setIntermediateStatus();
+    this._setIndeterminateStatus();
     this._refresh();
   }
 
@@ -1140,7 +1140,7 @@ export class CDataTable {
                 <div class="selection--heading">
                   <c-checkbox
                     value={this._hasSelectionsOnPage()}
-                    intermediate={this._isIntermediate}
+                    indeterminate={this._isIndeterminate}
                     hide-details
                     onClick={(event: MouseEvent) =>
                       this._onHeadingSelection(event)
