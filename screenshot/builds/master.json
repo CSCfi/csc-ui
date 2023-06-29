@@ -239,6 +239,19 @@
       "isMobile": false
     },
     {
+      "id": "5856111e",
+      "image": "69cc901f82d80dcfbac77f8611b460ed.png",
+      "userAgent": "default",
+      "desc": "c-tab-buttons one selection is mandatory",
+      "testPath": "./src/components/c-tab-buttons/test/c-tab-buttons.e2e.tsx",
+      "width": 600,
+      "height": 600,
+      "deviceScaleFactor": 1,
+      "hasTouch": false,
+      "isLandscape": false,
+      "isMobile": false
+    },
+    {
       "id": "19e39034",
       "image": "e728d58d224e0be3100cf40354ae8e61.png",
       "userAgent": "default",
