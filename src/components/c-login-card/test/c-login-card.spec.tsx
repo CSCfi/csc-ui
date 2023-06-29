@@ -162,9 +162,9 @@ describe('c-login-card', () => {
   it('renders colored overlay', async () => {
     const page = await newSpecPage({
       components: [CLoginCard],
-      html: `<c-login-card overlay=${true} 
-      overlay-blend-mode="hue"  
-      background-position="top left" 
+      html: `<c-login-card overlay=${true}
+      overlay-blend-mode="hue"
+      background-position="top left"
       src="mahti">
       ${content}
       </c-login-card>`,

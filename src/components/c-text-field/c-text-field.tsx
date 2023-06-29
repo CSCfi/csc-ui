@@ -8,7 +8,6 @@ import {
   Prop,
   State,
 } from '@stencil/core';
-import { v4 as uuid } from 'uuid';
 import { mdiCalendar, mdiEye, mdiEyeOff } from '@mdi/js';
 
 /**
@@ -177,9 +176,11 @@ export class CTextField {
 
   private _inputId: string;
 
-  private _uniqueId = uuid();
+  private static _uniqueId = 0;
 
   componentWillLoad() {
+    CTextField._uniqueId += 1;
+
     this._originalType = this.type;
 
     this._inputId = `${(
@@ -187,7 +188,7 @@ export class CTextField {
       this.label ||
       this.placeholder ||
       ''
-    ).replace(/[^a-zA-Z0-9-_]/g, '')}_${this._uniqueId}`;
+    ).replace(/[^a-zA-Z0-9-_]/g, '')}_${CTextField._uniqueId}`;
   }
 
   get isActive() {

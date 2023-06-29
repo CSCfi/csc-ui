@@ -10,7 +10,7 @@ exports[`c-accordion renders default html 1`] = `
   <c-accordion-item heading="One" value="one">
     <mock:shadow-root>
       <div class="c-accordion-item">
-        <button aria-controls="panel__9bfcb37d-069c-4b18-8e5f-62cf7a5ac1c7" aria-expanded="false" aria-label="One" class="c-accordion-item__header" id="header__9bfcb37d-069c-4b18-8e5f-62cf7a5ac1c7" tabindex="0">
+        <button aria-controls="panel__3" aria-expanded="false" aria-label="One" class="c-accordion-item__header" id="header__3" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -24,7 +24,7 @@ exports[`c-accordion renders default html 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__9bfcb37d-069c-4b18-8e5f-62cf7a5ac1c7" class="c-accordion-item__content" id="panel__9bfcb37d-069c-4b18-8e5f-62cf7a5ac1c7" role="region"></div>
+          <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
         </div>
       </div>
     </mock:shadow-root>
@@ -34,7 +34,7 @@ exports[`c-accordion renders default html 1`] = `
   <c-accordion-item heading="Two" value="two">
     <mock:shadow-root>
       <div class="c-accordion-item">
-        <button aria-controls="panel__b5cdfa2a-db97-4cef-ab9f-ea9c49132791" aria-expanded="false" aria-label="Two" class="c-accordion-item__header" id="header__b5cdfa2a-db97-4cef-ab9f-ea9c49132791" tabindex="0">
+        <button aria-controls="panel__3" aria-expanded="false" aria-label="Two" class="c-accordion-item__header" id="header__3" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -48,7 +48,7 @@ exports[`c-accordion renders default html 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__b5cdfa2a-db97-4cef-ab9f-ea9c49132791" class="c-accordion-item__content" id="panel__b5cdfa2a-db97-4cef-ab9f-ea9c49132791" role="region"></div>
+          <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
         </div>
       </div>
     </mock:shadow-root>
@@ -58,7 +58,7 @@ exports[`c-accordion renders default html 1`] = `
   <c-accordion-item heading="Three" value="three">
     <mock:shadow-root>
       <div class="c-accordion-item">
-        <button aria-controls="panel__4cb4a5cf-3586-445a-a3c8-e8866165ed3f" aria-expanded="false" aria-label="Three" class="c-accordion-item__header" id="header__4cb4a5cf-3586-445a-a3c8-e8866165ed3f" tabindex="0">
+        <button aria-controls="panel__3" aria-expanded="false" aria-label="Three" class="c-accordion-item__header" id="header__3" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -72,7 +72,7 @@ exports[`c-accordion renders default html 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__4cb4a5cf-3586-445a-a3c8-e8866165ed3f" class="c-accordion-item__content" id="panel__4cb4a5cf-3586-445a-a3c8-e8866165ed3f" role="region"></div>
+          <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
         </div>
       </div>
     </mock:shadow-root>
@@ -92,7 +92,7 @@ exports[`c-accordion renders expanded accordion-item 1`] = `
   <c-accordion-item heading="One" value="one">
     <mock:shadow-root>
       <div class="c-accordion-item c-accordion-item--expanded">
-        <button aria-controls="panel__e577c16e-f86d-498a-bf03-4a0ebe39056e" aria-expanded="true" aria-label="One" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__e577c16e-f86d-498a-bf03-4a0ebe39056e" tabindex="0">
+        <button aria-controls="panel__6" aria-expanded="true" aria-label="One" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__6" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -106,7 +106,7 @@ exports[`c-accordion renders expanded accordion-item 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__e577c16e-f86d-498a-bf03-4a0ebe39056e" class="c-accordion-item__content" id="panel__e577c16e-f86d-498a-bf03-4a0ebe39056e" role="region">
+          <div aria-labelledby="header__6" class="c-accordion-item__content" id="panel__6" role="region">
             <slot></slot>
           </div>
         </div>
@@ -118,7 +118,7 @@ exports[`c-accordion renders expanded accordion-item 1`] = `
   <c-accordion-item heading="Two" value="two">
     <mock:shadow-root>
       <div class="c-accordion-item">
-        <button aria-controls="panel__aabf0671-6821-412a-9ee5-1c00c5c52de3" aria-expanded="false" aria-label="Two" class="c-accordion-item__header" id="header__aabf0671-6821-412a-9ee5-1c00c5c52de3" tabindex="0">
+        <button aria-controls="panel__6" aria-expanded="false" aria-label="Two" class="c-accordion-item__header" id="header__6" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -132,7 +132,7 @@ exports[`c-accordion renders expanded accordion-item 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__aabf0671-6821-412a-9ee5-1c00c5c52de3" class="c-accordion-item__content" id="panel__aabf0671-6821-412a-9ee5-1c00c5c52de3" role="region"></div>
+          <div aria-labelledby="header__6" class="c-accordion-item__content" id="panel__6" role="region"></div>
         </div>
       </div>
     </mock:shadow-root>
@@ -142,7 +142,7 @@ exports[`c-accordion renders expanded accordion-item 1`] = `
   <c-accordion-item heading="Three" value="three">
     <mock:shadow-root>
       <div class="c-accordion-item">
-        <button aria-controls="panel__b48775d5-9fbb-41c5-b3c0-cde705e2aa3a" aria-expanded="false" aria-label="Three" class="c-accordion-item__header" id="header__b48775d5-9fbb-41c5-b3c0-cde705e2aa3a" tabindex="0">
+        <button aria-controls="panel__6" aria-expanded="false" aria-label="Three" class="c-accordion-item__header" id="header__6" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -156,7 +156,7 @@ exports[`c-accordion renders expanded accordion-item 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__b48775d5-9fbb-41c5-b3c0-cde705e2aa3a" class="c-accordion-item__content" id="panel__b48775d5-9fbb-41c5-b3c0-cde705e2aa3a" role="region"></div>
+          <div aria-labelledby="header__6" class="c-accordion-item__content" id="panel__6" role="region"></div>
         </div>
       </div>
     </mock:shadow-root>
@@ -176,7 +176,7 @@ exports[`c-accordion renders outlined items 1`] = `
   <c-accordion-item heading="One" value="one">
     <mock:shadow-root>
       <div class="c-accordion-item c-accordion-item--expanded c-accordion-item--outlined">
-        <button aria-controls="panel__eb9816fc-8959-4678-a89e-1a7019357713" aria-expanded="true" aria-label="One" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__eb9816fc-8959-4678-a89e-1a7019357713" tabindex="0">
+        <button aria-controls="panel__9" aria-expanded="true" aria-label="One" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__9" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -190,7 +190,7 @@ exports[`c-accordion renders outlined items 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__eb9816fc-8959-4678-a89e-1a7019357713" class="c-accordion-item__content" id="panel__eb9816fc-8959-4678-a89e-1a7019357713" role="region">
+          <div aria-labelledby="header__9" class="c-accordion-item__content" id="panel__9" role="region">
             <slot></slot>
           </div>
         </div>
@@ -202,7 +202,7 @@ exports[`c-accordion renders outlined items 1`] = `
   <c-accordion-item expanded="" heading="Two" value="two">
     <mock:shadow-root>
       <div class="c-accordion-item c-accordion-item--outlined">
-        <button aria-controls="panel__aca0d198-92da-40ce-8210-9dfdb513a37b" aria-expanded="false" aria-label="Two" class="c-accordion-item__header" id="header__aca0d198-92da-40ce-8210-9dfdb513a37b" tabindex="0">
+        <button aria-controls="panel__9" aria-expanded="false" aria-label="Two" class="c-accordion-item__header" id="header__9" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -216,7 +216,7 @@ exports[`c-accordion renders outlined items 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__aca0d198-92da-40ce-8210-9dfdb513a37b" class="c-accordion-item__content" id="panel__aca0d198-92da-40ce-8210-9dfdb513a37b" role="region"></div>
+          <div aria-labelledby="header__9" class="c-accordion-item__content" id="panel__9" role="region"></div>
         </div>
       </div>
     </mock:shadow-root>
@@ -226,7 +226,7 @@ exports[`c-accordion renders outlined items 1`] = `
   <c-accordion-item heading="Three" value="three">
     <mock:shadow-root>
       <div class="c-accordion-item c-accordion-item--outlined">
-        <button aria-controls="panel__38bcd6a8-42ec-4381-9563-b61c5f7f62e1" aria-expanded="false" aria-label="Three" class="c-accordion-item__header" id="header__38bcd6a8-42ec-4381-9563-b61c5f7f62e1" tabindex="0">
+        <button aria-controls="panel__9" aria-expanded="false" aria-label="Three" class="c-accordion-item__header" id="header__9" tabindex="0">
           <div class="c-accordion-item__icon">
             <slot name="icon"></slot>
           </div>
@@ -240,7 +240,7 @@ exports[`c-accordion renders outlined items 1`] = `
           </div>
         </button>
         <div class="c-accordion-item__content-wrapper">
-          <div aria-labelledby="header__38bcd6a8-42ec-4381-9563-b61c5f7f62e1" class="c-accordion-item__content" id="panel__38bcd6a8-42ec-4381-9563-b61c5f7f62e1" role="region"></div>
+          <div aria-labelledby="header__9" class="c-accordion-item__content" id="panel__9" role="region"></div>
         </div>
       </div>
     </mock:shadow-root>

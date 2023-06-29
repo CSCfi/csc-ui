@@ -8,7 +8,6 @@ import {
   State,
   Watch,
 } from '@stencil/core';
-import { v4 as uuid } from 'uuid';
 import { mdiCloseCircle } from '@mdi/js';
 import { CRadioGroupItem } from '../../types';
 import { createRipple } from '../../utils/utils';
@@ -112,7 +111,7 @@ export class CRadioGroup {
 
   private _containers?: HTMLDivElement[] = [];
 
-  private _uniqueId = uuid();
+  private static _uniqueId = 0;
 
   private _handleKeyDown(event: KeyboardEvent, item, index) {
     if (['Space', 'Enter'].includes(event.code)) {
@@ -177,7 +176,7 @@ export class CRadioGroup {
           aria-labelledby={itemId}
           disabled={this.disabled}
           checked={isChecked}
-          name={this._uniqueId}
+          name={CRadioGroup._uniqueId.toString()}
           onChange={(event) => this._select(event, item, index)}
         />
 
@@ -218,6 +217,10 @@ export class CRadioGroup {
       <path d={mdiCloseCircle} />
     </svg>
   );
+
+  componentWillLoad() {
+    CRadioGroup._uniqueId += 1;
+  }
 
   render() {
     const slotHasContent = !!this.el.childNodes.length;

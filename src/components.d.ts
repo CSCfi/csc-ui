@@ -3523,7 +3523,7 @@ declare namespace LocalJSX {
         /**
           * Value of tab buttons
          */
-        "value": number | string;
+        "value"?: number | string;
     }
     /**
      * @group Content Selectors

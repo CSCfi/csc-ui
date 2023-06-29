@@ -1,5 +1,4 @@
 import { Component, h, Prop, Event, EventEmitter, Listen } from '@stencil/core';
-import { v4 as uuid } from 'uuid';
 
 /**
  * @parent c-accordion
@@ -73,7 +72,7 @@ export class CAccordionItem {
     this.itemChange.emit({ value: this.value, expanded: this.expanded });
   }
 
-  private _uniqueId = uuid();
+  private static _uniqueId = 0;
 
   private _icons = {
     enabled: (
@@ -108,6 +107,10 @@ export class CAccordionItem {
     return <svg viewBox="0 0 24 24">{this._icons[this.icon]}</svg>;
   }
 
+  componentWillLoad() {
+    CAccordionItem._uniqueId += 1;
+  }
+
   render() {
     const hostClasses = {
       'c-accordion-item': true,
@@ -128,8 +131,8 @@ export class CAccordionItem {
     return (
       <div class={hostClasses}>
         <button
-          id={`header__${this._uniqueId}`}
-          aria-controls={`panel__${this._uniqueId}`}
+          id={`header__${CAccordionItem._uniqueId}`}
+          aria-controls={`panel__${CAccordionItem._uniqueId}`}
           aria-expanded={this.expanded.toString()}
           aria-label={this.heading}
           class={headerClasses}
@@ -161,10 +164,10 @@ export class CAccordionItem {
 
         <div class="c-accordion-item__content-wrapper">
           <div
-            id={`panel__${this._uniqueId}`}
+            id={`panel__${CAccordionItem._uniqueId}`}
             class="c-accordion-item__content"
             role="region"
-            aria-labelledby={`header__${this._uniqueId}`}
+            aria-labelledby={`header__${CAccordionItem._uniqueId}`}
           >
             {this.expanded && <slot></slot>}
           </div>

@@ -72,7 +72,7 @@ export class CCheckbox {
   @Event({ bubbles: false }) changeValue: EventEmitter;
 
   @State() messageOptions = {
-    show: true,
+    show: false,
     type: 'hint',
     content: '',
   };
@@ -110,16 +110,11 @@ export class CCheckbox {
   }
 
   componentDidLoad() {
-    this._handleValidation(this.valid, 0);
+    this._handleMessageOptions(this.valid);
   }
 
-  private _handleValidation(valid: boolean, timeout = 200) {
-    this.messageOptions = {
-      ...this.messageOptions,
-      show: false,
-    };
-
-    setTimeout(() => {
+  private _handleMessageOptions(valid: boolean) {
+    requestAnimationFrame(() => {
       this.messageOptions = {
         ...this.messageOptions,
         type: valid ? 'hint' : 'error',
@@ -132,6 +127,12 @@ export class CCheckbox {
           </span>
         ),
       };
+    });
+  }
+
+  private _handleValidation(valid: boolean, timeout = 200) {
+    setTimeout(() => {
+      this._handleMessageOptions(valid);
     }, timeout);
   }
 

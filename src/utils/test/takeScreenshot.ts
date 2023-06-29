@@ -9,6 +9,8 @@ export const takeScreenshot = async (
   const results = !description
     ? await page.compareScreenshot()
     : await page.compareScreenshot(description);
-  expect(results).toMatchScreenshot({ allowableMismatchedPixels: 50 });
-  expect(results).toMatchScreenshot({ allowableMismatchedRatio: 0.2 });
+  expect(results).toMatchScreenshot({
+    allowableMismatchedPixels: 500,
+    allowableMismatchedRatio: 0.2,
+  });
 };

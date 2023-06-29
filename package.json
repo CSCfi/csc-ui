@@ -49,16 +49,16 @@
     "jest": "^27.0.3",
     "jest-cli": "^27.4.5",
     "prettier": "^2.8.8",
-    "puppeteer": "^20.5.0",
+    "puppeteer": "^20.7.3",
     "style-dictionary": "^3.8.0"
   },
   "license": "MIT",
   "dependencies": {
     "@mdi/js": "^7.2.96",
-    "@stencil/core": "^3.4.0",
+    "@stencil/core": "^4.0.1",
     "@types/node": "^20.2.5",
     "stencil-click-outside": "^1.8.0",
-    "swiper": "^9.3.2",
+    "swiper": "^9.4.1",
     "uuid": "^9.0.0"
   },
   "repository": "CSCfi/csc-ui",

@@ -2,6 +2,7 @@ www/*
 dist/*
 node_modules/*
 .vscode/*
+.stencil/*
 
 # Automatically generated files
 docs.json
