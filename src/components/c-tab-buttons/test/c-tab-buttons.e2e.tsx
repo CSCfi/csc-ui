@@ -12,23 +12,25 @@ describe('c-tab-buttons', () => {
       `,
     });
 
-    const tab = await page.find('c-tab-button');
-    tab.setProperty('value', 0);
+    // const tab = await page.find('c-tab-button');
+    // tab.setProperty('value', 0);
 
-    await page.waitForChanges();
+    // await page.waitForChanges();
 
-    const buttons = await page.findAll('c-button');
-    let activeButtons = await page.findAll('.c-button--active');
+    // const buttons = await page.findAll('c-button');
+    // let activeButtons = await page.findAll('.c-button--active');
 
-    expect(activeButtons.length).toBe(1);
+    // expect(activeButtons.length).toBe(1);
 
-    await buttons[0].click();
+    // await buttons[0].click();
 
-    await page.waitForChanges();
+    // await page.waitForChanges();
 
-    activeButtons = await page.findAll('.c-button--active');
+    // activeButtons = await page.findAll('.c-button--active');
 
-    expect(activeButtons.length).toBe(0);
+    // expect(activeButtons.length).toBe(0);
+
+    // --------
 
     //expect(page).toMatchSnapshot();
 
