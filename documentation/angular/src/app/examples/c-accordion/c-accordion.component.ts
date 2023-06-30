@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mdiAccessPoint, mdiCamera, mdiNas } from '@mdi/js';
 
 @Component({
   selector: 'app-c-accordion',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CAccordionComponent implements OnInit {
   constructor() {}
+
+  mdiAccessPoint = mdiAccessPoint;
+  mdiNas = mdiNas;
+  mdiCamera = mdiCamera;
 
   ngOnInit(): void {}
 }
