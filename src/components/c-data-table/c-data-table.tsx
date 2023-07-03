@@ -551,10 +551,11 @@ export class CDataTable {
       }
     });
 
-    return !!this.pagination?.startFrom &&
-      !!this.pagination?.endTo &&
-      !this.hideFooter
-      ? sorted.slice(this.pagination.startFrom, this.pagination.endTo + 1)
+    return !this.hideFooter
+      ? sorted.slice(
+          this.pagination?.startFrom ?? 0,
+          (this.pagination?.endTo ?? this.data.length) + 1,
+        )
       : sorted;
   }
 
