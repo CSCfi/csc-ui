@@ -32,6 +32,8 @@
 .c-swiper-tab {
   $this: &;
 
+  height: 100%;
+
   &:hover:not(#{$this}--active) {
     #{$this}__content {
       background-color: var(--csc-primary-ghost-hover);

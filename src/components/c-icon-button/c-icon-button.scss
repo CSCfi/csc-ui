@@ -19,6 +19,7 @@ button.icon-button {
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
+  line-height: normal;
 
   ::slotted(svg),
   ::slotted(i),
@@ -222,6 +223,7 @@ svg {
   box-shadow: 0 0 0 2px #fff;
   top: -6px;
   padding: 0 4px;
+  line-height: 1;
 }
 
 .inner-container {
