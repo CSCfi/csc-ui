@@ -58,6 +58,7 @@
     "@mdi/js": "^7.2.96",
     "@stencil/core": "^4.0.1",
     "@types/node": "^20.2.5",
+    "normalize.css": "^8.0.1",
     "stencil-click-outside": "^1.8.0",
     "swiper": "^9.4.1",
     "uuid": "^9.0.0"
