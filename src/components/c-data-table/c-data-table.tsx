@@ -367,8 +367,6 @@ export class CDataTable {
   private _handleResponsiveHeaders() {
     const { width: tableWidth } = this._tableElement.getBoundingClientRect();
     const { width: rootWidth, x } = this.element.getBoundingClientRect();
-    const footerWidth =
-      this._footerElement?.getBoundingClientRect()?.width || 0;
 
     if (this._debounce !== null) {
       clearTimeout(this._debounce);
@@ -386,6 +384,9 @@ export class CDataTable {
         }
 
         this._debounce = setTimeout(() => {
+          const footerWidth =
+            this._footerElement?.getBoundingClientRect()?.width || 0;
+
           if (rootWidth < footerWidth) {
             this.markedFooterWidth = footerWidth;
             this._isPaginationSimple = true;
