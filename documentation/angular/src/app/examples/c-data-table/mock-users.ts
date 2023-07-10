@@ -868,25 +868,25 @@ const users: CDataTableData[] = [
   },
 ];
 
-const getRandomProgress = (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getProgressFromValue = (value: string) => Math.min(value.length * 10, 100);
 
 users.forEach((user) => {
   user['progress'] = {
-    value: getRandomProgress(),
+    value: getProgressFromValue(user['firstName'].value as string),
   };
 
   user['progress2'] = {
-    value: getRandomProgress(50, 100),
+    value: getProgressFromValue(user['lastName'].value as string),
   };
 
-  const failure = getRandomProgress(0, 33);
+  const failure = getProgressFromValue(user['firstName'].value as string) / 3;
 
   user['failure'] = {
     value: failure,
-    formattedValue: `${failure} %`,
+    formattedValue: `${formatNumber(failure, 'en-US', '1.0')} %`,
   };
 
-  const salary = getRandomProgress(2500, 5000);
+  const salary = getProgressFromValue(user['firstName'].value as string) * 64;
 
   user['salary'] = {
     value: salary,
