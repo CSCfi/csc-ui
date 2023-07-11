@@ -24,6 +24,7 @@
     "test.watch": "stencil test --spec --watchAll",
     "test.e2e": "stencil test --e2e --watchAll",
     "test.screenshot": "stencil test --e2e --screenshot",
+    "test.visual": "npx playwright install && npx playwright test",
     "generate": "stencil generate",
     "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.js",
     "style-dictionary:build:prod": "style-dictionary build --config ./style-dictionary.production.config.js",
