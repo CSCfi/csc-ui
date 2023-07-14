@@ -12,10 +12,22 @@ describe('c-tabs', () => {
       `,
     });
 
+    //problem - cannot find c-tab--active class, recognizes click-event
     const tabs = await page.find('c-tabs');
-    tabs.setProperty('value', 0);
+    tabs.setProperty('value', 1);
 
-    await page.waitForChanges();
+    // await page.waitForChanges();
+
+    // const tab = await page.findAll('c-tab');
+    // expect(tab.length).toBe(3);
+
+    // tab[0].setProperty('value', 1);
+    // tab[1].setProperty('value', 2);
+    // tab[2].setProperty('value', 3);
+
+    // await page.waitForChanges();
+
+    // expect(tab[0]).toHaveClass('c-tab--active');
 
     //problem - the snapshot doesn't render class c-tab-active, recognizes click
 
