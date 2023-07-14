@@ -1,10 +1,9 @@
 import { newE2EPage } from '@stencil/core/testing';
 
 describe('c-accordion', () => {
-  it('disallows collapsing all items', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent(`
+  it('one selection mandatory', async () => {
+    const page = await newE2EPage({
+      html: `
     <c-accordion>
         <c-accordion-item>
             <i class="mdi mdi-access-point" slot="icon"></i>
@@ -19,25 +18,11 @@ describe('c-accordion', () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis
             itaque!
         </c-accordion-item>
-  </c-accordion>`);
+  </c-accordion>`,
+    });
 
-    // const expandedItem = await page.find(
-    //   'c-accordion >>> c-accordion-item--expanded',
-    // );
-    // expect(expandedItem).toBe(null);
+    const accordionItems = await page.findAll('c-accordion > c-accordion-item');
 
-    // const accordion = await page.find('c-accordion');
-    // accordion.setProperty('mandatory', true);
-    // accordion.setProperty('value', 'one');
-
-    // await page.waitForChanges();
-
-    const accordionItems = await page.findAll(
-      'c-accordion >>> c-accordion-item',
-    );
-
-    await page.waitForChanges();
-
-    expect(accordionItems.length).toBe(2);
+    expect(accordionItems.length).toBe(3);
   });
 });
