@@ -960,7 +960,7 @@ export namespace Components {
          */
         "returnValue": false;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -3158,7 +3158,7 @@ declare namespace LocalJSX {
          */
         "returnValue"?: false;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**

@@ -73,7 +73,7 @@ export class CRadioGroup {
   @Prop() required = false;
 
   /**
-   * Set the validíty of the input
+   * Set the validity of the input
    */
   @Prop() valid = true;
 

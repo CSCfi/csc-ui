@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-radio-group renders custom color and items inlined 1`] = `
+<c-radio-group>
+  <mock:shadow-root>
+    <div aria-labelledby="c-radio-group__label" class="c-radio-group c-radio-group--inline" role="radiogroup">
+      <div class="c-radio-group__items">
+        <label class="c-radio" id="one">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="one" name="2" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 1
+          </div>
+        </label>
+        <label class="c-radio" id="two">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="two" name="2" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 2
+          </div>
+        </label>
+        <label class="c-radio" id="three">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="three" name="2" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 3
+          </div>
+        </label>
+      </div>
+      <div class="c-radio__details">
+        <div class="c-radio__message c-radio__message--hint"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-radio-group>
+`;
+
+exports[`c-radio-group renders default html 1`] = `
+<c-radio-group>
+  <mock:shadow-root>
+    <div aria-labelledby="c-radio-group__label" class="c-radio-group" role="radiogroup">
+      <div class="c-radio-group__items">
+        <label class="c-radio" id="one">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="one" name="1" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 1
+          </div>
+        </label>
+        <label class="c-radio" id="two">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="two" name="1" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 2
+          </div>
+        </label>
+        <label class="c-radio" id="three">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="three" name="1" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 3
+          </div>
+        </label>
+      </div>
+      <div class="c-radio__details">
+        <div class="c-radio__message c-radio__message--hint"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-radio-group>
+`;
+
+exports[`c-radio-group renders hint and label 1`] = `
+<c-radio-group>
+  <mock:shadow-root>
+    <div aria-labelledby="c-radio-group__label" class="c-radio-group" role="radiogroup">
+      <label class="c-radio-group__label">
+        This is label
+      </label>
+      <div class="c-radio-group__items">
+        <label class="c-radio" id="one">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="one" name="3" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 1
+          </div>
+        </label>
+        <label class="c-radio" id="two">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="two" name="3" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 2
+          </div>
+        </label>
+        <label class="c-radio" id="three">
+          <input aria-checked="false" aria-disabled="false" aria-labelledby="three" name="3" type="radio">
+          <span class="ripple">
+            <span class="selection"></span>
+          </span>
+          <div class="c-radio__label">
+            Radio 3
+          </div>
+        </label>
+      </div>
+      <div class="c-radio__details">
+        <div class="c-radio__message c-radio__message--hint"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-radio-group>
+`;
