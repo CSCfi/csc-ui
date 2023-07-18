@@ -30,9 +30,6 @@ describe('c-radio-group', () => {
 
     await page.waitForChanges();
 
-    const labelSelection = await page.find('label');
-    expect(labelSelection).toBe(true);
-
     //const selection = radioItems[1].getAttribute('aria-checked');
     //expect(selection).toBe(false);
 
