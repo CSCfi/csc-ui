@@ -1,5 +1,304 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`c-accordion allows multiple expansions 1`] = `
+CDPPage {
+  "_e2eClose": [Function],
+  "_e2eElements": Array [
+    <c-accordion class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-access-point" slot="icon"></i>
+    Lorem ipsum dolor sit amet.
+  </c-accordion-item>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-nas" slot="icon"></i>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, perspiciatis?
+  </c-accordion-item>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-camera" slot="icon"></i>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis itaque!
+  </c-accordion-item>
+</c-accordion>,
+    <c-accordion-item class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion-item">
+      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
+        <div class="c-accordion-item__icon">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-accordion-item__title"></div>
+        <div class="c-accordion-item__indicator">
+          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
+          </svg>
+        </div>
+      </button>
+      <div class="c-accordion-item__content-wrapper">
+        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <i class="mdi mdi-access-point" slot="icon"></i>
+  Lorem ipsum dolor sit amet.
+</c-accordion-item>,
+    <c-accordion-item class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion-item c-accordion-item--expanded">
+      <button aria-controls="panel__3" aria-expanded="true" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__3" tabindex="0">
+        <div class="c-accordion-item__icon">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-accordion-item__title"></div>
+        <div class="c-accordion-item__indicator c-accordion-item__indicator--expanded">
+          <svg class="expanded" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
+          </svg>
+        </div>
+      </button>
+      <div class="c-accordion-item__content-wrapper">
+        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <i class="mdi mdi-nas" slot="icon"></i>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, perspiciatis?
+</c-accordion-item>,
+    <c-accordion-item class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion-item">
+      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
+        <div class="c-accordion-item__icon">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-accordion-item__title"></div>
+        <div class="c-accordion-item__indicator">
+          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
+          </svg>
+        </div>
+      </button>
+      <div class="c-accordion-item__content-wrapper">
+        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <i class="mdi mdi-camera" slot="icon"></i>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis itaque!
+</c-accordion-item>,
+    <c-accordion class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-access-point" slot="icon"></i>
+    Lorem ipsum dolor sit amet.
+  </c-accordion-item>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-nas" slot="icon"></i>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, perspiciatis?
+  </c-accordion-item>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-camera" slot="icon"></i>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis itaque!
+  </c-accordion-item>
+</c-accordion>,
+  ],
+  "_e2eEventIds": 0,
+  "_e2eEvents": Map {},
+  "_e2eGoto": [Function],
+  "close": [Function],
+  "compareScreenshot": [Function],
+  "debugger": [Function],
+  "emitter": Object {
+    "all": Map {
+      "console" => Array [
+        [Function],
+      ],
+      "pageerror" => Array [
+        [Function],
+      ],
+      "requestfailed" => Array [
+        [Function],
+      ],
+      "request" => Array [
+        [Function],
+      ],
+    },
+    "emit": [Function],
+    "off": [Function],
+    "on": [Function],
+  },
+  "eventsMap": Map {
+    "console" => Array [
+      [Function],
+    ],
+    "pageerror" => Array [
+      [Function],
+    ],
+    "requestfailed" => Array [
+      [Function],
+    ],
+    "request" => Array [
+      [Function],
+    ],
+  },
+  "find": [Function],
+  "findAll": [Function],
+  "getDiagnostics": [Function],
+  "spyOnEvent": [Function],
+  "waitForChanges": [Function],
+  "waitForEvent": [Function],
+}
+`;
+
+exports[`c-accordion mandatory one selection required 1`] = `
+CDPPage {
+  "_e2eClose": [Function],
+  "_e2eElements": Array [
+    <c-accordion class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-access-point" slot="icon"></i>
+    Lorem ipsum dolor sit amet.
+  </c-accordion-item>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-nas" slot="icon"></i>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, perspiciatis?
+  </c-accordion-item>
+  <c-accordion-item class="hydrated">
+    <i class="mdi mdi-camera" slot="icon"></i>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis itaque!
+  </c-accordion-item>
+</c-accordion>,
+    <c-accordion-item class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion-item">
+      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
+        <div class="c-accordion-item__icon">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-accordion-item__title"></div>
+        <div class="c-accordion-item__indicator">
+          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
+          </svg>
+        </div>
+      </button>
+      <div class="c-accordion-item__content-wrapper">
+        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <i class="mdi mdi-access-point" slot="icon"></i>
+  Lorem ipsum dolor sit amet.
+</c-accordion-item>,
+    <c-accordion-item class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion-item c-accordion-item--expanded">
+      <button aria-controls="panel__3" aria-expanded="true" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__3" tabindex="0">
+        <div class="c-accordion-item__icon">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-accordion-item__title"></div>
+        <div class="c-accordion-item__indicator c-accordion-item__indicator--expanded">
+          <svg class="expanded" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
+          </svg>
+        </div>
+      </button>
+      <div class="c-accordion-item__content-wrapper">
+        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <i class="mdi mdi-nas" slot="icon"></i>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, perspiciatis?
+</c-accordion-item>,
+    <c-accordion-item class="hydrated">
+  <mock:shadow-root>
+    <div class="c-accordion-item">
+      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
+        <div class="c-accordion-item__icon">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-accordion-item__title"></div>
+        <div class="c-accordion-item__indicator">
+          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
+          </svg>
+        </div>
+      </button>
+      <div class="c-accordion-item__content-wrapper">
+        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <i class="mdi mdi-camera" slot="icon"></i>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis itaque!
+</c-accordion-item>,
+  ],
+  "_e2eEventIds": 0,
+  "_e2eEvents": Map {},
+  "_e2eGoto": [Function],
+  "close": [Function],
+  "compareScreenshot": [Function],
+  "debugger": [Function],
+  "emitter": Object {
+    "all": Map {
+      "console" => Array [
+        [Function],
+      ],
+      "pageerror" => Array [
+        [Function],
+      ],
+      "requestfailed" => Array [
+        [Function],
+      ],
+      "request" => Array [
+        [Function],
+      ],
+    },
+    "emit": [Function],
+    "off": [Function],
+    "on": [Function],
+  },
+  "eventsMap": Map {
+    "console" => Array [
+      [Function],
+    ],
+    "pageerror" => Array [
+      [Function],
+    ],
+    "requestfailed" => Array [
+      [Function],
+    ],
+    "request" => Array [
+      [Function],
+    ],
+  },
+  "find": [Function],
+  "findAll": [Function],
+  "getDiagnostics": [Function],
+  "spyOnEvent": [Function],
+  "waitForChanges": [Function],
+  "waitForEvent": [Function],
+}
+`;
+
 exports[`c-accordion reacts to click 1`] = `
 CDPPage {
   "_e2eClose": [Function],
@@ -165,20 +464,22 @@ CDPPage {
 </c-accordion>,
     <c-accordion-item class="hydrated">
   <mock:shadow-root>
-    <div class="c-accordion-item">
-      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
+    <div class="c-accordion-item c-accordion-item--expanded">
+      <button aria-controls="panel__3" aria-expanded="true" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__3" tabindex="0">
         <div class="c-accordion-item__icon">
           <slot name="icon"></slot>
         </div>
         <div class="c-accordion-item__title"></div>
-        <div class="c-accordion-item__indicator">
-          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <div class="c-accordion-item__indicator c-accordion-item__indicator--expanded">
+          <svg class="expanded" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
           </svg>
         </div>
       </button>
       <div class="c-accordion-item__content-wrapper">
-        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
+        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -211,122 +512,6 @@ CDPPage {
 </c-accordion-item>,
     <c-accordion-item class="hydrated">
   <mock:shadow-root>
-    <div class="c-accordion-item">
-      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
-        <div class="c-accordion-item__icon">
-          <slot name="icon"></slot>
-        </div>
-        <div class="c-accordion-item__title"></div>
-        <div class="c-accordion-item__indicator">
-          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
-          </svg>
-        </div>
-      </button>
-      <div class="c-accordion-item__content-wrapper">
-        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <i class="mdi mdi-camera" slot="icon"></i>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis itaque!
-</c-accordion-item>,
-  ],
-  "_e2eEventIds": 0,
-  "_e2eEvents": Map {},
-  "_e2eGoto": [Function],
-  "close": [Function],
-  "compareScreenshot": [Function],
-  "debugger": [Function],
-  "emitter": Object {
-    "all": Map {
-      "console" => Array [
-        [Function],
-      ],
-      "pageerror" => Array [
-        [Function],
-      ],
-      "requestfailed" => Array [
-        [Function],
-      ],
-      "request" => Array [
-        [Function],
-      ],
-    },
-    "emit": [Function],
-    "off": [Function],
-    "on": [Function],
-  },
-  "eventsMap": Map {
-    "console" => Array [
-      [Function],
-    ],
-    "pageerror" => Array [
-      [Function],
-    ],
-    "requestfailed" => Array [
-      [Function],
-    ],
-    "request" => Array [
-      [Function],
-    ],
-  },
-  "find": [Function],
-  "findAll": [Function],
-  "getDiagnostics": [Function],
-  "spyOnEvent": [Function],
-  "waitForChanges": [Function],
-  "waitForEvent": [Function],
-}
-`;
-
-exports[`c-accordion render default 1`] = `
-CDPPage {
-  "_e2eClose": [Function],
-  "_e2eElements": Array [
-    <c-accordion class="hydrated">
-  <mock:shadow-root>
-    <div class="c-accordion">
-      <slot></slot>
-    </div>
-  </mock:shadow-root>
-  <c-accordion-item class="hydrated">
-    <i class="mdi mdi-access-point" slot="icon"></i>
-    Lorem ipsum dolor sit amet.
-  </c-accordion-item>
-  <c-accordion-item class="hydrated">
-    <i class="mdi mdi-nas" slot="icon"></i>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, perspiciatis?
-  </c-accordion-item>
-  <c-accordion-item class="hydrated">
-    <i class="mdi mdi-camera" slot="icon"></i>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum perspiciatis itaque!
-  </c-accordion-item>
-</c-accordion>,
-    <c-accordion-item class="hydrated">
-  <mock:shadow-root>
-    <div class="c-accordion-item">
-      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
-        <div class="c-accordion-item__icon">
-          <slot name="icon"></slot>
-        </div>
-        <div class="c-accordion-item__title"></div>
-        <div class="c-accordion-item__indicator">
-          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
-          </svg>
-        </div>
-      </button>
-      <div class="c-accordion-item__content-wrapper">
-        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <i class="mdi mdi-access-point" slot="icon"></i>
-  Lorem ipsum dolor sit amet.
-</c-accordion-item>,
-    <c-accordion-item class="hydrated">
-  <mock:shadow-root>
     <div class="c-accordion-item c-accordion-item--expanded">
       <button aria-controls="panel__3" aria-expanded="true" class="c-accordion-item__header c-accordion-item__header--expanded" id="header__3" tabindex="0">
         <div class="c-accordion-item__icon">
@@ -343,28 +528,6 @@ CDPPage {
         <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region">
           <slot></slot>
         </div>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <i class="mdi mdi-nas" slot="icon"></i>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, perspiciatis?
-</c-accordion-item>,
-    <c-accordion-item class="hydrated">
-  <mock:shadow-root>
-    <div class="c-accordion-item">
-      <button aria-controls="panel__3" aria-expanded="false" class="c-accordion-item__header" id="header__3" tabindex="0">
-        <div class="c-accordion-item__icon">
-          <slot name="icon"></slot>
-        </div>
-        <div class="c-accordion-item__title"></div>
-        <div class="c-accordion-item__indicator">
-          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" fill="var(--csc-primary)"></path>
-          </svg>
-        </div>
-      </button>
-      <div class="c-accordion-item__content-wrapper">
-        <div aria-labelledby="header__3" class="c-accordion-item__content" id="panel__3" role="region"></div>
       </div>
     </div>
   </mock:shadow-root>
