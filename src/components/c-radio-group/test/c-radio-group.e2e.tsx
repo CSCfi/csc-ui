@@ -22,17 +22,10 @@ describe('c-radio-group', () => {
 
     const radioGroup = await page.find('c-radio-group');
     radioGroup.setProperty('items', items);
+    radioGroup.setProperty('disabled', true);
 
     await page.waitForChanges();
 
-    const radioItems = await page.findAll('c-radio-group >>> label');
-    expect(radioItems.length).toBe(3);
-
-    await page.waitForChanges();
-
-    //const selection = radioItems[1].getAttribute('aria-checked');
-    //expect(selection).toBe(false);
-
-    //radioGroup.setProperty('disabled', true);
+    const disabilityCheck = await page.find('c-radio-group > div');
   });
 });

@@ -1,7 +1,7 @@
 import { newE2EPage } from '@stencil/core/testing';
 
 describe('c-accordion', () => {
-  it('one selection mandatory', async () => {
+  it('render default', async () => {
     const page = await newE2EPage({
       html: `
     <c-accordion>
@@ -24,5 +24,17 @@ describe('c-accordion', () => {
     const accordionItems = await page.findAll('c-accordion > c-accordion-item');
 
     expect(accordionItems.length).toBe(3);
+
+    accordionItems[1].click();
+
+    await page.waitForChanges();
+
+    accordionItems[1].click();
+
+    await page.waitForChanges();
+
+    // problem -- element that should indicate if the item is open or closed stays expanded
+
+    expect(page).toMatchSnapshot();
   });
 });
