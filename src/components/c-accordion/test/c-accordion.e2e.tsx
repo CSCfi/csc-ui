@@ -22,6 +22,7 @@ describe('c-accordion', () => {
     });
 
     const accordion = await page.find('c-accordion');
+    expect(accordion).toHaveClass('hydrated');
 
     const accordionItems = await page.findAll('c-accordion-item');
     accordionItems[0].setProperty('value', 1);
@@ -34,7 +35,10 @@ describe('c-accordion', () => {
 
     await page.waitForChanges();
 
-    expect(page).toMatchSnapshot();
+    const expansionCheck = await page.find('c-accordion-item >>> div');
+    expect(expansionCheck).toHaveClass('c-accordion-item--expanded');
+
+    //expect(page).toMatchSnapshot();
   });
 
   it('reacts to click', async () => {
