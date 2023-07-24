@@ -1,7 +1,7 @@
 import { newE2EPage } from '@stencil/core/testing';
 
 describe('c-tabs', () => {
-  it('basic interaction test', async () => {
+  it('reacts to value change', async () => {
     const page = await newE2EPage({
       html: `
       <c-tabs>
@@ -12,50 +12,93 @@ describe('c-tabs', () => {
       `,
     });
 
-    //problem - cannot find c-tab--active class, recognizes click-event
     const tabs = await page.find('c-tabs');
     tabs.setProperty('value', 1);
 
-    // await page.waitForChanges();
+    const tabItems = await page.findAll('c-tab');
+    expect(tabItems.length).toBe(3);
 
-    // const tab = await page.findAll('c-tab');
-    // expect(tab.length).toBe(3);
+    tabItems[0].setProperty('value', 1);
+    tabItems[1].setProperty('value', 2);
+    tabItems[2].setProperty('value', 3);
 
-    // tab[0].setProperty('value', 1);
-    // tab[1].setProperty('value', 2);
-    // tab[2].setProperty('value', 3);
+    await page.waitForChanges();
 
-    // await page.waitForChanges();
+    tabItems[2].setAttribute('active', true);
 
-    // expect(tab[0]).toHaveClass('c-tab--active');
+    await page.waitForChanges();
 
-    //problem - the snapshot doesn't render class c-tab-active, recognizes click
+    //expect(page).toMatchSnapshot();
+    expect(tabItems[2]).toHaveClass('c-tab--active');
+  });
 
-    // const tab = await page.findAll('c-tab');
-    // expect(tab.length).toBe(3);
+  it('reacts to value change on click', async () => {
+    const page = await newE2EPage({
+      html: `
+      <c-tabs>
+      <c-tab>One</c-tab>
+      <c-tab>Two</c-tab>
+      <c-tab>Three</c-tab>
+      </c-tabs>
+      `,
+    });
 
-    // const activeTab = await page.findAll('c-tabs >>> c-tab >>> .c-tab--active');
+    const tabs = await page.find('c-tabs');
+    tabs.setProperty('value', 1);
 
-    // await page.waitForChanges();
+    const tabItems = await page.findAll('c-tab');
+    expect(tabItems.length).toBe(3);
 
-    // expect(activeTab.length).toBe(1);
+    tabItems[0].setProperty('value', 1);
+    tabItems[1].setProperty('value', 2);
+    tabItems[2].setProperty('value', 3);
 
-    // await page.waitForChanges();
+    await page.waitForChanges();
 
-    // tab[0].click();
+    tabItems[2].click();
 
-    // await page.waitForChanges();
+    await page.waitForChanges();
 
-    // expect(page).toMatchSnapshot();
+    //expect(page).toMatchSnapshot();
+    expect(tabItems[2]).toHaveClass('c-tab--active');
+  });
 
-    // tab[1].click();
+  it('renders disabled', async () => {
+    const page = await newE2EPage({
+      html: `
+      <c-tabs>
+      <c-tab>One</c-tab>
+      <c-tab>Two</c-tab>
+      <c-tab>Three</c-tab>
+      </c-tabs>
+      `,
+    });
 
-    // await page.waitForChanges();
+    const tabs = await page.find('c-tabs');
+    tabs.setProperty('value', 1);
 
-    // tab[1].click();
+    const tabItems = await page.findAll('c-tab');
+    expect(tabItems.length).toBe(3);
 
-    // await page.waitForChanges();
+    tabItems[0].setProperty('value', 1);
+    tabItems[1].setProperty('value', 2);
+    tabItems[2].setProperty('value', 3);
 
-    //expect(tab[1]).toHaveClass('c-tab--active');
+    await page.waitForChanges();
+
+    tabItems[2].click();
+
+    await page.waitForChanges();
+
+    //expect(page).toMatchSnapshot();
+    expect(tabItems[2]).toHaveClass('c-tab--active');
+
+    tabItems[1].setProperty('disabled', true);
+
+    tabItems[1].click();
+
+    await page.waitForChanges();
+
+    expect(tabItems[1]).not.toHaveClass('c-tab--active');
   });
 });
