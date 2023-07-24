@@ -26,6 +26,7 @@ describe('c-radio-group', () => {
 
     await page.waitForChanges();
 
-    const disabilityCheck = await page.find('c-radio-group > div');
+    const div = await page.find('c-radio-group >>> div');
+    expect(div).toHaveClass('c-radio-group--disabled');
   });
 });
