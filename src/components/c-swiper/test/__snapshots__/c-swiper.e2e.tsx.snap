@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-swiper renders disabled button 1`] = `
+CDPPage {
+  "_e2eClose": [Function],
+  "_e2eElements": Array [
+    <c-swiper class="hydrated" value="2">
+  <!---->
+  <div class="c-swiper swiper">
+    <div class="swiper-backface-hidden swiper-container swiper-horizontal swiper-initialized">
+      <div class="swiper-wrapper" role="tablist" style="transform: translate3d(0px, 0px, 0px);">
+        <c-swiper-tab aria-posinset="1" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide swiper-slide-active" data-index="0" role="tab" tabindex="-1" style="width: 261.333px; margin-right: 8px;">
+          One
+        </c-swiper-tab>
+        <c-swiper-tab aria-posinset="2" aria-selected="true" aria-setsize="5" class="hydrated swiper-slide swiper-slide-next" data-index="1" role="tab" tabindex="0" style="width: 261.333px; margin-right: 8px;">
+          Two
+        </c-swiper-tab>
+        <c-swiper-tab aria-posinset="3" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide" data-index="2" role="tab" tabindex="-1" style="width: 261.333px; margin-right: 8px;">
+          Three
+        </c-swiper-tab>
+        <c-swiper-tab aria-posinset="4" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide" data-index="3" role="tab" tabindex="-1" style="width: 261.333px; margin-right: 8px;">
+          Four
+        </c-swiper-tab>
+        <c-swiper-tab aria-posinset="5" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide" data-index="4" role="tab" tabindex="-1" style="width: 261.333px; margin-right: 8px;">
+          Five
+        </c-swiper-tab>
+      </div>
+      <div class="c-swiper__navigation">
+        <c-icon-button aria-disabled="true" aria-label="previous page" class="c-icon-button--prev hydrated swiper-button-disabled">
+          <span class="visuallyhidden">
+            Previous
+            <span>
+              page
+            </span>
+          </span>
+          <svg height="24" viewBox="0 0 24 24" width="24">
+            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path>
+          </svg>
+        </c-icon-button>
+        <c-icon-button aria-disabled="false" aria-label="next page" class="c-icon-button--next hydrated">
+          <span class="visuallyhidden">
+            Next
+            <span>
+              page
+            </span>
+          </span>
+          <svg height="24" viewBox="0 0 24 24" width="24">
+            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+          </svg>
+        </c-icon-button>
+      </div>
+    </div>
+  </div>
+</c-swiper>,
+    <c-swiper-tab aria-posinset="1" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide swiper-slide-active" data-index="0" role="tab" tabindex="-1">
+  <mock:shadow-root>
+    <div class="c-swiper-tab">
+      <div class="c-swiper-tab__content">
+        <div class="c-swiper-tab__header">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-swiper-tab__description">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  One
+</c-swiper-tab>,
+    <c-swiper-tab aria-posinset="2" aria-selected="true" aria-setsize="5" class="hydrated swiper-slide swiper-slide-next" data-index="1" role="tab" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-swiper-tab c-swiper-tab--disabled">
+      <div class="c-swiper-tab__content">
+        <div class="c-swiper-tab__header">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-swiper-tab__description">
+          <slot></slot>
+        </div>
+        <div class="animate md-ripple" style="width: 261px; height: 261px; top: -95.5px; left: 3.17188px;"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Two
+</c-swiper-tab>,
+    <c-swiper-tab aria-posinset="3" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide" data-index="2" role="tab" tabindex="-1">
+  <mock:shadow-root>
+    <div class="c-swiper-tab">
+      <div class="c-swiper-tab__content">
+        <div class="c-swiper-tab__header">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-swiper-tab__description">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Three
+</c-swiper-tab>,
+    <c-swiper-tab aria-posinset="4" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide" data-index="3" role="tab" tabindex="-1">
+  <mock:shadow-root>
+    <div class="c-swiper-tab">
+      <div class="c-swiper-tab__content">
+        <div class="c-swiper-tab__header">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-swiper-tab__description">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Four
+</c-swiper-tab>,
+    <c-swiper-tab aria-posinset="5" aria-selected="false" aria-setsize="5" class="hydrated swiper-slide" data-index="4" role="tab" tabindex="-1">
+  <mock:shadow-root>
+    <div class="c-swiper-tab">
+      <div class="c-swiper-tab__content">
+        <div class="c-swiper-tab__header">
+          <slot name="icon"></slot>
+        </div>
+        <div class="c-swiper-tab__description">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Five
+</c-swiper-tab>,
+  ],
+  "_e2eEventIds": 0,
+  "_e2eEvents": Map {},
+  "_e2eGoto": [Function],
+  "close": [Function],
+  "compareScreenshot": [Function],
+  "debugger": [Function],
+  "emitter": Object {
+    "all": Map {
+      "console" => Array [
+        [Function],
+      ],
+      "pageerror" => Array [
+        [Function],
+      ],
+      "requestfailed" => Array [
+        [Function],
+      ],
+      "request" => Array [
+        [Function],
+      ],
+    },
+    "emit": [Function],
+    "off": [Function],
+    "on": [Function],
+  },
+  "eventsMap": Map {
+    "console" => Array [
+      [Function],
+    ],
+    "pageerror" => Array [
+      [Function],
+    ],
+    "requestfailed" => Array [
+      [Function],
+    ],
+    "request" => Array [
+      [Function],
+    ],
+  },
+  "find": [Function],
+  "findAll": [Function],
+  "getDiagnostics": [Function],
+  "spyOnEvent": [Function],
+  "waitForChanges": [Function],
+  "waitForEvent": [Function],
+}
+`;
