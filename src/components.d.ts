@@ -1055,7 +1055,7 @@ export namespace Components {
          */
         "shadow": boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -3257,7 +3257,7 @@ declare namespace LocalJSX {
          */
         "shadow"?: boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**
