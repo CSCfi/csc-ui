@@ -2,7 +2,38 @@ import { newE2EPage } from '@stencil/core/testing';
 import { items } from './items';
 import { sleep } from '../../../utils/test/sleep';
 
+declare global {
+  interface Window {
+    IntersectionObserver: unknown;
+  }
+}
+
 describe('c-select', () => {
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    global.IntersectionObserver = class IntersectionObserver {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      constructor() {}
+
+      disconnect() {
+        return null;
+      }
+
+      observe() {
+        return null;
+      }
+
+      takeRecords() {
+        return null;
+      }
+
+      unobserve() {
+        return null;
+      }
+    };
+  });
+
   it('renders correctly', async () => {
     const page = await newE2EPage({
       html: `
