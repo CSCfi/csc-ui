@@ -87,7 +87,7 @@ describe('c-select', () => {
     await sleep(200);
 
     const errorMessage = await page.find(
-      'c-select >>> #error-input_Fruitoftheday',
+      'c-select >>> .c-input__message--error',
     );
 
     expect(errorMessage.innerText).toContain('Required field');
