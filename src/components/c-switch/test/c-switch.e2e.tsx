@@ -62,14 +62,16 @@ describe('c-switch', () => {
     expect(checkMark).not.toHaveAttribute('aria-checked');
   });
 
-  // problem with detecting the text
-  it.skip('require selection', async () => {
+  it('require selection', async () => {
     const page = await newE2EPage({
-      html: `<c-switch required>Required</c-switch>`,
+      html: `<c-switch>Required</c-switch>`,
     });
 
-    const requiredText = await page.find('c-switch >>> .c-switch__label');
+    const slider = await page.find('c-switch');
+    slider.setProperty('required', true);
 
-    expect(requiredText.innerText).toContain('Required');
+    await page.waitForChanges();
+
+    expect(slider.innerText).toContain('Required');
   });
 });
