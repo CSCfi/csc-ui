@@ -1286,7 +1286,7 @@
         },
         {
           "name": "valid",
-          "description": "Set the validíty of the input"
+          "description": "Set the validity of the input"
         },
         {
           "name": "validation",
@@ -1408,7 +1408,7 @@
         },
         {
           "name": "valid",
-          "description": "Set the validíty of the input"
+          "description": "Set the validity of the input"
         },
         {
           "name": "validate",

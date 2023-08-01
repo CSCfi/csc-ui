@@ -22,7 +22,7 @@
 | `required`       | `required`         | Set as required                                              | `boolean`                                    | `false`            |
 | `returnValue`    | `return-value`     | Return only the item value rather than the whole item object | `boolean`                                    | `undefined`        |
 | `shadow`         | `shadow`           | Shadow variant                                               | `boolean`                                    | `false`            |
-| `valid`          | `valid`            | Set the validíty of the input                                | `boolean`                                    | `true`             |
+| `valid`          | `valid`            | Set the validity of the input                                | `boolean`                                    | `true`             |
 | `validate`       | `validate`         | Manual validation                                            | `boolean`                                    | `false`            |
 | `validateOnBlur` | `validate-on-blur` | Validate the input on blur                                   | `boolean`                                    | `false`            |
 | `validation`     | `validation`       | Custom validation message                                    | `string`                                     | `'Required field'` |

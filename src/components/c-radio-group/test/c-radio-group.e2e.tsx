@@ -29,12 +29,4 @@ describe('c-radio-group', () => {
     const div = await page.find('c-radio-group >>> div');
     expect(div).toHaveClass('c-radio-group--disabled');
   });
-
-  //in progress
-
-  it.skip('renders required message', async () => {
-    const page = await newE2EPage({
-      html: `<c-radio-group validation="Required field"></c-radio-group>`,
-    });
-  });
 });
