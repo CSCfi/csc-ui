@@ -89,35 +89,3 @@ it('renders required message', async () => {
 
   expect(errorMessage.innerText).toContain('Required field');
 });
-
-it('hides hint and error messages', async () => {
-  const page = await newE2EPage({
-    html: `
-      <c-select
-      label="Your favorite fruit"
-      placeholder="Select a fruit"
-      validation="Required field"
-      return-value>
-      </c-select>`,
-  });
-
-  const select = await page.find('c-select');
-  select.setProperty('items', items);
-  select.setProperty('valid', false);
-
-  await page.waitForChanges();
-
-  await sleep(200);
-
-  let errorMessage = await page.find('c-select >>> .c-input__message--error');
-
-  expect(errorMessage.innerText).toContain('Required field');
-
-  select.setProperty('hide-details', true);
-
-  await page.waitForChanges();
-
-  errorMessage = await page.find('c-select >>> .c-input__message--error');
-
-  expect(errorMessage.innerText).not.toContain('Required field');
-});

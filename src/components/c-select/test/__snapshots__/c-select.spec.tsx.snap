@@ -1,10 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`c-select renders hidden details 1`] = `
+<c-select>
+  <mock:shadow-root>
+    <div aria-atomic="true" aria-live="polite" class="visuallyhidden" id="announce-2"></div>
+    <c-input hide-details="" hint="This is a hint" input-id="input_Yourfavoritefruit" label="Your favorite fruit" placeholder="Select a fruit" shadow="" valid="" validation="Required" variant="select">
+      <slot name="pre" slot="pre"></slot>
+      <div class="c-input__content">
+        <div class="c-input-menu__input">
+          <input aria-controls="results_2" aria-haspopup="listbox" aria-readonly="true" autocomplete="off" class="c-input__input" id="input_Yourfavoritefruit" readonly="true" type="text">
+        </div>
+        <div class="c-input-menu__item-wrapper c-input-menu__item-wrapper--shadow">
+          <ul aria-expanded="false" class="c-input-menu__items c-input-menu__items--hidden" id="results_2" role="listbox" title="Your favorite fruit" style="max-height: 288px; overflow-y: scroll;">
+            <li aria-posinset="1" aria-setsize="7" id="item_2--banana" role="option">
+              Banana
+            </li>
+            <li aria-posinset="2" aria-setsize="7" id="item_2--pineapple" role="option">
+              Pineapple
+            </li>
+            <li aria-posinset="3" aria-setsize="7" id="item_2--apple" role="option">
+              Apple
+            </li>
+            <li aria-posinset="4" aria-setsize="7" id="item_2--orange" role="option">
+              Orange
+            </li>
+            <li aria-posinset="5" aria-setsize="7" id="item_2--pear" role="option">
+              Pear
+            </li>
+            <li aria-posinset="6" aria-setsize="7" id="item_2--lemon" role="option">
+              Lemon
+            </li>
+            <li aria-posinset="7" aria-setsize="7" id="item_2--coconut" role="option">
+              Coconut
+            </li>
+          </ul>
+        </div>
+        <svg class="c-input-menu__chevron" viewBox="0 0 24 24">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+      <slot name="post" slot="post"></slot>
+    </c-input>
+    <slot></slot>
+  </mock:shadow-root>
+</c-select>
+`;
+
 exports[`c-select renders shadow variant 1`] = `
 <c-select>
   <mock:shadow-root>
     <div aria-atomic="true" aria-live="polite" class="visuallyhidden" id="announce-1"></div>
-    <c-input hint="" input-id="input_Yourfavoritefruit" label="Your favorite fruit" placeholder="Select a fruit" shadow="" valid="" validation="Required field" variant="select">
+    <c-input hint="This is a hint" input-id="input_Yourfavoritefruit" label="Your favorite fruit" placeholder="Select a fruit" shadow="" valid="" validation="Required" variant="select">
       <slot name="pre" slot="pre"></slot>
       <div class="c-input__content">
         <div class="c-input-menu__input">

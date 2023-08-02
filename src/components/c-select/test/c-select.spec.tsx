@@ -43,6 +43,29 @@ describe('c-select', () => {
           shadow
           placeholder="Select a fruit"
           label="Your favorite fruit"
+          hint="This is a hint"
+          valid
+          validation="Required"
+        ></c-select>
+      ),
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('renders hidden details', async () => {
+    const page = await newSpecPage({
+      components: [CSelect],
+      template: () => (
+        <c-select
+          items={items}
+          shadow
+          placeholder="Select a fruit"
+          label="Your favorite fruit"
+          hint="This is a hint"
+          valid
+          validation="Required"
+          hideDetails
         ></c-select>
       ),
     });
