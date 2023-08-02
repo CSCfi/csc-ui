@@ -29,4 +29,23 @@ describe('c-radio-group', () => {
     const div = await page.find('c-radio-group >>> div');
     expect(div).toHaveClass('c-radio-group--disabled');
   });
+
+  it('renders required message', async () => {
+    const page = await newE2EPage({
+      html: `<c-radio-group></c-radio-group>`,
+    });
+
+    const radioGroup = await page.find('c-radio-group');
+    radioGroup.setProperty('items', items);
+    radioGroup.setProperty('valid', false);
+    radioGroup.setProperty('validation', 'Required field');
+
+    await page.waitForChanges();
+
+    expect(page).toMatchSnapshot();
+
+    // const errorMessage = await page.find(
+    //   'c-radio-group >>> .c-radio__message--error',
+    // );
+  });
 });
