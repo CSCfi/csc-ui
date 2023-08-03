@@ -7,8 +7,6 @@ test.beforeEach(async ({}, testInfo) => {
 test('Variants', async ({ page }) => {
   await page.goto('http://localhost:4200/c-alert');
 
-  await page.waitForTimeout(1000);
-
   const alert = page.locator('app-example[name="basic"] c-alert').first();
 
   await page

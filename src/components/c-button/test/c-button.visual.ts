@@ -3,14 +3,10 @@ import { test, expect } from '@playwright/test';
 test.beforeEach(async ({ page }, testInfo) => {
   await page.goto('http://localhost:4200/c-button');
 
-  await page.waitForTimeout(200);
-
   testInfo.snapshotSuffix = '';
 });
 
 test('Default', async ({ page }) => {
-  await page.waitForTimeout(800);
-
   let button = page
     .getByTitle('Default button')
     .getByRole('button', { name: 'Default' })
@@ -38,8 +34,6 @@ test('Outlined', async ({ page }) => {
 
 test('Ghost', async ({ page }) => {
   await page.goto('http://localhost:4200/c-button');
-
-  await page.waitForTimeout(200);
 
   let button = page.getByRole('button', { name: 'Ghost' }).first();
 

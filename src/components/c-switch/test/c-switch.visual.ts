@@ -3,8 +3,6 @@ import { test, expect } from '@playwright/test';
 test.beforeEach(async ({ page }, testInfo) => {
   await page.goto('http://localhost:4200/c-switch');
 
-  await page.waitForTimeout(200);
-
   testInfo.snapshotSuffix = '';
 });
 
@@ -14,8 +12,6 @@ test('Default', async ({ page }) => {
   await expect(button).toHaveScreenshot();
 
   await button.locator('label span').click();
-
-  await page.waitForTimeout(350);
 
   await expect(button).toHaveScreenshot();
 });

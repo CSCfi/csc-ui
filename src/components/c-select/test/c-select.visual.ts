@@ -3,8 +3,6 @@ import { test, expect } from '@playwright/test';
 test.beforeEach(async ({ page }, testInfo) => {
   await page.goto('http://localhost:4200/c-select');
 
-  await page.waitForTimeout(200);
-
   testInfo.snapshotSuffix = '';
 });
 

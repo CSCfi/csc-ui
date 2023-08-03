@@ -3,14 +3,10 @@ import { test, expect } from '@playwright/test';
 test.beforeEach(async ({ page }, testInfo) => {
   await page.goto('http://localhost:4200/c-tab-buttons');
 
-  await page.waitForTimeout(200);
-
   testInfo.snapshotSuffix = '';
 });
 
 test('Default', async ({ page }) => {
-  await page.waitForTimeout(800);
-
   const tabButtons = page.locator('app-example[name="basic"] div').nth(1);
 
   await expect(tabButtons).toHaveScreenshot();
@@ -20,16 +16,12 @@ test('Default', async ({ page }) => {
     .getByRole('button', { name: 'One' })
     .click();
 
-  await page.waitForTimeout(350);
-
   await expect(tabButtons).toHaveScreenshot();
 
   await page
     .getByTitle('Basic usage')
     .getByRole('button', { name: 'One' })
     .click();
-
-  await page.waitForTimeout(350);
 
   await expect(tabButtons).toHaveScreenshot();
 });
@@ -43,8 +35,6 @@ test('Mandatory', async ({ page }) => {
     .getByTitle('Basic usage')
     .getByRole('button', { name: 'One' })
     .click();
-
-  await page.waitForTimeout(350);
 
   await expect(tabButtons).toHaveScreenshot();
 });

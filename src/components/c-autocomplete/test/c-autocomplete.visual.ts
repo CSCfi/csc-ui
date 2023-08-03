@@ -7,8 +7,6 @@ test.beforeEach(async ({}, testInfo) => {
 test('Default', async ({ page }) => {
   await page.goto('http://localhost:4200/c-autocomplete');
 
-  await page.waitForTimeout(1000);
-
   const example = page.locator('app-example[name="angular"]').first();
 
   const autocomplete = example.locator('c-autocomplete').first();
@@ -27,8 +25,6 @@ test('Default', async ({ page }) => {
 
 test('Custom menu items', async ({ page }) => {
   await page.goto('http://localhost:4200/c-autocomplete');
-
-  await page.waitForTimeout(1000);
 
   const example = page.locator('app-example[name="customMenu"]').first();
 

@@ -7,8 +7,6 @@ test.beforeEach(async ({}, testInfo) => {
 test('Default', async ({ page }) => {
   await page.goto('http://localhost:4200/c-data-table');
 
-  await page.waitForTimeout(100);
-
   const table = page.locator('app-example[name="basic"] c-data-table').first();
 
   // Expect initial visual appearance
@@ -17,8 +15,6 @@ test('Default', async ({ page }) => {
 
 test('Row selection', async ({ page }) => {
   await page.goto('http://localhost:4200/c-data-table');
-
-  await page.waitForTimeout(600);
 
   const table = page
     .locator('app-example[name="complex"] c-data-table')
@@ -44,8 +40,6 @@ test('Row selection', async ({ page }) => {
   await table.locator('c-checkbox').first().click();
 
   const checkbox = table.locator('c-checkbox').nth(1);
-
-  await page.waitForTimeout(200);
 
   await checkbox.click();
 

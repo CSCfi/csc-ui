@@ -7,8 +7,6 @@ test.beforeEach(async ({}, testInfo) => {
 test('Default', async ({ page }) => {
   await page.goto('http://localhost:4200/c-accordion');
 
-  await page.waitForTimeout(1000);
-
   const accordion = page
     .locator('app-example[name="basic"] c-accordion')
     .first();

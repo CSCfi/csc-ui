@@ -68,5 +68,6 @@ export default defineConfig({
     command: 'cd documentation/angular && npm run dev',
     url: 'http://localhost:4200',
     reuseExistingServer: !process.env.CI,
+    timeout: 120000,
   },
 });
