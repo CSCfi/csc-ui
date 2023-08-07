@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CAutocompleteItem } from '../../../../../../dist/types/types';
 import countries from '../countries.json';
+import { mdiEarth } from '@mdi/js';
 
 @Component({
   selector: 'app-c-autocomplete',
@@ -80,6 +81,8 @@ export class CAutocompleteComponent implements OnInit {
   // @example-end
 
   constructor() {}
+
+  mdiEarth = mdiEarth;
 
   ngOnInit(): void {}
 }
