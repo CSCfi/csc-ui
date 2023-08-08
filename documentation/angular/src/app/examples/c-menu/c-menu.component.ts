@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { mdiDotsHorizontal, mdiInformationOutline } from '@mdi/js';
 import { CMenuCustomTrigger, CToastType } from '../../../../../../src/types';
+import { mdiEmailOutline } from '@mdi/js';
 
 @Component({
   selector: 'app-c-menu',
   templateUrl: './c-menu.component.html',
-  styleUrls: ['./c-menu.component.scss']
+  styleUrls: ['./c-menu.component.scss'],
 })
 export class CMenuComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
+  mdiEmailOutline = mdiEmailOutline;
 
   // @example-start|basic|nohover|small|simple|custom
   items = [
     { name: 'Item 1', action: () => this.onItemClick('Item 1 selected') },
     { name: 'Item 2', action: () => this.onItemClick('Item 2 selected') },
     { name: 'Item 3', action: () => this.onItemClick('Item 3 selected'), disabled: true },
-    { name: 'Item 4', action: () => this.onItemClick('Item 4 selected'), icon: mdiInformationOutline, iconPosition: 'end' },
+    {
+      name: 'Item 4',
+      action: () => this.onItemClick('Item 4 selected'),
+      icon: mdiInformationOutline,
+      iconPosition: 'end',
+    },
     { name: 'Item 5', action: () => this.onItemClick('Item 5 selected') },
     { name: 'Item 6', action: () => this.onItemClick('Item 6 selected') },
     { name: 'Item 7', action: () => this.onItemClick('Item 7 selected') },

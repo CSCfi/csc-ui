@@ -68,15 +68,20 @@
   padding-bottom: 4px;
 }
 
-::slotted(span) {
+::slotted(span),
+::slotted(c-icon) {
   margin-right: 8px;
   font-size: 20px;
 }
 
 ::slotted([slot='main']) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: normal;
 }
 
 .styleMain {

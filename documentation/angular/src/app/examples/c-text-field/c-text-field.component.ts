@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { mdiMagnify, mdiStar } from '@mdi/js';
 @Component({
   selector: 'app-c-text-field',
   templateUrl: './c-text-field.component.html',
   styleUrls: ['./c-text-field.component.scss'],
 })
 export class CTextFieldComponent implements OnInit {
+  mdiMagnify = mdiMagnify;
+  mdiStar = mdiStar;
   // @example-start|validation
   form: FormGroup;
 

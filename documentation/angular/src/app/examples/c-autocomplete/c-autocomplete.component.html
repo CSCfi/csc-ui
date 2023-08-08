@@ -12,7 +12,7 @@
       [(ngModel)]="selection"
       style="flex: 1"
     >
-      <c-icon [path]="mdiEarth" slot="pre"></c-icon>
+      <c-icon [path]="mdiEarth" slot="pre" size="16"></c-icon>
     </c-autocomplete>
 
     <c-button (click)="addTag()" (keyup.enter)="addTag()">Add</c-button>
@@ -73,7 +73,7 @@
       style="flex: 1"
       [customMenu]="true"
     >
-      <c-icon [path]="mdiEarth" slot="pre"></c-icon>
+      <c-icon [path]="mdiEarth" slot="pre" size="16"></c-icon>
       <div
         *ngFor="let item of filteredItems; let i = index"
         slot="customMenu"

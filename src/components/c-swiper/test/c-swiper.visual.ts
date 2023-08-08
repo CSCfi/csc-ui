@@ -13,10 +13,10 @@ test('Default', async ({ page }) => {
 
   await page
     .getByRole('tab', {
-      name: 'Two 󰒋 Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      name: 'Two Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     })
     .locator('div')
-    .first()
+    .nth(1)
     .click();
 
   await expect(swiper).toHaveScreenshot();

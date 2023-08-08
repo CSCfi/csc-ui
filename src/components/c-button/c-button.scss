@@ -337,6 +337,10 @@ a {
 .hide-text {
   color: transparent !important;
 
+  ::slotted([slot='icon']) {
+    opacity: 0;
+  }
+
   svg {
     fill: transparent !important;
   }

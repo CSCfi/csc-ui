@@ -8,6 +8,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+import { mdiXml } from '@mdi/js';
 import docs from '../../../../../../docs.json';
 
 @Component({
@@ -31,6 +32,7 @@ export class ExampleComponent implements AfterViewInit, AfterContentChecked, OnI
   allowedAttributes = [];
   showCode = false;
   examples = null;
+  mdiXml = mdiXml;
 
   constructor(private cdref: ChangeDetectorRef) {
     const attrs = docs.components?.reduce(

@@ -22,8 +22,8 @@
       [multiple]="false"
     >
       <c-sidenavigationitem [routerLink]="['']" [active]="url === '/'">
-        <div slot="main" class="text-capitalize">
-          <span class="mdi mdi-information-outline me-1"></span>
+        <div slot="main" class="text-capitalize d-flex align-items-center">
+          <c-icon [path]="icons.mdiInformationOutline" size="16"></c-icon>
           About
         </div>
       </c-sidenavigationitem>
@@ -40,7 +40,7 @@
             routerLinkActive="active"
             (keyup.enter)="navigate($event, 'getting-started/angular')"
           >
-            <span class="mdi mdi-angular"></span>
+            <c-icon [path]="icons.mdiAngular" size="20" class="me-2"></c-icon>
             Angular
           </c-subnavigationitem>
         </div>
@@ -51,7 +51,7 @@
             routerLinkActive="active"
             (keyup.enter)="navigate($event, 'getting-started/html')"
           >
-            <span class="mdi mdi-language-html5"></span>
+            <c-icon [path]="icons.mdiLanguageHtml5" size="20" class="me-2"></c-icon>
             HTML Page
           </c-subnavigationitem>
         </div>
@@ -63,7 +63,7 @@
             routerLinkActive="active"
             (keyup.enter)="navigate($event, 'getting-started/vue')"
           >
-            <span class="mdi mdi-vuejs"></span>
+            <c-icon [path]="icons.mdiVuejs" size="20" class="me-2"></c-icon>
             Vue 3
           </c-subnavigationitem>
         </div>
@@ -75,7 +75,7 @@
             routerLinkActive="active"
             (keyup.enter)="navigate($event, 'getting-started/vue-2')"
           >
-            <span class="mdi mdi-vuejs"></span>
+            <c-icon [path]="icons.mdiVuejs" size="20" class="me-2"></c-icon>
             Vue 2
           </c-subnavigationitem>
         </div>
@@ -106,7 +106,7 @@
         cControl
         (input)="filterComponents($event)"
       >
-        <i class="mdi mdi-magnify" slot="pre"></i>
+        <c-icon [path]="icons.mdiMagnify" slot="pre" size="16"></c-icon>
       </c-text-field>
 
       <c-sidenavigationitem
@@ -131,7 +131,7 @@
       </c-sidenavigationitem>
 
       <c-sidenavigationitem
-        *ngFor="let item of (groupedComponents | menuGroups: false)[0]?.components"
+        *ngFor="let item of (groupedComponents | menuGroups : false)[0]?.components"
         class="text-capitalize"
         [routerLink]="['/' + item.tag]"
         routerLinkActive="active"
@@ -144,8 +144,8 @@
       <p class="text-white border-bottom mt-4 mb-3">Miscellaneous</p>
 
       <c-sidenavigationitem [routerLink]="['types']" [active]="url?.startsWith('/types')">
-        <div slot="main" class="text-capitalize">
-          <span class="mdi mdi-language-typescript me-1"></span>
+        <div slot="main" class="text-capitalize d-flex align-items-center">
+          <c-icon [path]="icons.mdiLanguageTypescript" class="me-2" size="16"></c-icon>
           Types
         </div>
       </c-sidenavigationitem>

@@ -16,11 +16,11 @@
   </c-steps>
 
   <c-icon-button [disabled]="step === min" (click)="move('<')">
-    <i class="mdi mdi-chevron-left"></i>
+    <c-icon [path]="mdiChevronLeft"></c-icon>
   </c-icon-button>
 
   <c-icon-button [disabled]="step === max" (click)="move('>')">
-    <i class="mdi mdi-chevron-right"></i>
+    <c-icon [path]="mdiChevronRight"></c-icon>
   </c-icon-button>
 </app-example>
 
@@ -39,11 +39,11 @@
 
     <c-card-actions justify="center">
       <c-icon-button [disabled]="step === min" (click)="move('<')">
-        <i class="mdi mdi-chevron-left"></i>
+        <c-icon [path]="mdiChevronLeft"></c-icon>
       </c-icon-button>
 
       <c-icon-button [disabled]="step === max" (click)="move('>')">
-        <i class="mdi mdi-chevron-right"></i>
+        <c-icon [path]="mdiChevronRight"></c-icon>
       </c-icon-button>
     </c-card-actions>
   </c-card>

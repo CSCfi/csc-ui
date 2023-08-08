@@ -7,6 +7,14 @@ import docs from '../../../../docs.json';
 import { map, Observable, Subscription } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 import { VersionService } from './services/version.service';
+import {
+  mdiMagnify,
+  mdiInformationOutline,
+  mdiAngular,
+  mdiLanguageHtml5,
+  mdiVuejs,
+  mdiLanguageTypescript,
+} from '@mdi/js';
 
 interface ComponentGroup {
   name: string;
@@ -28,6 +36,15 @@ export class AppComponent implements OnInit {
   activeComponent: ComponentData;
   url = null;
   active: string = null;
+
+  icons = {
+    mdiMagnify,
+    mdiInformationOutline,
+    mdiAngular,
+    mdiLanguageHtml5,
+    mdiVuejs,
+    mdiLanguageTypescript,
+  };
 
   constructor(
     public componentDataService: ComponentDataService,

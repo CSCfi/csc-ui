@@ -307,12 +307,8 @@ export class CInput {
   );
 
   private _calculateElementWidths() {
-    setTimeout(() => {
-      this.labelWidth = !!this.label
-        ? this._labelRef.scrollWidth * 0.75 + 6
-        : 0;
-      this.preSlotWidth = this.inputField.offsetLeft;
-    }, 100);
+    this.labelWidth = !!this.label ? this._labelRef.scrollWidth * 0.75 + 6 : 0;
+    this.preSlotWidth = this.inputField.offsetLeft;
   }
 
   private _handleValidation(valid: boolean, timeout = 200) {

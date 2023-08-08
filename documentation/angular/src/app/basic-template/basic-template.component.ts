@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-
+import { mdiXml, mdiHome, mdiAlarm, mdiLogout } from '@mdi/js';
 @Component({
   selector: 'app-basic-template',
   templateUrl: './basic-template.component.html',
   styleUrls: ['./basic-template.component.scss'],
 })
 export class BasicTemplateComponent implements OnInit {
+  icons = {
+    mdiXml,
+    mdiHome,
+    mdiAlarm,
+    mdiLogout,
+  };
+
   template = `<c-main>
   <c-toolbar>
     <c-csc-logo></c-csc-logo>

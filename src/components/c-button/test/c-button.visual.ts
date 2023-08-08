@@ -95,11 +95,15 @@ test('Fitted', async ({ page }) => {
 });
 
 test('With icon', async ({ page }) => {
-  let button = page.getByRole('button', { name: '󰍂 Login' }).first();
+  let button = page.getByRole('button', { name: 'Login' }).first();
 
   await expect(button).toHaveScreenshot();
 
-  button = page.getByRole('button', { name: '󰍂 Login' }).nth(2);
+  button = page.getByRole('button', { name: 'Login' }).nth(2);
+
+  await expect(button).toHaveScreenshot();
+
+  button = page.getByRole('button', { name: 'Next' });
 
   await expect(button).toHaveScreenshot();
 });

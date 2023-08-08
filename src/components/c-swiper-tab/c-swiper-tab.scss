@@ -41,6 +41,7 @@
   }
 
   &__content {
+    --c-color: var(--csc-primary);
     border-radius: 4px;
     background-color: var(--csc-primary-ghost);
     color: var(--csc-primary);
@@ -71,6 +72,7 @@
 
   &--disabled {
     #{$this}__content {
+      --c-color: var(--csc-mid-grey);
       background: var(--csc-lightest-grey);
       color: var(--csc-mid-grey);
       cursor: default !important;
@@ -81,6 +83,7 @@
   &--active {
     #{$this}__content {
       background-color: var(--csc-primary);
+      --c-color: #fff;
       color: #fff;
       pointer-events: none;
 

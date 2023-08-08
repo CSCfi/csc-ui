@@ -16,7 +16,7 @@
   component="c-text-field"
 >
   <c-text-field placeholder="Text field with a shadow" shadow autocapitalize="words">
-    <i class="mdi mdi-magnify" slot="pre"></i>
+    <c-icon [path]="mdiMagnify" slot="pre" size="16"></c-icon>
 
     <c-tag slot="post" active>12</c-tag>
   </c-text-field>
@@ -56,7 +56,7 @@
           required
           cControl
         >
-          <i class="mdi mdi-star" slot="pre"></i>
+          <c-icon [path]="mdiStar" slot="pre" size="16"></c-icon>
         </c-text-field>
 
         <c-text-field

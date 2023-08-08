@@ -22,6 +22,7 @@ button.icon-button {
   line-height: normal;
 
   ::slotted(svg),
+  ::slotted(c-icon),
   ::slotted(i),
   ::slotted(span) {
     width: 24px;
@@ -40,6 +41,12 @@ button.icon-button {
     width: 32px;
     height: 32px;
 
+    ::slotted(c-icon) {
+      width: 16px !important;
+      height: 16px !important;
+      font-size: 16px !important;
+    }
+
     ::slotted(svg),
     ::slotted(i),
     ::slotted(span) {
@@ -52,6 +59,12 @@ button.icon-button {
   &--x-small {
     width: 28px;
     height: 28px;
+
+    ::slotted(c-icon) {
+      width: 14px !important;
+      height: 14px !important;
+      font-size: 14px !important;
+    }
 
     ::slotted(svg),
     ::slotted(i),
