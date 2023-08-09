@@ -1,5 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 import { items } from './items';
+import { sleep } from '../../../utils/test/sleep';
 
 describe('c-radio-group', () => {
   it('renders correctly', async () => {
@@ -42,10 +43,12 @@ describe('c-radio-group', () => {
 
     await page.waitForChanges();
 
-    expect(page).toMatchSnapshot();
+    await sleep(200);
 
-    // const errorMessage = await page.find(
-    //   'c-radio-group >>> .c-radio__message--error',
-    // );
+    const errorMessage = await page.find(
+      'c-radio-group >>> div .c-radio__message >>> span',
+    );
+
+    expect(errorMessage.innerText).toContain('Required');
   });
 });
