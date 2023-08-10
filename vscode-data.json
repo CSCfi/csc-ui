@@ -553,10 +553,6 @@
           "description": "Fill color"
         },
         {
-          "name": "inherit-color",
-          "description": "Inherit parent color"
-        },
-        {
           "name": "path",
           "description": "Svg path d attribute value"
         },

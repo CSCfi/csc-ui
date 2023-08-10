@@ -457,10 +457,6 @@ export namespace Components {
          */
         "color": any;
         /**
-          * Inherit parent color
-         */
-        "inheritColor": boolean;
-        /**
           * Svg path d attribute value
          */
         "path": string;
@@ -2627,10 +2623,6 @@ declare namespace LocalJSX {
           * Fill color
          */
         "color"?: any;
-        /**
-          * Inherit parent color
-         */
-        "inheritColor"?: boolean;
         /**
           * Svg path d attribute value
          */

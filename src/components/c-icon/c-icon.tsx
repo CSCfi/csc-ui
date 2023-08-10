@@ -26,17 +26,8 @@ export class CIcon {
    */
   @Prop() color = null;
 
-  /**
-   * Inherit parent color
-   */
-  @Prop() inheritColor = true;
-
   render() {
-    let color = this.inheritColor ? 'currentColor' : 'var(--csc-primary)';
-
-    if (this.color) {
-      color = this.color;
-    }
+    const color = this.color || 'currentColor';
 
     return (
       <Host style={{ height: `${this.size}px` }}>
