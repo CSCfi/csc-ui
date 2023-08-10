@@ -116,18 +116,7 @@
   background-color: var(--c-hover-background);
 }
 
-// :host(:host:focus) {
-//   outline: 2px var(--c-outline-color) solid;
-//   outline-offset: 2px;
-// }
-
 :host(:host:focus:not(:host:focus-visible)) { outline: none }
-
-// @supports selector(:host:focus-visible) {
-//   :host(:host:focus) {
-//     outline: none;
-//   }
-// }
 
 :host(:host:focus-visible) {
   outline: 2px var(--c-outline-color) solid;

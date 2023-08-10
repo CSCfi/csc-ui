@@ -144,9 +144,11 @@ export class CButton {
 
   private _onKeyDown = (event: KeyboardEvent) => {
     if (['Space', 'Enter'].includes(event.code)) {
-      if (!this.href) {
-        event.preventDefault();
+      if (!!this.href) {
+        window.open(this.href, this.target);
       }
+
+      event.preventDefault();
 
       this._onClick(event, true);
     }
@@ -237,12 +239,15 @@ export class CButton {
 
     const Tag = !!this.href ? 'a' : 'button';
 
+    const hostAttributes = {
+      onKeyDown: this._onKeyDown,
+    };
+
     const attributes = {
       id: this.hostId,
       class: buttonClasses,
       tabindex: this.disabled ? -1 : 0,
       disabled: this.disabled,
-      onKeyDown: this._onKeyDown,
       onClick: this._onClick,
     };
 
@@ -263,8 +268,13 @@ export class CButton {
     );
 
     return (
-      <Host class={hostClasses}>
-        <Tag {...attributes} {...linkAttributes}>
+      <Host
+        class={hostClasses}
+        tabindex={!!this.disabled ? '-1' : '0'}
+        role="button"
+        {...hostAttributes}
+      >
+        <Tag {...attributes} {...linkAttributes} tabindex="-1">
           <div
             class={contentClasses}
             ref={(el) => (this._container = el as HTMLDivElement)}
