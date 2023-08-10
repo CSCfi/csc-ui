@@ -202,16 +202,10 @@ export class CButton {
     const contentClasses = {
       'c-button': true,
       'c-button--description': this._containerhasDescriptionSlot,
-      'c-button--disabled': !!this.disabled,
       'c-button--fitted': !!this.fit,
-      'c-button--ghost': !!this.ghost,
       'c-button--large': this.size === 'large',
       'c-button--no-radius': !!this.noRadius,
-      'c-button--outlined': !!this.outlined,
       'c-button--small': this.size === 'small',
-      'c-button--text': !!this.text,
-      'c-button--grouped': this.grouped,
-      'c-button--inverted': this.inverted,
     };
 
     const innerClasses = {
@@ -221,13 +215,19 @@ export class CButton {
 
     const buttonClasses = {
       fit: !!this.fit,
-      'no-radius': !!this.noRadius,
       grouped: this.grouped,
+      outlined: this.outlined,
     };
 
     const hostClasses = {
       'c-button--active': this.grouped && !this.outlined,
+      'no-radius': !!this.noRadius,
+      disabled: !!this.disabled,
+      ghost: !!this.ghost,
+      grouped: this.grouped,
       inverted: this.inverted,
+      outlined: this.outlined,
+      text: !!this.text,
     };
 
     const descriptionSlotClasses = {
@@ -241,7 +241,6 @@ export class CButton {
       id: this.hostId,
       class: buttonClasses,
       tabindex: this.disabled ? -1 : 0,
-      role: 'button',
       disabled: this.disabled,
       onKeyDown: this._onKeyDown,
       onClick: this._onClick,

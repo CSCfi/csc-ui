@@ -1,11 +1,142 @@
 :host {
+  --c-background-color: var(--csc-primary);
+  --c-color: #fff;
+  --c-hover-background: var(--csc-primary-hover);
   --c-outline-color: var(--csc-primary);
+  --c-radius: 4px;
 
+  --c-tab-button-background: #fff;
+
+  background-color: var(--c-background-color);
+  border-radius: var(--c-radius);
+  color: var(--c-color);
   display: inline-flex;
+  overflow: hidden;
+  transform: translateZ(0); // Safari border-radius fix
+  transition: background-color 0.3s ease-in-out;
+}
+
+:host(.grouped),
+:host(.no-radius) {
+  --c-radius: 0;
+}
+
+:host(.ghost) {
+  --c-background-color: var(--csc-primary-ghost);
+  --c-color: var(--csc-primary);
+  --c-hover-background: var(--csc-primary-ghost-hover);
+}
+
+:host(.ghost.inverted) {
+  --c-background-color: rgba(255, 255, 255, 0.15);
+  --c-color: #fff;
+  --c-hover-background: rgba(255, 255, 255, 0.25);
+}
+
+:host(.ghost.disabled) {
+  --c-background-color: var(--csc-lightest-grey);
+  --c-hover-background: var(--csc-lightest-grey);
+}
+
+:host(.disabled) {
+  --c-color: var(--csc-mid-grey) !important;
+  --c-background-color: var(--csc-light-grey);
+  --c-hover-background: var(--csc-light-grey);
+}
+
+:host(.disabled.outlined) {
+  --c-background-color: transparent;
+  --c-hover-background: transparent;
+  --c-color: var(--csc-mid-grey);
+}
+
+:host(.disabled.grouped) {
+  box-shadow: none !important;
+}
+
+:host(.disabled.grouped:not(.outlined)) {
+  box-shadow: none;
 }
 
 :host(.inverted) {
+  --c-background-color: #fff;
+  --c-color: var(--csc-primary);
+  --c-hover-background: rgba(255, 255, 255, 0.85);
   --c-outline-color: #fff;
+}
+
+:host(.outlined) {
+  --c-background-color: transparent;
+  --c-color: var(--csc-primary);
+  --c-hover-background: var(--csc-primary-text-hover);
+}
+
+:host(.outlined.inverted) {
+  --c-color: #fff;
+  --c-hover-background: rgba(255, 255, 255, 0.15);
+}
+
+:host(.outlined.disabled) {
+  --c-background-color: transparent;
+  --c-hover-background: transparent;
+}
+
+:host(.outlined.grouped) {
+  --c-background-color: #fff;
+  --c-hover-background: var(--csc-primary-text-hover);
+}
+
+:host(.text) {
+  --c-background-color: transparent;
+  --c-color: var(--csc-primary);
+  --c-hover-background: var(--csc-primary-text-hover);
+}
+
+:host(.text.inverted) {
+  --c-color: #fff;
+  --c-hover-background: rgba(255, 255, 255, 0.15);
+}
+
+:host(.text.disabled) {
+  --c-background-color: transparent;
+  --c-hover-background: transparent;
+}
+
+:host(.text.inverted.disabled) {
+  --c-color: rgba(255, 255, 255, 0.56) !important;
+}
+
+:host(.c-button--active) {
+  --c-color: rgba(255, 255, 255, 1);
+}
+
+:host(:host:hover) {
+  --c-tab-button-background: var(--csc-primary-text-hover);
+
+  background-color: var(--c-hover-background);
+}
+
+// :host(:host:focus) {
+//   outline: 2px var(--c-outline-color) solid;
+//   outline-offset: 2px;
+// }
+
+:host(:host:focus:not(:host:focus-visible)) { outline: none }
+
+// @supports selector(:host:focus-visible) {
+//   :host(:host:focus) {
+//     outline: none;
+//   }
+// }
+
+:host(:host:focus-visible) {
+  outline: 2px var(--c-outline-color) solid;
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+:host(:host.grouped:focus-visible) {
+  outline-offset: 4px;
 }
 
 ::slotted([slot='icon']) {
@@ -22,43 +153,25 @@ a {
 
 button,
 a {
-  &:not(.grouped) {
-    --c-radius: 4px;
-  }
-
-  &.no-radius {
-    --c-radius: 0;
-  }
-
+  background-color: transparent;
+  color: currentColor;
   font-family: var(--csc-font-family);
   display: flex;
   border: none;
   padding: 0;
-  background: transparent;
-  border-radius: var(--c-radius);
   position: relative;
-  overflow: hidden;
   margin: 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 
-  &:focus {
-    outline: 2px var(--c-outline-color) solid;
-    outline-offset: 2px;
-  }
-
-  @supports selector(:focus-visible) {
-    &:focus {
-      outline: none;
-    }
-  }
-
-  &:focus-visible {
-    outline: 2px var(--c-outline-color) solid;
-    outline-offset: 2px;
+  &:disabled {
+    cursor: default;
   }
 
   &.grouped {
     flex: 1;
-    transform: translateZ(0); // Safari border-radius fix
+    text-align: center;
 
     &:focus,
     &:focus-visible {
@@ -70,6 +183,32 @@ a {
   &.fit {
     flex-grow: 1 !important;
     width: 100%;
+  }
+
+  &.outlined {
+    border-radius: var(--c-radius);
+    box-shadow: inset 0 0 0 2px var(--c-color);
+
+    &.grouped {
+      box-shadow: none;
+
+      &::before,
+      &::after {
+        background-color: #fff;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: background-color 0.3s ease-in-out;
+        width: 100%;
+        z-index: -1;
+      }
+
+      &:hover {
+        background-color: var(--c-tab-button-background);
+      }
+    }
   }
 }
 
@@ -93,17 +232,12 @@ a {
   --c-height: 44px;
   --c-padding: 0 16px;
   --c-font-size: 16px;
-  --c-background-color: var(--csc-primary);
-  --c-color: #fff;
-  --c-hover-background: var(--csc-primary-hover);
   --c-button-icon-size: 24px;
 
   $this: &;
 
-  background-color: var(--c-background-color);
   border-radius: var(--c-radius);
   position: relative;
-  cursor: pointer;
   box-shadow: none;
   outline: none;
   backface-visibility: hidden;
@@ -113,7 +247,7 @@ a {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transition: background-color 0.3s;
-  color: var(--c-color);
+  color: currentColor;
   margin: 0;
   text-decoration: none;
   display: inline-block;
@@ -146,16 +280,6 @@ a {
     }
   }
 
-  &:hover {
-    background-color: var(--c-hover-background);
-  }
-
-  &--inverted {
-    --c-background-color: #fff;
-    --c-color: var(--csc-primary);
-    --c-hover-background: rgba(255, 255, 255, 0.85);
-  }
-
   &--small {
     --c-height: 28px;
     --c-padding: 0 12px;
@@ -167,113 +291,6 @@ a {
     --c-height: 52px;
     --c-padding: 0 24px;
     --c-font-size: 18px;
-  }
-
-  &--ghost {
-    --c-background-color: var(--csc-primary-ghost);
-    --c-color: var(--csc-primary);
-    --c-hover-background: var(--csc-primary-ghost-hover);
-
-    &#{$this} {
-      &--inverted {
-        --c-background-color: rgba(255, 255, 255, 0.15);
-        --c-color: #fff;
-        --c-hover-background: rgba(255, 255, 255, 0.25);
-      }
-
-      &--disabled {
-        --c-background-color: var(--csc-lightest-grey);
-        --c-hover-background: var(--csc-lightest-grey);
-      }
-    }
-  }
-
-  &--text {
-    --c-background-color: transparent;
-    --c-color: var(--csc-primary);
-    --c-hover-background: var(--csc-primary-text-hover);
-
-    &#{$this} {
-      &--inverted {
-        --c-color: #fff;
-        --c-hover-background: rgba(255, 255, 255, 0.15);
-      }
-
-      &--disabled {
-        --c-background-color: transparent;
-        --c-hover-background: transparent;
-      }
-    }
-  }
-
-  &--outlined {
-    --c-background-color: transparent;
-    --c-color: var(--csc-primary);
-    --c-hover-background: var(--csc-primary-text-hover);
-
-    box-shadow: inset 0 0 0 2px var(--c-color);
-
-    &#{$this} {
-      &--inverted {
-        --c-color: #fff;
-        --c-hover-background: rgba(255, 255, 255, 0.15);
-      }
-
-      &--disabled {
-        --c-background-color: transparent;
-        --c-hover-background: transparent;
-      }
-
-      &--grouped {
-        --c-background-color: #fff;
-        --c-hover-background: var(--csc-primary-text-hover);
-
-        &::before,
-        &::after {
-          background-color: #fff;
-          content: '';
-          height: 100%;
-          left: 0;
-          position: absolute;
-          top: 0;
-          transition: background-color 0.3s ease-in-out;
-          width: 100%;
-          z-index: -1;
-        }
-
-        &:hover {
-          background-color: #fff;
-
-          &::after {
-            background-color: var(--csc-primary-text-hover);
-          }
-        }
-      }
-    }
-  }
-
-  &--disabled {
-    --c-color: var(--csc-mid-grey);
-    --c-background-color: var(--csc-light-grey);
-    --c-hover-background: var(--csc-light-grey);
-
-    cursor: default !important;
-    pointer-events: none;
-
-    &.outlined {
-      --c-background-color: transparent;
-      --c-hover-background: transparent;
-      --c-color: var(--csc-mid-grey);
-    }
-
-    &.grouped {
-      box-shadow: none !important;
-
-      &:not(.outlined) {
-        color: var(--csc-dark-grey) !important;
-        box-shadow: none;
-      }
-    }
   }
 
   &--no-radius {
@@ -313,7 +330,7 @@ a {
     padding: 0 12px 12px;
 
     &--loading {
-      opacity: 0.5;
+      opacity: 0.8;
     }
   }
 }
