@@ -24,15 +24,13 @@ export class CIcon {
   /**
    * Fill color
    */
-  @Prop() color = null;
+  @Prop() color = 'currentColor';
 
   render() {
-    const color = this.color || 'currentColor';
-
     return (
       <Host style={{ height: `${this.size}px` }}>
         <svg width={this.size} height={this.size} viewBox="0 0 24 24">
-          <path d={this.path} style={{ fill: color }} />
+          <path d={this.path} style={{ fill: this.color }} />
         </svg>
       </Host>
     );

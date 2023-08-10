@@ -455,7 +455,7 @@ export namespace Components {
         /**
           * Fill color
          */
-        "color": any;
+        "color": string;
         /**
           * Svg path d attribute value
          */
@@ -2622,7 +2622,7 @@ declare namespace LocalJSX {
         /**
           * Fill color
          */
-        "color"?: any;
+        "color"?: string;
         /**
           * Svg path d attribute value
          */
