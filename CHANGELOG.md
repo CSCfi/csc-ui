@@ -1,3 +1,17 @@
+# v0.6.78 (Mon Aug 14 2023)
+
+#### 🐛 Bug Fix
+
+- Merge current version to master [#203](https://github.com/CSCfi/csc-ui/pull/203) ([@villeerikssoncsc](https://github.com/villeerikssoncsc) [@csckata](https://github.com/csckata) [@razorfever](https://github.com/razorfever))
+
+#### Authors: 3
+
+- [@csckata](https://github.com/csckata)
+- [@villeerikssoncsc](https://github.com/villeerikssoncsc)
+- Oskari Väistö ([@razorfever](https://github.com/razorfever))
+
+---
+
 # v0.6.77 (Tue Mar 28 2023)
 
 #### 🐛 Bug Fix
