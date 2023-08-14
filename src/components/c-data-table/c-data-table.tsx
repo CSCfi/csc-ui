@@ -563,11 +563,26 @@ export class CDataTable {
     });
 
     this._sortedData = sorted.map((row) => {
-      const { _hiddenData, ...rowData } = row;
+      const { _hiddenData, ..._rowData } = row;
+
+      const hiddenData = _hiddenData.reduce((items, item) => {
+        items[item.id] = item.value.formattedValue || item.value.value;
+
+        return items;
+      }, {});
+
+      const rowData = Object.entries(_rowData).reduce(
+        (items, [key, item]: [string, CDataTableDataItem]) => {
+          items[key] = item.formattedValue || item.value;
+
+          return items;
+        },
+        {},
+      );
 
       return {
         ...rowData,
-        ..._hiddenData,
+        ...hiddenData,
       };
     });
 
