@@ -50,6 +50,16 @@ Type: `Promise<void>`
 
 
 
+### `getData() => Promise<CDataTableDataItem[]>`
+
+Provide sorted data
+
+#### Returns
+
+Type: `Promise<CDataTableDataItem[]>`
+
+
+
 
 ## Dependencies
 

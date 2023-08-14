@@ -209,6 +209,8 @@ export class CDataTable {
 
   private _isVisible = false;
 
+  private _sortedData: CDataTableDataItem[] = [];
+
   @Watch('hiddenHeaders')
   onHiddenHeaderChange() {
     this._getData();
@@ -244,6 +246,14 @@ export class CDataTable {
   async clearSelections() {
     this._selections = [];
     this._emitChange();
+  }
+
+  /**
+   * Provide sorted data
+   */
+  @Method()
+  async getData() {
+    return this._sortedData;
   }
 
   componentWillLoad() {
@@ -550,6 +560,15 @@ export class CDataTable {
 
         return valueB - valueA;
       }
+    });
+
+    this._sortedData = sorted.map((row) => {
+      const { _hiddenData, ...rowData } = row;
+
+      return {
+        ...rowData,
+        ..._hiddenData,
+      };
     });
 
     return !this.hideFooter
