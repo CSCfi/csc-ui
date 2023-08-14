@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-container renders custom width 1`] = `
+<c-container width="500" style="max-width: 500px;">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-container>
+`;
+
+exports[`c-container renders default html 1`] = `
+<c-container>
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</c-container>
+`;

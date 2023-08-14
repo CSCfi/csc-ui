@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 /**
  * @group Other
@@ -9,6 +9,8 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class CIcon {
+  @Element() host: HTMLCIconElement;
+
   /**
    * Svg path d attribute value
    */
@@ -22,7 +24,7 @@ export class CIcon {
   /**
    * Fill color
    */
-  @Prop() color = 'var(--csc-primary)';
+  @Prop() color = 'currentColor';
 
   render() {
     return (

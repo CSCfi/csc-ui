@@ -40,6 +40,7 @@ export class CDataTableComponent implements OnInit {
               tag: 'c-icon',
               params: {
                 path: mdiFlag,
+                color: 'var(--csc-primary)',
               },
             },
           },

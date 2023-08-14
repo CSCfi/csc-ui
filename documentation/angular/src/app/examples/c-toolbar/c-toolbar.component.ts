@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { mdiEmailOutline } from '@mdi/js';
 @Component({
   selector: 'app-c-toolbar',
   templateUrl: './c-toolbar.component.html',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CToolbarComponent implements OnInit {
   constructor() {}
+
+  mdiEmailOutline = mdiEmailOutline;
 
   ngOnInit(): void {}
 

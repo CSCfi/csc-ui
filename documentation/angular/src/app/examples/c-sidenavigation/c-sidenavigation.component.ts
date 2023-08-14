@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mdiAlarm, mdiHome, mdiLogout } from '@mdi/js';
 
 @Component({
   selector: 'app-c-sidenavigation',
@@ -10,11 +11,11 @@ export class CSidenavigationComponent implements OnInit {
   items = [
     {
       title: 'Home',
-      icon: 'mdi-home',
+      icon: mdiHome,
     },
     {
       title: 'Something',
-      icon: 'mdi-alarm',
+      icon: mdiAlarm,
       subs: [
         {
           title: 'Link to CSC website',
@@ -23,7 +24,7 @@ export class CSidenavigationComponent implements OnInit {
     },
     {
       title: 'Logout',
-      icon: 'mdi-logout',
+      icon: mdiLogout,
     },
   ];
 

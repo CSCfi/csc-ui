@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 
 @Component({
   selector: 'app-c-steps',
@@ -9,6 +10,10 @@ export class CStepsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  mdiChevronLeft = mdiChevronLeft;
+
+  mdiChevronRight = mdiChevronRight;
 
   // @example-start|angular
   step = 1;

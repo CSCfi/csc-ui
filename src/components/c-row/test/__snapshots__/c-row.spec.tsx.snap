@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-row renders alignment:center 1`] = `
+<c-row align="center">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-center c-row--justify-start" style="--row-gap: 0px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders alignment:end 1`] = `
+<c-row align="end">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-end c-row--justify-start" style="--row-gap: 0px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders alignment:start 1`] = `
+<c-row align="start">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-start c-row--justify-start" style="--row-gap: 0px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders custom gap 1`] = `
+<c-row align="center" gap="5">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-center c-row--justify-start" style="--row-gap: 5px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders default html 1`] = `
+<c-row>
+  <mock:shadow-root>
+    <div class="c-row c-row--align-start c-row--justify-start" style="--row-gap: 0px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders disable flex wrapping 1`] = `
+<c-row align="start" gap="3" justify="start" nowrap="true">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-start c-row--justify-start c-row--nowrap" style="--row-gap: 3px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders justification:center 1`] = `
+<c-row align="center" gap="5" justify="center">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-center c-row--justify-center" style="--row-gap: 5px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders justification:end 1`] = `
+<c-row align="end" gap="5" justify="end">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-end c-row--justify-end" style="--row-gap: 5px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders justification:space-around 1`] = `
+<c-row align="center" gap="5" justify="space-around">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-center c-row--justify-space-around" style="--row-gap: 5px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders justification:space-between 1`] = `
+<c-row align="center" gap="5" justify="space-between">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-center c-row--justify-space-between" style="--row-gap: 5px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;
+
+exports[`c-row renders justification:start 1`] = `
+<c-row align="start" gap="3" justify="start">
+  <mock:shadow-root>
+    <div class="c-row c-row--align-start c-row--justify-start" style="--row-gap: 3px;">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="">
+    <c-button>
+      Button
+    </c-button>
+    <c-button>
+      Button
+    </c-button>
+  </div>
+</c-row>
+`;

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-card-actions align: end 1`] = `
+<c-card-actions align="end">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-end c-card-actions--justify-start">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions align: start 1`] = `
+<c-card-actions align="start">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-start c-card-actions--justify-start">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions custom align: baseline 1`] = `
+<c-card-actions align="baseline">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-baseline c-card-actions--justify-start">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions custom align: stretch 1`] = `
+<c-card-actions align="stretch">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-stretch c-card-actions--justify-start">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions justify: center 1`] = `
+<c-card-actions justify="center">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-center c-card-actions--justify-center">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions justify: end 1`] = `
+<c-card-actions justify="end">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-center c-card-actions--justify-end">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions justify: space-around 1`] = `
+<c-card-actions justify="space-around">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-center c-card-actions--justify-space-around">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions justify: space-between 1`] = `
+<c-card-actions justify="space-between">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-center c-card-actions--justify-space-between">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions justify: stretch 1`] = `
+<c-card-actions justify="stretch">
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-center c-card-actions--justify-stretch">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;
+
+exports[`c-card-actions renders default html 1`] = `
+<c-card-actions>
+  <mock:shadow-root>
+    <div class="c-card-actions c-card-actions--align-center c-card-actions--justify-start">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</c-card-actions>
+`;

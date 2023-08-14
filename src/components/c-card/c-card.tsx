@@ -112,7 +112,6 @@ export class CCard {
           <c-icon-button
             aria-hidden="true"
             class="c-card__fullscreen-toggle"
-            size="small"
             title={this.isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
             text
             onClick={() => this._onFullscreen()}

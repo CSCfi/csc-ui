@@ -2,6 +2,7 @@ www/*
 dist/*
 node_modules/*
 .vscode/*
+.stencil/*
 
 # Automatically generated files
 docs.json
@@ -14,3 +15,6 @@ firebase-debug.log
 playground/**/node_modules
 .env
 yarn-error.log
+/test-results/
+/playwright-report/
+/playwright/.cache/

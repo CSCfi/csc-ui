@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-link add target-attribute 1`] = `
+<c-link target="_blank">
+  <mock:shadow-root>
+    <a target="_blank" style="color: var(--csc-link); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link add underline under the link 1`] = `
+<c-link underline="true">
+  <mock:shadow-root>
+    <a class="underline" style="color: var(--csc-link); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link custom weight 1`] = `
+<c-link weight="300">
+  <mock:shadow-root>
+    <a style="color: var(--csc-link); font-weight: 300;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link renders color: primary 1`] = `
+<c-link color="primary">
+  <mock:shadow-root>
+    <a style="color: var(--csc-primary); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link renders custom color 1`] = `
+<c-link color="#fc03e8">
+  <mock:shadow-root>
+    <a style="color: var(--csc-#fc03e8); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link renders default html 1`] = `
+<c-link>
+  <mock:shadow-root>
+    <a style="color: var(--csc-link); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link renders href-value 1`] = `
+<c-link href="www.csc.fi">
+  <mock:shadow-root>
+    <a href="www.csc.fi" style="color: var(--csc-link); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link renders icon position 1`] = `
+<c-link icon-after="true&quot;">
+  <mock:shadow-root>
+    <a class="icon-after" style="color: var(--csc-link); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link renders path to svg icon 1`] = `
+<c-link path="path-to-my-svg">
+  <mock:shadow-root>
+    <a class="icon" style="color: var(--csc-link); font-weight: 600;">
+      <slot name="icon">
+        <svg class="icon-by-path" height="18" viewBox="0 0 24 24" width="18" style="fill: var(--csc-link);">
+          <path d="path-to-my-svg"></path>
+        </svg>
+      </slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;
+
+exports[`c-link renders svg icons color 1`] = `
+<c-link icon-fill="warning">
+  <mock:shadow-root>
+    <a style="color: var(--csc-link); font-weight: 600;">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+</c-link>
+`;

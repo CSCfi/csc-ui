@@ -8,7 +8,6 @@ import {
   Listen,
 } from '@stencil/core';
 import { mdiChevronDown } from '@mdi/js';
-import { v4 as uuid } from 'uuid';
 import { CMenuCustomTrigger, CMenuOption } from '../../types';
 
 /**
@@ -86,7 +85,7 @@ export class CMenu {
     }
   }
 
-  private _uniqueId = `c-menu-items-${uuid()}`;
+  private static _uniqueId = 0;
 
   private _createWrapperElement() {
     const existingOverlay = document.querySelector('.c-menu-overlay__content');
@@ -186,7 +185,7 @@ export class CMenu {
     this.menuItemsComponent.small = this.small;
     this.menuItemsComponent.itemsPerPage = this.itemsPerPage;
     this.menuItemsComponent.top = bottom;
-    this.menuItemsComponent.id = this._uniqueId;
+    this.menuItemsComponent.id = `c-menu-items-${CMenu._uniqueId}`;
     this.menuItemsComponent.index = this.currentIndex;
     this.menuItemsComponent.setAttribute('tabindex', '-1');
     this.menuItemsComponent.setAttribute('role', 'listbox');
@@ -201,6 +200,10 @@ export class CMenu {
           ?.children[0] as HTMLLIElement
       )?.focus();
     }, 200);
+  }
+
+  componentWillLoad() {
+    CMenu._uniqueId += 1;
   }
 
   disconnectedCallback() {
@@ -219,7 +222,7 @@ export class CMenu {
         class="custom-menu-trigger"
         aria-expanded={this.active.toString()}
         aria-haspopup="listbox"
-        aria-controls={this._uniqueId}
+        aria-controls={`c-menu-items-${CMenu._uniqueId}`}
         onClick={() => this._onClick()}
       >
         {props.value}
@@ -244,7 +247,7 @@ export class CMenu {
           <button
             aria-expanded={this.active.toString()}
             aria-haspopup="listbox"
-            aria-controls={this._uniqueId}
+            aria-controls={`c-menu-items-${CMenu._uniqueId}`}
             class={{
               'c-menu-wrapper': !this.simple,
               simple: this.simple,

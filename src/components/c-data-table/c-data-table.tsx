@@ -122,12 +122,12 @@ export class CDataTable {
   /**
    * Sort data by
    */
-  @Prop() sortBy = null;
+  @Prop({ mutable: true }) sortBy = null;
 
   /**
    * Sorting direction
    */
-  @Prop() sortDirection: 'asc' | 'desc' | null = null;
+  @Prop({ mutable: true }) sortDirection: 'asc' | 'desc' | null = null;
 
   /**
    * Use sticky header
@@ -163,7 +163,7 @@ export class CDataTable {
 
   @State() _data: CDataTableDataItemPrivate[] = [];
 
-  @State() _isIntermediate = false;
+  @State() _isIndeterminate = false;
 
   @State() _isPaginationSimple = false;
 
@@ -209,14 +209,22 @@ export class CDataTable {
 
   private _isVisible = false;
 
+  private _sortedData: CDataTableDataItem[] = [];
+
   @Watch('hiddenHeaders')
-  onHeaderChange() {
+  onHiddenHeaderChange() {
     this._getData();
   }
 
   @Watch('data')
   onDataChange() {
     this._getData();
+    this._handleInitialHeaders();
+  }
+
+  @Watch('headers')
+  onHeaderChange() {
+    this._handleInitialHeaders();
   }
 
   @Watch('singleSelection')
@@ -227,7 +235,7 @@ export class CDataTable {
   @Watch('loading')
   onLoadingChange(loading: boolean) {
     if (!loading) {
-      this._setIntermediateStatus();
+      this._setIndeterminateStatus();
     }
   }
 
@@ -240,19 +248,20 @@ export class CDataTable {
     this._emitChange();
   }
 
+  /**
+   * Provide sorted data
+   */
+  @Method()
+  async getData() {
+    return this._sortedData;
+  }
+
   componentWillLoad() {
     this.sortBy = this.sortBy ?? this.headers[0].key;
     this.sortDirection = this.sortDirection ?? 'asc';
     this._getData();
 
-    this.initiallyHiddenHeaders = this.headers
-      .filter((header) => !!header.hidden)
-      .map((header) => header.key);
-
-    // Hide the initially hidden headers
-    this.hiddenHeaders = [
-      ...new Set([...this.hiddenHeaders, ...this.initiallyHiddenHeaders]),
-    ];
+    this._handleInitialHeaders();
   }
 
   componentDidLoad() {
@@ -311,6 +320,17 @@ export class CDataTable {
     this._lastCellIntersectionObserver?.disconnect();
   }
 
+  private _handleInitialHeaders() {
+    this.initiallyHiddenHeaders = this.headers
+      .filter((header) => !!header.hidden)
+      .map((header) => header.key);
+
+    // Hide the initially hidden headers
+    this.hiddenHeaders = [
+      ...new Set([...this.hiddenHeaders, ...this.initiallyHiddenHeaders]),
+    ];
+  }
+
   private _handleHeaderVisibility(
     header: HTMLElement,
     rootWidth: number,
@@ -357,8 +377,6 @@ export class CDataTable {
   private _handleResponsiveHeaders() {
     const { width: tableWidth } = this._tableElement.getBoundingClientRect();
     const { width: rootWidth, x } = this.element.getBoundingClientRect();
-    const footerWidth =
-      this._footerElement?.getBoundingClientRect()?.width || 0;
 
     if (this._debounce !== null) {
       clearTimeout(this._debounce);
@@ -376,6 +394,9 @@ export class CDataTable {
         }
 
         this._debounce = setTimeout(() => {
+          const footerWidth =
+            this._footerElement?.getBoundingClientRect()?.width || 0;
+
           if (rootWidth < footerWidth) {
             this.markedFooterWidth = footerWidth;
             this._isPaginationSimple = true;
@@ -508,9 +529,9 @@ export class CDataTable {
     this.selection.emit(this._selections);
   }
 
-  private _setIntermediateStatus() {
+  private _setIndeterminateStatus() {
     requestAnimationFrame(() => {
-      this._isIntermediate = this._isPageIntermediate();
+      this._isIndeterminate = this._isPageIndeterminate();
       this._refresh();
     });
   }
@@ -541,8 +562,20 @@ export class CDataTable {
       }
     });
 
-    return !!this.pagination && !this.hideFooter
-      ? sorted.slice(this.pagination.startFrom, this.pagination.endTo + 1)
+    this._sortedData = sorted.map((row) => {
+      const { _hiddenData, ...rowData } = row;
+
+      return {
+        ...rowData,
+        ..._hiddenData,
+      };
+    });
+
+    return !this.hideFooter
+      ? sorted.slice(
+          this.pagination?.startFrom ?? 0,
+          (this.pagination?.endTo ?? this.data.length) + 1,
+        )
       : sorted;
   }
 
@@ -588,7 +621,7 @@ export class CDataTable {
     return this._getSelectionsForPage().length > 0;
   }
 
-  private _isPageIntermediate() {
+  private _isPageIndeterminate() {
     const selectionsInPage = this._getSelectionsForPage();
 
     return (
@@ -626,7 +659,7 @@ export class CDataTable {
           ),
         ];
 
-        this._setIntermediateStatus();
+        this._setIndeterminateStatus();
         this._emitChange();
 
         this._tableElement;
@@ -643,7 +676,7 @@ export class CDataTable {
         ]),
       ];
 
-      this._setIntermediateStatus();
+      this._setIndeterminateStatus();
       this._emitChange();
     }, 200);
   }
@@ -660,7 +693,7 @@ export class CDataTable {
       ...event.detail,
     };
 
-    this._setIntermediateStatus();
+    this._setIndeterminateStatus();
 
     this._getData();
   }
@@ -685,7 +718,7 @@ export class CDataTable {
 
     this._emitChange();
 
-    this._setIntermediateStatus();
+    this._setIndeterminateStatus();
   }
 
   private _onSort(key: string) {
@@ -701,7 +734,7 @@ export class CDataTable {
 
     this._getData();
 
-    this._setIntermediateStatus();
+    this._setIndeterminateStatus();
     this._refresh();
   }
 
@@ -1128,7 +1161,7 @@ export class CDataTable {
                 <div class="selection--heading">
                   <c-checkbox
                     value={this._hasSelectionsOnPage()}
-                    intermediate={this._isIntermediate}
+                    indeterminate={this._isIndeterminate}
                     hide-details
                     onClick={(event: MouseEvent) =>
                       this._onHeadingSelection(event)

@@ -8,7 +8,6 @@ import {
   Prop,
   State,
 } from '@stencil/core';
-import { v4 as uuid } from 'uuid';
 import { mdiCalendar, mdiEye, mdiEyeOff } from '@mdi/js';
 
 /**
@@ -128,7 +127,7 @@ export class CTextField {
   @Prop() type: string;
 
   /**
-   * Set the validíty of the input
+   * Set the validity of the input
    */
   @Prop() valid = true;
 
@@ -177,15 +176,19 @@ export class CTextField {
 
   private _inputId: string;
 
-  private _uniqueId = uuid();
+  private static _uniqueId = 0;
 
   componentWillLoad() {
+    CTextField._uniqueId += 1;
+
     this._originalType = this.type;
 
-    this._inputId = `${(this.hostId || this.label || this.placeholder).replace(
-      /[^a-zA-Z0-9-_]/g,
-      '',
-    )}_${this._uniqueId}`;
+    this._inputId = `${(
+      this.hostId ||
+      this.label ||
+      this.placeholder ||
+      ''
+    ).replace(/[^a-zA-Z0-9-_]/g, '')}_${CTextField._uniqueId}`;
   }
 
   get isActive() {
@@ -245,8 +248,8 @@ export class CTextField {
     const textInput = (
       <input
         class={props.classes}
-        {...props.shared}
         {...props.input}
+        {...props.shared}
         ref={(el) => (this._inputElement = el)}
       />
     );

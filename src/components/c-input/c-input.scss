@@ -23,6 +23,8 @@
 }
 
 .c-input {
+  --c-color: rgba(0, 0, 0, 0.87);
+
   $this: &;
 
   --c-input-border-width: 1px;
@@ -325,6 +327,7 @@
   &:focus-within,
   &:not(.c-input--disabled):active {
     --c-input-border-width: 2px;
+    --c-color: var(--csc-primary);
 
     color: var(--csc-primary);
 

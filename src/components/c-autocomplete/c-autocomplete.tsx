@@ -12,7 +12,6 @@ import {
   Method,
 } from '@stencil/core';
 import { mdiChevronDown, mdiAlert } from '@mdi/js';
-import { v4 as uuid } from 'uuid';
 import { CAutocompleteItem } from '../../types';
 
 /**
@@ -167,7 +166,7 @@ export class CAutocomplete {
 
   private _inputId: string;
 
-  private _uniqueId = uuid();
+  private static _uniqueId = 0;
 
   private _direction = null;
 
@@ -368,7 +367,12 @@ export class CAutocomplete {
   }
 
   componentWillLoad() {
-    this._id = this.hostId?.replace(/[^a-zA-Z0-9-_]/g, '') ?? this._uniqueId;
+    CAutocomplete._uniqueId += 1;
+
+    this._id =
+      this.hostId?.replace(/[^a-zA-Z0-9-_]/g, '') ??
+      CAutocomplete._uniqueId.toString();
+
     this._inputId =
       'input_' +
       (this.hostId || this.label || this.placeholder).replace(

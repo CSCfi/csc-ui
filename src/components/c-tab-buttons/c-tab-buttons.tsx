@@ -22,7 +22,7 @@ export class CTabButtons {
   /**
    * Value of tab buttons
    */
-  @Prop({ mutable: true }) value!: number | string;
+  @Prop({ mutable: true }) value: number | string = 0;
 
   /**
    * Always require a selection
@@ -90,9 +90,6 @@ export class CTabButtons {
   }
 
   componentDidLoad() {
-    // use 0 as value if nothing is provided
-    this.value = this.value ?? 0;
-
     this._isIndexBased = this.buttons.every(
       (button) => typeof button.value === 'undefined',
     );

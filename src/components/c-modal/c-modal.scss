@@ -45,6 +45,7 @@
   transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.5, 1);
   opacity: 0;
   pointer-events: none;
+  backdrop-filter: blur(4px);
 
   &--hide {
     visibility: hidden;

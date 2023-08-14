@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-tag renders active tag 1`] = `
+<c-tag active="true" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="active c-tag">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag renders badge 1`] = `
+<c-tag badge="2" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag c-tag--badge">
+      <div class="row">
+        <div class="badge">
+          2
+        </div>
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag renders closeable tag 1`] = `
+<c-tag closeable="true" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag c-tag--closeable">
+      <div class="row">
+        <slot></slot>
+        <svg viewBox="0 0 24 24">
+          <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" fill="currentColor"></path>
+        </svg>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag renders default html 1`] = `
+<c-tag role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag renders fit tag 1`] = `
+<c-tag class="fit" fit="true" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;
+
+exports[`c-tag renders flat tag 1`] = `
+<c-tag class="flat" flat="true" tabindex="0">
+  <mock:shadow-root>
+    <div class="c-tag flat">
+      <div class="row">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</c-tag>
+`;

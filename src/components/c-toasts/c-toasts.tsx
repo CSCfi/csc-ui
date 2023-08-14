@@ -8,7 +8,6 @@ import {
   State,
 } from '@stencil/core';
 import { CToastMessage, CToastPosition, CToastType } from '../../types';
-import { v4 as uuid } from 'uuid';
 
 /**
  * @group Popups
@@ -38,6 +37,8 @@ export class CToasts {
 
   @State() messages: CToastMessage[] = [];
 
+  private static _uniqueId = 0;
+
   private _getDefaultOptions = () => ({
     type: CToastType.Info,
     duration: 6000,
@@ -45,7 +46,7 @@ export class CToasts {
     indeterminate: false,
     position: CToastPosition.Fixed,
     progress: true,
-    id: uuid(),
+    id: `c-toast-item-${CToasts._uniqueId}`,
   });
 
   /**
@@ -114,6 +115,10 @@ export class CToasts {
         {message.custom && <slot />}
       </c-toast>
     );
+  }
+
+  componentWillLoad() {
+    CToasts._uniqueId += 1;
   }
 
   render() {

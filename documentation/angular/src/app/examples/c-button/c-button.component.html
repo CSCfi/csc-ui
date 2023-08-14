@@ -36,6 +36,7 @@
     <c-button inverted outlined>Outlined</c-button>
     <c-button inverted ghost>Ghost</c-button>
     <c-button inverted text>Text</c-button>
+    <c-button inverted text disabled>Text</c-button>
   </c-row>
 </app-example>
 
@@ -52,19 +53,19 @@
 
 <app-example title="With icon" name="icon" component="c-button" cols>
   <c-button>
-    <i class="mdi mdi-login" slot="icon"></i>
+    <c-icon [path]="mdiLogin" slot="icon"></c-icon>
     Login
   </c-button>
   <c-button loading>
-    <i class="mdi mdi-login" slot="icon"></i>
+    <c-icon [path]="mdiLogin" slot="icon"></c-icon>
     Login
   </c-button>
   <c-button disabled>
-    <i class="mdi mdi-login" slot="icon"></i>
+    <c-icon [path]="mdiLogin" slot="icon"></c-icon>
     Login
   </c-button>
   <c-button text icon-end>
-    <i class="mdi mdi-arrow-right" slot="icon"></i>
+    <c-icon [path]="mdiArrowRight" slot="icon"></c-icon>
     Next
   </c-button>
 </app-example>
@@ -173,14 +174,6 @@
   </c-button>
 
   <c-button size="large">
-    standard.medium
-    <div slot="description">
-      <div>80 GB storage</div>
-      <div>4 GB RAM | 3 CPU</div>
-    </div>
-  </c-button>
-
-  <c-button size="large" loading>
     standard.medium
     <div slot="description">
       <div>80 GB storage</div>

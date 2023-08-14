@@ -5,10 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
+import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableDataItem, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
 import { CardBackground } from "./components/c-card/c-card";
 import { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
-export { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
+export { CAlertType, CAutocompleteItem, CDataTableData, CDataTableDataItem, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
 export { CardBackground } from "./components/c-card/c-card";
 export { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
 export namespace Components {
@@ -316,9 +316,9 @@ export namespace Components {
          */
         "hint": string;
         /**
-          * Intermediate state
+          * Indeterminate state
          */
-        "intermediate": boolean;
+        "indeterminate": boolean;
         /**
           * Element label
          */
@@ -328,7 +328,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -385,6 +385,10 @@ export namespace Components {
           * Items per page options
          */
         "footerOptions": CDataTableFooterOptions;
+        /**
+          * Provide sorted data
+         */
+        "getData": () => Promise<CDataTableDataItem[]>;
         /**
           * Headers of the table
          */
@@ -960,7 +964,7 @@ export namespace Components {
          */
         "returnValue": false;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -1055,7 +1059,7 @@ export namespace Components {
          */
         "shadow": boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -1420,7 +1424,7 @@ export namespace Components {
          */
         "type": string;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid": boolean;
         /**
@@ -2467,9 +2471,9 @@ declare namespace LocalJSX {
          */
         "hint"?: string;
         /**
-          * Intermediate state
+          * Indeterminate state
          */
-        "intermediate"?: boolean;
+        "indeterminate"?: boolean;
         /**
           * Element label
          */
@@ -2483,7 +2487,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**
@@ -3158,7 +3162,7 @@ declare namespace LocalJSX {
          */
         "returnValue"?: false;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**
@@ -3257,7 +3261,7 @@ declare namespace LocalJSX {
          */
         "shadow"?: boolean;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**
@@ -3523,7 +3527,7 @@ declare namespace LocalJSX {
         /**
           * Value of tab buttons
          */
-        "value": number | string;
+        "value"?: number | string;
     }
     /**
      * @group Content Selectors
@@ -3661,7 +3665,7 @@ declare namespace LocalJSX {
          */
         "type"?: string;
         /**
-          * Set the validíty of the input
+          * Set the validity of the input
          */
         "valid"?: boolean;
         /**

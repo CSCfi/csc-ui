@@ -70,18 +70,16 @@ export class CLoginCard {
 
   @State() imageHeight = '100%';
 
-  componentDidLoad() {
+  componentWillLoad() {
     this._observer = new ResizeObserver(([entry]) => {
       const { width } = entry.contentRect;
 
       this._handleResize(width);
     });
+  }
 
+  componentDidLoad() {
     this._observer.observe(this._cardElement);
-
-    const { width } = this._cardElement.getBoundingClientRect();
-
-    this._handleResize(width);
   }
 
   disconnectedCallback() {

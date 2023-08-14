@@ -19,8 +19,10 @@ button.icon-button {
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
+  line-height: normal;
 
   ::slotted(svg),
+  ::slotted(c-icon),
   ::slotted(i),
   ::slotted(span) {
     width: 24px;
@@ -39,6 +41,12 @@ button.icon-button {
     width: 32px;
     height: 32px;
 
+    ::slotted(c-icon) {
+      width: 16px !important;
+      height: 16px !important;
+      font-size: 16px !important;
+    }
+
     ::slotted(svg),
     ::slotted(i),
     ::slotted(span) {
@@ -51,6 +59,12 @@ button.icon-button {
   &--x-small {
     width: 28px;
     height: 28px;
+
+    ::slotted(c-icon) {
+      width: 14px !important;
+      height: 14px !important;
+      font-size: 14px !important;
+    }
 
     ::slotted(svg),
     ::slotted(i),
@@ -222,6 +236,7 @@ svg {
   box-shadow: 0 0 0 2px #fff;
   top: -6px;
   padding: 0 4px;
+  line-height: 1;
 }
 
 .inner-container {

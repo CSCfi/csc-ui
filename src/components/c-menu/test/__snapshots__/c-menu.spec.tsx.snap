@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-menu renders custom amount of pages before adding scroll 1`] = `
+<c-menu class="c-menu" items-per-page="3">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-2" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders default html 1`] = `
+<c-menu class="c-menu">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-1" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders no-hover background 1`] = `
+<c-menu class="c-menu c-menu--no-hover" nohover="true">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-3" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="22" viewBox="0 0 24 24" width="22">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders simple variant 1`] = `
+<c-menu class="c-menu c-menu--simple" simple="true">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-4" aria-expanded="false" aria-haspopup="listbox" class="simple" tabindex="0" type="button">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;
+
+exports[`c-menu renders small variant 1`] = `
+<c-menu class="c-menu c-menu--small" small="true">
+  <mock:shadow-root>
+    <button aria-controls="c-menu-items-5" aria-expanded="false" aria-haspopup="listbox" class="c-menu-wrapper" tabindex="0" type="button">
+      <div class="c-menu__header">
+        <slot></slot>
+        <svg class="c-menu__icon" height="16" viewBox="0 0 24 24" width="16">
+          <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+        </svg>
+      </div>
+    </button>
+  </mock:shadow-root>
+</c-menu>
+`;

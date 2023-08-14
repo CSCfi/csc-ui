@@ -18,7 +18,7 @@
 | `label`       | `label`        | Label of the radio group                                     | `string`                              | `undefined`        |
 | `required`    | `required`     | Set as required                                              | `boolean`                             | `false`            |
 | `returnValue` | `return-value` | Return only the item value rather than the whole item object | `boolean`                             | `undefined`        |
-| `valid`       | `valid`        | Set the validíty of the input                                | `boolean`                             | `true`             |
+| `valid`       | `valid`        | Set the validity of the input                                | `boolean`                             | `true`             |
 | `validation`  | `validation`   | Custom validation message                                    | `string`                              | `'Required field'` |
 | `value`       | `value`        | Value of the radio group                                     | `CRadioGroupItem \| number \| string` | `undefined`        |
 

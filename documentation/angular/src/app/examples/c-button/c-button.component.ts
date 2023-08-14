@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mdiLogin, mdiArrowRight } from '@mdi/js';
 
 @Component({
   selector: 'app-c-button',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CButtonComponent implements OnInit {
   constructor() {}
+
+  mdiLogin = mdiLogin;
+  mdiArrowRight = mdiArrowRight;
 
   ngOnInit(): void {}
 }

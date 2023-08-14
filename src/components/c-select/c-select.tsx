@@ -12,7 +12,6 @@ import {
 } from '@stencil/core';
 import { mdiChevronDown } from '@mdi/js';
 import { registerClickOutside } from 'stencil-click-outside';
-import { v4 as uuid } from 'uuid';
 import { CSelectItem } from '../../types';
 
 /**
@@ -75,7 +74,7 @@ export class CSelect {
   @Prop() returnValue: false;
 
   /**
-   * Set the validíty of the input
+   * Set the validity of the input
    */
   @Prop() valid = true;
 
@@ -143,7 +142,7 @@ export class CSelect {
 
   private _outerWrapperClasses = ['outer-wrapper'];
 
-  private _uniqueId = uuid();
+  private static _uniqueId = 0;
 
   private _validationClasses = ['validation-message'];
 
@@ -323,7 +322,12 @@ export class CSelect {
   }
 
   componentWillLoad() {
-    this._id = this.hostId?.replace(/[^a-zA-Z0-9-_]/g, '') ?? this._uniqueId;
+    CSelect._uniqueId += 1;
+
+    this._id =
+      this.hostId?.replace(/[^a-zA-Z0-9-_]/g, '') ??
+      CSelect._uniqueId.toString();
+
     this._inputId =
       'input_' +
       (this.hostId || this.label || this.placeholder).replace(

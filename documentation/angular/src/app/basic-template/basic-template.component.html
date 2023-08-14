@@ -14,20 +14,20 @@
         <c-sidenavigation style="min-height: 40vh">
           <c-sidenavigationitem active>
             <div slot="main">
-              <span class="mdi mdi-home"></span>
+              <c-icon [path]="icons.mdiHome" slot="icon"></c-icon>
               Home
             </div>
           </c-sidenavigationitem>
 
           <c-sidenavigationitem>
             <div slot="main">
-              <span class="mdi mdi-alarm"></span>
+              <c-icon [path]="icons.mdiAlarm" slot="icon"></c-icon>
               Something
             </div>
           </c-sidenavigationitem>
 
           <c-button style="margin-right: 24px" slot="bottom" ghost inverted fit>
-            <span class="mdi mdi-logout" slot="icon"></span>
+            <c-icon [path]="icons.mdiLogout" slot="icon"></c-icon>
             Logout
           </c-button>
         </c-sidenavigation>
@@ -56,7 +56,7 @@
 
   <c-accordion [value]="showCode" outlined>
     <c-accordion-item [value]="true" heading="Code for basic template" class="mt-3 mb-0">
-      <i class="mdi mdi-xml" slot="icon"></i>
+      <c-icon slot="icon">{{ icons.mdiXml }}</c-icon>
       <pre><code [highlight]="template"></code></pre>
     </c-accordion-item>
   </c-accordion>

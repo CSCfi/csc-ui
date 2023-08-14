@@ -9,7 +9,7 @@
 
 <c-accordion [value]="showCode" outlined>
   <c-accordion-item [value]="true" [heading]="'Code for example: ' + title" class="mt-3 mb-0">
-    <i class="mdi mdi-xml" slot="icon"></i>
+    <c-icon [path]="mdiXml" slot="icon"></c-icon>
     <pre><code [highlight]="code"></code></pre>
     <pre *ngIf="!!scriptCode" class="mt-2"><code [highlight]="scriptCode"></code></pre>
   </c-accordion-item>

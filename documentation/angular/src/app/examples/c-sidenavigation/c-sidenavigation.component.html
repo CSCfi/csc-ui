@@ -6,12 +6,16 @@
       (click)="currentItem = item"
     >
       <div slot="main">
-        <span class="mdi {{ item.icon }}"></span>
+        <c-icon [path]="item.icon" size="16"></c-icon>
         {{ item.title }}
       </div>
 
       <div *ngIf="item.subs?.length" slot="subnavitem">
-        <c-subnavigationitem *ngFor="let sub of item.subs" href="https://www.csc.fi" target="_blank">
+        <c-subnavigationitem
+          *ngFor="let sub of item.subs"
+          href="https://www.csc.fi"
+          target="_blank"
+        >
           {{ sub.title }}
         </c-subnavigationitem>
       </div>

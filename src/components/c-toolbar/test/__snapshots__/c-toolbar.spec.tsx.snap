@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-toolbar renders default html 1`] = `
+<c-toolbar>
+  <mock:shadow-root>
+    <div class="c-toolbar">
+      <slot></slot>
+    </div>
+    <div class="spacer"></div>
+  </mock:shadow-root>
+</c-toolbar>
+`;
