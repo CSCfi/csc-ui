@@ -5,10 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableDataItem, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
+import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
 import { CardBackground } from "./components/c-card/c-card";
 import { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
-export { CAlertType, CAutocompleteItem, CDataTableData, CDataTableDataItem, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
+export { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSCColor, CSelectItem, CToastMessage } from "./types";
 export { CardBackground } from "./components/c-card/c-card";
 export { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
 export namespace Components {
@@ -388,7 +388,7 @@ export namespace Components {
         /**
           * Provide sorted data
          */
-        "getData": () => Promise<CDataTableDataItem[]>;
+        "getData": () => Promise<Record<string, string | number | boolean>[]>;
         /**
           * Headers of the table
          */
