@@ -431,14 +431,6 @@
       ]
     },
     {
-      "name": "c-consent",
-      "description": {
-        "kind": "markdown",
-        "value": "A container component for cookie consent"
-      },
-      "attributes": []
-    },
-    {
       "name": "c-container",
       "description": {
         "kind": "markdown",

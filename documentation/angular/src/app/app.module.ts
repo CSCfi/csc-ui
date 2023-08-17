@@ -32,7 +32,6 @@ import { CAccordionComponent } from './examples/c-accordion/c-accordion.componen
 import { CMenuComponent } from './examples/c-menu/c-menu.component';
 import { CModalComponent } from './examples/c-modal/c-modal.component';
 import { CRadioGroupComponent } from './examples/c-radio-group/c-radio-group.component';
-import { CConsentComponent } from './examples/c-consent/c-consent.component';
 import { CLoaderComponent } from './examples/c-loader/c-loader.component';
 import { CNotificationComponent } from './examples/c-notification/c-notification.component';
 import { CSelectComponent } from './examples/c-select/c-select.component';
@@ -84,7 +83,6 @@ import { CIconComponent } from './examples/c-icon/c-icon.component';
     CAccordionComponent,
     CMenuComponent,
     CModalComponent,
-    CConsentComponent,
     CLoaderComponent,
     CNotificationComponent,
     CSelectComponent,

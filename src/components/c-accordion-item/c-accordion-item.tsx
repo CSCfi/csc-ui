@@ -1,4 +1,12 @@
-import { Component, h, Prop, Event, EventEmitter, Listen } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  Event,
+  EventEmitter,
+  Listen,
+  Element,
+} from '@stencil/core';
 
 /**
  * @parent c-accordion
@@ -10,6 +18,8 @@ import { Component, h, Prop, Event, EventEmitter, Listen } from '@stencil/core';
   shadow: true,
 })
 export class CAccordionItem {
+  @Element() el: HTMLCAccordionItemElement;
+
   /**
    * Marks the item as collapsable
    * @private
@@ -49,6 +59,14 @@ export class CAccordionItem {
    */
   @Event() itemChange: EventEmitter;
 
+  private _animation: Animation;
+
+  private _accordionDetails: HTMLDetailsElement;
+
+  private _accordionHeader: HTMLDetailsElement;
+
+  private _accordionContent: HTMLDivElement;
+
   @Listen('keydown', { capture: true })
   handleKeyDown(event: KeyboardEvent) {
     if (
@@ -56,7 +74,7 @@ export class CAccordionItem {
       (event.key === 'Enter' || event.code === 'Space')
     ) {
       event.preventDefault();
-      this._toggle();
+      this._toggle(event);
     }
   }
 
@@ -65,11 +83,40 @@ export class CAccordionItem {
     event.stopPropagation();
   }
 
-  private _toggle() {
-    if (!this.collapsable && this.expanded) return;
+  private _toggle(event: Event) {
+    if (!this.collapsable && this.expanded) {
+      event.preventDefault();
+
+      return;
+    }
 
     this.expanded = !this.expanded;
     this.itemChange.emit({ value: this.value, expanded: this.expanded });
+
+    if (this._animation) {
+      this._animation.cancel();
+    }
+
+    const detailsHeight = this._accordionDetails.offsetHeight;
+
+    requestAnimationFrame(() => {
+      this._accordionDetails.classList.add('c-accordion-item--expanding');
+
+      const headerHeight = this._accordionHeader.offsetHeight;
+      const contentHeight = this._accordionContent.offsetHeight;
+
+      this._animation = this._accordionDetails.animate(
+        {
+          height: [`${detailsHeight}px`, `${headerHeight + contentHeight}px`],
+        },
+        { duration: 300, easing: 'cubic-bezier(0.25, 0.8, 0.5, 1)' },
+      );
+
+      this._animation.onfinish = () => {
+        this._animation = null;
+        this._accordionDetails.classList.remove('c-accordion-item--expanding');
+      };
+    });
   }
 
   private static _uniqueId = 0;
@@ -129,17 +176,22 @@ export class CAccordionItem {
     };
 
     return (
-      <div class={hostClasses}>
-        <button
+      <details
+        id={`panel__${CAccordionItem._uniqueId}`}
+        ref={(el) => (this._accordionDetails = el as HTMLDetailsElement)}
+        class={hostClasses}
+        open={!!this.expanded}
+      >
+        <summary
           id={`header__${CAccordionItem._uniqueId}`}
+          ref={(el) => (this._accordionHeader = el as HTMLDetailsElement)}
           aria-controls={`panel__${CAccordionItem._uniqueId}`}
           aria-expanded={this.expanded.toString()}
           aria-label={this.heading}
           class={headerClasses}
-          tabindex="0"
-          onClick={() => this._toggle()}
+          onClick={(event) => this._toggle(event)}
         >
-          <div class="c-accordion-item__icon">
+          <div class="c-accordion-item__icon" aria-visible="hidden">
             {!!this.icon ? this._getIcon() : <slot name="icon"></slot>}
           </div>
 
@@ -160,11 +212,13 @@ export class CAccordionItem {
               />
             </svg>
           </div>
-        </button>
+        </summary>
 
-        <div class="c-accordion-item__content-wrapper">
+        <div
+          ref={(el) => (this._accordionContent = el as HTMLDivElement)}
+          class="c-accordion-item__content-wrapper"
+        >
           <div
-            id={`panel__${CAccordionItem._uniqueId}`}
             class="c-accordion-item__content"
             role="region"
             aria-labelledby={`header__${CAccordionItem._uniqueId}`}
@@ -172,7 +226,7 @@ export class CAccordionItem {
             {this.expanded && <slot></slot>}
           </div>
         </div>
-      </div>
+      </details>
     );
   }
 }

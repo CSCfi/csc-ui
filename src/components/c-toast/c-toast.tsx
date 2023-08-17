@@ -119,13 +119,12 @@ export class CToast {
         text
         onClick={() => this.closeToast()}
       >
-        <svg
+        <c-icon
           {...{ ...(!!this.message.closeText && { slot: 'icon' }) }}
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-        >
-          <path d={this._icons.close}></path>
-        </svg>
+          color="var(--c-toast-color)"
+          path={this._icons.close}
+        />
+
         {this.message.closeText}
       </Tag>
     );

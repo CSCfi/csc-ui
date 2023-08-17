@@ -47,6 +47,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   c-toasts --> c-toast
+  c-toast --> c-icon
   style c-toasts fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -40,8 +40,8 @@
 
 :host(.disabled) {
   --c-color: var(--csc-mid-grey) !important;
-  --c-background-color: var(--csc-light-grey);
-  --c-hover-background: var(--csc-light-grey);
+  --c-background-color: var(--csc-lightest-grey);
+  --c-hover-background: var(--csc-lightest-grey);
 }
 
 :host(.disabled.outlined) {

@@ -115,7 +115,7 @@
 }
 
 .c-checkbox input:checked + .c-checkbox__label {
-  &:before {
+  .ripple::before {
     background: var(--c-checkbox-color);
     border-color: var(--c-checkbox-color);
   }
@@ -137,20 +137,6 @@
   gap: 4px;
   position: relative;
   user-select: none;
-
-  &:before {
-    border-radius: 2px;
-    border: 2px solid var(--c-checkbox-color);
-    content: '';
-    display: inline-block;
-    height: 18px;
-    left: 12px;
-    position: absolute;
-    top: 12px;
-    transition: all 0.25s ease-out;
-    vertical-align: middle;
-    width: 18px;
-  }
 
   svg {
     height: 14px;
@@ -177,5 +163,19 @@
     position: relative;
     transform: translateZ(0);
     width: 42px;
+
+    &::before {
+      border-radius: 2px;
+      border: 2px solid var(--c-checkbox-color);
+      content: '';
+      display: inline-block;
+      height: 18px;
+      left: 12px;
+      position: absolute;
+      top: 12px;
+      transition: all 0.25s ease-out;
+      vertical-align: middle;
+      width: 18px;
+    }
   }
 }

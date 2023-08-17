@@ -61,6 +61,8 @@ export class CToasts {
         `Custom toast messages are restricted to 1 visible message due to slot reflection limitations.`,
       );
     } else {
+      CToasts._uniqueId += 1;
+
       requestAnimationFrame(() => {
         const defaultOptions = this._getDefaultOptions();
 

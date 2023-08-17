@@ -3,14 +3,24 @@
 }
 
 .c-accordion-item {
+  $this: &;
+
   --c-accordion-indicator-rotation: rotate(180deg);
   --c-accordion-content-height: 0px;
   --c-accordion-min-height: 46px;
   --c-accordion-border-radius: 6px;
   --c-accordion-padding: 12px;
-  --c-accordion-overflow: hidden;
+  --c-accordion-overflow: visible;
+  --c-accordion-outline-offset: 4px;
+  --c-accordion-outline-color: var(--csc-primary);
 
   display: block;
+  overflow: var(--c-accordion-overflow);
+
+  &--expanding {
+    --c-accordion-overflow: hidden !important;
+    --c-accordion-outline-color: transparent;
+  }
 
   &--expanded {
     --c-accordion-content-height: auto;
@@ -22,6 +32,7 @@
     --c-accordion-min-height: 42px;
     --c-accordion-border-radius: 4px;
     --c-accordion-padding: 10px;
+    --c-accordion-outline-offset: 6px;
 
     box-shadow: inset 0 0 0 2px var(--csc-primary-ghost);
     border-radius: 6px;
@@ -40,15 +51,15 @@
     cursor: pointer;
     grid-template-columns: auto 1fr auto;
     gap: 8px;
-    width: 100%;
     border: none;
     text-align: left;
     margin: 0;
     font-family: var(--csc-font-family);
+    position: relative;
 
     &:focus {
-      outline: 2px var(--csc-primary) solid;
-      outline-offset: 4px;
+      outline: 2px var(--c-accordion-outline-color) solid;
+      outline-offset: var(--c-accordion-outline-offset);
     }
 
     @supports selector(:focus-visible) {
@@ -58,8 +69,8 @@
     }
 
     &:focus-visible {
-      outline: 2px var(--csc-primary) solid;
-      outline-offset: 4px;
+      outline: 2px var(--c-accordion-outline-color) solid;
+      outline-offset: var(--c-accordion-outline-offset);
     }
   }
 
@@ -77,8 +88,8 @@
   }
 
   &__content-wrapper {
-    overflow: var(--c-accordion-overflow);
-    height: var(--c-accordion-content-height);
+    overflow: visible;
+    // height: var(--c-accordion-content-height);
   }
 
   &__icon {

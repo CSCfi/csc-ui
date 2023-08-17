@@ -1,0 +1,20 @@
+{
+  "c-button": {
+    "primary": {
+      "background": {
+        "value": "{theme.teal.100.value}"
+      },
+      "text": {
+        "value": "{theme.text.light.value}"
+      }
+    },
+    "secondary": {
+      "background": {
+        "value": "{theme.purple.100.value}"
+      },
+      "text": {
+        "value": "{theme.text.dark.value}"
+      }
+    }
+  }
+}

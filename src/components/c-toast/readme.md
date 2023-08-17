@@ -38,9 +38,14 @@ Type: `Promise<void>`
 
  - [c-toasts](../c-toasts)
 
+### Depends on
+
+- [c-icon](../c-icon)
+
 ### Graph
 ```mermaid
 graph TD;
+  c-toast --> c-icon
   c-toasts --> c-toast
   style c-toast fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -16,7 +16,7 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "rimraf ./dist && stencil build --docs",
     "build:watch": "stencil build --watch",
     "build:visual-testing": "docker build -t csc-ui-playwright .",
     "lint": "eslint src/**/*{.ts,.tsx}",
@@ -53,6 +53,7 @@
     "jest-cli": "^27.4.5",
     "prettier": "^2.8.8",
     "puppeteer": "^20.7.3",
+    "rimraf": "^5.0.1",
     "style-dictionary": "^3.8.0"
   },
   "license": "MIT",

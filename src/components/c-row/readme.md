@@ -26,19 +26,6 @@ Generic flex row component
 |      | Should contain items to be displayed in the row |
 
 
-## Dependencies
-
-### Used by
-
- - [c-consent](../c-consent)
-
-### Graph
-```mermaid
-graph TD;
-  c-consent --> c-row
-  style c-row fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

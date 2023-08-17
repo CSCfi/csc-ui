@@ -341,12 +341,6 @@ export namespace Components {
         "value": boolean;
     }
     /**
-     * A container component for cookie consent
-     * @group Popups
-     */
-    interface CConsent {
-    }
-    /**
      * Container component for holding current page content
      * @group Layout
      */
@@ -1674,16 +1668,6 @@ declare global {
         new (): HTMLCCheckboxElement;
     };
     /**
-     * A container component for cookie consent
-     * @group Popups
-     */
-    interface HTMLCConsentElement extends Components.CConsent, HTMLStencilElement {
-    }
-    var HTMLCConsentElement: {
-        prototype: HTMLCConsentElement;
-        new (): HTMLCConsentElement;
-    };
-    /**
      * Container component for holding current page content
      * @group Layout
      */
@@ -2108,7 +2092,6 @@ declare global {
         "c-card-content": HTMLCCardContentElement;
         "c-card-title": HTMLCCardTitleElement;
         "c-checkbox": HTMLCCheckboxElement;
-        "c-consent": HTMLCConsentElement;
         "c-container": HTMLCContainerElement;
         "c-csc-logo": HTMLCCscLogoElement;
         "c-data-table": HTMLCDataTableElement;
@@ -2498,12 +2481,6 @@ declare namespace LocalJSX {
           * Is the element checked
          */
         "value"?: boolean;
-    }
-    /**
-     * A container component for cookie consent
-     * @group Popups
-     */
-    interface CConsent {
     }
     /**
      * Container component for holding current page content
@@ -3736,7 +3713,6 @@ declare namespace LocalJSX {
         "c-card-content": CCardContent;
         "c-card-title": CCardTitle;
         "c-checkbox": CCheckbox;
-        "c-consent": CConsent;
         "c-container": CContainer;
         "c-csc-logo": CCscLogo;
         "c-data-table": CDataTable;
@@ -3828,11 +3804,6 @@ declare module "@stencil/core" {
              * @group Form
              */
             "c-checkbox": LocalJSX.CCheckbox & JSXBase.HTMLAttributes<HTMLCCheckboxElement>;
-            /**
-             * A container component for cookie consent
-             * @group Popups
-             */
-            "c-consent": LocalJSX.CConsent & JSXBase.HTMLAttributes<HTMLCConsentElement>;
             /**
              * Container component for holding current page content
              * @group Layout

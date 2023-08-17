@@ -65,11 +65,6 @@ export class CLink {
       'icon-after': this.iconAfter,
     };
 
-    const iconStyle = {
-      ...this.iconStyle,
-      fill: this.iconFill ? CSCColor(this.iconFill) : 'inherit',
-    };
-
     const style = {
       color: CSCColor(this.color),
       fontWeight: this.weight.toString(),
@@ -77,19 +72,7 @@ export class CLink {
 
     return (
       <a class={classList} href={this.href} target={this.target} style={style}>
-        <slot name="icon">
-          {this.path && (
-            <svg
-              style={iconStyle}
-              class="icon-by-path"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-            >
-              <path d={this.path} />
-            </svg>
-          )}
-        </slot>
+        <slot name="icon">{this.path && <c-icon path={this.path} />}</slot>
         <slot></slot>
       </a>
     );

@@ -24,6 +24,19 @@ Basic hyperlink component
 | `weight`    | `weight`     | Customisable font weight                | `string`                                                                                                                                                                                                                                         | `'600'`     |
 
 
+## Dependencies
+
+### Depends on
+
+- [c-icon](../c-icon)
+
+### Graph
+```mermaid
+graph TD;
+  c-link --> c-icon
+  style c-link fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
