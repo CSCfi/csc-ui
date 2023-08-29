@@ -50,13 +50,13 @@ Type: `Promise<void>`
 
 
 
-### `getData() => Promise<CDataTableDataItem[]>`
+### `getData() => Promise<Record<string, string | number | boolean>[]>`
 
 Provide sorted data
 
 #### Returns
 
-Type: `Promise<CDataTableDataItem[]>`
+Type: `Promise<Record<string, string | number | boolean>[]>`
 
 
 

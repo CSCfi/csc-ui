@@ -209,7 +209,7 @@ export class CDataTable {
 
   private _isVisible = false;
 
-  private _sortedData: CDataTableDataItem[] = [];
+  private _sortedData: Record<string, string | number | boolean>[] = [];
 
   @Watch('hiddenHeaders')
   onHiddenHeaderChange() {
@@ -566,14 +566,20 @@ export class CDataTable {
       const { _hiddenData, ..._rowData } = row;
 
       const hiddenData = _hiddenData.reduce((items, item) => {
-        items[item.id] = item.value.formattedValue || item.value.value;
+        items[item.id] =
+          item.value.plainTextValue ||
+          item.value.formattedValue?.trim() ||
+          item.value.value;
 
         return items;
       }, {});
 
       const rowData = Object.entries(_rowData).reduce(
         (items, [key, item]: [string, CDataTableDataItem]) => {
-          items[key] = item.formattedValue || item.value;
+          items[key] =
+            item.plainTextValue ||
+            item.formattedValue?.toString().trim() ||
+            item.value;
 
           return items;
         },

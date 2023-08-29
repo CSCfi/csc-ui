@@ -60,6 +60,7 @@ export interface CDataTableData {
 export interface CDataTableDataItem {
   value: string | number;
   formattedValue?: string | number;
+  plainTextValue?: string;
   children?: CDataTableChild[];
   align?: 'start' | 'center' | 'end';
   justify?: 'start' | 'center' | 'end';
