@@ -1,5 +1,5 @@
 <app-example title="Basic modal" name="basic" component="c-modal">
-  <c-button (click)="modal = true">Open modal</c-button>
+  <c-button (click)="modal = true" (keyup.space)="modal = true" (keyup.enter)="modal = true">Open modal</c-button>
 
   <c-modal cControl [(ngModel)]="modal">
     <c-card>
@@ -12,7 +12,7 @@
       </c-card-content>
 
       <c-card-actions>
-        <c-button (click)="modal = false">Close</c-button>
+        <c-button (click)="modal = false" (keyup.space)="modal = false" (keyup.enter)="modal = false">Close</c-button>
       </c-card-actions>
     </c-card>
   </c-modal>
@@ -20,8 +20,8 @@
 
 <app-example title="Custom width" name="maxWidth" component="c-modal">
   <c-row gap="8">
-    <c-button (click)="numericWidthModal = true">Open modal with a numeric width</c-button>
-    <c-button (click)="stringWidthModal = true">Open modal with a width defined as string</c-button>
+    <c-button (click)="numericWidthModal = true" (keyup.space)="numericWidthModal = true" (keyup.enter)="numericWidthModal = true">Open modal with a numeric width</c-button>
+    <c-button (click)="stringWidthModal = true" (keyup.space)="stringWidthModal = true" (keyup.enter)="stringWidthModal = true">Open modal with a width defined as string</c-button>
   </c-row>
 
   <c-modal cControl [(ngModel)]="numericWidthModal" width="400">
@@ -35,7 +35,7 @@
       </c-card-content>
 
       <c-card-actions>
-        <c-button (click)="numericWidthModal = false">Close</c-button>
+        <c-button (click)="numericWidthModal = false" (keyup.space)="numericWidthModal = false" (keyup.enter)="numericWidthModal = false">Close</c-button>
       </c-card-actions>
     </c-card>
   </c-modal>
@@ -51,7 +51,7 @@
       </c-card-content>
 
       <c-card-actions>
-        <c-button (click)="stringWidthModal = false">Close</c-button>
+        <c-button (click)="stringWidthModal = false" (keyup.space)="stringWidthModal = false" (keyup.enter)="stringWidthModal = false">Close</c-button>
       </c-card-actions>
     </c-card>
   </c-modal>
@@ -63,7 +63,7 @@
   name="dismissable"
   component="c-modal"
 >
-  <c-button (click)="dismissableModal = true">Open dismissable modal</c-button>
+  <c-button (click)="dismissableModal = true" (keyup.space)="dismissableModal = true" (keyup.enter)="dismissableModal = true">Open dismissable modal</c-button>
 
   <c-modal cControl [(ngModel)]="dismissableModal" dismissable>
     <c-card fullscreen>
@@ -78,7 +78,7 @@
       </c-card-content>
 
       <c-card-actions>
-        <c-button (click)="dismissableModal = false">Close</c-button>
+        <c-button (click)="dismissableModal = false" (keyup.space)="dismissableModal = false" (keyup.enter)="dismissableModal = false">Close</c-button>
       </c-card-actions>
     </c-card>
   </c-modal>

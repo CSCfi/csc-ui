@@ -20,10 +20,12 @@ import {
 export class CModal {
   @Element() el: HTMLCModalElement;
 
+  private _dialog?: HTMLDialogElement;
+
   /**
    * Is the modal visible
    */
-  @Prop({ mutable: true }) value = false;
+  @Prop() value = false;
 
   /**
    * Dismissed when touching/clicking outside the content
@@ -54,42 +56,85 @@ export class CModal {
 
   @Watch('value')
   onValueChange(value: boolean) {
-    setTimeout(
-      () => {
-        this.innerValue = value;
-        this.changeValue.emit(this.value);
-
-        const cardChild = this.el.querySelector('c-card');
-
-        if (!value && cardChild) {
-          cardChild.exitFullscreen();
-        }
-      },
-      value ? 0 : 500,
-    );
-  }
-
-  private _hideModal() {
-    if (!this.dismissable) {
-      this.animateModal = true;
-
-      if (this._debounce !== null) {
-        clearTimeout(this._debounce);
-        this._debounce = null;
-      }
-
-      this._debounce = window.setTimeout(() => {
-        this.animateModal = false;
-
-        this._debounce = null;
-      }, 150);
+    if (value) {
+      this._handleShow();
 
       return;
     }
 
-    this.value = false;
-    this.changeValue.emit(this.value);
+    this._handleClose();
   }
+
+  private _handleShow = () => {
+    if (this._dialog) {
+      this._dialog.addEventListener('animationend', this._onDialogOpened);
+      this._dialog.classList.add('opening');
+      this._dialog.showModal();
+    }
+  };
+
+  private _onDialogOpened = () => {
+    if (this._dialog) {
+      this._dialog.removeEventListener('animationend', this._onDialogOpened);
+      this._dialog.classList.remove('opening');
+    }
+  };
+
+  private _handleClose = () => {
+    if (this._dialog) {
+      this._dialog.addEventListener('animationend', this._onDialogClosed);
+      this._dialog.classList.add('closing');
+    }
+  };
+
+  private _onDialogClosed = () => {
+    if (this._dialog) {
+      this._dialog.removeEventListener('animationend', this._onDialogClosed);
+      this._dialog.classList.remove('closing');
+      this._dialog.close();
+    }
+  };
+
+  private _handleClickOutside = () => {
+    this._dialog.addEventListener('click', (e) => {
+      const dialogDimensions = this._dialog.getBoundingClientRect();
+
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        if (!this.dismissable) {
+          this._dialog.classList.add('nudging');
+
+          if (this._debounce !== null) {
+            clearTimeout(this._debounce);
+            this._debounce = null;
+          }
+
+          this._debounce = window.setTimeout(() => {
+            this._dialog.classList.remove('nudging');
+
+            this._debounce = null;
+          }, 150);
+
+          return;
+        }
+
+        this._handleClose();
+        this.changeValue.emit(false);
+      }
+    });
+  };
+
+  private _handleKeyDown = (e) => {
+    if (e.keyCode === 27) {
+      e.preventDefault();
+      this._handleClose();
+      this.changeValue.emit(false);
+    }
+  };
 
   componentWillLoad() {
     this.innerValue = this.value;
@@ -99,43 +144,23 @@ export class CModal {
     this.el.style.setProperty('--c-modal-width', `${width}`);
   }
 
+  componentDidLoad() {
+    this._handleClickOutside();
+  }
+
   render() {
-    const modalClasses = {
-      'c-modal': true,
-      'c-modal--show': this.value,
-      'c-modal--hide': !this.innerValue,
-      'c-modal--animate': this.animateModal,
-    };
-
-    const overlayClasses = {
-      'c-overlay': true,
-      'c-overlay--hide': !this.innerValue,
-      'c-overlay--show': this.value,
-    };
-
-    const contentStyle = {
-      'z-index': `${this.zIndex + 1}`,
-    };
-
-    const overlayStyle = {
+    const dialogStyle = {
       'z-index': `${this.zIndex}`,
     };
 
     return (
-      <div class="modal-wrapper">
-        <div
-          class={modalClasses}
-          aria-hidden={!this.value}
-          style={contentStyle}
-        >
-          {this.innerValue && <slot></slot>}
-        </div>
-        <div
-          class={overlayClasses}
-          style={overlayStyle}
-          onClick={() => this._hideModal()}
-        ></div>
-      </div>
+      <dialog
+        ref={(el) => (this._dialog = el as HTMLDialogElement)}
+        style={dialogStyle}
+        onKeyDown={this._handleKeyDown}
+      >
+        <slot></slot>
+      </dialog>
     );
   }
 }
