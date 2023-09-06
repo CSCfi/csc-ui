@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.2](https://github.com/CSCfi/csc-ui/compare/v0.7.1...v0.7.2) (2023-09-06)
+## [0.7.8](https://github.com/CSCfi/csc-ui/compare/v0.7.1...v0.7.8) (2023-09-06)
 
 
 ### Bug Fixes
