@@ -11,9 +11,9 @@ import { Component, h } from '@stencil/core';
 export class CCardContent {
   render() {
     return (
-      <div class="c-card-content">
+      <article class="c-card-content">
         <slot></slot>
-      </div>
+      </article>
     );
   }
 }

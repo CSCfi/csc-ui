@@ -1,4 +1,4 @@
-:host {
+article {
   --c-card-gap: 24px;
 
   border-radius: 6px;
@@ -14,7 +14,7 @@
   border-radius: 6px;
 }
 
-:host(.c-card--fullscreen) {
+article.c-card--fullscreen {
   height: 100vh;
   left: 0 !important;
   overflow-y: scroll;

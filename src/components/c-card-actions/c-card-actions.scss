@@ -1,4 +1,4 @@
-:host {
+footer {
   padding: 0 var(--c-card-gap, 24px);
   display: block;
 }
@@ -7,6 +7,8 @@
   align-items: center;
   display: flex;
   gap: 8px;
+  margin: 0;
+  padding: 0;
 
   ::slotted(c-button[fit]) {
     flex: 1;

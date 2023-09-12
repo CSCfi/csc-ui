@@ -1,9 +1,9 @@
-:host {
+article {
   display: block;
   padding: 0 var(--c-card-gap, 24px);
 }
 
-.c-card-content {
+article.c-card-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--c-card-gap);

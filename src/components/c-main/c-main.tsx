@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 /**
  * Wrapper component for the whole page
  *
@@ -13,9 +13,9 @@ import { Component, Host, h } from '@stencil/core';
 export class CMain {
   render() {
     return (
-      <Host>
+      <main>
         <slot></slot>
-      </Host>
+      </main>
     );
   }
 }

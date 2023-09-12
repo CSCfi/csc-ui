@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 /**
  * @parent c-card
  * @slot - Card actions
@@ -33,11 +33,11 @@ export class CCardActions {
     };
 
     return (
-      <Host>
-        <div class={classes}>
+      <footer>
+        <menu class={classes}>
           <slot></slot>
-        </div>
-      </Host>
+        </menu>
+      </footer>
     );
   }
 }

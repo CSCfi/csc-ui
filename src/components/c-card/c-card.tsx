@@ -2,7 +2,6 @@ import { mdiFullscreen, mdiFullscreenExit } from '@mdi/js';
 import {
   Component,
   Element,
-  Host,
   h,
   Prop,
   getAssetPath,
@@ -107,7 +106,7 @@ export class CCard {
     }
 
     return (
-      <Host class={hostClasses} style={style}>
+      <article class={hostClasses} style={style}>
         {this.fullscreen && (
           <c-icon-button
             aria-hidden="true"
@@ -122,7 +121,7 @@ export class CCard {
           </c-icon-button>
         )}
         <slot></slot>
-      </Host>
+      </article>
     );
   }
 }
