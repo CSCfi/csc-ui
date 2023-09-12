@@ -1,0 +1,62 @@
+:host {
+  display: block;
+  line-height: 1;
+  padding: 0 12px;
+}
+
+.c-message {
+  $this: &;
+
+  &--active {
+    #{$this} {
+      &-item {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  &-item {
+    font-size: 12px;
+    min-height: 16px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.5, 1);
+
+    &--hint {
+      color: var(--csc-mid-grey);
+    }
+
+    &--error {
+      color: var(--csc-error);
+    }
+
+    span {
+      align-items: flex-start;
+      color: currentColor;
+      display: flex;
+      gap: 4px;
+      min-height: 16px;
+    }
+
+    svg {
+      fill: currentColor;
+      height: 16px;
+      width: 16px;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}

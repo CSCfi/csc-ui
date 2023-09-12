@@ -51,9 +51,14 @@
  - [c-select](../c-select)
  - [c-text-field](../c-text-field)
 
+### Depends on
+
+- [c-message](../c-message)
+
 ### Graph
 ```mermaid
 graph TD;
+  c-input --> c-message
   c-autocomplete --> c-input
   c-select --> c-input
   c-text-field --> c-input
