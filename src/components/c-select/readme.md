@@ -46,6 +46,7 @@
 ```mermaid
 graph TD;
   c-select --> c-input
+  c-input --> c-message
   style c-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

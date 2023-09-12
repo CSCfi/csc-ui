@@ -9,7 +9,6 @@ import {
   Element,
   Watch,
 } from '@stencil/core';
-import { mdiCloseCircle } from '@mdi/js';
 import { CAutocompleteItem, CSelectItem } from '../../types';
 
 /**
@@ -159,55 +158,20 @@ export class CInput {
 
   @State() preSlotWidth = 0;
 
-  @State() messageOptions = {
-    show: true,
-    type: 'hint',
-    content: '',
-  };
-
   @State() statusText = '';
 
   @Element() hiddenEl!: HTMLCInputElement;
 
   @Watch('valid')
-  onValidChange(valid: boolean) {
+  onValidChange() {
     if (this.validateOnBlur && !this._hasBlurred) return;
 
     this._setAriaDescriptionId();
-
-    this._handleValidation(valid);
   }
 
   @Watch('validation')
-  onValidationMessageChange(message: string) {
+  onValidationMessageChange() {
     this._updateStatusText();
-
-    if (this.valid || !message) return;
-
-    this.messageOptions = {
-      ...this.messageOptions,
-      content: (
-        <span>
-          <span class="visuallyhidden">Error: </span>
-          {this._validationIcon} {message}
-        </span>
-      ),
-    };
-  }
-
-  @Watch('hint')
-  onHintMessageChange(message: string) {
-    if (!this.valid || !message) return;
-
-    this.messageOptions = {
-      ...this.messageOptions,
-      content: (
-        <span>
-          <span class="visuallyhidden">Hint: </span>
-          {message}
-        </span>
-      ),
-    };
   }
 
   @Watch('value')
@@ -224,12 +188,6 @@ export class CInput {
 
   private _labelRef: HTMLLabelElement;
 
-  private _validationIcon = (
-    <svg height="16px" width="16px" viewBox="0 0 24 24">
-      <path d={mdiCloseCircle} />
-    </svg>
-  );
-
   private _debounce = null;
 
   componentDidLoad() {
@@ -239,7 +197,6 @@ export class CInput {
       }, 500);
     }
 
-    this._handleValidation(this.valid, 0);
     this._calculateElementWidths();
     this._setAriaDescriptionId();
 
@@ -316,42 +273,11 @@ export class CInput {
     this.preSlotWidth = this.inputField.offsetLeft;
   }
 
-  private _handleValidation(valid: boolean, timeout = 200) {
-    this.messageOptions = {
-      ...this.messageOptions,
-      show: false,
-    };
-
-    setTimeout(() => {
-      this.messageOptions = {
-        ...this.messageOptions,
-        type: valid ? 'hint' : 'error',
-        show: true,
-        content: valid ? (
-          <span id={`hint-${this.inputId}`}>
-            <span class="visuallyhidden">Hint: </span>
-            {this.hint}
-          </span>
-        ) : (
-          <span id={`error-${this.inputId}`}>
-            {this._validationIcon}
-            <span class="visuallyhidden">Error: </span>
-            {this.validation}
-          </span>
-        ),
-      };
-    }, timeout);
-  }
-
   private _onBlur = () => {
     // delay the blur event to prevent the label from 'flashing' on c-select selection
     setTimeout(() => {
       this.isFocused = false;
       this._hasBlurred = true;
-
-      if (this.validateOnBlur) {
-        this._handleValidation(this.valid);
-      }
 
       // show the label if there's no label or value
       this._onReset();
@@ -438,26 +364,6 @@ export class CInput {
       | HTMLTextAreaElement;
   }
 
-  private _renderMessages() {
-    if (this.hideDetails) return;
-
-    const classes = {
-      'c-input__details': true,
-      active: this.messageOptions.show,
-    };
-
-    const messageClasses = {
-      'c-input__message': true,
-      [`c-input__message--${this.messageOptions.type}`]: true,
-    };
-
-    return (
-      <div class={classes}>
-        <div class={messageClasses}>{this.messageOptions.content}</div>
-      </div>
-    );
-  }
-
   private _updateStatusText() {
     if (this._debounce !== null) {
       clearTimeout(this._debounce);
@@ -477,7 +383,7 @@ export class CInput {
       'c-input--disabled': this.disabled,
       'c-input--shadow': this.shadow,
       'c-input--textarea': this.rows > 1,
-      'c-input--error': this.messageOptions.type === 'error',
+      'c-input--error': !this.valid,
       [`c-input--${this.variant}`]: true,
     };
 
@@ -513,7 +419,12 @@ export class CInput {
               </div>
             </div>
 
-            {this._renderMessages()}
+            <c-message
+              hint={this.hint}
+              inputId={this.inputId}
+              valid={this.valid}
+              validation={this.validation}
+            />
           </div>
         </div>
       </Host>

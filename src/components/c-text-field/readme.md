@@ -54,6 +54,7 @@
 ```mermaid
 graph TD;
   c-text-field --> c-input
+  c-input --> c-message
   style c-text-field fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
