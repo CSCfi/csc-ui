@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/CSCfi/csc-ui/compare/v0.8.0...v0.8.1) (2023-09-12)
+
+
+### Bug Fixes
+
+* Prevent artifacts in c-otp-input ([ef9669d](https://github.com/CSCfi/csc-ui/commit/ef9669de2fcc6f51c0623c7b2813b4137eaebd3a))
+
 ## [0.8.0](https://github.com/CSCfi/csc-ui/compare/v0.7.8...v0.8.0) (2023-09-12)
 
 
