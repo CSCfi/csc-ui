@@ -886,6 +886,27 @@ export namespace Components {
         "position": 'fixed' | 'absolute';
     }
     /**
+     * @group None
+     */
+    interface COption {
+        /**
+          * Set option as disabled
+         */
+        "disabled": boolean;
+        /**
+          * Option name
+         */
+        "name": string;
+        /**
+          * Set option as selected
+         */
+        "selected": boolean;
+        /**
+          * Option value
+         */
+        "value": string | number;
+    }
+    /**
      * @group Form
      */
     interface COtpInput {
@@ -1092,6 +1113,10 @@ export namespace Components {
           * Input field name
          */
         "name": string;
+        /**
+          * display the option as selection (works only when c-option elements are used)
+         */
+        "optionAsSelection": false;
         /**
           * Placeholder text
          */
@@ -1941,6 +1966,15 @@ declare global {
         new (): HTMLCNotificationElement;
     };
     /**
+     * @group None
+     */
+    interface HTMLCOptionElement extends Components.COption, HTMLStencilElement {
+    }
+    var HTMLCOptionElement: {
+        prototype: HTMLCOptionElement;
+        new (): HTMLCOptionElement;
+    };
+    /**
      * @group Form
      */
     interface HTMLCOtpInputElement extends Components.COtpInput, HTMLStencilElement {
@@ -2203,6 +2237,7 @@ declare global {
         "c-modal": HTMLCModalElement;
         "c-navigationbutton": HTMLCNavigationbuttonElement;
         "c-notification": HTMLCNotificationElement;
+        "c-option": HTMLCOptionElement;
         "c-otp-input": HTMLCOtpInputElement;
         "c-pagination": HTMLCPaginationElement;
         "c-progress-bar": HTMLCProgressBarElement;
@@ -3150,6 +3185,27 @@ declare namespace LocalJSX {
         "position"?: 'fixed' | 'absolute';
     }
     /**
+     * @group None
+     */
+    interface COption {
+        /**
+          * Set option as disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Option name
+         */
+        "name"?: string;
+        /**
+          * Set option as selected
+         */
+        "selected"?: boolean;
+        /**
+          * Option value
+         */
+        "value"?: string | number;
+    }
+    /**
      * @group Form
      */
     interface COtpInput {
@@ -3376,6 +3432,10 @@ declare namespace LocalJSX {
           * Triggered when an item is selected
          */
         "onChangeValue"?: (event: CSelectCustomEvent<any>) => void;
+        /**
+          * display the option as selection (works only when c-option elements are used)
+         */
+        "optionAsSelection"?: false;
         /**
           * Placeholder text
          */
@@ -3891,6 +3951,7 @@ declare namespace LocalJSX {
         "c-modal": CModal;
         "c-navigationbutton": CNavigationbutton;
         "c-notification": CNotification;
+        "c-option": COption;
         "c-otp-input": COtpInput;
         "c-pagination": CPagination;
         "c-progress-bar": CProgressBar;
@@ -4060,6 +4121,10 @@ declare module "@stencil/core" {
              * @parent None
              */
             "c-notification": LocalJSX.CNotification & JSXBase.HTMLAttributes<HTMLCNotificationElement>;
+            /**
+             * @group None
+             */
+            "c-option": LocalJSX.COption & JSXBase.HTMLAttributes<HTMLCOptionElement>;
             /**
              * @group Form
              */

@@ -20,6 +20,18 @@
   &__input {
     width: 100%;
     display: flex;
+    justify-items: stretch;
+  }
+
+  &__selection {
+    display: none;
+    pointer-events: none;
+
+    &--show {
+      align-items: center;
+      display: flex;
+      width: 100%;
+    }
   }
 
   &__item-wrapper {
@@ -54,13 +66,23 @@
     li {
       cursor: pointer;
       display: flex;
-      height: 48px;
+      min-height: 48px;
       padding: 0 12px;
       transition: background-color 0.3s;
       font-size: 14px;
       align-items: center;
       justify-content: flex-start;
       color: rgba(0, 0, 0, 0.87);
+
+      &.disabled {
+        background-color: rgba(0, 0, 0, 0.05);
+        filter: grayscale(1) opacity(0.75);
+        cursor: default;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
 
       &.dense {
         padding: 10px 14px;

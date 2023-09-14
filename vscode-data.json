@@ -1205,6 +1205,31 @@
       ]
     },
     {
+      "name": "c-option",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Set option as disabled"
+        },
+        {
+          "name": "name",
+          "description": "Option name"
+        },
+        {
+          "name": "selected",
+          "description": "Set option as selected"
+        },
+        {
+          "name": "value",
+          "description": "Option value"
+        }
+      ]
+    },
+    {
       "name": "c-otp-input",
       "description": {
         "kind": "markdown",
@@ -1447,6 +1472,10 @@
         {
           "name": "name",
           "description": "Input field name"
+        },
+        {
+          "name": "option-as-selection",
+          "description": "display the option as selection (works only when c-option elements are used)"
         },
         {
           "name": "placeholder",

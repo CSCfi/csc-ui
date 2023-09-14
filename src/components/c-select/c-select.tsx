@@ -115,6 +115,11 @@ export class CSelect {
   @Prop() items: CSelectItem[] = [];
 
   /**
+   * display the option as selection (works only when c-option elements are used)
+   */
+  @Prop() optionAsSelection: false;
+
+  /**
    * Triggered when an item is selected
    */
   @Event({ bubbles: false }) changeValue: EventEmitter;
@@ -129,6 +134,8 @@ export class CSelect {
 
   @State() statusText = '';
 
+  @State() hasOptionItems = false;
+
   @State() previousValue: CSelectItem = { value: '', name: '' };
 
   private _itemRefs: { value: string | number | boolean; ref: HTMLElement }[] =
@@ -138,7 +145,9 @@ export class CSelect {
 
   private _inputElement: HTMLInputElement;
 
-  private _listElement: HTMLUListElement;
+  private _cOptionElements: Map<string, HTMLCOptionElement> = new Map();
+
+  private _selectionElement: HTMLDivElement;
 
   private _outerWrapperClasses = ['outer-wrapper'];
 
@@ -174,25 +183,51 @@ export class CSelect {
 
   @Watch('currentIndex')
   onCurrentIndexChange(index: number) {
-    const items = Array.from(this._listElement?.children || []);
+    this.activeListItemId = this._itemRefs[index]?.ref?.id ?? null;
 
-    this.activeListItemId = items[index]?.id ?? null;
     this._updateStatusText();
   }
 
-  private _valueChangedHandler(item: CSelectItem) {
-    function isItem(element) {
-      return element.value === item?.value;
-    }
+  private get _firstSelectableIndex() {
+    return this._items.findIndex((item) => !item.disabled);
+  }
 
-    this.currentIndex = this.items.findIndex(isItem);
+  private get _lastSelectableIndex() {
+    return [...this._items].reverse().findIndex((item) => !item.disabled);
+  }
 
-    const value = this.returnValue
+  private get _items() {
+    return this.hasOptionItems ? this._optionItems : this.items;
+  }
+
+  private _setValue(item: CSelectItem) {
+    return this.returnValue
       ? item?.value
       : {
           name: item?.name,
           value: item?.value,
         };
+  }
+
+  private _valueChangedHandler(item: CSelectItem) {
+    if (this.hasOptionItems && this.optionAsSelection) {
+      const selection = this._cOptionElements.get(item.value.toString());
+
+      if (!selection) return;
+
+      const clone = selection.cloneNode(true);
+
+      this._selectionElement.classList.add('c-input-menu__selection--show');
+      this._selectionElement.replaceChildren(clone);
+    }
+
+    function isItem(element) {
+      return element.value === item?.value;
+    }
+
+    this.currentIndex = this._items.findIndex(isItem);
+
+    const value = this._setValue(item);
 
     if (this.previousValue.value === item?.value) return;
 
@@ -206,16 +241,14 @@ export class CSelect {
       this.returnValue &&
       ['number', 'string', 'boolean'].includes(typeof this.value)
     ) {
-      return this.items?.find((item) => item.value === this.value)?.name;
+      return this._items?.find((item) => item.value === this.value)?.name;
     }
-
-    return (this.value as CSelectItem)?.name;
   }
 
   private _scrollToElement() {
-    if (this.items.length > this.itemsPerPage) {
+    if (this._items.length > this.itemsPerPage) {
       const itemRef = this._itemRefs.find(
-        (item) => item.value === this.items[this.currentIndex].value,
+        (item) => item.value === this._items[this.currentIndex].value,
       )?.ref;
 
       if (!!itemRef) {
@@ -241,16 +274,18 @@ export class CSelect {
       }
 
       this._lastKeyPressTime = Date.now();
-      const selectedItem = this.items.find((i) =>
+
+      const selectedItem = this._items.find((i) =>
         i.name.toLowerCase().startsWith(this._searchString),
       );
+
       function isItem(element) {
         return element === selectedItem;
       }
 
       if (selectedItem) {
         if (this.menuVisible) {
-          this.currentIndex = this.items.findIndex(isItem);
+          this.currentIndex = this._items.findIndex(isItem);
           this._scrollToElement();
         } else {
           this.value = selectedItem;
@@ -261,12 +296,14 @@ export class CSelect {
 
     if (ev.key === 'Home' && this.menuVisible) {
       ev.preventDefault();
-      this.currentIndex = 0;
+
+      this.currentIndex = this._firstSelectableIndex;
     }
 
     if (ev.key === 'End' && this.menuVisible) {
       ev.preventDefault();
-      this.currentIndex = this.items.length - 1;
+
+      this.currentIndex = this._lastSelectableIndex;
     }
 
     if (ev.key === 'Tab') {
@@ -280,7 +317,7 @@ export class CSelect {
 
       if (this.currentIndex === null) {
         this.currentIndex = 0;
-      } else if (this.currentIndex + 1 < this.items.length) {
+      } else if (this.currentIndex + 1 < this._items.length) {
         this.currentIndex += 1;
       }
     }
@@ -293,22 +330,23 @@ export class CSelect {
       if (this.currentIndex > 0) {
         this.currentIndex -= 1;
       } else if (this.currentIndex === null) {
-        this.currentIndex = this.items.length - 1;
+        this.currentIndex = this._items.length - 1;
       }
     }
 
     if (ev.key === ' ') {
+      ev.preventDefault();
+
       if (!this.menuVisible) {
         this.menuVisible = true;
       }
     }
 
     if (ev.key === 'Escape') {
-      const input = this.host.shadowRoot.querySelector('input');
-
       if (this.menuVisible) {
         this.menuVisible = false;
-        input.focus();
+
+        this._inputElement.focus();
       }
     }
 
@@ -317,6 +355,10 @@ export class CSelect {
 
       if (this.currentIndex !== null) {
         this._selectItem();
+      }
+
+      if (!this.menuVisible) {
+        this._inputElement.focus();
       }
     }
   }
@@ -337,12 +379,14 @@ export class CSelect {
   }
 
   componentDidLoad() {
+    this._getOptionItems();
+
     if (
       (this.value || typeof this.value === 'boolean') &&
       !this.currentIndex &&
       this.currentIndex !== 0
     ) {
-      this.currentIndex = this.items.findIndex(
+      this.currentIndex = this._items.findIndex(
         (item) => item.value === this.value,
       );
     }
@@ -360,8 +404,10 @@ export class CSelect {
 
   private _blurred = false;
 
+  private _optionItems: CSelectItem[] = [];
+
   private _selectItem() {
-    const selectedItem = this.items[this.currentIndex];
+    const selectedItem = this._items[this.currentIndex];
     this.value = selectedItem;
     this._valueChangedHandler(selectedItem);
     this._scrollToElement();
@@ -383,20 +429,59 @@ export class CSelect {
     this._blurred = true;
   }
 
-  private _select(event, item) {
+  private _select(event, item: CSelectItem) {
+    if (!!item.disabled) return;
+
     event.preventDefault();
     event.stopPropagation();
 
-    this.value = item;
+    this.value = this._setValue(item);
+
     this._valueChangedHandler(item);
+
     this.menuVisible = false;
   }
 
+  private _getOptionItems() {
+    requestAnimationFrame(() => {
+      this._cOptionElements = new Map();
+
+      let selection: CSelectItem | null = null;
+
+      this._optionItems = (
+        this.host ? Array.from(this.host.querySelectorAll('c-option')) : []
+      ).map((item, index) => {
+        const cSelectItem = {
+          value: item.value,
+          name: item.name || item.innerText,
+          disabled: !!item.disabled,
+        } as CSelectItem;
+
+        if (item.selected) {
+          selection = cSelectItem;
+        }
+
+        item.slot = `option-${index}`;
+
+        this._cOptionElements.set(item.value.toString(), item);
+
+        return cSelectItem;
+      });
+
+      this.hasOptionItems = !!this._optionItems.length;
+
+      if (selection) {
+        this._valueChangedHandler(selection);
+      }
+    });
+  }
+
   private _getListItem = (item: CSelectItem, index: number) => {
-    const isActive = this.items[this.currentIndex] === item;
+    const isActive = this._items[this.currentIndex]?.value === item.value;
 
     const classes = {
       none: item.value === null,
+      disabled: !!item.disabled,
     };
 
     let itemId = 'none';
@@ -410,7 +495,7 @@ export class CSelect {
     const a11y = {
       role: 'option',
       'aria-posinset': (index + 1).toString(),
-      'aria-setsize': this.items.length.toString(),
+      'aria-setsize': this._items.length.toString(),
     };
 
     if (isActive) {
@@ -425,9 +510,14 @@ export class CSelect {
           this._itemRefs.push({ value: item.value, ref: el as HTMLElement })
         }
         class={classes}
+        data-value={item.name}
         onClick={(event) => this._select(event, item)}
       >
-        {item.name}
+        {this.hasOptionItems ? (
+          <slot name={`option-${index}`}></slot>
+        ) : (
+          item.name
+        )}
       </li>
     );
   };
@@ -471,13 +561,18 @@ export class CSelect {
           aria-readonly="true"
           aria-haspopup="listbox"
           id={this._inputId}
-          ref={(el) => (this._inputElement = el as HTMLInputElement)}
+          ref={(el) => (this._inputElement = el)}
           autocomplete="off"
           class="c-input__input"
           type="text"
           value={this._getLabel() ?? null}
           name={this.name ?? null}
           readonly="true"
+        />
+
+        <div
+          ref={(el) => (this._selectionElement = el)}
+          class="c-input-menu__selection"
         />
       </div>
     );
@@ -503,33 +598,38 @@ export class CSelect {
               : 'c-input-menu__items c-input-menu__items--hidden'
           }
           role="listbox"
-          ref={(el) => (this._listElement = el as HTMLUListElement)}
         >
-          {this.items.map((item, index) => this._getListItem(item, index))}
+          {this._items.map((item, index) => this._getListItem(item, index))}
         </ul>
       </div>
     );
   }
 
-  private _updateStatusText() {
-    // this.statusText = '';
+  private _handleSlotChange = () => {
+    this._getOptionItems();
+  };
 
+  private _updateStatusText() {
     if (this._debounce !== null) {
       clearTimeout(this._debounce);
       this._debounce = null;
     }
 
     this._debounce = window.setTimeout(() => {
-      const ending = !!this.items.length
+      const selection = this.host.shadowRoot.querySelector(
+        'li[aria-selected="true"]',
+      ) as HTMLLIElement;
+
+      const ending = !!this._items.length
         ? ', to navigate use up and down arrows'
         : '';
 
-      const selection = this.host.shadowRoot.querySelector(
-        'li[aria-selected="true"]',
-      );
+      const isDisabled = selection.classList.contains('disabled');
+
+      const beginning = isDisabled ? 'Disabled option - ' : '';
 
       const selectionText = !!selection
-        ? `${selection.innerHTML} ${selection.ariaPosInSet} of ${selection.ariaSetSize} is highlighted`
+        ? `${beginning}${selection.dataset.value} -  ${selection.ariaPosInSet} of ${selection.ariaSetSize} is highlighted`
         : null;
 
       this.statusText = `${selectionText || ending}`;
@@ -544,7 +644,7 @@ export class CSelect {
     if (
       this.itemsPerPage &&
       this.itemsPerPage > 0 &&
-      this.items.length > this.itemsPerPage
+      this._items.length > this.itemsPerPage
     ) {
       itemsPerPageStyle = {
         'max-height': 48 * this.itemsPerPage + 'px',
@@ -590,12 +690,12 @@ export class CSelect {
             {this._renderInputElement()}
             {this._renderMenu(itemsPerPageStyle)}
             {this._renderChevron()}
+
+            <slot onSlotchange={this._handleSlotChange}></slot>
           </div>
 
           <slot name="post" slot="post"></slot>
         </c-input>
-
-        <slot></slot>
       </Host>
     );
   }
