@@ -1,3 +1,121 @@
+<app-example title="Usage with c-options" name="withOptions" component="c-select">
+  <c-select
+    cControl
+    label="Choose your snack"
+    [(ngModel)]="selectedItem"
+    placeholder="Make your decision..."
+    style="max-width: 360px"
+    return-value
+  >
+    <c-option value="5.69" name="Pizza">
+      <c-row align="center" justify="space-between">
+        🍕 Pizza
+        <c-tag flat>$ 5.69</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="1.99" name="Hot Dog">
+      <c-row align="center" justify="space-between">
+        🌭 Hot Dog
+        <c-tag flat>$ 1.99</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="3.99" name="Taco">
+      <c-row align="center" justify="space-between">
+        🌮 Taco
+        <c-tag flat>$ 3.99</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="7.23" name="Burger and Fries">
+      <c-row align="center" justify="space-between">
+        🍔🍟 Burger and Fries
+        <c-tag flat>$ 7.23</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="4.59" name="Sushi">
+      <c-row align="center" justify="space-between">
+        🍣 Sushi
+        <c-tag flat>$ 4.59</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="9.99" name="Cake" disabled>
+      <c-row align="center" justify="space-between">
+        🎂 Cake
+        <c-tag badge="Out of stock" active flat>$ 9.99</c-tag>
+      </c-row>
+    </c-option>
+  </c-select>
+
+  <p class="mt-3">Selected fruit price: $ {{ selectedItem || '?' }}</p>
+</app-example>
+
+<app-example title="Usage with c-options" subtitle="Displaying the option as selection" name="withOptionsRich" component="c-select">
+  <c-select
+    cControl
+    label="Shop a fruit"
+    [(ngModel)]="selectedOption"
+    placeholder="Select a fruit to buy"
+    style="max-width: 360px"
+    option-as-selection
+    return-value
+  >
+    <c-option value="1.69" name="Strawberry">
+      <c-row align="center" justify="space-between">
+        🍓 Strawberry
+        <c-tag tabindex="-1" flat>$ 1.69</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="0.99" name="Kiwi">
+      <c-row align="center" justify="space-between">
+        🥝 Kiwi
+        <c-tag tabindex="-1" flat>$ 0.99</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="3.99" name="Banana">
+      <c-row align="center" justify="space-between">
+        🍌 Banana
+        <c-tag tabindex="-1" badge="Sale" active flat>$ 3.99</c-tag>
+      </c-row>
+    </c-option>
+
+    <c-option value="5.25" name="Pineapple">
+      <c-row align="center" justify="space-between">
+        🍍 Pineapple
+        <c-tag tabindex="-1" flat>$ 5.25</c-tag>
+      </c-row>
+    </c-option>
+  </c-select>
+
+  <p class="mt-3">Selected fruit price: $ {{ selectedOption || '?' }}</p>
+</app-example>
+
+<app-example title="Usage with c-options" subtitle="Selected by default" name="optionsAndSelection" component="c-select">
+  <c-select
+    cControl
+    label="Your favorite sport"
+    [(ngModel)]="selected"
+    placeholder="Select a sport"
+    return-value
+  >
+    <c-option value="Golf">Golf</c-option>
+
+    <c-option value="Hockey" selected>Hockey</c-option>
+
+    <c-option value="Tennis">Tennis</c-option>
+
+    <c-option value="Football">Football</c-option>
+  </c-select>
+
+  <p class="mt-3">Selected sport: {{ selected || 'None' }}</p>
+</app-example>
+
+
 <app-example title="Basic usage with return-value (Angular)" name="basic" component="c-select">
   <c-select
     cControl

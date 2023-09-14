@@ -20,6 +20,7 @@ export interface CPaginationTextOverrides {
 export interface CSelectItem {
   name: string;
   value: string | number | boolean;
+  disabled?: boolean;
 }
 
 export interface CAutocompleteItem extends CSelectItem {
