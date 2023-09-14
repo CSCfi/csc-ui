@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/CSCfi/csc-ui/compare/v0.8.1...v0.9.0) (2023-09-14)
+
+
+### Features
+
+* Add ability to use c-select with c-option elements  like native select with options. ([436d7a8](https://github.com/CSCfi/csc-ui/commit/436d7a83048ca5d045c802e99d09066f8176d35e))
+
 ## [0.8.1](https://github.com/CSCfi/csc-ui/compare/v0.8.0...v0.8.1) (2023-09-12)
 
 
