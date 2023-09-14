@@ -1,0 +1,42 @@
+<app-example title="Basic usage" subtitle="With automatic submit" name="basic" component="c-otp-input" cols>
+  <c-otp-input
+    id="basic-otp-example"
+    [(ngModel)]="otp1"
+    hint="Please enter your one time password"
+    (completion)="onComplete($event)"
+    cControl
+  ></c-otp-input>
+
+  <c-toasts id="toasts"></c-toasts>
+</app-example>
+
+<app-example title="Manual submit" name="manual" component="c-otp-input">
+  <c-row justify="center">
+    <c-card>
+      <c-card-title>OTP Code</c-card-title>
+
+      <c-card-content>
+        <c-otp-input
+          [(ngModel)]="otp2"
+          [length]="5"
+          [valid]="valid"
+          [validation]="errorMessage"
+          hint="Please enter your one time password"
+          cControl
+        ></c-otp-input>
+      </c-card-content>
+
+      <c-card-actions justify="end">
+        <c-button
+          (click)="onManualCommit()"
+          (keyup.space)="onManualCommit()"
+          (keyup.enter)="onManualCommit()"
+        >
+          Submit
+        </c-button>
+      </c-card-actions>
+    </c-card>
+  </c-row>
+
+  <c-toasts id="manual-toasts"></c-toasts>
+</app-example>

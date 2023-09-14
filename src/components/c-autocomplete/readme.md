@@ -63,6 +63,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   c-autocomplete --> c-input
+  c-input --> c-message
   style c-autocomplete fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

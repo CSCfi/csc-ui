@@ -203,52 +203,6 @@
     }
   }
 
-  &__details {
-    line-height: 1;
-    padding: 0 12px;
-
-    &.active {
-      #{$this} {
-        &__message {
-          opacity: 1;
-          transform: translateY(0px);
-        }
-      }
-    }
-  }
-
-  &__message {
-    font-size: 12px;
-    min-height: 16px;
-    opacity: 0;
-    transform: translateY(-4px);
-    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.5, 1);
-
-    &--hint {
-      color: var(--csc-mid-grey);
-    }
-
-    &--error {
-      color: var(--csc-error);
-    }
-
-    span {
-      align-items: flex-start;
-      color: currentColor;
-      display: flex;
-      gap: 4px;
-      min-height: 16px;
-    }
-
-    svg {
-      fill: currentColor;
-      height: 16px;
-      width: 16px;
-      position: relative;
-      top: -2px;
-    }
-  }
-
   &--select .c-input__slot {
     cursor: pointer;
   }

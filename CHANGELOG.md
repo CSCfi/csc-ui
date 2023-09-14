@@ -1,145 +1,30 @@
-# v0.6.78 (Mon Aug 14 2023)
+# Changelog
 
-#### 🐛 Bug Fix
+## [0.9.0](https://github.com/CSCfi/csc-ui/compare/v0.8.1...v0.9.0) (2023-09-14)
 
-- Merge current version to master [#203](https://github.com/CSCfi/csc-ui/pull/203) ([@villeerikssoncsc](https://github.com/villeerikssoncsc) [@csckata](https://github.com/csckata) [@razorfever](https://github.com/razorfever))
 
-#### Authors: 3
+### Features
 
-- [@csckata](https://github.com/csckata)
-- [@villeerikssoncsc](https://github.com/villeerikssoncsc)
-- Oskari Väistö ([@razorfever](https://github.com/razorfever))
+* Add ability to use c-select with c-option elements  like native select with options. ([436d7a8](https://github.com/CSCfi/csc-ui/commit/436d7a83048ca5d045c802e99d09066f8176d35e))
 
----
+## [0.8.1](https://github.com/CSCfi/csc-ui/compare/v0.8.0...v0.8.1) (2023-09-12)
 
-# v0.6.77 (Tue Mar 28 2023)
 
-#### 🐛 Bug Fix
+### Bug Fixes
 
-- Replace csc-ui-vue-directive references with new scoped packages [#194](https://github.com/CSCfi/csc-ui/pull/194) ([@razorfever](https://github.com/razorfever))
+* Prevent artifacts in c-otp-input ([ef9669d](https://github.com/CSCfi/csc-ui/commit/ef9669de2fcc6f51c0623c7b2813b4137eaebd3a))
 
-#### Authors: 1
+## [0.8.0](https://github.com/CSCfi/csc-ui/compare/v0.7.8...v0.8.0) (2023-09-12)
 
-- Oskari Väistö ([@razorfever](https://github.com/razorfever))
 
----
+### Features
 
-# v0.6.76 (Mon Mar 06 2023)
+* Add new component: c-otp-input ([803b084](https://github.com/CSCfi/csc-ui/commit/803b084c4131388c2fdcdbf42baa170a6f0177d9))
 
-#### 🐛 Bug Fix
+## [0.7.8](https://github.com/CSCfi/csc-ui/compare/v0.7.1...v0.7.8) (2023-09-06)
 
-- Replace example cdn source for the npm library [#188](https://github.com/CSCfi/csc-ui/pull/188) ([@villeerikssoncsc](https://github.com/villeerikssoncsc) [@csc-design-system-team](https://github.com/csc-design-system-team))
 
-#### ⚠️ Pushed to `release/v0.6.76`
+### Bug Fixes
 
-- 0.6.76 ([@csc-design-system-team](https://github.com/csc-design-system-team))
-
-#### Authors: 2
-
-- [@csc-design-system-team](https://github.com/csc-design-system-team)
-- [@villeerikssoncsc](https://github.com/villeerikssoncsc)
-
----
-
-# v0.6.75 (Wed Mar 01 2023)
-
-#### 🐛 Bug Fix
-
-- Refactor c-menu and c-menu-items components [#186](https://github.com/CSCfi/csc-ui/pull/186) ([@razorfever](https://github.com/razorfever))
-
-#### ⚠️ Pushed to `release/v0.6.75`
-
-- 0.6.75 ([@csc-design-system-team](https://github.com/csc-design-system-team))
-
-#### Authors: 2
-
-- [@csc-design-system-team](https://github.com/csc-design-system-team)
-- Oskari Väistö ([@razorfever](https://github.com/razorfever))
-
----
-
-# v0.6.74 (Fri Feb 24 2023)
-
-#### 🐛 Bug Fix
-
-- Fix c-menu positioning and z-index issues [#184](https://github.com/CSCfi/csc-ui/pull/184) ([@razorfever](https://github.com/razorfever))
-
-#### ⚠️ Pushed to `release/v0.6.74`
-
-- 0.6.74 ([@csc-design-system-team](https://github.com/csc-design-system-team))
-
-#### Authors: 2
-
-- [@csc-design-system-team](https://github.com/csc-design-system-team)
-- Oskari Väistö ([@razorfever](https://github.com/razorfever))
-
----
-
-# v0.6.72 (Fri Feb 24 2023)
-
-#### 🐛 Bug Fix
-
-- Attempt to fix releasing in Github actions [#182](https://github.com/CSCfi/csc-ui/pull/182) ([@csc-design-system-team](https://github.com/csc-design-system-team) [@villeerikssoncsc](https://github.com/villeerikssoncsc))
-
-#### ⚠️ Pushed to `release/v0.6.73`
-
-- 0.6.73 ([@csc-design-system-team](https://github.com/csc-design-system-team))
-
-#### Authors: 2
-
-- [@csc-design-system-team](https://github.com/csc-design-system-team)
-- [@villeerikssoncsc](https://github.com/villeerikssoncsc)
-
----
-
-# v0.6.69 (Tue Feb 21 2023)
-
-#### 🐛 Bug Fix
-
-- Fix issues in Github actions implementation [#179](https://github.com/CSCfi/csc-ui/pull/179) ([@csc-design-system-team](https://github.com/csc-design-system-team) [@villeerikssoncsc](https://github.com/villeerikssoncsc))
-
-#### ⚠️ Pushed to `release/v0.6.71`
-
-- 0.6.71 ([@csc-design-system-team](https://github.com/csc-design-system-team))
-
-#### Authors: 2
-
-- [@csc-design-system-team](https://github.com/csc-design-system-team)
-- [@villeerikssoncsc](https://github.com/villeerikssoncsc)
-
----
-
-# v0.6.68 (Wed Feb 15 2023)
-
-#### 🐛 Bug Fix
-
-- Fix the complete step icon in Safari [#174](https://github.com/CSCfi/csc-ui/pull/174) ([@razorfever](https://github.com/razorfever))
-
-#### ⚠️ Pushed to `release/v0.6.68`
-
-- 0.6.68 ([@csc-design-system-team](https://github.com/csc-design-system-team))
-
-#### Authors: 2
-
-- [@csc-design-system-team](https://github.com/csc-design-system-team)
-- Oskari Väistö ([@razorfever](https://github.com/razorfever))
-
----
-
-# v0.6.67 (Wed Feb 15 2023)
-
-#### 🐛 Bug Fix
-
-- Fix actions [#172](https://github.com/CSCfi/csc-ui/pull/172) ([@razorfever](https://github.com/razorfever))
-
-#### ⚠️ Pushed to `release/v0.6.67`
-
-- 0.6.67 ([@csc-design-system-team](https://github.com/csc-design-system-team))
-
-#### Authors: 2
-
-- [@csc-design-system-team](https://github.com/csc-design-system-team)
-- Oskari Väistö ([@razorfever](https://github.com/razorfever))
-
----
-
+* Fix c-button styles ([4e034c8](https://github.com/CSCfi/csc-ui/commit/4e034c86885ef2d1caadd8802337461a7269e56b))
+* Use master branch in release workflow ([d155522](https://github.com/CSCfi/csc-ui/commit/d1555226fbecdf9b8c4c2e3ffb573808f93afe4a))

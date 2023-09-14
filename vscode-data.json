@@ -1118,6 +1118,31 @@
       ]
     },
     {
+      "name": "c-message",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "hint",
+          "description": "Hint text for the input"
+        },
+        {
+          "name": "input-id",
+          "description": "Id of the related input element"
+        },
+        {
+          "name": "valid",
+          "description": "Parent validíty"
+        },
+        {
+          "name": "validation",
+          "description": "Custom validation message"
+        }
+      ]
+    },
+    {
       "name": "c-modal",
       "description": {
         "kind": "markdown",
@@ -1168,6 +1193,64 @@
               "name": "fixed"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "c-option",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Set option as disabled"
+        },
+        {
+          "name": "name",
+          "description": "Option name"
+        },
+        {
+          "name": "selected",
+          "description": "Set option as selected"
+        },
+        {
+          "name": "value",
+          "description": "Option value"
+        }
+      ]
+    },
+    {
+      "name": "c-otp-input",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "description": "Id of the element"
+        },
+        {
+          "name": "hide-details",
+          "description": "Hide the hint and error messages"
+        },
+        {
+          "name": "hint",
+          "description": "Hint text for the input"
+        },
+        {
+          "name": "length",
+          "description": "Length of the OTP code"
+        },
+        {
+          "name": "valid",
+          "description": "Set the validíty of the input"
+        },
+        {
+          "name": "validation",
+          "description": "Custom validation message"
         }
       ]
     },
@@ -1381,6 +1464,10 @@
         {
           "name": "name",
           "description": "Input field name"
+        },
+        {
+          "name": "option-as-selection",
+          "description": "display the option as selection (works only when c-option elements are used)"
         },
         {
           "name": "placeholder",

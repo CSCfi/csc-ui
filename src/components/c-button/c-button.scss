@@ -14,6 +14,7 @@
   overflow: hidden;
   transform: translateZ(0); // Safari border-radius fix
   transition: background-color 0.3s ease-in-out;
+  align-self: baseline;
 }
 
 :host(.grouped),
@@ -116,7 +117,9 @@
   background-color: var(--c-hover-background);
 }
 
-:host(:host:focus:not(:host:focus-visible)) { outline: none }
+:host(:host:focus:not(:host:focus-visible)) {
+  outline: none;
+}
 
 :host(:host:focus-visible) {
   outline: 2px var(--c-outline-color) solid;

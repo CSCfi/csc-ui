@@ -55,6 +55,7 @@ import { TypesComponent } from './types/types.component';
 import { CStepsComponent } from './examples/c-steps/c-steps.component';
 import { GettingStartedVueLegacyComponent } from './getting-started-vue-legacy/getting-started-vue-legacy.component';
 import { CIconComponent } from './examples/c-icon/c-icon.component';
+import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { CIconComponent } from './examples/c-icon/c-icon.component';
     CStepsComponent,
     GettingStartedVueLegacyComponent,
     CIconComponent,
+    COtpInputComponent,
   ],
   imports: [
     BrowserModule,
