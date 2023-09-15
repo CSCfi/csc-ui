@@ -1,132 +1,111 @@
 <app-example title="Usage with c-options" name="withOptions" component="c-select">
   <c-select
     cControl
-    label="Choose your snack"
+    label="Partition"
     [(ngModel)]="selectedItem"
-    placeholder="Make your decision..."
+    placeholder="Choose partition..."
     style="max-width: 360px"
     return-value
   >
-    <c-option value="5.69" name="Pizza">
+    <c-option value="normal" name="normal">
       <c-row align="center" justify="space-between">
-        🍕 Pizza
-        <c-tag flat>$ 5.69</c-tag>
+        Normal
+        <c-tag flat>100 BU / node / h</c-tag>
       </c-row>
     </c-option>
 
-    <c-option value="1.99" name="Hot Dog">
+    <c-option value="interactive" name="interactive">
       <c-row align="center" justify="space-between">
-        🌭 Hot Dog
-        <c-tag flat>$ 1.99</c-tag>
+        Interactive
+        <c-tag flat>1 BU / CPU / h</c-tag>
       </c-row>
     </c-option>
 
-    <c-option value="3.99" name="Taco">
+    <c-option value="gpu" name="gpu" disabled>
       <c-row align="center" justify="space-between">
-        🌮 Taco
-        <c-tag flat>$ 3.99</c-tag>
-      </c-row>
-    </c-option>
-
-    <c-option value="7.23" name="Burger and Fries">
-      <c-row align="center" justify="space-between">
-        🍔🍟 Burger and Fries
-        <c-tag flat>$ 7.23</c-tag>
-      </c-row>
-    </c-option>
-
-    <c-option value="4.59" name="Sushi">
-      <c-row align="center" justify="space-between">
-        🍣 Sushi
-        <c-tag flat>$ 4.59</c-tag>
-      </c-row>
-    </c-option>
-
-    <c-option value="9.99" name="Cake" disabled>
-      <c-row align="center" justify="space-between">
-        🎂 Cake
-        <c-tag badge="Out of stock" active flat>$ 9.99</c-tag>
+        GPU
+        <c-tag flat badge="N/A" active>100 BU / GPU / h</c-tag>
       </c-row>
     </c-option>
   </c-select>
 
-  <p class="mt-3">Selected fruit price: $ {{ selectedItem || '?' }}</p>
+  <p class="mt-3">Selected partition value: {{ selectedItem || '?' }}</p>
 </app-example>
 
-<app-example title="Usage with c-options" subtitle="Displaying the option as selection" name="withOptionsRich" component="c-select">
+<app-example
+  title="Usage with c-options"
+  subtitle="Displaying the option as selection"
+  name="withOptionsRich"
+  component="c-select"
+>
   <c-select
     cControl
-    label="Shop a fruit"
+    label="Partition"
     [(ngModel)]="selectedOption"
-    placeholder="Select a fruit to buy"
+    placeholder="Choose partition..."
     style="max-width: 360px"
     option-as-selection
     return-value
   >
-    <c-option value="1.69" name="Strawberry">
+    <c-option value="normal" name="normal">
       <c-row align="center" justify="space-between">
-        🍓 Strawberry
-        <c-tag tabindex="-1" flat>$ 1.69</c-tag>
+        Normal
+        <c-tag flat>100 BU / node / h</c-tag>
       </c-row>
     </c-option>
 
-    <c-option value="0.99" name="Kiwi">
+    <c-option value="interactive" name="interactive">
       <c-row align="center" justify="space-between">
-        🥝 Kiwi
-        <c-tag tabindex="-1" flat>$ 0.99</c-tag>
+        Interactive
+        <c-tag flat>1 BU / CPU / h</c-tag>
       </c-row>
     </c-option>
 
-    <c-option value="3.99" name="Banana">
+    <c-option value="gpu" name="gpu">
       <c-row align="center" justify="space-between">
-        🍌 Banana
-        <c-tag tabindex="-1" badge="Sale" active flat>$ 3.99</c-tag>
-      </c-row>
-    </c-option>
-
-    <c-option value="5.25" name="Pineapple">
-      <c-row align="center" justify="space-between">
-        🍍 Pineapple
-        <c-tag tabindex="-1" flat>$ 5.25</c-tag>
+        GPU
+        <c-tag flat>100 BU / GPU / h</c-tag>
       </c-row>
     </c-option>
   </c-select>
 
-  <p class="mt-3">Selected fruit price: $ {{ selectedOption || '?' }}</p>
+  <p class="mt-3">Selected partition: {{ selectedOption || '?' }}</p>
 </app-example>
 
-<app-example title="Usage with c-options" subtitle="Selected by default" name="optionsAndSelection" component="c-select">
+<app-example
+  title="Usage with c-options"
+  subtitle="Selected by default"
+  name="optionsAndSelection"
+  component="c-select"
+>
   <c-select
     cControl
-    label="Your favorite sport"
+    label="Partition"
     [(ngModel)]="selected"
-    placeholder="Select a sport"
+    placeholder="Choose partition..."
     return-value
   >
-    <c-option value="Golf">Golf</c-option>
+    <c-option value="Normal">Normal</c-option>
 
-    <c-option value="Hockey" selected>Hockey</c-option>
+    <c-option value="Interactive" selected>Interactive</c-option>
 
-    <c-option value="Tennis">Tennis</c-option>
-
-    <c-option value="Football">Football</c-option>
+    <c-option value="GPU">GPU</c-option>
   </c-select>
 
-  <p class="mt-3">Selected sport: {{ selected || 'None' }}</p>
+  <p class="mt-3">Selected partition: {{ selected || 'None' }}</p>
 </app-example>
-
 
 <app-example title="Basic usage with return-value (Angular)" name="basic" component="c-select">
   <c-select
     cControl
-    label="Your favorite fruit"
+    label="Partition"
     return-value
     [items]="items"
     [(ngModel)]="value"
-    placeholder="Select a fruit"
+    placeholder="Choose partition..."
   ></c-select>
 
-  <p class="mt-3">Selected fruit: {{ value || 'None' }}</p>
+  <p class="mt-3">Selected partition: {{ value || 'None' }}</p>
 </app-example>
 
 <app-example title="Shadow variant (Angular)" name="shadow" component="c-select">
@@ -135,10 +114,10 @@
     cControl
     [items]="items"
     [(ngModel)]="selection"
-    placeholder="Select a fruit"
+    placeholder="Partition"
   ></c-select>
 
-  <p class="mt-3">Selected fruit: {{ (selection | json) || 'None' }}</p>
+  <p class="mt-3">Selected partition: {{ (selection | json) || 'None' }}</p>
 </app-example>
 
 <app-example title="Scrollable items + required (Angular)" name="scrollable" component="c-select">
@@ -149,10 +128,10 @@
     [items]="items"
     [(ngModel)]="selection"
     [valid]="!!selection?.value"
-    label="Fruit of the day"
-    placeholder="Select a fruit"
+    label="Partition"
+    placeholder="Choose partition..."
     required
   ></c-select>
 
-  <p class="mt-3">Selected fruit: {{ (selection | json) || 'None' }}</p>
+  <p class="mt-3">Selected partition: {{ (selection | json) || 'None' }}</p>
 </app-example>

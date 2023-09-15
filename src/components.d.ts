@@ -880,7 +880,7 @@ export namespace Components {
         "position": 'fixed' | 'absolute';
     }
     /**
-     * @group None
+     * @parent c-select
      */
     interface COption {
         /**
@@ -1950,7 +1950,7 @@ declare global {
         new (): HTMLCNotificationElement;
     };
     /**
-     * @group None
+     * @parent c-select
      */
     interface HTMLCOptionElement extends Components.COption, HTMLStencilElement {
     }
@@ -3162,7 +3162,7 @@ declare namespace LocalJSX {
         "position"?: 'fixed' | 'absolute';
     }
     /**
-     * @group None
+     * @parent c-select
      */
     interface COption {
         /**
@@ -4093,7 +4093,7 @@ declare module "@stencil/core" {
              */
             "c-notification": LocalJSX.CNotification & JSXBase.HTMLAttributes<HTMLCNotificationElement>;
             /**
-             * @group None
+             * @parent c-select
              */
             "c-option": LocalJSX.COption & JSXBase.HTMLAttributes<HTMLCOptionElement>;
             /**

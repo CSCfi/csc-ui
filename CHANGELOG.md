@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/CSCfi/csc-ui/compare/v0.9.0...v0.9.1) (2023-09-15)
+
+
+### Bug Fixes
+
+* Show selected item correctly in c-select ([6c26038](https://github.com/CSCfi/csc-ui/commit/6c260384f278ac1c77735a609aefc8e87f56af31))
+
 ## [0.9.0](https://github.com/CSCfi/csc-ui/compare/v0.8.1...v0.9.0) (2023-09-14)
 
 
