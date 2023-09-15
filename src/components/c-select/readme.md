@@ -37,6 +37,13 @@
 | `changeValue` | Triggered when an item is selected | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot             | Description                |
+| ---------------- | -------------------------- |
+| `"Default slot"` | Use c-option elements only |
+
+
 ## Dependencies
 
 ### Depends on

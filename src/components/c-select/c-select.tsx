@@ -16,6 +16,7 @@ import { CSelectItem } from '../../types';
 
 /**
  * @group Form
+ * @slot Default slot - Use c-option elements only
  */
 @Component({
   tag: 'c-select',
