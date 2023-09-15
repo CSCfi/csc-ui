@@ -1,7 +1,7 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 
 /**
- * @group None
+ * @parent c-select
  */
 @Component({
   tag: 'c-option',
