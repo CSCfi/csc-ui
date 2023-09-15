@@ -237,12 +237,18 @@ export class CSelect {
   }
 
   private _getLabel() {
+    if (!this.value) return '';
+
     if (
       this.returnValue &&
       ['number', 'string', 'boolean'].includes(typeof this.value)
     ) {
       return this._items?.find((item) => item.value === this.value)?.name;
     }
+
+    return this._items?.find(
+      (item) => item.value === (this.value as CSelectItem).value,
+    )?.name;
   }
 
   private _scrollToElement() {

@@ -28,12 +28,9 @@ export class CSelectComponent implements OnInit {
 
   // @example-start|scrollable|basic|shadow
   items = [
-    { name: 'Banana', value: 'banana' },
-    { name: 'Pineapple', value: 'pineapple' },
-    { name: 'Apple', value: 'apple' },
-    { name: 'Orange', value: 'orange' },
-    { name: 'Pear', value: 'pear', disabled: true },
-    { name: 'Lemon', value: 'lemon' },
+    { name: 'Normal', value: 'normal' },
+    { name: 'Interactive', value: 'interactive' },
+    { name: 'GPU', value: 'gpu' },
   ];
   // @example-end
 
