@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.2](https://github.com/CSCfi/csc-ui/compare/v0.9.1...v0.9.2) (2023-09-18)
+
+
+### Bug Fixes
+
+* c-select keyboard navigation scrolling fixed ([2efa2bb](https://github.com/CSCfi/csc-ui/commit/2efa2bba774749b7ce8bd2f42025d688ba4984ea))
+
 ## [0.9.1](https://github.com/CSCfi/csc-ui/compare/v0.9.0...v0.9.1) (2023-09-15)
 
 

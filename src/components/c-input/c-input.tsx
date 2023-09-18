@@ -419,12 +419,14 @@ export class CInput {
               </div>
             </div>
 
-            <c-message
-              hint={this.hint}
-              inputId={this.inputId}
-              valid={this.valid}
-              validation={this.validation}
-            />
+            {!this.hideDetails && (
+              <c-message
+                hint={this.hint}
+                inputId={this.inputId}
+                valid={this.valid}
+                validation={this.validation}
+              />
+            )}
           </div>
         </div>
       </Host>

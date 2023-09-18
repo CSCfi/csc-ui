@@ -98,14 +98,14 @@
 <app-example title="Basic usage with return-value (Angular)" name="basic" component="c-select">
   <c-select
     cControl
-    label="Partition"
+    label="Country"
     return-value
     [items]="items"
     [(ngModel)]="value"
-    placeholder="Choose partition..."
+    placeholder="Choose country..."
   ></c-select>
 
-  <p class="mt-3">Selected partition: {{ value || 'None' }}</p>
+  <p class="mt-3">Selected country: {{ value || 'None' }}</p>
 </app-example>
 
 <app-example title="Shadow variant (Angular)" name="shadow" component="c-select">
@@ -114,10 +114,10 @@
     cControl
     [items]="items"
     [(ngModel)]="selection"
-    placeholder="Partition"
+    placeholder="Country"
   ></c-select>
 
-  <p class="mt-3">Selected partition: {{ (selection | json) || 'None' }}</p>
+  <p class="mt-3">Selected country: {{ (selection | json) || 'None' }}</p>
 </app-example>
 
 <app-example title="Scrollable items + required (Angular)" name="scrollable" component="c-select">
@@ -128,10 +128,10 @@
     [items]="items"
     [(ngModel)]="selection"
     [valid]="!!selection?.value"
-    label="Partition"
-    placeholder="Choose partition..."
+    label="Country"
+    placeholder="Choose country..."
     required
   ></c-select>
 
-  <p class="mt-3">Selected partition: {{ (selection | json) || 'None' }}</p>
+  <p class="mt-3">Selected country: {{ (selection | json) || 'None' }}</p>
 </app-example>
