@@ -186,6 +186,8 @@ export class CSelect {
   onCurrentIndexChange(index: number) {
     this.activeListItemId = this._itemRefs[index]?.ref?.id ?? null;
 
+    this._scrollToElement();
+
     this._updateStatusText();
   }
 
