@@ -41,11 +41,11 @@ describe('c-select', () => {
         <c-select
           items={items}
           shadow
-          placeholder="Select a fruit"
-          label="Your favorite fruit"
-          hint="This is a hint"
+          placeholder='Select a fruit'
+          label='Your favorite fruit'
+          hint='This is a hint'
           valid
-          validation="Required"
+          validation='Required'
         ></c-select>
       ),
     });
@@ -60,11 +60,11 @@ describe('c-select', () => {
         <c-select
           items={items}
           shadow
-          placeholder="Select a fruit"
-          label="Your favorite fruit"
-          hint="This is a hint"
+          placeholder='Select a fruit'
+          label='Your favorite fruit'
+          hint='This is a hint'
           valid
-          validation="Required"
+          validation='Required'
           hideDetails
         ></c-select>
       ),

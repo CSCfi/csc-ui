@@ -1,54 +1,67 @@
+// TODO:  Remove and add to index.html
+@import '../../styles/css/c-button.css';
+
 :host {
-  --c-background-color: var(--csc-primary);
-  --c-color: #fff;
-  --c-hover-background: var(--csc-primary-hover);
-  --c-outline-color: var(--csc-primary);
-  --c-radius: 4px;
+  --c-button-background: var(--c-button-default-background);
+  --c-button-text: var(--c-button-default-text);
+  --c-button-hover: var(--c-button-default-hover);
+  --c-button-outline-color: var(--c-button-default-background);
+  --c-button-border-radius: 4px;
+
+  --c-height: 44px;
 
   --c-tab-button-background: #fff;
 
-  background-color: var(--c-background-color);
-  border-radius: var(--c-radius);
-  color: var(--c-color);
+  background-color: var(--c-button-background);
+  border-radius: var(--c-button-border-radius);
+  color: var(--c-button-text);
   display: inline-flex;
-  overflow: hidden;
+  // overflow: hidden;
   transform: translateZ(0); // Safari border-radius fix
   transition: background-color 0.3s ease-in-out;
-  align-self: baseline;
 }
 
 :host(.grouped),
 :host(.no-radius) {
-  --c-radius: 0;
+  --c-button-border-radius: 0;
+}
+
+:host(:host:not(.description)) {
+  height: var(--c-height);
+}
+
+:host(.description) {
+  height: 'auto';
 }
 
 :host(.ghost) {
-  --c-background-color: var(--csc-primary-ghost);
-  --c-color: var(--csc-primary);
-  --c-hover-background: var(--csc-primary-ghost-hover);
+  --c-button-background: var(--c-button-ghost-background);
+  --c-button-text: var(--c-button-ghost-text);
+  --c-button-hover: var(--c-button-ghost-hover);
 }
 
 :host(.ghost.inverted) {
-  --c-background-color: rgba(255, 255, 255, 0.15);
-  --c-color: #fff;
-  --c-hover-background: rgba(255, 255, 255, 0.25);
+  --c-button-background: var(--c-button-ghost-inverted-background);
+  --c-button-text: var(--c-button-ghost-inverted-text);
+  --c-button-hover: var(--c-button-ghost-inverted-hover);
 }
 
-:host(.ghost.disabled) {
-  --c-background-color: var(--csc-lightest-grey);
-  --c-hover-background: var(--csc-lightest-grey);
-}
+// :host(.ghost.disabled) {
+//   --c-button-background: var(--csc-lightes);
+//   --c-button-hover: var(--csc-lightest-grey);
+// }
 
+:host(.disabled.inverted),
 :host(.disabled) {
-  --c-color: var(--csc-mid-grey) !important;
-  --c-background-color: var(--csc-lightest-grey);
-  --c-hover-background: var(--csc-lightest-grey);
+  --c-button-background: var(--c-button-default-disabled-background);
+  --c-button-hover: var(--c-button-default-disabled-hover);
+  --c-button-text: var(--c-button-default-disabled-text) !important;
 }
 
 :host(.disabled.outlined) {
-  --c-background-color: transparent;
-  --c-hover-background: transparent;
-  --c-color: var(--csc-mid-grey);
+  --c-button-background: var(--c-button-outlined-disabled-background);
+  --c-button-hover: var(--c-button-outlined-disabled-hover);
+  --c-button-text: var(--c-button-outlined-disabled-text);
 }
 
 :host(.disabled.grouped) {
@@ -60,61 +73,92 @@
 }
 
 :host(.inverted) {
-  --c-background-color: #fff;
-  --c-color: var(--csc-primary);
-  --c-hover-background: rgba(255, 255, 255, 0.85);
-  --c-outline-color: #fff;
+  --c-button-background: var(--c-button-default-inverted-background);
+  --c-button-hover: var(--c-button-default-inverted-hover);
+  --c-button-text: var(--c-button-default-inverted-text);
+  --c-button-outline-color: #fff;
 }
 
 :host(.outlined) {
-  --c-background-color: transparent;
-  --c-color: var(--csc-primary);
-  --c-hover-background: var(--csc-primary-text-hover);
+  --c-button-text: var(--c-button-outlined-text);
+  --c-button-background: var(--c-button-outlined-background);
+  --c-button-hover: var(--c-button-outlined-hover);
+}
+
+:host(.danger.disabled.inverted),
+:host(.danger) {
+  --c-button-text: var(--c-button-danger-text);
+  --c-button-background: var(--c-button-danger-background);
+  --c-button-hover: var(--c-button-danger-hover);
+}
+
+:host(.danger:not(.inverted)) {
+  --c-button-outline-color: var(--c-button-danger-background);
+}
+
+:host(.danger.disabled) {
+  --c-button-text: var(--c-button-danger-disabled-text);
+  --c-button-background: var(--c-button-danger-disabled-background);
+  --c-button-hover: var(--c-button-danger-disabled-hover);
+}
+
+:host(.danger.inverted) {
+  --c-button-text: var(--c-button-danger-inverted-text);
+  --c-button-background: var(--c-button-danger-inverted-background);
+  --c-button-hover: var(--c-button-danger-inverted-hover);
 }
 
 :host(.outlined.inverted) {
-  --c-color: #fff;
-  --c-hover-background: rgba(255, 255, 255, 0.15);
+  --c-button-text: var(--c-button-outlined-inverted-text);
+  --c-button-background: var(--c-button-outlined-inverted-background);
+  --c-button-hover: var(--c-button-outlined-inverted-hover);
 }
 
 :host(.outlined.disabled) {
-  --c-background-color: transparent;
-  --c-hover-background: transparent;
+  --c-button-text: var(--c-button-outlined-disabled-text);
+  --c-button-background: var(--c-button-outlined-disabled-background);
+  --c-button-hover: var(--c-button-outlined-disabled-hover);
+}
+
+:host(.outlined.inverted.disabled) {
+  --c-button-text: var(--c-button-outlined-inverted-disabled-text) !important;
 }
 
 :host(.outlined.grouped) {
-  --c-background-color: #fff;
-  --c-hover-background: var(--csc-primary-text-hover);
+  --c-button-background-color: #fff;
+  --c-button-hover: var(--c-button-outlined-inverted-hover);
 }
 
 :host(.text) {
-  --c-background-color: transparent;
-  --c-color: var(--csc-primary);
-  --c-hover-background: var(--csc-primary-text-hover);
+  --c-button-background: var(--c-button-text-background);
+  --c-button-hover: var(--c-button-text-hover);
+  --c-button-text: var(--c-button-text-text);
 }
 
 :host(.text.inverted) {
-  --c-color: #fff;
-  --c-hover-background: rgba(255, 255, 255, 0.15);
+  --c-button-background: var(--c-button-text-inverted-background);
+  --c-button-hover: var(--c-button-text-inverted-hover);
+  --c-button-text: var(--c-button-text-inverted-text);
 }
 
 :host(.text.disabled) {
-  --c-background-color: transparent;
-  --c-hover-background: transparent;
+  --c-button-background: var(--c-button-text-disabled-background);
+  --c-button-hover: var(--c-button-text-disabled-hover);
+  --c-button-text: var(--c-button-text-disabled-text);
 }
 
 :host(.text.inverted.disabled) {
-  --c-color: rgba(255, 255, 255, 0.56) !important;
+  --c-button-text: var(--c-button-text-inverted-disabled-text) !important;
 }
 
 :host(.c-button--active) {
-  --c-color: rgba(255, 255, 255, 1);
+  --c-button-text: rgba(255, 255, 255, 1);
 }
-
+// TODO:  wtf?
 :host(:host:hover) {
   --c-tab-button-background: var(--csc-primary-text-hover);
 
-  background-color: var(--c-hover-background);
+  background-color: var(--c-button-hover);
 }
 
 :host(:host:focus:not(:host:focus-visible)) {
@@ -122,7 +166,7 @@
 }
 
 :host(:host:focus-visible) {
-  outline: 2px var(--c-outline-color) solid;
+  outline: 2px var(--c-button-outline-color) solid;
   outline-offset: 2px;
   z-index: 1;
 }
@@ -131,12 +175,24 @@
   outline-offset: 4px;
 }
 
+:host([fit]) {
+  width: 100%;
+}
+
+:host([size="small"]) {
+  --c-height: 28px;
+}
+
+:host([size="large"]) {
+  --c-height: 52px;
+}
+
 ::slotted([slot='icon']) {
   font-size: var(--c-button-icon-size);
 }
 
 ::slotted(svg) {
-  fill: var(--c-color);
+  fill: var(--c-button-text);
 }
 
 a {
@@ -148,7 +204,7 @@ a {
   background-color: transparent;
   color: currentColor;
   font-family: var(--csc-font-family);
-  display: flex;
+  display: inline-grid;
   border: none;
   padding: 0;
   position: relative;
@@ -172,14 +228,9 @@ a {
     }
   }
 
-  &.fit {
-    flex-grow: 1 !important;
-    width: 100%;
-  }
-
   &.outlined {
-    border-radius: var(--c-radius);
-    box-shadow: inset 0 0 0 2px var(--c-color);
+    border-radius: var(--c-button-border-radius);
+    box-shadow: inset 0 0 0 2px var(--c-button-text);
 
     &.grouped {
       box-shadow: none;
@@ -221,14 +272,13 @@ a {
 }
 
 .c-button {
-  --c-height: 44px;
   --c-padding: 0 16px;
   --c-font-size: 16px;
   --c-button-icon-size: 24px;
 
   $this: &;
 
-  border-radius: var(--c-radius);
+  border-radius: var(--c-button-border-radius);
   position: relative;
   box-shadow: none;
   outline: none;
@@ -256,7 +306,7 @@ a {
   }
 
   svg {
-    fill: var(--c-color);
+    fill: var(--c-button-text);
     height: var(--c-button-icon-size);
     width: var(--c-button-icon-size);
 
@@ -273,20 +323,18 @@ a {
   }
 
   &--small {
-    --c-height: 28px;
     --c-padding: 0 12px;
     --c-font-size: 14px;
     --c-button-icon-size: 20px;
   }
 
   &--large {
-    --c-height: 52px;
     --c-padding: 0 24px;
     --c-font-size: 18px;
   }
 
   &--no-radius {
-    --c-radius: 0;
+    --c-button-border-radius: 0;
   }
 
   &--fitted {
@@ -305,6 +353,10 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
+
+    .c-button__content {
+      height: var(--c-height);
+    }
   }
 
   &__content {
@@ -331,7 +383,7 @@ a {
   animation: 2s ease-in-out infinite both circle-animation;
   display: block;
   fill: transparent;
-  stroke: var(--c-color);
+  stroke: var(--c-button-text);
   stroke-linecap: round;
   stroke-dasharray: 283;
   stroke-dashoffset: 280;

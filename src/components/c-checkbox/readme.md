@@ -29,9 +29,9 @@
 
 ## Slots
 
-| Slot | Description                |
-| ---- | -------------------------- |
-|      | Default slot for the label |
+| Slot             | Description                |
+| ---------------- | -------------------------- |
+| `"Default slot"` | Default slot for the label |
 
 
 ## Dependencies
@@ -40,9 +40,14 @@
 
  - [c-data-table](../c-data-table)
 
+### Depends on
+
+- [c-ripple](../c-ripple)
+
 ### Graph
 ```mermaid
 graph TD;
+  c-checkbox --> c-ripple
   c-data-table --> c-checkbox
   style c-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -11,7 +11,7 @@ import {
 
 /**
  * @group Content Selectors
- * @slot - Default slot for the c-accordion-item components
+ * @slot Default slot - Default slot for the c-accordion-item components
  */
 @Component({
   tag: 'c-accordion',
@@ -98,7 +98,7 @@ export class CAccordion {
 
   render() {
     return (
-      <div class="c-accordion">
+      <div class='c-accordion'>
         <slot></slot>
       </div>
     );

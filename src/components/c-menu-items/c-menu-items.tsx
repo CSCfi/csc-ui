@@ -332,14 +332,14 @@ export class CMenuItems {
       <li
         aria-disabled={(!!item.disabled).toString()}
         class={classes}
-        tabindex="-1"
-        role="menuitem"
+        tabindex='-1'
+        role='menuitem'
         onClick={(event) => onItemClick(event, item)}
       >
         {item.name}
 
         {item.icon && (
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24">
+          <svg class='icon' width='20' height='20' viewBox='0 0 24 24'>
             <path d={item.icon} />
           </svg>
         )}

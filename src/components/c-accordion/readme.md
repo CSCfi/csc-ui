@@ -24,9 +24,9 @@
 
 ## Slots
 
-| Slot | Description                                      |
-| ---- | ------------------------------------------------ |
-|      | Default slot for the c-accordion-item components |
+| Slot             | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| `"Default slot"` | Default slot for the c-accordion-item components |
 
 
 ----------------------------------------------

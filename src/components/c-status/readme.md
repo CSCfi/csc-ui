@@ -14,9 +14,9 @@
 
 ## Slots
 
-| Slot | Description |
-| ---- | ----------- |
-|      | Status text |
+| Slot             | Description |
+| ---------------- | ----------- |
+| `"Default slot"` | Status text |
 
 
 ----------------------------------------------

@@ -3,7 +3,7 @@
     "value": "4px"
   },
   "dark-grey": {
-    "value": "{theme.grey.500}"
+    "value": "{theme.grey.600}"
   },
   "error": {
     "value": "{theme.red.400}"
@@ -18,30 +18,30 @@
     "value": "{theme.grey.100}"
   },
   "link": {
-    "value": "{theme.light-blue.500}"
+    "value": "{theme.light-blue.600}"
   },
   "mid-grey": {
-    "value": "{theme.grey.500}"
+    "value": "{theme.grey.600}"
   },
   "primary": {
-    "value": "{theme.teal.500}"
+    "value": "{theme.petrol.600}"
   },
   "primary-ghost": {
-    "value": "{theme.teal.100}"
+    "value": "{theme.petrol.100}"
   },
   "primary-ghost-hover": {
-    "value": "{theme.teal.200}"
+    "value": "{theme.petrol.200}"
   },
   "primary-hover": {
-    "value": "{theme.teal.400}"
+    "value": "{theme.petrol.400}"
   },
   "primary-text-hover": {
-    "value": "{theme.teal.100}"
+    "value": "{theme.petrol.100}"
   },
   "success": {
-    "value": "{theme.green.500}"
+    "value": "{theme.green.600}"
   },
   "warning": {
-    "value": "{theme.orange.500}"
+    "value": "{theme.orange.600}"
   }
 }

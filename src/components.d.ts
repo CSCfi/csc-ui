@@ -172,6 +172,10 @@ export namespace Components {
      */
     interface CButton {
         /**
+          * Danger variant style
+         */
+        "danger": boolean;
+        /**
           * Disable the button
          */
         "disabled": boolean;
@@ -862,24 +866,6 @@ export namespace Components {
     interface CNavigationbutton {
     }
     /**
-     * @parent None
-     */
-    interface CNotification {
-        /**
-          * notification contents
-         */
-        "notification": {
-    name: string;
-    type: 'warning' | 'error' | 'success' | 'info';
-    delay?: number;
-    requiresClosing?: boolean;
-  };
-        /**
-          * Position of the notifications
-         */
-        "position": 'fixed' | 'absolute';
-    }
-    /**
      * @parent c-select
      */
     interface COption {
@@ -1040,6 +1026,19 @@ export namespace Components {
           * Value of the radio group
          */
         "value": string | number | CRadioGroupItem;
+    }
+    /**
+     * @parent None
+     */
+    interface CRipple {
+        /**
+          * Create a circular ripple
+         */
+        "circular": boolean;
+        /**
+          * Creates a ripple
+         */
+        "createRipple": (event: MouseEvent, parent: HTMLElement, center?: boolean) => Promise<void>;
     }
     /**
      * Generic flex row component
@@ -1941,15 +1940,6 @@ declare global {
         new (): HTMLCNavigationbuttonElement;
     };
     /**
-     * @parent None
-     */
-    interface HTMLCNotificationElement extends Components.CNotification, HTMLStencilElement {
-    }
-    var HTMLCNotificationElement: {
-        prototype: HTMLCNotificationElement;
-        new (): HTMLCNotificationElement;
-    };
-    /**
      * @parent c-select
      */
     interface HTMLCOptionElement extends Components.COption, HTMLStencilElement {
@@ -1993,6 +1983,15 @@ declare global {
     var HTMLCRadioGroupElement: {
         prototype: HTMLCRadioGroupElement;
         new (): HTMLCRadioGroupElement;
+    };
+    /**
+     * @parent None
+     */
+    interface HTMLCRippleElement extends Components.CRipple, HTMLStencilElement {
+    }
+    var HTMLCRippleElement: {
+        prototype: HTMLCRippleElement;
+        new (): HTMLCRippleElement;
     };
     /**
      * Generic flex row component
@@ -2219,12 +2218,12 @@ declare global {
         "c-message": HTMLCMessageElement;
         "c-modal": HTMLCModalElement;
         "c-navigationbutton": HTMLCNavigationbuttonElement;
-        "c-notification": HTMLCNotificationElement;
         "c-option": HTMLCOptionElement;
         "c-otp-input": HTMLCOtpInputElement;
         "c-pagination": HTMLCPaginationElement;
         "c-progress-bar": HTMLCProgressBarElement;
         "c-radio-group": HTMLCRadioGroupElement;
+        "c-ripple": HTMLCRippleElement;
         "c-row": HTMLCRowElement;
         "c-select": HTMLCSelectElement;
         "c-sidenavigation": HTMLCSidenavigationElement;
@@ -2421,6 +2420,10 @@ declare namespace LocalJSX {
      * @group Buttons
      */
     interface CButton {
+        /**
+          * Danger variant style
+         */
+        "danger"?: boolean;
         /**
           * Disable the button
          */
@@ -3144,24 +3147,6 @@ declare namespace LocalJSX {
     interface CNavigationbutton {
     }
     /**
-     * @parent None
-     */
-    interface CNotification {
-        /**
-          * notification contents
-         */
-        "notification"?: {
-    name: string;
-    type: 'warning' | 'error' | 'success' | 'info';
-    delay?: number;
-    requiresClosing?: boolean;
-  };
-        /**
-          * Position of the notifications
-         */
-        "position"?: 'fixed' | 'absolute';
-    }
-    /**
      * @parent c-select
      */
     interface COption {
@@ -3338,6 +3323,15 @@ declare namespace LocalJSX {
           * Value of the radio group
          */
         "value"?: string | number | CRadioGroupItem;
+    }
+    /**
+     * @parent None
+     */
+    interface CRipple {
+        /**
+          * Create a circular ripple
+         */
+        "circular"?: boolean;
     }
     /**
      * Generic flex row component
@@ -3926,12 +3920,12 @@ declare namespace LocalJSX {
         "c-message": CMessage;
         "c-modal": CModal;
         "c-navigationbutton": CNavigationbutton;
-        "c-notification": CNotification;
         "c-option": COption;
         "c-otp-input": COtpInput;
         "c-pagination": CPagination;
         "c-progress-bar": CProgressBar;
         "c-radio-group": CRadioGroup;
+        "c-ripple": CRipple;
         "c-row": CRow;
         "c-select": CSelect;
         "c-sidenavigation": CSidenavigation;
@@ -4089,10 +4083,6 @@ declare module "@stencil/core" {
              */
             "c-navigationbutton": LocalJSX.CNavigationbutton & JSXBase.HTMLAttributes<HTMLCNavigationbuttonElement>;
             /**
-             * @parent None
-             */
-            "c-notification": LocalJSX.CNotification & JSXBase.HTMLAttributes<HTMLCNotificationElement>;
-            /**
              * @parent c-select
              */
             "c-option": LocalJSX.COption & JSXBase.HTMLAttributes<HTMLCOptionElement>;
@@ -4112,6 +4102,10 @@ declare module "@stencil/core" {
              * @group Form
              */
             "c-radio-group": LocalJSX.CRadioGroup & JSXBase.HTMLAttributes<HTMLCRadioGroupElement>;
+            /**
+             * @parent None
+             */
+            "c-ripple": LocalJSX.CRipple & JSXBase.HTMLAttributes<HTMLCRippleElement>;
             /**
              * Generic flex row component
              * @group Layout

@@ -39,6 +39,7 @@
     "build": "npm run build:examples && ng build",
     "build:examples": "node ./scripts/build-examples.js",
     "dev": "npm run build:examples && ng serve",
+    "lint": "eslint **/*.ts ./src/app/examples/**/*.ts",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",

@@ -8,6 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class CProgressBarComponent implements OnInit, OnDestroy {
   // @example-start|basic
   progress = 0;
+
   interval = null;
 
   ngOnInit() {

@@ -73,14 +73,14 @@ export class CSubnavigationitem {
         onClick={(e) => this._redirect(e)}
         onKeyDown={(e) => this._redirect(e)}
       >
-        <div class="c-subnavigation-item__wrapper">
-          <div class="c-subnavigation-item">
-            <div class="c-subnavigation-item__content">
-              <div class="c-subnavigation-item__slot">
+        <div class='c-subnavigation-item__wrapper'>
+          <div class='c-subnavigation-item'>
+            <div class='c-subnavigation-item__content'>
+              <div class='c-subnavigation-item__slot'>
                 <slot></slot>
               </div>
               {this.active && (
-                <span class="visuallyhidden">, Current page</span>
+                <span class='visuallyhidden'>, Current page</span>
               )}
             </div>
 

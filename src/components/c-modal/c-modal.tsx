@@ -122,7 +122,7 @@ export class CModal {
     };
 
     return (
-      <div class="modal-wrapper">
+      <div class='modal-wrapper'>
         <div
           class={modalClasses}
           aria-hidden={!this.value}

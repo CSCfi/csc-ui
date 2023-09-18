@@ -18,9 +18,9 @@ Container component for holding current page content
 
 ## Slots
 
-| Slot | Description                          |
-| ---- | ------------------------------------ |
-|      | Content to be centered within a page |
+| Slot             | Description                          |
+| ---------------- | ------------------------------------ |
+| `"Default slot"` | Content to be centered within a page |
 
 
 ----------------------------------------------

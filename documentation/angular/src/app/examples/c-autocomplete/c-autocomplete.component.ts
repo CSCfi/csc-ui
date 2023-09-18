@@ -25,6 +25,7 @@ export class CAutocompleteComponent implements OnInit {
 
   get filteredItems() {
     if (!this.query) return this.items;
+
     return this.items.filter((i) => i.name?.toLowerCase().includes(this.query?.toLowerCase()));
   }
 
@@ -59,10 +60,11 @@ export class CAutocompleteComponent implements OnInit {
 
   tags: string[] = [];
 
-  value: string = '';
+  value = '';
 
   get countries() {
     if (!this.searchString) return this.items;
+
     return this.items.filter((i) =>
       i.name?.toLowerCase().includes(this.searchString?.toLowerCase()),
     );

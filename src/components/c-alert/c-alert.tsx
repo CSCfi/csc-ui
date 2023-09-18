@@ -9,7 +9,7 @@ import { CAlertType } from '../../types';
 
 /**
  * @group Indicators
- * @slot - Default slot
+ * @slot Default slot - Default slot
  * @slot title - Title slot
  */
 @Component({
@@ -40,12 +40,12 @@ export class CAlert {
       <Host>
         <div class={classes}>
           {!!this.type && (
-            <svg width="22" height="22" viewBox="0 0 24 24">
+            <svg width='22' height='22' viewBox='0 0 24 24'>
               <path d={this._icons[this.type]} />
             </svg>
           )}
-          <div class="c-alert__content">
-            <slot name="title"></slot>
+          <div class='c-alert__content'>
+            <slot name='title'></slot>
             <slot></slot>
           </div>
         </div>

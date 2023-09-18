@@ -22,6 +22,13 @@
 | `changeValue` | Emit inner value change to parent | `CustomEvent<boolean>` |
 
 
+## Slots
+
+| Slot      | Description               |
+| --------- | ------------------------- |
+| `"label"` | Label text for the switch |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

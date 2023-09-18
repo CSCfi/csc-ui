@@ -8,7 +8,6 @@ import {
   EventEmitter,
   Listen,
 } from '@stencil/core';
-import { createRipple } from '../../utils/utils';
 
 /**
  * @parent c-swiper
@@ -71,11 +70,13 @@ export class CSwiperTab {
 
   private _container?: HTMLDivElement;
 
+  private _rippleElement: HTMLCRippleElement;
+
   @Listen('click', { passive: true })
   onTabClick(event) {
     if (this.active) return;
 
-    createRipple(event, this._container);
+    this._rippleElement.createRipple(event, this._container);
 
     this.changeValue.emit(this.value);
   }
@@ -95,19 +96,22 @@ export class CSwiperTab {
     };
 
     return (
-      <Host {...a11y} role="tab">
+      <Host {...a11y} role='tab'>
         <div id={this.hostId} class={classes}>
           <div
-            class="c-swiper-tab__content"
+            class='c-swiper-tab__content'
             ref={(el) => (this._container = el as HTMLDivElement)}
           >
-            <div class="c-swiper-tab__header">
+            <div class='c-swiper-tab__header'>
               {this.label}
-              <slot name="icon"></slot>
+              <slot name='icon'></slot>
             </div>
-            <div class="c-swiper-tab__description">
+
+            <div class='c-swiper-tab__description'>
               <slot></slot>
             </div>
+
+            <c-ripple ref={(el) => (this._rippleElement = el)}></c-ripple>
           </div>
         </div>
       </Host>

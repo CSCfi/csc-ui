@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  CSelectItem,
-  CToastMessage,
-  CToastType,
-} from '../../../../../../src/types';
+import { CSelectItem, CToastMessage, CToastType } from '../../../../../../src/types';
 
 @Component({
   selector: 'app-c-toasts',
@@ -97,7 +93,7 @@ export class CToastsComponent {
   // @example-end
 
   // @example-start|custom
-  hasCustomToast = false
+  hasCustomToast = false;
 
   onAddCustomToast() {
     const message: CToastMessage = {

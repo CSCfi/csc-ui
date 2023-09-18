@@ -53,6 +53,15 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot           | Description                    |
+| -------------- | ------------------------------ |
+| `"customMenu"` | Custom menu content            |
+| `"post"`       | Content added after the input  |
+| `"pre"`        | Content added before the input |
+
+
 ## Dependencies
 
 ### Depends on

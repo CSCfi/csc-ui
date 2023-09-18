@@ -7,9 +7,9 @@
 
 ## Slots
 
-| Slot | Description        |
-| ---- | ------------------ |
-|      | Content of toolbar |
+| Slot             | Description        |
+| ---------------- | ------------------ |
+| `"Default slot"` | Content of toolbar |
 
 
 ----------------------------------------------

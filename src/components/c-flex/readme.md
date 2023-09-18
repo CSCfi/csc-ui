@@ -9,9 +9,9 @@ Component which fills the remaining space within a flex container
 
 ## Slots
 
-| Slot | Description |
-| ---- | ----------- |
-|      | Content     |
+| Slot             | Description |
+| ---------------- | ----------- |
+| `"Default slot"` | Content     |
 
 
 ----------------------------------------------

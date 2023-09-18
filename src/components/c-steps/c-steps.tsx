@@ -12,7 +12,7 @@ import {
 
 /**
  * @group Indicators
- * @slot - Default slot
+ * @slot Default slot - Default slot
  */
 @Component({
   tag: 'c-steps',
@@ -110,17 +110,17 @@ export class CSteps {
 
   render() {
     return (
-      <Host tabindex="0">
+      <Host tabindex='0'>
         {this._stepElements && (
-          <span class="visuallyhidden">
+          <span class='visuallyhidden'>
             {this._getA11yMessage(this._stepElements.length, +this.value)}
           </span>
         )}
-        <div class="c-steps" aria-hidden="true">
+        <div class='c-steps' aria-hidden='true'>
           <slot></slot>
         </div>
         {this.isMobile && (
-          <div class="c-steps__label" aria-hidden="true">
+          <div class='c-steps__label' aria-hidden='true'>
             {this.label}
           </div>
         )}

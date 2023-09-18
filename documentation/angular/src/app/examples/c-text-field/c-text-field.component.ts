@@ -8,7 +8,9 @@ import { mdiMagnify, mdiStar } from '@mdi/js';
 })
 export class CTextFieldComponent implements OnInit {
   mdiMagnify = mdiMagnify;
+
   mdiStar = mdiStar;
+
   // @example-start|validation
   form: FormGroup;
 

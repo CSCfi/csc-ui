@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { mdiDotsHorizontal, mdiInformationOutline } from '@mdi/js';
+import { mdiDotsHorizontal, mdiInformationOutline, mdiEmailOutline } from '@mdi/js';
 import { CMenuCustomTrigger, CToastType } from '../../../../../../src/types';
-import { mdiEmailOutline } from '@mdi/js';
 
 @Component({
   selector: 'app-c-menu',

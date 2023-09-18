@@ -15,9 +15,9 @@
 
 ## Slots
 
-| Slot | Description        |
-| ---- | ------------------ |
-|      | Login card actions |
+| Slot             | Description        |
+| ---------------- | ------------------ |
+| `"Default slot"` | Login card actions |
 
 
 ## Dependencies

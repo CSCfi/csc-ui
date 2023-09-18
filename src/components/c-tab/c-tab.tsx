@@ -8,12 +8,11 @@ import {
   Listen,
   Prop,
 } from '@stencil/core';
-import { createRipple } from '../../utils/utils';
 
 /**
  * @group Tabs
  * @parent c-tabs
- * @slot - Default slot
+ * @slot Default slot - Default slot
  */
 @Component({
   tag: 'c-tab',
@@ -63,10 +62,12 @@ export class CTab {
    */
   @Event() tabChange: EventEmitter;
 
+  private _rippleElement: HTMLCRippleElement;
+
   private _onClick = (event, center = false) => {
     if (this.disabled) return;
 
-    createRipple(event, this.element, center);
+    this._rippleElement.createRipple(event, this.element, center);
 
     this.tabChange.emit(this.value);
   };
@@ -100,6 +101,8 @@ export class CTab {
     return (
       <Host {...a11y} id={this.hostId} class={classes} onClick={this._onClick}>
         <slot></slot>
+
+        <c-ripple ref={(el) => (this._rippleElement = el)}></c-ripple>
       </Host>
     );
   }

@@ -33,7 +33,6 @@ import { CMenuComponent } from './examples/c-menu/c-menu.component';
 import { CModalComponent } from './examples/c-modal/c-modal.component';
 import { CRadioGroupComponent } from './examples/c-radio-group/c-radio-group.component';
 import { CLoaderComponent } from './examples/c-loader/c-loader.component';
-import { CNotificationComponent } from './examples/c-notification/c-notification.component';
 import { CSelectComponent } from './examples/c-select/c-select.component';
 import { CToolbarComponent } from './examples/c-toolbar/c-toolbar.component';
 import { CSidenavigationComponent } from './examples/c-sidenavigation/c-sidenavigation.component';
@@ -85,7 +84,6 @@ import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component
     CMenuComponent,
     CModalComponent,
     CLoaderComponent,
-    CNotificationComponent,
     CSelectComponent,
     CRadioGroupComponent,
     CToolbarComponent,

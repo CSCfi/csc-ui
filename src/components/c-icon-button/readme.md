@@ -21,9 +21,9 @@
 
 ## Slots
 
-| Slot | Description               |
-| ---- | ------------------------- |
-|      | Default slot for the icon |
+| Slot             | Description               |
+| ---------------- | ------------------------- |
+| `"Default slot"` | Default slot for the icon |
 
 
 ## Dependencies
@@ -36,9 +36,14 @@
  - [c-sidenavigation](../c-sidenavigation)
  - [c-swiper](../c-swiper)
 
+### Depends on
+
+- [c-ripple](../c-ripple)
+
 ### Graph
 ```mermaid
 graph TD;
+  c-icon-button --> c-ripple
   c-card --> c-icon-button
   c-data-table --> c-icon-button
   c-pagination --> c-icon-button

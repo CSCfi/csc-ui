@@ -1,24 +1,30 @@
+// TODO:  Remove and add to index.html
+@import '../../styles/css/c-switch.css';
+
 :host {
   display: inline-block;
 }
 
 .c-switch {
-  --border-color: var(--csc-dark-grey);
-  --thumb-color: var(--csc-dark-grey);
-  --thumb-margin: 5px;
-  --slider-color: transparent;
-  --switch-pointer: pointer;
-  --switch-height: 22px;
-  --switch-width: 44px;
-  --thumb-size: calc(var(--switch-height) - 2 * var(--thumb-margin));
-  --thumb-active-position: calc(
-    var(--switch-width) - var(--thumb-size) - 2 * var(--thumb-margin)
+  --c-switch-border-color: var(--c-switch-inactive-border-color);
+  --c-switch-thumb-color: var(--c-switch-inactive-thumb-color);
+  --c-switch-slider-color: var(--c-switch-inactive-slider-color);
+
+  --c-switch-thumb-margin: 5px;
+  --c-switch-pointer: pointer;
+  --c-switch-height: 22px;
+  --c-switch-width: 44px;
+  --c-switch-thumb-size: calc(var(--c-switch-height) - 2 * var(--c-switch-thumb-margin));
+  --c-switch-thumb-active-position: calc(
+    var(--c-switch-width) - var(--c-switch-thumb-size) - 2 * var(--c-switch-thumb-margin)
   );
 
   $this: &;
 
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   display: inline-grid;
-  height: var(--switch-height);
+  height: var(--c-switch-height);
   position: relative;
 
   grid-template-columns: 1fr;
@@ -26,55 +32,60 @@
   align-items: center;
 
   &--disabled {
-    --switch-pointer: default;
-    --thumb-color: var(--csc-mid-grey);
-    --slider-color: var(--csc-light-grey);
-    --border-color: transparent;
+    --c-switch-thumb-color: var(--c-switch-disabled-thumb-color);
+    --c-switch-slider-color: var(--c-switch-disabled-slider-color);
+    --c-switch-border-color: transparent;
+
+    --c-switch-pointer: default;
+
+    // TODO:  get from theme
     --csc-error: var(--csc-mid-grey);
 
+    // TODO:  get from theme
     color: var(--csc-mid-grey);
   }
 
   &--label {
-    grid-template-columns: var(--switch-width) auto;
+    grid-template-columns: var(--c-switch-width) auto;
   }
 
   &__label {
     span.required {
+      // TODO:  get from theme
       color: var(--csc-error);
     }
   }
 
   &__input {
-    height: var(--switch-height);
+    height: var(--c-switch-height);
     position: relative;
-    width: var(--switch-width);
+    width: var(--c-switch-width);
     align-self: start;
   }
 
   &__slider {
-    background-color: var(--slider-color);
-    border-radius: var(--switch-height);
-    box-shadow: inset 0 0 0 2px var(--border-color);
+    background-color: var(--c-switch-slider-color);
+    border-radius: var(--c-switch-height);
+    box-shadow: inset 0 0 0 2px var(--c-switch-border-color);
     bottom: 0;
-    cursor: var(--switch-pointer);
+    cursor: var(--c-switch-pointer);
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
     transform-origin: 50% 50%;
-    transition: 0.4s;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 
     &::before {
-      background-color: var(--thumb-color);
+      background-color: var(--c-switch-thumb-color);
       border-radius: 50%;
-      bottom: var(--thumb-margin);
+      bottom: var(--c-switch-thumb-margin);
       content: '';
-      height: var(--thumb-size);
-      left: var(--thumb-margin);
+      height: var(--c-switch-thumb-size);
+      left: var(--c-switch-thumb-margin);
       position: absolute;
-      transition: 0.4s;
-      width: var(--thumb-size);
+      transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+      width: var(--c-switch-thumb-size);
     }
   }
 
@@ -87,12 +98,12 @@
       + {
         #{$this} {
           &__slider {
-            --thumb-color: #fff;
-            --slider-color: var(--csc-primary);
-            --border-color: var(--csc-primary);
+            --c-switch-thumb-color: var(--c-switch-active-thumb-color);
+            --c-switch-slider-color: var(--c-switch-active-slider-color);
+            --c-switch-border-color: var(--c-switch-active-border-color);
 
             &::before {
-              transform: translateX(var(--thumb-active-position));
+              transform: translateX(var(--c-switch-thumb-active-position));
             }
           }
         }

@@ -4,7 +4,7 @@ import { CToastType } from '../../../../../../src/types';
 @Component({
   selector: 'app-c-otp-input',
   templateUrl: './c-otp-input.component.html',
-  styleUrls: ['./c-otp-input.component.scss']
+  styleUrls: ['./c-otp-input.component.scss'],
 })
 export class COtpInputComponent implements OnInit {
   // @example-start|basic
@@ -13,14 +13,15 @@ export class COtpInputComponent implements OnInit {
 
   // @example-start|manual
   otp2 = '';
+
   errorMessage = '';
+
   valid = true;
   // @example-end
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   // @example-start|basic
   onComplete(event) {
@@ -39,7 +40,6 @@ export class COtpInputComponent implements OnInit {
     const toasts = document.getElementById('manual-toasts') as HTMLCToastsElement;
 
     if (!this.otp2) {
-
       this.errorMessage = 'Invalid OTP Code';
       this.valid = false;
 

@@ -19,9 +19,9 @@
 
 ## Slots
 
-| Slot | Description                                     |
-| ---- | ----------------------------------------------- |
-|      | Menu title / activator element (simple variant) |
+| Slot             | Description                                     |
+| ---------------- | ----------------------------------------------- |
+| `"Default slot"` | Menu title / activator element (simple variant) |
 
 
 ## Dependencies

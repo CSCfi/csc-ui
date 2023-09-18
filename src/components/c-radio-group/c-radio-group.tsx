@@ -10,11 +10,10 @@ import {
 } from '@stencil/core';
 import { mdiCloseCircle } from '@mdi/js';
 import { CRadioGroupItem } from '../../types';
-import { createRipple } from '../../utils/utils';
 
 /**
  * @group Form
- * @slot - Default slot for the label
+ * @slot Default slot - Default slot for the label
  */
 @Component({
   tag: 'c-radio-group',
@@ -111,6 +110,8 @@ export class CRadioGroup {
 
   private _containers?: HTMLDivElement[] = [];
 
+  private _rippleElements: HTMLCRippleElement[] = [];
+
   private static _uniqueId = 0;
 
   private _handleKeyDown(event: KeyboardEvent, item, index) {
@@ -146,7 +147,11 @@ export class CRadioGroup {
   private _select(event, item, index) {
     if (this.disabled) return;
 
-    createRipple(event, this._containers[index], true);
+    this._rippleElements[index].createRipple(
+      event,
+      this._containers[index],
+      true,
+    );
     this.value = this.returnValue ? item?.value : item;
     this.changeValue.emit(this.value);
   }
@@ -170,7 +175,7 @@ export class CRadioGroup {
         onKeyDown={(event) => this._handleKeyDown(event, item, index)}
       >
         <input
-          type="radio"
+          type='radio'
           aria-checked={(this.value === item).toString()}
           aria-disabled={this.disabled.toString()}
           aria-labelledby={itemId}
@@ -181,13 +186,18 @@ export class CRadioGroup {
         />
 
         <span
-          class="ripple"
+          class='ripple'
           ref={(el) => (this._containers[index] = el as HTMLDivElement)}
         >
-          <span class="selection"></span>
+          <span class='selection'></span>
+
+          <c-ripple
+            ref={(el) => (this._rippleElements[index] = el)}
+            circular
+          ></c-ripple>
         </span>
 
-        <div class="c-radio__label">{item.label}</div>
+        <div class='c-radio__label'>{item.label}</div>
       </label>
     );
   };
@@ -213,7 +223,7 @@ export class CRadioGroup {
   }
 
   private _validationIcon = (
-    <svg height="16px" width="16px" viewBox="0 0 24 24">
+    <svg height='16px' width='16px' viewBox='0 0 24 24'>
       <path d={mdiCloseCircle} />
     </svg>
   );
@@ -235,17 +245,17 @@ export class CRadioGroup {
     return (
       <div
         class={wrapperClasses}
-        role="radiogroup"
-        aria-labelledby="c-radio-group__label"
+        role='radiogroup'
+        aria-labelledby='c-radio-group__label'
       >
         {(!!this.label || slotHasContent) && (
-          <label class="c-radio-group__label">
+          <label class='c-radio-group__label'>
             {!!this.label ? this.label : <slot></slot>}
-            {this.required && <span class="required">&nbsp;*</span>}
+            {this.required && <span class='required'>&nbsp;*</span>}
           </label>
         )}
 
-        <div class="c-radio-group__items">
+        <div class='c-radio-group__items'>
           {this.items.map((item, index) => this._getRadioButton(item, index))}
         </div>
 

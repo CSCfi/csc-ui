@@ -326,14 +326,14 @@ export class CInput {
     };
 
     return (
-      <fieldset aria-hidden="true">
+      <fieldset aria-hidden='true'>
         <legend
           class={classes}
           style={{
             '--c-legend-width': this.labelWidth + 'px',
           }}
         >
-          <span class="notranslate"></span>
+          <span class='notranslate'></span>
         </legend>
       </fieldset>
     );
@@ -391,31 +391,31 @@ export class CInput {
       <Host disabled={this.disabled}>
         <div
           id={'announce-' + this.inputId}
-          class="visuallyhidden"
-          aria-live="polite"
-          aria-atomic="true"
+          class='visuallyhidden'
+          aria-live='polite'
+          aria-atomic='true'
         >
           {this.statusText}
         </div>
 
         <div class={containerClasses}>
-          <div class="c-input__control">
-            <div class="c-input__slot" onClick={() => this._onFocus()}>
+          <div class='c-input__control'>
+            <div class='c-input__slot' onClick={() => this._onFocus()}>
               {this._renderBorders()}
 
               <div
-                class="c-input__field"
+                class='c-input__field'
                 style={{
                   '--c-label-position': this.preSlotWidth + 'px',
                 }}
               >
-                <slot name="pre"></slot>
+                <slot name='pre'></slot>
 
                 {this._renderLabel()}
 
                 <slot></slot>
 
-                <slot name="post"></slot>
+                <slot name='post'></slot>
               </div>
             </div>
 

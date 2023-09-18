@@ -79,9 +79,11 @@ graph TD;
   c-data-table --> c-icon-button
   c-data-table --> c-icon
   c-data-table --> c-spacer
+  c-checkbox --> c-ripple
   c-pagination --> c-menu
   c-pagination --> c-icon-button
   c-menu --> c-menu-items
+  c-icon-button --> c-ripple
   style c-data-table fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

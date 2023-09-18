@@ -11,9 +11,9 @@ Wrapper component for the whole page
 
 ## Slots
 
-| Slot | Description          |
-| ---- | -------------------- |
-|      | Contents of the page |
+| Slot             | Description          |
+| ---------------- | -------------------- |
+| `"Default slot"` | Contents of the page |
 
 
 ----------------------------------------------

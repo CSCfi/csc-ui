@@ -80,6 +80,7 @@ export interface CDataTableComponent {
 }
 
 export interface CDataTableComponentParams {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
   onClick?: (params: CDataTableFunctionParams) => unknown;
 }

@@ -1,7 +1,7 @@
 import { Component, h } from '@stencil/core';
 /**
  * @parent c-card
- * @slot - Card contents
+ * @slot Default slot - Card contents
  */
 @Component({
   tag: 'c-card-content',
@@ -11,7 +11,7 @@ import { Component, h } from '@stencil/core';
 export class CCardContent {
   render() {
     return (
-      <div class="c-card-content">
+      <div class='c-card-content'>
         <slot></slot>
       </div>
     );

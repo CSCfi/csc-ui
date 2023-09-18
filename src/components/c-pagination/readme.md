@@ -41,6 +41,7 @@ graph TD;
   c-pagination --> c-menu
   c-pagination --> c-icon-button
   c-menu --> c-menu-items
+  c-icon-button --> c-ripple
   c-data-table --> c-pagination
   style c-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```

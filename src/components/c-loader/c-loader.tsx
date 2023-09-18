@@ -46,19 +46,19 @@ export class CLoader {
 
     return (
       <Host>
-        <div class="c-loader" style={styles}>
-          <svg class="c-loader__loader" viewBox="25 25 50 50">
+        <div class='c-loader' style={styles}>
+          <svg class='c-loader__loader' viewBox='25 25 50 50'>
             <circle
-              class="c-loader__loader-path"
-              cx="50"
-              cy="50"
-              r="20"
+              class='c-loader__loader-path'
+              cx='50'
+              cy='50'
+              r='20'
             ></circle>
           </svg>
 
           {slotHasContent && (
             <div
-              class="c-loader__slot"
+              class='c-loader__slot'
               style={{ 'animation-delay': `${this.contentdelay}s` }}
             >
               <slot></slot>

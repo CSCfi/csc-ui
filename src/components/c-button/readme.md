@@ -9,6 +9,7 @@
 
 | Property   | Attribute   | Description                                                                                                                              | Type                                       | Default     |
 | ---------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ----------- |
+| `danger`   | `danger`    | Danger variant style                                                                                                                     | `boolean`                                  | `false`     |
 | `disabled` | `disabled`  | Disable the button                                                                                                                       | `boolean`                                  | `false`     |
 | `fit`      | `fit`       | Fit width to containing element                                                                                                          | `boolean`                                  | `false`     |
 | `ghost`    | `ghost`     | Light button background                                                                                                                  | `boolean`                                  | `false`     |
@@ -38,12 +39,25 @@
 
 ## Slots
 
-| Slot            | Description                                              |
-| --------------- | -------------------------------------------------------- |
-|                 | Button text                                              |
-| `"description"` | Additional description to be shown below the button text |
-| `"icon"`        | Icon                                                     |
+| Slot             | Description                                              |
+| ---------------- | -------------------------------------------------------- |
+| `"Default slot"` | Button text                                              |
+| `"description"`  | Additional description to be shown below the button text |
+| `"icon"`         | Icon                                                     |
 
+
+## Dependencies
+
+### Depends on
+
+- [c-ripple](../c-ripple)
+
+### Graph
+```mermaid
+graph TD;
+  c-button --> c-ripple
+  style c-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

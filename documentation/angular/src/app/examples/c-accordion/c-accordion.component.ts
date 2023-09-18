@@ -10,7 +10,9 @@ export class CAccordionComponent implements OnInit {
   constructor() {}
 
   mdiAccessPoint = mdiAccessPoint;
+
   mdiNas = mdiNas;
+
   mdiCamera = mdiCamera;
 
   ngOnInit(): void {}

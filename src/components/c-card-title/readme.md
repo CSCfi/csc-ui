@@ -7,9 +7,9 @@
 
 ## Slots
 
-| Slot | Description     |
-| ---- | --------------- |
-|      | Card title text |
+| Slot             | Description     |
+| ---------------- | --------------- |
+| `"Default slot"` | Card title text |
 
 
 ## Dependencies

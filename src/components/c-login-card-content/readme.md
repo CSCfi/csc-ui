@@ -7,9 +7,9 @@
 
 ## Slots
 
-| Slot | Description        |
-| ---- | ------------------ |
-|      | Login card content |
+| Slot             | Description        |
+| ---------------- | ------------------ |
+| `"Default slot"` | Login card content |
 
 
 ----------------------------------------------

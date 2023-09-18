@@ -2,7 +2,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 
 /**
  * @group Indicators
- * @slot - Status text
+ * @slot Default slot - Status text
  */
 @Component({
   tag: 'c-status',

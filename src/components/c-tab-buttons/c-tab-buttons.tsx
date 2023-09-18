@@ -11,7 +11,7 @@ import {
 
 /**
  * @group Content Selectors
- * @slot - Default slot for the c-button elements
+ * @slot Default slot - Default slot for the c-button elements
  */
 @Component({
   tag: 'c-tab-buttons',

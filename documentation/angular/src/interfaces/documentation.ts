@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ComponentData {
   name?: string;
   filePath: string;
@@ -6,7 +7,7 @@ export interface ComponentData {
   readme: string;
   docs: string;
   docsTags: any[];
-  usage: Usage;
+  usage: any;
   props: any[];
   methods: any[];
   events: EventItem[];
@@ -19,8 +20,6 @@ export interface ComponentData {
   dependencyGraph: { [key: string]: string[] };
   children?: ComponentData[];
 }
-
-export interface Usage {}
 
 export interface Listener {
   event: string;

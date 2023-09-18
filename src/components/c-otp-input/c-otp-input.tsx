@@ -216,8 +216,8 @@ export class COtpInput {
         aria-label={`Enter code - digit number - ${index + 1} of ${
           this.length
         }`}
-        type="tel"
-        maxlength="1"
+        type='tel'
+        maxlength='1'
         onFocus={() => this._onFocus(index)}
         onInput={(event) => this._onInput(event)}
         onKeyDown={(event) => this._onKeyDown(event)}
@@ -243,9 +243,9 @@ export class COtpInput {
       >
         <div
           id={'announce-' + this.id}
-          class="visuallyhidden"
-          aria-live="polite"
-          aria-atomic="true"
+          class='visuallyhidden'
+          aria-live='polite'
+          aria-atomic='true'
         >
           {this.statusText}
         </div>

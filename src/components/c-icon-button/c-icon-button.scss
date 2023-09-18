@@ -1,4 +1,15 @@
+// TODO:  Remove and add to index.html
+@import '../../styles/css/c-icon-button.css';
+
+:host {
+  display: block;
+  position: relative;
+  border-radius: 50%;
+}
+
 button.icon-button {
+  --c-icon-button-background: var(--c-icon-button-background)
+
   font-family: var(--csc-font-family);
   display: flex;
   border: none;

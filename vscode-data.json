@@ -183,6 +183,10 @@
       },
       "attributes": [
         {
+          "name": "danger",
+          "description": "Danger variant style"
+        },
+        {
           "name": "disabled",
           "description": "Disable the button"
         },
@@ -1176,27 +1180,6 @@
       "attributes": []
     },
     {
-      "name": "c-notification",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [
-        {
-          "name": "position",
-          "description": "Position of the notifications",
-          "values": [
-            {
-              "name": "absolute"
-            },
-            {
-              "name": "fixed"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "c-option",
       "description": {
         "kind": "markdown",
@@ -1370,6 +1353,19 @@
         {
           "name": "value",
           "description": "Value of the radio group"
+        }
+      ]
+    },
+    {
+      "name": "c-ripple",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "circular",
+          "description": "Create a circular ripple"
         }
       ]
     },

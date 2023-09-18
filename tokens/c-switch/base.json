@@ -1,0 +1,55 @@
+{
+  "c-switch": {
+    "active": {
+      "border": {
+        "color": {
+          "value": "{theme.transparent.value}"
+        }
+      },
+      "slider": {
+        "color": {
+          "value": "{theme.petrol.600.value}"
+        }
+      },
+      "thumb": {
+        "color": {
+          "value": "{theme.white.value}"
+        }
+      }
+    },
+    "disabled": {
+      "border": {
+        "color": {
+          "value": "{theme.transparent.value}"
+        }
+      },
+      "slider": {
+        "color": {
+          "value": "{theme.grey.200.value}"
+        }
+      },
+      "thumb": {
+        "color": {
+          "value": "{theme.grey.600.value}"
+        }
+      }
+    },
+    "inactive": {
+      "border": {
+        "color": {
+          "value": "{theme.grey.600.value}"
+        }
+      },
+      "slider": {
+        "color": {
+          "value": "{theme.transparent.value}"
+        }
+      },
+      "thumb": {
+        "color": {
+          "value": "{theme.grey.600.value}"
+        }
+      }
+    }
+  }
+}

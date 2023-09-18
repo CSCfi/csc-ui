@@ -79,26 +79,26 @@ export class CSidenavigation {
       <Host class={{ desktop: !this.mobile }}>
         <div class={containerClasses}>
           {this.mobile && (
-            <div class="c-sidenavigation__burger">
+            <div class='c-sidenavigation__burger'>
               <c-icon-button inverted text onClick={() => this._closeMenu()}>
-                <span class="visuallyhidden">Close sidemenu</span>
-                <svg width="24" height="24" viewBox="0 0 24 24">
+                <span class='visuallyhidden'>Close sidemenu</span>
+                <svg width='24' height='24' viewBox='0 0 24 24'>
                   <path d={mdiArrowRight} />
                 </svg>
               </c-icon-button>
             </div>
           )}
 
-          <nav class={classes} role="menubar">
+          <nav class={classes} role='menubar'>
             <slot></slot>
-            <div class="vertical-spacer"></div>
-            <slot name="bottom"></slot>
+            <div class='vertical-spacer'></div>
+            <slot name='bottom'></slot>
           </nav>
         </div>
 
         {this.menuVisible && this.mobile && (
           <div
-            class="c-overlay c-fadeIn"
+            class='c-overlay c-fadeIn'
             onClick={() => this._closeMenu()}
           ></div>
         )}

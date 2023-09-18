@@ -51,7 +51,7 @@ export class CMessage {
       ...this.messageOptions,
       content: (
         <span>
-          <span class="visuallyhidden">Error: </span>
+          <span class='visuallyhidden'>Error: </span>
           {this._validationIcon} {message}
         </span>
       ),
@@ -66,7 +66,7 @@ export class CMessage {
       ...this.messageOptions,
       content: (
         <span>
-          <span class="visuallyhidden">Hint: </span>
+          <span class='visuallyhidden'>Hint: </span>
           {message}
         </span>
       ),
@@ -86,13 +86,13 @@ export class CMessage {
         show: true,
         content: valid ? (
           <span id={`hint-${this.inputId}`}>
-            <span class="visuallyhidden">Hint: </span>
+            <span class='visuallyhidden'>Hint: </span>
             {this.hint}
           </span>
         ) : (
           <span id={`error-${this.inputId}`}>
             {this._validationIcon}
-            <span class="visuallyhidden">Error: </span>
+            <span class='visuallyhidden'>Error: </span>
             {this.validation}
           </span>
         ),
@@ -101,7 +101,7 @@ export class CMessage {
   }
 
   private _validationIcon = (
-    <svg height="16px" width="16px" viewBox="0 0 24 24">
+    <svg height='16px' width='16px' viewBox='0 0 24 24'>
       <path d={mdiCloseCircle} />
     </svg>
   );

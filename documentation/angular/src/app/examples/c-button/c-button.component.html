@@ -22,6 +22,12 @@
   <c-button text disabled>Text</c-button>
 </app-example>
 
+<app-example title="Danger variant" name="danger" component="c-button" cols>
+  <c-button danger>Danger</c-button>
+  <c-button danger loading>Danger</c-button>
+  <c-button danger disabled>Danger</c-button>
+</app-example>
+
 <app-example
   title="Inverted variant"
   subtitle="For dark backgrounds"
@@ -31,10 +37,11 @@
 >
   <c-row gap="8" style="background-color: #006878; padding: 24px">
     <c-button inverted>Default</c-button>
-    <c-button inverted loading>Default</c-button>
     <c-button inverted disabled>Default</c-button>
     <c-button inverted outlined>Outlined</c-button>
+    <c-button inverted outlined disabled>Outlined</c-button>
     <c-button inverted ghost>Ghost</c-button>
+    <c-button inverted ghost disabled>Ghost</c-button>
     <c-button inverted text>Text</c-button>
     <c-button inverted text disabled>Text</c-button>
   </c-row>
@@ -46,9 +53,8 @@
   <c-button no-radius disabled>No radius</c-button>
 </app-example>
 
-<app-example title="Fitted" name="fit" component="c-button" rows>
+<app-example title="Fitted" name="fit" component="c-button">
   <c-button fit>Fitted</c-button>
-  <c-button fit loading>Fitted</c-button>
 </app-example>
 
 <app-example title="With icon" name="icon" component="c-button" cols>

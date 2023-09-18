@@ -12,7 +12,7 @@ import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 
 /**
  * @group Content Selectors
- * @slot - Default slot for the c-swiper-tab elements
+ * @slot Default slot - Default slot for the c-swiper-tab elements
  */
 @Component({
   tag: 'c-swiper',
@@ -158,50 +158,50 @@ export class CSwiper {
 
   render() {
     return (
-      <div class="c-swiper swiper">
+      <div class='c-swiper swiper'>
         <div
-          class="swiper-container"
+          class='swiper-container'
           ref={(el) => (this._container = el as HTMLDivElement)}
         >
           <div
-            role="tablist"
-            class="swiper-wrapper"
+            role='tablist'
+            class='swiper-wrapper'
             ref={(el) => (this._wrapper = el as HTMLDivElement)}
           >
             <slot></slot>
           </div>
 
-          <div class="c-swiper__navigation">
+          <div class='c-swiper__navigation'>
             <c-icon-button
               aria-disabled={this.isBeginning ? 'true' : 'false'}
-              aria-label="previous page"
-              class="c-icon-button--prev"
+              aria-label='previous page'
+              class='c-icon-button--prev'
               disabled={this.isBeginning}
-              size="small"
+              size='small'
               ghost
             >
-              <span class="visuallyhidden">
+              <span class='visuallyhidden'>
                 Previous
                 <span>page</span>
               </span>
-              <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg width='24' height='24' viewBox='0 0 24 24'>
                 <path d={mdiChevronLeft} />
               </svg>
             </c-icon-button>
 
             <c-icon-button
               aria-disabled={this.isEnd ? 'true' : 'false'}
-              aria-label="next page"
-              class="c-icon-button--next"
+              aria-label='next page'
+              class='c-icon-button--next'
               disabled={this.isEnd}
-              size="small"
+              size='small'
               ghost
             >
-              <span class="visuallyhidden">
+              <span class='visuallyhidden'>
                 Next
                 <span>page</span>
               </span>
-              <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg width='24' height='24' viewBox='0 0 24 24'>
                 <path d={mdiChevronRight} />
               </svg>
             </c-icon-button>

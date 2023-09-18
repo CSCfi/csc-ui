@@ -24,9 +24,9 @@
 
 ## Slots
 
-| Slot | Description                            |
-| ---- | -------------------------------------- |
-|      | Default slot for the c-button elements |
+| Slot             | Description                            |
+| ---------------- | -------------------------------------- |
+| `"Default slot"` | Default slot for the c-button elements |
 
 
 ----------------------------------------------

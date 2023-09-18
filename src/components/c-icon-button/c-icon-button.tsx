@@ -1,9 +1,8 @@
-import { Component, h, Prop } from '@stencil/core';
-import { createRipple } from '../../utils/utils';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 /**
  * @group Buttons
- * @slot - Default slot for the icon
+ * @slot Default slot - Default slot for the icon
  */
 @Component({
   tag: 'c-icon-button',
@@ -53,8 +52,10 @@ export class CIconButton {
 
   private _container?: HTMLDivElement;
 
+  private _rippleElement: HTMLCRippleElement;
+
   private _renderBadge() {
-    return <div class="icon-button-badge">{this.badge}</div>;
+    return <div class='icon-button-badge'>{this.badge}</div>;
   }
 
   private _outerClasses() {
@@ -71,26 +72,33 @@ export class CIconButton {
   }
 
   private _onClick = (event) => {
-    createRipple(event, this._container);
+    this._rippleElement.createRipple(event, this._container);
   };
 
   render() {
     return (
-      <button class={this._outerClasses()} onClick={this._onClick}>
-        <div
-          class="inner-container"
-          ref={(el) => (this._container = el as HTMLDivElement)}
-        >
-          <slot>
-            {this.path && (
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path d={this.path} />
-              </svg>
-            )}
-          </slot>
-        </div>
-        {this.badge && this._renderBadge()}
-      </button>
+      <Host>
+        <button class={this._outerClasses()} onClick={this._onClick}>
+          <div
+            class='inner-container'
+            ref={(el) => (this._container = el as HTMLDivElement)}
+          >
+            <slot>
+              {this.path && (
+                <svg width='24' height='24' viewBox='0 0 24 24'>
+                  <path d={this.path} />
+                </svg>
+              )}
+            </slot>
+          </div>
+          {this.badge && this._renderBadge()}
+
+          <c-ripple
+            ref={(el) => (this._rippleElement = el)}
+            circular
+          ></c-ripple>
+        </button>
+      </Host>
     );
   }
 }

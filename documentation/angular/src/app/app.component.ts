@@ -29,12 +29,19 @@ interface ComponentGroup {
 })
 export class AppComponent implements OnInit {
   routeSubscription: Subscription;
+
   selectedComponent = {};
+
   components = [];
+
   groups = [];
+
   groupedComponents: ComponentGroup[] = [];
+
   activeComponent: ComponentData;
+
   url = null;
+
   active: string = null;
 
   icons = {
@@ -125,6 +132,7 @@ export class AppComponent implements OnInit {
     const activeGroup = this.groupedComponents.find((group) =>
       group.components.some((component) => component.tag === this.activeComponent?.tag),
     );
+
     if (activeGroup) {
       activeGroup.visible = true;
     }

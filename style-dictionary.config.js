@@ -1,6 +1,7 @@
 const tokens = require('./tokens');
 const StyleDictionaryPackage = require('style-dictionary');
 const fs = require('fs');
+const prettier = require('prettier');
 
 const TAILWIND_DEFAULT_SHADE = '600';
 
@@ -8,13 +9,13 @@ const formats = {
   css: {
     fileStart: ':root {',
     fileEnd: '\n};\n',
-    prefix: '\n\t--csc',
+    prefix: '\n\t--c',
     postfix: '',
   },
   scss: {
     fileStart: '',
     fileEnd: '',
-    prefix: '$csc',
+    prefix: '$c',
     postfix: '\n',
   },
 };
@@ -105,7 +106,9 @@ StyleDictionaryPackage.registerFormat({
         });
     });
 
-    return `export const theme = ${JSON.stringify(config, null, 2)};\n`;
+    const options = prettier.resolveConfig('./prettier.config.js');
+
+    return prettier.format(`export const theme = ${JSON.stringify(config)}`, options);
   },
 });
 

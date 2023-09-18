@@ -556,7 +556,7 @@ export class CSelect {
     };
 
     return (
-      <svg class={classes} viewBox="0 0 24 24">
+      <svg class={classes} viewBox='0 0 24 24'>
         <path d={mdiChevronDown} />
       </svg>
     );
@@ -564,24 +564,24 @@ export class CSelect {
 
   private _renderInputElement() {
     return (
-      <div class="c-input-menu__input" onClick={() => this._showMenu()}>
+      <div class='c-input-menu__input' onClick={() => this._showMenu()}>
         <input
           aria-controls={'results_' + this._id}
-          aria-readonly="true"
-          aria-haspopup="listbox"
+          aria-readonly='true'
+          aria-haspopup='listbox'
           id={this._inputId}
           ref={(el) => (this._inputElement = el)}
-          autocomplete="off"
-          class="c-input__input"
-          type="text"
+          autocomplete='off'
+          class='c-input__input'
+          type='text'
           value={this._getLabel() ?? null}
           name={this.name ?? null}
-          readonly="true"
+          readonly='true'
         />
 
         <div
           ref={(el) => (this._selectionElement = el)}
-          class="c-input-menu__selection"
+          class='c-input-menu__selection'
         />
       </div>
     );
@@ -606,7 +606,7 @@ export class CSelect {
               ? 'c-input-menu__items'
               : 'c-input-menu__items c-input-menu__items--hidden'
           }
-          role="listbox"
+          role='listbox'
         >
           {this._items.map((item, index) => this._getListItem(item, index))}
         </ul>
@@ -667,9 +667,9 @@ export class CSelect {
       >
         <div
           id={'announce-' + this._id}
-          class="visuallyhidden"
-          aria-live="polite"
-          aria-atomic="true"
+          class='visuallyhidden'
+          aria-live='polite'
+          aria-atomic='true'
         >
           {this.statusText}
         </div>
@@ -691,11 +691,11 @@ export class CSelect {
           validate-on-blur={this.validateOnBlur}
           validation={this.validation}
           value={this.value}
-          variant="select"
+          variant='select'
         >
-          <slot name="pre" slot="pre"></slot>
+          <slot name='pre' slot='pre'></slot>
 
-          <div class="c-input__content">
+          <div class='c-input__content'>
             {this._renderInputElement()}
             {this._renderMenu(itemsPerPageStyle)}
             {this._renderChevron()}
@@ -703,7 +703,7 @@ export class CSelect {
             <slot onSlotchange={this._handleSlotChange}></slot>
           </div>
 
-          <slot name="post" slot="post"></slot>
+          <slot name='post' slot='post'></slot>
         </c-input>
       </Host>
     );

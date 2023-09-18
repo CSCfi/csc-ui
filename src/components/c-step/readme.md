@@ -15,9 +15,9 @@
 
 ## Slots
 
-| Slot | Description                |
-| ---- | -------------------------- |
-|      | Default slot for the label |
+| Slot             | Description                |
+| ---------------- | -------------------------- |
+| `"Default slot"` | Default slot for the label |
 
 
 ----------------------------------------------

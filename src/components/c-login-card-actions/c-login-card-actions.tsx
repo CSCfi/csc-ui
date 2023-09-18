@@ -2,7 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 
 /**
  * @parent c-login-card
- * @slot - Login card actions
+ * @slot Default slot - Login card actions
  */
 @Component({
   tag: 'c-login-card-actions',

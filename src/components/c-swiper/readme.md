@@ -21,9 +21,9 @@
 
 ## Slots
 
-| Slot | Description                                |
-| ---- | ------------------------------------------ |
-|      | Default slot for the c-swiper-tab elements |
+| Slot             | Description                                |
+| ---------------- | ------------------------------------------ |
+| `"Default slot"` | Default slot for the c-swiper-tab elements |
 
 
 ## Dependencies
@@ -36,6 +36,7 @@
 ```mermaid
 graph TD;
   c-swiper --> c-icon-button
+  c-icon-button --> c-ripple
   style c-swiper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

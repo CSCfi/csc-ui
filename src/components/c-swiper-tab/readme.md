@@ -23,6 +23,19 @@
 | `changeValue` | Emit value change to the parent | `CustomEvent<number \| string>` |
 
 
+## Dependencies
+
+### Depends on
+
+- [c-ripple](../c-ripple)
+
+### Graph
+```mermaid
+graph TD;
+  c-swiper-tab --> c-ripple
+  style c-swiper-tab fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

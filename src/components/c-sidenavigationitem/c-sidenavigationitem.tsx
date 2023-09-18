@@ -143,23 +143,23 @@ export class CSidenavigationitem {
           }}
         >
           {this._slotHasContent && (
-            <svg width="22" height="22" viewBox="0 0 24 24" class="svg">
+            <svg width='22' height='22' viewBox='0 0 24 24' class='svg'>
               <path d={mdiChevronRight} />
             </svg>
           )}
-          <div class="c-sidenavigation-item__slot">
-            <slot name="main"></slot>
+          <div class='c-sidenavigation-item__slot'>
+            <slot name='main'></slot>
           </div>
         </div>
 
         {this._slotHasContent && (
           <nav
-            role="menubar"
+            role='menubar'
             aria-label={this._ariaLabel}
             aria-expanded={(!!this.active)?.toString()}
             class={subNavigationClasses}
           >
-            <slot name="subnavitem"></slot>
+            <slot name='subnavitem'></slot>
           </nav>
         )}
 

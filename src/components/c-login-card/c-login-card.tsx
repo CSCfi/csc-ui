@@ -20,7 +20,7 @@ export type CLoginCardBlendMode =
 
 /**
  * @group Cards
- * @slot - Login Card contents
+ * @slot Default slot - Login Card contents
  */
 @Component({
   tag: 'c-login-card',
@@ -116,9 +116,9 @@ export class CLoginCard {
     return (
       <Host>
         {!!this.src && (
-          <svg width="0" height="0">
+          <svg width='0' height='0'>
             <defs>
-              <clipPath id="cLoginClipPath" clipPathUnits="objectBoundingBox">
+              <clipPath id='cLoginClipPath' clipPathUnits='objectBoundingBox'>
                 <path d={this.path} />
               </clipPath>
             </defs>
@@ -126,7 +126,7 @@ export class CLoginCard {
         )}
 
         <div
-          class="c-login-card"
+          class='c-login-card'
           ref={(el) => (this._cardElement = el as HTMLDivElement)}
         >
           {!!this.src && <div class={imageClasses} style={style}></div>}

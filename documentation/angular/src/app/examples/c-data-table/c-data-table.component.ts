@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, NgZone, OnInit } from '@angular/core';
-import { mdiBabyFace, mdiDelete, mdiFlag, mdiHeartPlus } from '@mdi/js';
+import { mdiDelete, mdiFlag, mdiHeartPlus } from '@mdi/js';
 import mockUsers from './mock-users';
 import {
   CPaginationOptions,

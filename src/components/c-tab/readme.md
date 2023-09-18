@@ -26,10 +26,23 @@
 
 ## Slots
 
-| Slot | Description  |
-| ---- | ------------ |
-|      | Default slot |
+| Slot             | Description  |
+| ---------------- | ------------ |
+| `"Default slot"` | Default slot |
 
+
+## Dependencies
+
+### Depends on
+
+- [c-ripple](../c-ripple)
+
+### Graph
+```mermaid
+graph TD;
+  c-tab --> c-ripple
+  style c-tab fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

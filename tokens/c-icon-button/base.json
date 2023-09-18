@@ -1,0 +1,7 @@
+{
+  "c-icon-button": {
+    "background": {
+      "value": "{theme.petrol.600.value}"
+    }
+  }
+}

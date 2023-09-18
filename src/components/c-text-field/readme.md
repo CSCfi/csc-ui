@@ -44,6 +44,14 @@
 | `changeValue` | Emit changes to the parent | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot     | Description                    |
+| -------- | ------------------------------ |
+| `"post"` | Content added after the input  |
+| `"pre"`  | Content added before the input |
+
+
 ## Dependencies
 
 ### Depends on

@@ -21,9 +21,9 @@ Generic flex row component
 
 ## Slots
 
-| Slot | Description                                     |
-| ---- | ----------------------------------------------- |
-|      | Should contain items to be displayed in the row |
+| Slot             | Description                                     |
+| ---------------- | ----------------------------------------------- |
+| `"Default slot"` | Should contain items to be displayed in the row |
 
 
 ----------------------------------------------

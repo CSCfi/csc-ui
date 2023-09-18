@@ -14,10 +14,10 @@
 
 ## Slots
 
-| Slot      | Description  |
-| --------- | ------------ |
-|           | Default slot |
-| `"title"` | Title slot   |
+| Slot             | Description  |
+| ---------------- | ------------ |
+| `"Default slot"` | Default slot |
+| `"title"`        | Title slot   |
 
 
 ----------------------------------------------

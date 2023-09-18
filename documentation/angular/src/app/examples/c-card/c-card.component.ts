@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { mdiXml } from '@mdi/js';
 
 @Component({
   selector: 'app-c-card',

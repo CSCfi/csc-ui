@@ -7,9 +7,9 @@
 
 ## Slots
 
-| Slot | Description  |
-| ---- | ------------ |
-|      | Default slot |
+| Slot             | Description  |
+| ---------------- | ------------ |
+| `"Default slot"` | Default slot |
 
 
 ## Dependencies

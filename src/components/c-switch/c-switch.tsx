@@ -10,6 +10,7 @@ import {
 
 /**
  * @group Form
+ * @slot label - Label text for the switch
  */
 @Component({
   tag: 'c-switch',
@@ -68,23 +69,23 @@ export class CSwitch {
 
     return (
       <label class={classes} htmlFor={this.hostId}>
-        <div class="c-switch__input">
+        <div class='c-switch__input'>
           <input
             id={this.hostId}
             aria-checked={this.value}
-            type="checkbox"
-            role="switch"
+            type='checkbox'
+            role='switch'
             disabled={this.hostDisabled}
             checked={this.value}
             onInput={this._valueChangedHandler}
           />
-          <span class="c-switch__slider"></span>
+          <span class='c-switch__slider'></span>
         </div>
         {this.hasLabel ? (
-          <div class="c-switch__label">
+          <div class='c-switch__label'>
             <slot></slot>
 
-            {this.required && <span class="required">&nbsp;*</span>}
+            {this.required && <span class='required'>&nbsp;*</span>}
           </div>
         ) : null}
       </label>

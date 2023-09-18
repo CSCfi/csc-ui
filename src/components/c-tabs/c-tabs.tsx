@@ -12,7 +12,7 @@ import {
 
 /**
  * @group Content Selectors
- * @slot - Default slot
+ * @slot Default slot - Default slot
  */
 @Component({
   tag: 'c-tabs',
@@ -141,7 +141,7 @@ export class CTabs {
     };
 
     return (
-      <Host role="tablist" class={classes}>
+      <Host role='tablist' class={classes}>
         <slot></slot>
       </Host>
     );

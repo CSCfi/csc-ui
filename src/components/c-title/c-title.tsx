@@ -2,7 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 
 /**
  * @parent None
- * @slot - Default slot
+ * @slot Default slot - Default slot
  */
 
 @Component({
@@ -15,7 +15,7 @@ export class CTitle {
     return (
       <Host>
         <slot></slot>
-        <div class="title-underline"></div>
+        <div class='title-underline'></div>
       </Host>
     );
   }

@@ -146,7 +146,7 @@ export class CPagination {
     return (
       <c-menu items={itemsPerPageOptions} nohover onClick={onMenuClick}>
         <div>
-          <span class="items-per-page">
+          <span class='items-per-page'>
             {this._getText('itemsPerPageText')} {this._itemsPerPage}
           </span>
         </div>
@@ -214,8 +214,8 @@ export class CPagination {
           text
           onClick={this._decreasePageNumber}
         >
-          <span class="visuallyhidden">{this._getText('prevPage')}</span>
-          <svg width="24" height="24" viewBox="0 0 24 24">
+          <span class='visuallyhidden'>{this._getText('prevPage')}</span>
+          <svg width='24' height='24' viewBox='0 0 24 24'>
             <path d={mdiChevronLeft} />
           </svg>
         </c-icon-button>
@@ -236,8 +236,8 @@ export class CPagination {
           text
           onClick={this._increasePageNumber}
         >
-          <span class="visuallyhidden">{this._getText('nextPage')}</span>
-          <svg width="24" height="24" viewBox="0 0 24 24">
+          <span class='visuallyhidden'>{this._getText('nextPage')}</span>
+          <svg width='24' height='24' viewBox='0 0 24 24'>
             <path d={mdiChevronRight} />
           </svg>
         </c-icon-button>
@@ -292,14 +292,14 @@ export class CPagination {
     this._buttons.push(
       <li>
         <c-icon-button
-          aria-disabled="true"
+          aria-disabled='true'
           size={size}
-          tabindex="-1"
-          role="separator"
+          tabindex='-1'
+          role='separator'
           disabled
           text
         >
-          <svg width="16" height="16" viewBox="0 0 24 24">
+          <svg width='16' height='16' viewBox='0 0 24 24'>
             <path d={mdiDotsHorizontal} />
           </svg>
         </c-icon-button>
@@ -380,9 +380,9 @@ export class CPagination {
     };
 
     return (
-      <nav class={classes} role="navigation" aria-label="pagination">
+      <nav class={classes} role='navigation' aria-label='pagination'>
         {!this.hideDetails && (
-          <div class="c-pagination__details">
+          <div class='c-pagination__details'>
             {this._getItemsPerPage()}
 
             <span class={{ range: !this.simple }}>{this._getRange()}</span>

@@ -32,10 +32,23 @@
 
 ## Slots
 
-| Slot | Description                |
-| ---- | -------------------------- |
-|      | Default slot for the label |
+| Slot             | Description                |
+| ---------------- | -------------------------- |
+| `"Default slot"` | Default slot for the label |
 
+
+## Dependencies
+
+### Depends on
+
+- [c-ripple](../c-ripple)
+
+### Graph
+```mermaid
+graph TD;
+  c-radio-group --> c-ripple
+  style c-radio-group fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -1,7 +1,7 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 /**
  * @parent c-card
- * @slot - Card actions
+ * @slot Default slot - Card actions
  */
 @Component({
   tag: 'c-card-actions',

@@ -8,9 +8,8 @@ describe('COtpInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ COtpInputComponent ]
-    })
-    .compileComponents();
+      declarations: [COtpInputComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(COtpInputComponent);
     component = fixture.componentInstance;

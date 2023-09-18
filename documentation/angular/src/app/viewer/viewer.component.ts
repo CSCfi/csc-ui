@@ -16,10 +16,15 @@ export class ViewerComponent implements OnInit, OnDestroy {
   dynamicComponent!: DynamicComponentDirective;
 
   private _subscriptions: Subscription[] = [];
-  componentTag: string = '';
+
+  componentTag = '';
+
   componentData: ComponentData;
+
   _dynamicInstance: ComponentRef<any>;
+
   tabs = [];
+
   activeTab = 'Examples';
 
   constructor(
@@ -34,7 +39,7 @@ export class ViewerComponent implements OnInit, OnDestroy {
     .pipe(map((obs) => obs.matches));
 
   get usage() {
-    return Object.values(this.componentData.usage).map((item) =>
+    return Object.values(this.componentData.usage).map((item: string) =>
       this._sanitizer.bypassSecurityTrustHtml(item),
     );
   }

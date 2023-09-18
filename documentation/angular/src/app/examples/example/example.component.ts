@@ -19,19 +19,29 @@ import docs from '../../../../../../docs.json';
 })
 export class ExampleComponent implements AfterViewInit, AfterContentChecked, OnInit {
   @Input() title: string;
+
   @Input() subtitle: string;
+
   @Input() name: string;
+
   @Input() cols: string;
+
   @Input() rows: string;
+
   @Input() component: string;
 
   @ViewChild('example') example;
 
   code = '';
+
   scriptCode = '';
+
   allowedAttributes = [];
+
   showCode = false;
+
   examples = null;
+
   mdiXml = mdiXml;
 
   constructor(private cdref: ChangeDetectorRef) {
