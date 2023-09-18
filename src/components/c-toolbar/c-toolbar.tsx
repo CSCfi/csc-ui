@@ -12,10 +12,10 @@ export class CToolbar {
   render() {
     return (
       <Host>
-        <div class='c-toolbar'>
+        <div class="c-toolbar">
           <slot></slot>
         </div>
-        <div class='spacer'></div>
+        <div class="spacer"></div>
       </Host>
     );
   }

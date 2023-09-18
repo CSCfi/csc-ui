@@ -17,7 +17,7 @@ describe('c-radio-group', () => {
     const page = await newSpecPage({
       components: [CRadioGroup],
       template: () => (
-        <c-radio-group color='red' inline items={items}></c-radio-group>
+        <c-radio-group color="red" inline items={items}></c-radio-group>
       ),
     });
 
@@ -29,8 +29,8 @@ describe('c-radio-group', () => {
       components: [CRadioGroup],
       template: () => (
         <c-radio-group
-          hint='This is hint message'
-          label='This is label'
+          hint="This is hint message"
+          label="This is label"
           items={items}
         ></c-radio-group>
       ),

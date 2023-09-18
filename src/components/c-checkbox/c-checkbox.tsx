@@ -82,7 +82,7 @@ export class CCheckbox {
   private _rippleElement: HTMLCRippleElement;
 
   private _validationIcon = (
-    <svg height='16px' width='16px' viewBox='0 0 24 24'>
+    <svg height="16px" width="16px" viewBox="0 0 24 24">
       <path d={mdiCloseCircle} />
     </svg>
   );
@@ -183,9 +183,9 @@ export class CCheckbox {
       <Host>
         <div class={wrapperClasses}>
           <input
-            class='visuallyhidden'
-            id='checkbox'
-            type='checkbox'
+            class="visuallyhidden"
+            id="checkbox"
+            type="checkbox"
             aria-checked={(!!this.value).toString()}
             aria-disabled={this.disabled.toString()}
             checked={this.value}
@@ -193,20 +193,20 @@ export class CCheckbox {
             onChange={(event) => this.toggleState(event)}
           />
 
-          <label class={labelClasses} htmlFor='checkbox'>
+          <label class={labelClasses} htmlFor="checkbox">
             <div
-              class='ripple'
+              class="ripple"
               ref={(el) => (this._container = el as HTMLDivElement)}
             >
-              <svg viewBox='0 0 100 100'>
+              <svg viewBox="0 0 100 100">
                 {!this.indeterminate && !!this.value && (
                   <path
-                    class='path'
-                    d='M 12 52 l 24 24 l 47 -47 l -3 -3 l -44 44 l -21 -21 l -3 3'
+                    class="path"
+                    d="M 12 52 l 24 24 l 47 -47 l -3 -3 l -44 44 l -21 -21 l -3 3"
                   />
                 )}
                 {this.indeterminate && (
-                  <path class='path' d='M20 56 h60 v-8 h-60 z' />
+                  <path class="path" d="M20 56 h60 v-8 h-60 z" />
                 )}
               </svg>
 
@@ -216,9 +216,9 @@ export class CCheckbox {
               ></c-ripple>
             </div>
 
-            <div class='c-checkbox__label-content'>
+            <div class="c-checkbox__label-content">
               {!!this.label ? this.label : <slot></slot>}
-              {this.required && <span class='required'>&nbsp;*</span>}
+              {this.required && <span class="required">&nbsp;*</span>}
             </div>
           </label>
         </div>

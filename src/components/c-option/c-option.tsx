@@ -31,7 +31,7 @@ export class COption {
 
   render() {
     return (
-      <Host tabindex='-1'>
+      <Host tabindex="-1">
         <slot></slot>
       </Host>
     );

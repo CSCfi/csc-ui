@@ -55,7 +55,7 @@ export class CIconButton {
   private _rippleElement: HTMLCRippleElement;
 
   private _renderBadge() {
-    return <div class='icon-button-badge'>{this.badge}</div>;
+    return <div class="icon-button-badge">{this.badge}</div>;
   }
 
   private _outerClasses() {
@@ -80,12 +80,12 @@ export class CIconButton {
       <Host>
         <button class={this._outerClasses()} onClick={this._onClick}>
           <div
-            class='inner-container'
+            class="inner-container"
             ref={(el) => (this._container = el as HTMLDivElement)}
           >
             <slot>
               {this.path && (
-                <svg width='24' height='24' viewBox='0 0 24 24'>
+                <svg width="24" height="24" viewBox="0 0 24 24">
                   <path d={this.path} />
                 </svg>
               )}

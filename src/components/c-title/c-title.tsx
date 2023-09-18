@@ -15,7 +15,7 @@ export class CTitle {
     return (
       <Host>
         <slot></slot>
-        <div class='title-underline'></div>
+        <div class="title-underline"></div>
       </Host>
     );
   }

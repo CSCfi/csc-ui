@@ -420,7 +420,7 @@ export class CAutocomplete {
     };
 
     return (
-      <svg class={classes} viewBox='0 0 24 24'>
+      <svg class={classes} viewBox="0 0 24 24">
         <path d={mdiChevronDown} />
       </svg>
     );
@@ -428,9 +428,9 @@ export class CAutocomplete {
 
   private _renderEmptyMenu() {
     return (
-      <ul class='c-input-menu__items c-input-menu__items--empty'>
-        <li tabindex='-1'>
-          <svg viewBox='0 0 24 24'>
+      <ul class="c-input-menu__items c-input-menu__items--empty">
+        <li tabindex="-1">
+          <svg viewBox="0 0 24 24">
             <path d={mdiAlert} />
           </svg>
           No suggestions found
@@ -474,7 +474,7 @@ export class CAutocomplete {
             }
             style={style}
           >
-            <slot name='customMenu' />
+            <slot name="customMenu" />
           </div>
         )}
         {!this.items.length &&
@@ -501,7 +501,7 @@ export class CAutocomplete {
                 ? 'c-input-menu__items'
                 : 'c-input-menu__items c-input-menu__items--hidden'
             }
-            role='listbox'
+            role="listbox"
             style={style}
           >
             {this.menuVisible &&
@@ -511,8 +511,8 @@ export class CAutocomplete {
                   aria-posinset={(index + 1).toString()}
                   aria-setsize={this.items.length.toString()}
                   aria-selected={(this.currentIndex === index).toString()}
-                  role='option'
-                  tabindex='-1'
+                  role="option"
+                  tabindex="-1"
                   ref={(el) => {
                     item.ref = el as HTMLElement;
                     this._itemRefs.push({
@@ -534,16 +534,16 @@ export class CAutocomplete {
 
   private _renderInputElement() {
     return (
-      <div class='c-input-menu__input'>
+      <div class="c-input-menu__input">
         <input
-          type='text'
+          type="text"
           aria-expanded={this.menuVisible.toString()}
           aria-owns={'results_' + this._id}
-          aria-autocomplete='list'
+          aria-autocomplete="list"
           aria-activedescendant={this._getActiveListItemId()}
-          autocomplete='off'
-          class='c-input__input'
-          role='combobox'
+          autocomplete="off"
+          class="c-input__input"
+          role="combobox"
           value={this.query}
           name={this.name ?? null}
           onInput={(event) => this.handleChange(event)}
@@ -582,9 +582,9 @@ export class CAutocomplete {
       <Host>
         <div
           id={'announce-' + this._id}
-          class='visuallyhidden'
-          aria-live='polite'
-          aria-atomic='true'
+          class="visuallyhidden"
+          aria-live="polite"
+          aria-atomic="true"
         >
           {this.statusText}
         </div>
@@ -607,9 +607,9 @@ export class CAutocomplete {
           validation={this.validation}
           value={this.query}
         >
-          <slot name='pre' slot='pre'></slot>
+          <slot name="pre" slot="pre"></slot>
 
-          <div class='c-input__content'>
+          <div class="c-input__content">
             {this._renderInputElement()}
             {this.customMenu
               ? this._renderCustomMenu(itemsPerPageStyle)
@@ -617,7 +617,7 @@ export class CAutocomplete {
             {this._renderChevron()}
           </div>
 
-          <slot name='post' slot='post'></slot>
+          <slot name="post" slot="post"></slot>
         </c-input>
       </Host>
     );

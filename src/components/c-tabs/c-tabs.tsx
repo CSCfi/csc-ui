@@ -141,7 +141,7 @@ export class CTabs {
     };
 
     return (
-      <Host role='tablist' class={classes}>
+      <Host role="tablist" class={classes}>
         <slot></slot>
       </Host>
     );

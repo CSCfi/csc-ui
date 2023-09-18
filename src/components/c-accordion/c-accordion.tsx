@@ -98,7 +98,7 @@ export class CAccordion {
 
   render() {
     return (
-      <div class='c-accordion'>
+      <div class="c-accordion">
         <slot></slot>
       </div>
     );

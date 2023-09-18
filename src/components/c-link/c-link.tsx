@@ -72,7 +72,7 @@ export class CLink {
 
     return (
       <a class={classList} href={this.href} target={this.target} style={style}>
-        <slot name='icon'>{this.path && <c-icon path={this.path} />}</slot>
+        <slot name="icon">{this.path && <c-icon path={this.path} />}</slot>
         <slot></slot>
       </a>
     );

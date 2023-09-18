@@ -110,8 +110,8 @@ export class CCard {
       <Host class={hostClasses} style={style}>
         {this.fullscreen && (
           <c-icon-button
-            aria-hidden='true'
-            class='c-card__fullscreen-toggle'
+            aria-hidden="true"
+            class="c-card__fullscreen-toggle"
             title={this.isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
             text
             onClick={() => this._onFullscreen()}

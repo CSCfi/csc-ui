@@ -219,9 +219,9 @@ export class CMenu {
     return (
       <Tag
         {...params}
-        class='custom-menu-trigger'
+        class="custom-menu-trigger"
         aria-expanded={this.active.toString()}
-        aria-haspopup='listbox'
+        aria-haspopup="listbox"
         aria-controls={`c-menu-items-${CMenu._uniqueId}`}
         onClick={() => this._onClick()}
       >
@@ -246,25 +246,25 @@ export class CMenu {
         ) : (
           <button
             aria-expanded={this.active.toString()}
-            aria-haspopup='listbox'
+            aria-haspopup="listbox"
             aria-controls={`c-menu-items-${CMenu._uniqueId}`}
             class={{
               'c-menu-wrapper': !this.simple,
               simple: this.simple,
             }}
-            tabindex='0'
-            type='button'
+            tabindex="0"
+            type="button"
             onClick={() => this._onClick()}
           >
             {this.simple ? (
               <slot></slot>
             ) : (
-              <div class='c-menu__header'>
+              <div class="c-menu__header">
                 <slot></slot>
                 <svg
                   width={this.small ? '16' : '22'}
                   height={this.small ? '16' : '22'}
-                  viewBox='0 0 24 24'
+                  viewBox="0 0 24 24"
                   class={
                     this.active
                       ? 'c-menu__icon c-menu__icon--rotated'

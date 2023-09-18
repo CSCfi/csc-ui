@@ -176,6 +176,14 @@
       ]
     },
     {
+      "name": "c-badge",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": []
+    },
+    {
       "name": "c-button",
       "description": {
         "kind": "markdown",

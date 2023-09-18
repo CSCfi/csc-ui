@@ -282,7 +282,7 @@ export class CTextField {
     return (
       <svg
         class={classes}
-        viewBox='0 0 24 24'
+        viewBox="0 0 24 24"
         onClick={this._toggleDatepicker.bind(this)}
       >
         <path d={mdiCalendar} />
@@ -305,7 +305,7 @@ export class CTextField {
     return (
       <svg
         class={classes}
-        viewBox='0 0 24 24'
+        viewBox="0 0 24 24"
         onClick={this._togglePasswordVisibility}
       >
         <path d={this.passwordIcon} />
@@ -343,7 +343,7 @@ export class CTextField {
           validation={this.validation}
           value={this.value}
         >
-          <slot name='pre' slot='pre'></slot>
+          <slot name="pre" slot="pre"></slot>
 
           {this._renderInputElement()}
 
@@ -351,7 +351,7 @@ export class CTextField {
 
           {this._renderDateToggle()}
 
-          <slot name='post' slot='post'></slot>
+          <slot name="post" slot="post"></slot>
         </c-input>
       </Host>
     );

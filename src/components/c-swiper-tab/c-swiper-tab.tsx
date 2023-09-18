@@ -96,18 +96,18 @@ export class CSwiperTab {
     };
 
     return (
-      <Host {...a11y} role='tab'>
+      <Host {...a11y} role="tab">
         <div id={this.hostId} class={classes}>
           <div
-            class='c-swiper-tab__content'
+            class="c-swiper-tab__content"
             ref={(el) => (this._container = el as HTMLDivElement)}
           >
-            <div class='c-swiper-tab__header'>
+            <div class="c-swiper-tab__header">
               {this.label}
-              <slot name='icon'></slot>
+              <slot name="icon"></slot>
             </div>
 
-            <div class='c-swiper-tab__description'>
+            <div class="c-swiper-tab__description">
               <slot></slot>
             </div>
 

@@ -114,14 +114,14 @@ export class CToast {
 
     return (
       <Tag
-        aria-label='close'
-        size='small'
+        aria-label="close"
+        size="small"
         text
         onClick={() => this.closeToast()}
       >
         <c-icon
           {...{ ...(!!this.message.closeText && { slot: 'icon' }) }}
-          color='var(--c-toast-color)'
+          color="var(--c-toast-color)"
           path={this._icons.close}
         />
 
@@ -137,27 +137,27 @@ export class CToast {
       <Host
         id={`c-toast--${this.message.id}`}
         class={{ [this.message.type]: true }}
-        role='alert'
-        aria-atomic='true'
-        aria-live='assertive'
+        role="alert"
+        aria-atomic="true"
+        aria-live="assertive"
         onMouseEnter={() => this._onMouseEnter()}
         onMouseLeave={() => this._onMouseLeave()}
       >
-        <span class='visuallyhidden'>{this.message.type} notification</span>
+        <span class="visuallyhidden">{this.message.type} notification</span>
 
         {this.message.custom ? (
-          <div class='c-toast__custom-item'>
-            <div class='c-toast__content'>
+          <div class="c-toast__custom-item">
+            <div class="c-toast__content">
               <slot></slot>
             </div>
           </div>
         ) : (
-          <div class='c-toast__item'>
-            <svg viewBox='0 0 24 24'>
+          <div class="c-toast__item">
+            <svg viewBox="0 0 24 24">
               <path d={this._icons[this.message.type]}></path>
             </svg>
 
-            <div class='c-toast__content'>
+            <div class="c-toast__content">
               {!!this.message.title && <p>{this.message.title}</p>}
 
               {this.message.message}
@@ -169,7 +169,7 @@ export class CToast {
 
         {showProgressBar && (
           <div
-            class='c-toast__progress'
+            class="c-toast__progress"
             style={{ '--c-toast-duration': `${this.message.duration}ms` }}
           >
             <div

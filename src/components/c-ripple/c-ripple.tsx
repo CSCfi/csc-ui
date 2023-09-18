@@ -71,8 +71,8 @@ export class CRipple {
     };
 
     return (
-      <Host {...props} aria-hidden='true'>
-        <div ref={(el) => (this._rippleElement = el)} class='c-ripple' />
+      <Host {...props} aria-hidden="true">
+        <div ref={(el) => (this._rippleElement = el)} class="c-ripple" />
       </Host>
     );
   }

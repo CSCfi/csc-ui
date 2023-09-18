@@ -167,6 +167,8 @@ export namespace Components {
          */
         "value": string | number | CAutocompleteItem;
     }
+    interface CBadge {
+    }
     /**
      * @group Buttons
      */
@@ -1691,6 +1693,12 @@ declare global {
         prototype: HTMLCAutocompleteElement;
         new (): HTMLCAutocompleteElement;
     };
+    interface HTMLCBadgeElement extends Components.CBadge, HTMLStencilElement {
+    }
+    var HTMLCBadgeElement: {
+        prototype: HTMLCBadgeElement;
+        new (): HTMLCBadgeElement;
+    };
     /**
      * @group Buttons
      */
@@ -2191,6 +2199,7 @@ declare global {
         "c-accordion-item": HTMLCAccordionItemElement;
         "c-alert": HTMLCAlertElement;
         "c-autocomplete": HTMLCAutocompleteElement;
+        "c-badge": HTMLCBadgeElement;
         "c-button": HTMLCButtonElement;
         "c-card": HTMLCCardElement;
         "c-card-actions": HTMLCCardActionsElement;
@@ -2415,6 +2424,8 @@ declare namespace LocalJSX {
           * Selected item
          */
         "value"?: string | number | CAutocompleteItem;
+    }
+    interface CBadge {
     }
     /**
      * @group Buttons
@@ -3893,6 +3904,7 @@ declare namespace LocalJSX {
         "c-accordion-item": CAccordionItem;
         "c-alert": CAlert;
         "c-autocomplete": CAutocomplete;
+        "c-badge": CBadge;
         "c-button": CButton;
         "c-card": CCard;
         "c-card-actions": CCardActions;
@@ -3969,6 +3981,7 @@ declare module "@stencil/core" {
              * @group Form
              */
             "c-autocomplete": LocalJSX.CAutocomplete & JSXBase.HTMLAttributes<HTMLCAutocompleteElement>;
+            "c-badge": LocalJSX.CBadge & JSXBase.HTMLAttributes<HTMLCBadgeElement>;
             /**
              * @group Buttons
              */
