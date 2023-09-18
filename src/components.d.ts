@@ -741,6 +741,11 @@ export namespace Components {
     | 'space-between'
     | 'stretch'
     | 'space-around';
+        /**
+          * Remove padding
+          * @private
+         */
+        "removePadding": boolean;
     }
     /**
      * @parent c-login-card
@@ -3026,6 +3031,11 @@ declare namespace LocalJSX {
     | 'space-between'
     | 'stretch'
     | 'space-around';
+        /**
+          * Remove padding
+          * @private
+         */
+        "removePadding"?: boolean;
     }
     /**
      * @parent c-login-card

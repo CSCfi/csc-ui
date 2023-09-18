@@ -1044,6 +1044,10 @@
               "name": "stretch"
             }
           ]
+        },
+        {
+          "name": "remove-padding",
+          "description": "Remove padding"
         }
       ]
     },

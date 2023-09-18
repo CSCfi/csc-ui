@@ -1,5 +1,5 @@
 footer {
-    padding: 0 var(--c-card-gap, 24px);
+    padding: 0;
     display: block;
   
     &.remove-padding {
@@ -7,7 +7,7 @@ footer {
     }
   }
   
-  .c-card-actions {
+  .c-login-card-actions {
     align-items: center;
     display: flex;
     gap: 8px;

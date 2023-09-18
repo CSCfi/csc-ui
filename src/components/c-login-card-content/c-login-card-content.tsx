@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 /**
  * @parent c-login-card
@@ -12,9 +12,9 @@ import { Component, Host, h } from '@stencil/core';
 export class CLoginCardContent {
   render() {
     return (
-      <Host>
+      <article>
         <slot></slot>
-      </Host>
+      </article>
     );
   }
 }

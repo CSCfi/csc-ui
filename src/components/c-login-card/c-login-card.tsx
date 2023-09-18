@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, State, Host } from '@stencil/core';
+import { Component, Element, h, Prop, State } from '@stencil/core';
 
 export type CLoginCardBlendMode =
   | 'normal'
@@ -114,7 +114,7 @@ export class CLoginCard {
     };
 
     return (
-      <Host>
+      <article>
         {!!this.src && (
           <svg width="0" height="0">
             <defs>
@@ -135,7 +135,7 @@ export class CLoginCard {
             <slot></slot>
           </div>
         </div>
-      </Host>
+      </article>
     );
   }
 }

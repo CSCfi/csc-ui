@@ -21,19 +21,6 @@
 |      | Card actions |
 
 
-## Dependencies
-
-### Used by
-
- - [c-login-card-actions](../c-login-card-actions)
-
-### Graph
-```mermaid
-graph TD;
-  c-login-card-actions --> c-card-actions
-  style c-card-actions fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
