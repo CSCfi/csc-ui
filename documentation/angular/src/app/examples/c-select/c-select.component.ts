@@ -28,9 +28,13 @@ export class CSelectComponent implements OnInit {
 
   // @example-start|scrollable|basic|shadow
   items = [
-    { name: 'Normal', value: 'normal' },
-    { name: 'Interactive', value: 'interactive' },
-    { name: 'GPU', value: 'gpu' },
+    { name: 'Finland', value: 'finland' },
+    { name: 'Sweden', value: 'sweden' },
+    { name: 'Norway', value: 'norway' },
+    { name: 'Denmark', value: 'denmark' },
+    { name: 'Germany', value: 'germany' },
+    { name: 'Belgium', value: 'belgium' },
+    { name: 'France', value: 'france' },
   ];
   // @example-end
 
