@@ -826,6 +826,27 @@ export namespace Components {
         "top": number;
     }
     /**
+     * @parent None
+     */
+    interface CMessage {
+        /**
+          * Hint text for the input
+         */
+        "hint": string;
+        /**
+          * Id of the related input element
+         */
+        "inputId": string;
+        /**
+          * Parent validíty
+         */
+        "valid": boolean;
+        /**
+          * Custom validation message
+         */
+        "validation": string;
+    }
+    /**
      * @group Popups
      */
     interface CModal {
@@ -868,6 +889,56 @@ export namespace Components {
           * Position of the notifications
          */
         "position": 'fixed' | 'absolute';
+    }
+    /**
+     * @parent c-select
+     */
+    interface COption {
+        /**
+          * Set option as disabled
+         */
+        "disabled": boolean;
+        /**
+          * Option name
+         */
+        "name": string;
+        /**
+          * Set option as selected
+         */
+        "selected": boolean;
+        /**
+          * Option value
+         */
+        "value": string | number;
+    }
+    /**
+     * @group Form
+     */
+    interface COtpInput {
+        /**
+          * Id of the element
+         */
+        "elementId": string;
+        /**
+          * Hide the hint and error messages
+         */
+        "hideDetails": boolean;
+        /**
+          * Hint text for the input
+         */
+        "hint": string;
+        /**
+          * Length of the OTP code
+         */
+        "length": number;
+        /**
+          * Set the validíty of the input
+         */
+        "valid": boolean;
+        /**
+          * Custom validation message
+         */
+        "validation": string;
     }
     /**
      * @group Navigation
@@ -1047,6 +1118,10 @@ export namespace Components {
           * Input field name
          */
         "name": string;
+        /**
+          * display the option as selection (works only when c-option elements are used)
+         */
+        "optionAsSelection": false;
         /**
           * Placeholder text
          */
@@ -1535,6 +1610,10 @@ export interface CModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCModalElement;
 }
+export interface COtpInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCOtpInputElement;
+}
 export interface CPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCPaginationElement;
@@ -1856,6 +1935,15 @@ declare global {
         new (): HTMLCMenuItemsElement;
     };
     /**
+     * @parent None
+     */
+    interface HTMLCMessageElement extends Components.CMessage, HTMLStencilElement {
+    }
+    var HTMLCMessageElement: {
+        prototype: HTMLCMessageElement;
+        new (): HTMLCMessageElement;
+    };
+    /**
      * @group Popups
      */
     interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {
@@ -1881,6 +1969,24 @@ declare global {
     var HTMLCNotificationElement: {
         prototype: HTMLCNotificationElement;
         new (): HTMLCNotificationElement;
+    };
+    /**
+     * @parent c-select
+     */
+    interface HTMLCOptionElement extends Components.COption, HTMLStencilElement {
+    }
+    var HTMLCOptionElement: {
+        prototype: HTMLCOptionElement;
+        new (): HTMLCOptionElement;
+    };
+    /**
+     * @group Form
+     */
+    interface HTMLCOtpInputElement extends Components.COtpInput, HTMLStencilElement {
+    }
+    var HTMLCOtpInputElement: {
+        prototype: HTMLCOtpInputElement;
+        new (): HTMLCOtpInputElement;
     };
     /**
      * @group Navigation
@@ -2132,9 +2238,12 @@ declare global {
         "c-main": HTMLCMainElement;
         "c-menu": HTMLCMenuElement;
         "c-menu-items": HTMLCMenuItemsElement;
+        "c-message": HTMLCMessageElement;
         "c-modal": HTMLCModalElement;
         "c-navigationbutton": HTMLCNavigationbuttonElement;
         "c-notification": HTMLCNotificationElement;
+        "c-option": HTMLCOptionElement;
+        "c-otp-input": HTMLCOtpInputElement;
         "c-pagination": HTMLCPaginationElement;
         "c-progress-bar": HTMLCProgressBarElement;
         "c-radio-group": HTMLCRadioGroupElement;
@@ -3017,6 +3126,27 @@ declare namespace LocalJSX {
         "top"?: number;
     }
     /**
+     * @parent None
+     */
+    interface CMessage {
+        /**
+          * Hint text for the input
+         */
+        "hint"?: string;
+        /**
+          * Id of the related input element
+         */
+        "inputId"?: string;
+        /**
+          * Parent validíty
+         */
+        "valid"?: boolean;
+        /**
+          * Custom validation message
+         */
+        "validation"?: string;
+    }
+    /**
      * @group Popups
      */
     interface CModal {
@@ -3063,6 +3193,64 @@ declare namespace LocalJSX {
           * Position of the notifications
          */
         "position"?: 'fixed' | 'absolute';
+    }
+    /**
+     * @parent c-select
+     */
+    interface COption {
+        /**
+          * Set option as disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Option name
+         */
+        "name"?: string;
+        /**
+          * Set option as selected
+         */
+        "selected"?: boolean;
+        /**
+          * Option value
+         */
+        "value"?: string | number;
+    }
+    /**
+     * @group Form
+     */
+    interface COtpInput {
+        /**
+          * Id of the element
+         */
+        "elementId": string;
+        /**
+          * Hide the hint and error messages
+         */
+        "hideDetails"?: boolean;
+        /**
+          * Hint text for the input
+         */
+        "hint"?: string;
+        /**
+          * Length of the OTP code
+         */
+        "length"?: number;
+        /**
+          * Run on input - returns the current value
+         */
+        "onChangeValue"?: (event: COtpInputCustomEvent<string>) => void;
+        /**
+          * Run on completion - returns the current value
+         */
+        "onCompletion"?: (event: COtpInputCustomEvent<string>) => void;
+        /**
+          * Set the validíty of the input
+         */
+        "valid"?: boolean;
+        /**
+          * Custom validation message
+         */
+        "validation"?: string;
     }
     /**
      * @group Navigation
@@ -3254,6 +3442,10 @@ declare namespace LocalJSX {
           * Triggered when an item is selected
          */
         "onChangeValue"?: (event: CSelectCustomEvent<any>) => void;
+        /**
+          * display the option as selection (works only when c-option elements are used)
+         */
+        "optionAsSelection"?: false;
         /**
           * Placeholder text
          */
@@ -3765,9 +3957,12 @@ declare namespace LocalJSX {
         "c-main": CMain;
         "c-menu": CMenu;
         "c-menu-items": CMenuItems;
+        "c-message": CMessage;
         "c-modal": CModal;
         "c-navigationbutton": CNavigationbutton;
         "c-notification": CNotification;
+        "c-option": COption;
+        "c-otp-input": COtpInput;
         "c-pagination": CPagination;
         "c-progress-bar": CProgressBar;
         "c-radio-group": CRadioGroup;
@@ -3921,6 +4116,10 @@ declare module "@stencil/core" {
              */
             "c-menu-items": LocalJSX.CMenuItems & JSXBase.HTMLAttributes<HTMLCMenuItemsElement>;
             /**
+             * @parent None
+             */
+            "c-message": LocalJSX.CMessage & JSXBase.HTMLAttributes<HTMLCMessageElement>;
+            /**
              * @group Popups
              */
             "c-modal": LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
@@ -3932,6 +4131,14 @@ declare module "@stencil/core" {
              * @parent None
              */
             "c-notification": LocalJSX.CNotification & JSXBase.HTMLAttributes<HTMLCNotificationElement>;
+            /**
+             * @parent c-select
+             */
+            "c-option": LocalJSX.COption & JSXBase.HTMLAttributes<HTMLCOptionElement>;
+            /**
+             * @group Form
+             */
+            "c-otp-input": LocalJSX.COtpInput & JSXBase.HTMLAttributes<HTMLCOtpInputElement>;
             /**
              * @group Navigation
              */

@@ -10,18 +10,27 @@ export class CSelectComponent implements OnInit {
   value = null;
   // @example-end
 
+  // @example-start|withOptions
+  selectedItem = '';
+  // @example-end
+
+  // @example-start|withOptionsRich
+  selectedOption = '';
+  // @example-end
+
+  // @example-start|optionsAndSelection
+  selected = '';
+  // @example-end
+
   // @example-start|scrollable|shadow
   selection = null;
   // @example-end
 
   // @example-start|scrollable|basic|shadow
   items = [
-    { name: 'Banana', value: 'banana' },
-    { name: 'Pineapple', value: 'pineapple' },
-    { name: 'Apple', value: 'apple' },
-    { name: 'Orange', value: 'orange' },
-    { name: 'Pear', value: 'pear' },
-    { name: 'Lemon', value: 'lemon' },
+    { name: 'Normal', value: 'normal' },
+    { name: 'Interactive', value: 'interactive' },
+    { name: 'GPU', value: 'gpu' },
   ];
   // @example-end
 
