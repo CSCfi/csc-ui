@@ -27,11 +27,7 @@ export class CLoginCardActions {
 
   render() {
     return (
-      <c-card-actions
-        align={this.align}
-        justify={this.justify}
-        style={{ padding: '0px' }}
-      >
+      <c-card-actions align={this.align} justify={this.justify} remove-padding>
         <slot></slot>
       </c-card-actions>
     );

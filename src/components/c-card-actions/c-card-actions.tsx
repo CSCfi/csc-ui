@@ -15,6 +15,12 @@ export class CCardActions {
   @Prop() align: 'start' | 'center' | 'end' = 'center';
 
   /**
+   * Remove padding
+   * @private
+   */
+  @Prop() removePadding = false;
+
+  /**
    * Justify the actions
    */
   @Prop() justify:
@@ -33,7 +39,7 @@ export class CCardActions {
     };
 
     return (
-      <footer>
+      <footer class={{ 'remove-padding': this.removePadding }}>
         <menu class={classes}>
           <slot></slot>
         </menu>

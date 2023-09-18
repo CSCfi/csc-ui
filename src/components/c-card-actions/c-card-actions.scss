@@ -1,6 +1,10 @@
 footer {
   padding: 0 var(--c-card-gap, 24px);
   display: block;
+
+  &.remove-padding {
+    padding: 0;
+  }
 }
 
 .c-card-actions {
