@@ -1,6 +1,6 @@
 :host {
-  --bar-color: var(--csc-primary);
-  --bg-color: var(--csc-light-grey);
+  --bar-color: var(--c-primary-600);
+  --bg-color: var(--c-tertiary-200);
   --border-size: 4px;
   --height: 16px;
   --value: 0%;
@@ -38,7 +38,7 @@
     padding-left: 16px;
 
     &--negative {
-      color: var(--csc-error);
+      color: var(--c-error-600);
     }
 
     &.adjacent-details {
@@ -64,7 +64,7 @@
   }
 
   &:focus-within {
-    outline: 2px var(--csc-primary) solid;
+    outline: 2px var(--c-primary-600) solid;
     outline-offset: 6px;
   }
 

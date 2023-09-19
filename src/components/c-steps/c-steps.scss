@@ -12,14 +12,14 @@
 }
 
 :host(:focus-within) {
-  outline: 2px var(--csc-primary) solid;
+  outline: 2px var(--c-primary-600) solid;
   outline-offset: 2px;
 }
 
 .c-steps {
-  --c-step-line-color: var(--csc-mid-grey);
-  --c-step-before-color: var(--csc-mid-grey);
-  --c-step-after-color: var(--csc-mid-grey);
+  --c-step-line-color: var(--c-tertiary-500);
+  --c-step-before-color: var(--c-tertiary-500);
+  --c-step-after-color: var(--c-tertiary-500);
   --c-step-divider-width: calc(100% + 160px);
   --c-step-divider-margin: 10px -80px 0;
 
@@ -42,7 +42,7 @@
   }
 
   ::slotted(.divider.complete) {
-    background-color: var(--csc-primary);
+    background-color: var(--c-primary-600);
     height: 4px;
     margin-top: 9px;
   }

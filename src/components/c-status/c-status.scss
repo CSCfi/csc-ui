@@ -3,15 +3,15 @@
 }
 
 .c-status {
-  --c-status-bg: #e5eff1;
-  --c-status-info: #002f5f;
-  --c-status-info-bg: #eef2f8;
-  --c-status-warning: #c74600;
-  --c-status-warning-bg: #fff7e3;
-  --c-status-error: #b90729;
-  --c-status-error-bg: #f8e5e9;
-  --c-status-success: #3a7a06;
-  --c-status-success-bg: #e5f2da;
+  --c-status-bg: var(--c-primary-200);
+  --c-status-info: var(--c-info-800);
+  --c-status-info-bg: var(--c-info-200);
+  --c-status-warning: var(--c-warning-800);
+  --c-status-warning-bg: var(--c-warning-200);
+  --c-status-error: var(--c-error-800);
+  --c-status-error-bg: var(--c-error-200);
+  --c-status-success: var(--c-success-800);
+  --c-status-success-bg: var(--c-success-200);
 
   display: inline-flex;
   min-height: 24px;
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  color: var(--csc-primary);
+  color: var(--c-primary-800);
   background-color: var(--c-status-bg);
   position: relative;
   box-shadow: inset 0 0 0 1px currentColor;

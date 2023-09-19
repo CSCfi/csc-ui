@@ -13,7 +13,7 @@
 }
 
 .c-step {
-  --c-step-line-color: var(--csc-mid-grey);
+  --c-step-line-color: var(--c-tertiary-500);
 
   display: grid;
   justify-items: center;
@@ -34,7 +34,7 @@
       position: relative;
 
       &.current {
-        --c-step-line-color: var(--csc-primary);
+        --c-step-line-color: var(--c-primary-600);
 
         box-shadow: inset 0 0 0 3px var(--c-step-line-color);
 
@@ -67,7 +67,7 @@
   &--complete {
     .c-step__indicator {
       > div {
-        --c-step-line-color: var(--csc-primary);
+        --c-step-line-color: var(--c-primary-600);
 
         position: relative;
         border-radius: 22px;
