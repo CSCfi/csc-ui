@@ -36,6 +36,7 @@
 ```mermaid
 graph TD;
   c-swiper --> c-icon-button
+  c-icon-button --> c-badge
   c-icon-button --> c-ripple
   style c-swiper fill:#f9f,stroke:#333,stroke-width:4px
 ```

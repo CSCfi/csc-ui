@@ -2,79 +2,8 @@ const tokens = require('./tokens');
 const StyleDictionaryPackage = require('style-dictionary');
 const fs = require('fs');
 const prettier = require('prettier');
-
-const TAILWIND_DEFAULT_SHADE = '600';
-
-const formats = {
-  css: {
-    fileStart: ':root {',
-    fileEnd: '\n};\n',
-    prefix: '\n\t--c',
-    postfix: '',
-  },
-  scss: {
-    fileStart: '',
-    fileEnd: '',
-    prefix: '$c',
-    postfix: '\n',
-  },
-};
-
-const createTheme = (dictionary, type) => {
-  const config = formats[type];
-  const cache = new Set();
-
-  let theme = '';
-
-  Object.values(dictionary).forEach((dict) => {
-    return Object.values(dict)
-      .filter((token) => {
-        const [category] = token.path || [];
-
-        return category === 'theme';
-      })
-      .forEach((token) => {
-        if (!cache.has(token.name)) {
-          cache.add(token.name);
-
-          theme += `${config.prefix}-${token.name.replace('theme-', '')}: `;
-          theme += `${token.value};${config.postfix}`;
-        }
-      });
-  });
-
-  return `${config.fileStart}${theme}${config.fileEnd}`;
-};
-
-const setValue = (obj = {}, paths = [], value) => {
-  const inputObj = obj === null ? {} : { ...obj };
-
-  if (paths.length === 0) {
-    return inputObj;
-  }
-
-  if (paths.length === 1) {
-    const path = paths[0];
-
-    if (path === TAILWIND_DEFAULT_SHADE) {
-      // add default value for the color
-      // 'bg-primary' === 'bg-primary-600'
-      inputObj.DEFAULT = value;
-    }
-
-    inputObj[path] = value;
-
-    return { ...inputObj, [path]: value };
-  }
-
-  const [path, ...rest] = paths;
-
-  const currentNode = inputObj[path];
-
-  const childNode = setValue(currentNode, rest, value);
-
-  return { ...inputObj, [path]: childNode };
-};
+const createTheme = require('./utils/createTheme');
+const setValue = require('./utils/setValue');
 
 /**
  * Create an importable Tailwind CSS theme configuration
@@ -235,7 +164,7 @@ module.exports = {
             },
           },
           options: {
-            selector: ':host',
+            selector: ':host, :root',
           },
         })),
       // actions: ['copy_assets'],

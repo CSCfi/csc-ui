@@ -23,6 +23,7 @@
 ```mermaid
 graph TD;
   c-sidenavigation --> c-icon-button
+  c-icon-button --> c-badge
   c-icon-button --> c-ripple
   style c-sidenavigation fill:#f9f,stroke:#333,stroke-width:4px
 ```

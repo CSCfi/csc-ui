@@ -3,45 +3,45 @@
     "value": "4px"
   },
   "dark-grey": {
-    "value": "{theme.grey.600}"
+    "value": "var(--c-tertiary-600)"
   },
   "error": {
-    "value": "{theme.red.400}"
+    "value": "var(--c-error-400)"
   },
   "font-family": {
     "value": "'museo-sans', sans-serif"
   },
   "light-grey": {
-    "value": "{theme.grey.200}"
+    "value": "var(--c-tertiary-200)"
   },
   "lightest-grey": {
-    "value": "{theme.grey.100}"
+    "value": "var(--c-tertiary-100)"
   },
   "link": {
-    "value": "{theme.light-blue.600}"
+    "value": "var(--c-link-600)"
   },
   "mid-grey": {
-    "value": "{theme.grey.600}"
+    "value": "var(--c-tertiary-600)"
   },
   "primary": {
-    "value": "{theme.petrol.600}"
+    "value": "var(--c-primary-600)"
   },
   "primary-ghost": {
-    "value": "{theme.petrol.100}"
+    "value": "var(--c-primary-100)"
   },
   "primary-ghost-hover": {
-    "value": "{theme.petrol.200}"
+    "value": "var(--c-primary-200)"
   },
   "primary-hover": {
-    "value": "{theme.petrol.400}"
+    "value": "var(--c-primary-400)"
   },
   "primary-text-hover": {
-    "value": "{theme.petrol.100}"
+    "value": "var(--c-primary-100)"
   },
   "success": {
-    "value": "{theme.green.600}"
+    "value": "var(--c-success-600)"
   },
   "warning": {
-    "value": "{theme.orange.600}"
+    "value": "var(--c-warning-600)"
   }
 }

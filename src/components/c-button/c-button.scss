@@ -1,11 +1,11 @@
 // TODO:  Remove and add to index.html
-@import '../../styles/css/c-button.css';
+// @import '../../styles/css/c-button.css';
 
 :host {
-  --c-button-background: var(--c-button-default-background);
-  --c-button-text: var(--c-button-default-text);
-  --c-button-hover: var(--c-button-default-hover);
-  --c-button-outline-color: var(--c-button-default-background);
+  --c-button-background: var(--c-primary-600);
+  --c-button-text: var(--c-white);
+  --c-button-hover: var(--c-primary-400);
+  --c-button-outline: var(--c-primary-600);
   --c-button-border-radius: 4px;
 
   --c-height: 44px;
@@ -16,7 +16,7 @@
   border-radius: var(--c-button-border-radius);
   color: var(--c-button-text);
   display: inline-flex;
-  // overflow: hidden;
+  overflow: hidden;
   transform: translateZ(0); // Safari border-radius fix
   transition: background-color 0.3s ease-in-out;
 }
@@ -35,33 +35,33 @@
 }
 
 :host(.ghost) {
-  --c-button-background: var(--c-button-ghost-background);
-  --c-button-text: var(--c-button-ghost-text);
-  --c-button-hover: var(--c-button-ghost-hover);
+  --c-button-background: var(--c-primary-200);
+  --c-button-text: var(--c-primary-600);
+  --c-button-hover: var(--c-primary-100);
 }
 
 :host(.ghost.inverted) {
-  --c-button-background: var(--c-button-ghost-inverted-background);
-  --c-button-text: var(--c-button-ghost-inverted-text);
-  --c-button-hover: var(--c-button-ghost-inverted-hover);
+  --c-button-background: var(--c-primary-500);
+  --c-button-text: var(--c-white);
+  --c-button-hover: var(--c-primary-400);
 }
 
 // :host(.ghost.disabled) {
-//   --c-button-background: var(--csc-lightes);
+//   --c-button-background: var(--csc-lightest-grey);
 //   --c-button-hover: var(--csc-lightest-grey);
 // }
 
 :host(.disabled.inverted),
 :host(.disabled) {
-  --c-button-background: var(--c-button-default-disabled-background);
-  --c-button-hover: var(--c-button-default-disabled-hover);
-  --c-button-text: var(--c-button-default-disabled-text) !important;
+  --c-button-background: var(--c-tertiary-100);
+  --c-button-hover: var(--c-tertiary-100);
+  --c-button-text: var(--c-tertiary-600) !important;
 }
 
 :host(.disabled.outlined) {
-  --c-button-background: var(--c-button-outlined-disabled-background);
-  --c-button-hover: var(--c-button-outlined-disabled-hover);
-  --c-button-text: var(--c-button-outlined-disabled-text);
+  --c-button-background: var(--c-transparent);
+  --c-button-hover: var(--c-transparent);
+  --c-button-text: var(--c-tertiary-500);
 }
 
 :host(.disabled.grouped) {
@@ -73,86 +73,87 @@
 }
 
 :host(.inverted) {
-  --c-button-background: var(--c-button-default-inverted-background);
-  --c-button-hover: var(--c-button-default-inverted-hover);
-  --c-button-text: var(--c-button-default-inverted-text);
-  --c-button-outline-color: #fff;
+  --c-button-background: var(--c-white);
+  --c-button-hover: var(--c-primary-200);
+  --c-button-text: var(--c-primary-600);
+  --c-button-outline: var(--c-white);
 }
 
 :host(.outlined) {
-  --c-button-text: var(--c-button-outlined-text);
-  --c-button-background: var(--c-button-outlined-background);
-  --c-button-hover: var(--c-button-outlined-hover);
+  --c-button-text: var(--c-primary-600);
+  --c-button-background: var(--c-transparent);
+  --c-button-hover: var(--c-primary-200);
 }
 
 :host(.danger.disabled.inverted),
 :host(.danger) {
-  --c-button-text: var(--c-button-danger-text);
-  --c-button-background: var(--c-button-danger-background);
-  --c-button-hover: var(--c-button-danger-hover);
+  --c-button-text: var(--c-white);
+  --c-button-background: var(--c-error-600);
+  --c-button-hover: var(--c-error-400);
 }
 
 :host(.danger:not(.inverted)) {
-  --c-button-outline-color: var(--c-button-danger-background);
+  --c-button-outline: var(--c-error-600);
 }
 
 :host(.danger.disabled) {
-  --c-button-text: var(--c-button-danger-disabled-text);
-  --c-button-background: var(--c-button-danger-disabled-background);
-  --c-button-hover: var(--c-button-danger-disabled-hover);
+  --c-button-text: var(--c-tertiary-600);
+  --c-button-background: var(--c-tertiary-100);
+  // TODO:  use value from the line above?
+  --c-button-hover: var(--c-tertiary-100);
 }
 
 :host(.danger.inverted) {
-  --c-button-text: var(--c-button-danger-inverted-text);
-  --c-button-background: var(--c-button-danger-inverted-background);
-  --c-button-hover: var(--c-button-danger-inverted-hover);
+  --c-button-text: var(--c-error-600);
+  --c-button-background: var(--c-white);
+  --c-button-hover: var(--c-error-100);
 }
 
 :host(.outlined.inverted) {
-  --c-button-text: var(--c-button-outlined-inverted-text);
-  --c-button-background: var(--c-button-outlined-inverted-background);
-  --c-button-hover: var(--c-button-outlined-inverted-hover);
+  --c-button-text: var(--c-white);
+  --c-button-background: var(--c-transparent);
+  --c-button-hover: var(--c-primary-500);
 }
 
 :host(.outlined.disabled) {
-  --c-button-text: var(--c-button-outlined-disabled-text);
-  --c-button-background: var(--c-button-outlined-disabled-background);
-  --c-button-hover: var(--c-button-outlined-disabled-hover);
+  --c-button-text: var(--c-tertiary-500);
+  --c-button-background: var(--c-transparent);
+  --c-button-hover: var(--c-transparent);
 }
 
 :host(.outlined.inverted.disabled) {
-  --c-button-text: var(--c-button-outlined-inverted-disabled-text) !important;
+  --c-button-text: var(--c-tertiary-400) !important;
 }
 
 :host(.outlined.grouped) {
-  --c-button-background-color: #fff;
-  --c-button-hover: var(--c-button-outlined-inverted-hover);
+  --c-button-background-color: var(--c-white);
+  --c-button-hover: var(--c-primary-500);
 }
 
 :host(.text) {
-  --c-button-background: var(--c-button-text-background);
-  --c-button-hover: var(--c-button-text-hover);
-  --c-button-text: var(--c-button-text-text);
+  --c-button-background: var(--c-transparent);
+  --c-button-hover: var(--c-primary-100);
+  --c-button-text: var(--c-primary-600);
 }
 
 :host(.text.inverted) {
-  --c-button-background: var(--c-button-text-inverted-background);
-  --c-button-hover: var(--c-button-text-inverted-hover);
-  --c-button-text: var(--c-button-text-inverted-text);
+  --c-button-background: var(--c-transparent);
+  --c-button-hover: var(--c-primary-100);
+  --c-button-text: var(--c-primary-600);
 }
 
 :host(.text.disabled) {
-  --c-button-background: var(--c-button-text-disabled-background);
-  --c-button-hover: var(--c-button-text-disabled-hover);
-  --c-button-text: var(--c-button-text-disabled-text);
+  --c-button-background: var(--c-transparent);
+  --c-button-hover: var(--c-transparent);
+  --c-button-text: var(--c-tertiary-500);
 }
 
 :host(.text.inverted.disabled) {
-  --c-button-text: var(--c-button-text-inverted-disabled-text) !important;
+  --c-button-text: var(--c-tertiary-400) !important;
 }
 
 :host(.c-button--active) {
-  --c-button-text: rgba(255, 255, 255, 1);
+  --c-button-text: var(--c-primary-600);
 }
 // TODO:  wtf?
 :host(:host:hover) {
@@ -166,7 +167,7 @@
 }
 
 :host(:host:focus-visible) {
-  outline: 2px var(--c-button-outline-color) solid;
+  outline: 2px var(--c-button-outline) solid;
   outline-offset: 2px;
   z-index: 1;
 }

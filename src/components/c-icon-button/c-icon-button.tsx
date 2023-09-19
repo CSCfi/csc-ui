@@ -55,7 +55,7 @@ export class CIconButton {
   private _rippleElement: HTMLCRippleElement;
 
   private _renderBadge() {
-    return <div class="icon-button-badge">{this.badge}</div>;
+    return <c-badge>{this.badge}</c-badge>;
   }
 
   private _outerClasses() {

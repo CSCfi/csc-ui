@@ -49,7 +49,6 @@ export const config: Config = {
     sass({
       injectGlobalPaths: [
         'src/styles/global.scss',
-        'src/styles/variables.css',
         'src/styles/variables.scss',
       ],
     }),

@@ -3,51 +3,51 @@
     "active": {
       "border": {
         "color": {
-          "value": "{theme.transparent.value}"
+          "value": "var(--c-transparent)"
         }
       },
       "slider": {
         "color": {
-          "value": "{theme.petrol.600.value}"
+          "value": "var(-c-primary-600)"
         }
       },
       "thumb": {
         "color": {
-          "value": "{theme.white.value}"
+          "value": "var(-c-primary-600)"
         }
       }
     },
     "disabled": {
       "border": {
         "color": {
-          "value": "{theme.transparent.value}"
+          "value": "var(--c-transparent)"
         }
       },
       "slider": {
         "color": {
-          "value": "{theme.grey.200.value}"
+          "value": "var(-c-tertiary-200)"
         }
       },
       "thumb": {
         "color": {
-          "value": "{theme.grey.600.value}"
+          "value": "var(-c-tertiary-600)"
         }
       }
     },
     "inactive": {
       "border": {
         "color": {
-          "value": "{theme.grey.600.value}"
+          "value": "var(-c-tertiary-600)"
         }
       },
       "slider": {
         "color": {
-          "value": "{theme.transparent.value}"
+          "value": "var(--c-transparent)"
         }
       },
       "thumb": {
         "color": {
-          "value": "{theme.grey.600.value}"
+          "value": "var(-c-tertiary-600)"
         }
       }
     }

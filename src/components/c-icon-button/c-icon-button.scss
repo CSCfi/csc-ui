@@ -8,7 +8,10 @@
 }
 
 button.icon-button {
-  --c-icon-button-background: var(--c-icon-button-default-background)
+  --c-icon-button-background: var(--c-primary-600);
+  --c-icon-button-text: var(--c-white);
+  --c-icon-button-hover: var(--c-primary-400);
+  --c-icon-button-outline: var(--c-primary-600);
 
   font-family: var(--csc-font-family);
   display: flex;
@@ -16,8 +19,8 @@ button.icon-button {
   padding: 0;
   width: 40px;
   height: 40px;
-  background: var(--csc-primary);
-  color: #fff;
+  background-color: var(--c-icon-button-background);
+  color: var(--c-icon-button-text);
   transition: background-color 0.3s ease;
   border-radius: 50%;
   cursor: pointer;
@@ -87,7 +90,7 @@ button.icon-button {
   }
 
   &:focus {
-    outline: 2px var(--csc-primary) solid;
+    outline: 2px var(--c-icon-button-outline) solid;
     outline-offset: 2px;
   }
 
@@ -98,22 +101,22 @@ button.icon-button {
   }
 
   &:focus-visible {
-    outline: 2px var(--csc-primary) solid;
+    outline: 2px var(--c-icon-button-outline) solid;
     outline-offset: 2px;
   }
 
   &.ghost {
-    background: var(--csc-primary-ghost);
-    color: var(--csc-primary);
+    --c-icon-button-background: var(--c-primary-200);
+    --c-icon-button-text: var(--c-primary-600);
 
     ::slotted(*),
     svg {
-      color: var(--csc-primary) !important;
-      fill: var(--csc-primary) !important;
+      color: var(--c-primary-600) !important;
+      fill: var(--c-primary-600) !important;
     }
 
     &:hover {
-      background: var(--csc-primary-ghost-hover);
+      --c-icon-button-background: var(--c-primary-100);
     }
 
     &.inverted {

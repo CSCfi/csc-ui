@@ -83,6 +83,7 @@ graph TD;
   c-pagination --> c-menu
   c-pagination --> c-icon-button
   c-menu --> c-menu-items
+  c-icon-button --> c-badge
   c-icon-button --> c-ripple
   style c-data-table fill:#f9f,stroke:#333,stroke-width:4px
 ```

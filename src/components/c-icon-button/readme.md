@@ -38,11 +38,13 @@
 
 ### Depends on
 
+- [c-badge](../c-badge)
 - [c-ripple](../c-ripple)
 
 ### Graph
 ```mermaid
 graph TD;
+  c-icon-button --> c-badge
   c-icon-button --> c-ripple
   c-card --> c-icon-button
   c-data-table --> c-icon-button
