@@ -110,6 +110,8 @@ export class CPagination {
   }
 
   private _setRange() {
+    if (!this.value) return;
+
     this._currentPage = this.value.currentPage || 1;
     this._itemsPerPage = this.value.itemsPerPage || 25;
     this._totalVisible = this.value.totalVisible || 7;
