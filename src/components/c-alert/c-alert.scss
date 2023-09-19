@@ -1,5 +1,5 @@
 .c-alert {
-  --c-alert-color: var(--csc-primary);
+  --c-alert-color: var(--c-primary-600);
 
   display: grid;
   gap: 16px;
@@ -18,19 +18,19 @@
   }
 
   &--info {
-    --c-alert-color: var(--csc-link);
+    --c-alert-color: var(--c-info-600);
   }
 
   &--error {
-    --c-alert-color: var(--csc-error);
+    --c-alert-color: var(--c-error-600);
   }
 
   &--success {
-    --c-alert-color: var(--csc-success);
+    --c-alert-color: var(--c-success-600);
   }
 
   &--warning {
-    --c-alert-color: var(--csc-warning);
+    --c-alert-color: var(--c-warning-600);
   }
 
   &__content {

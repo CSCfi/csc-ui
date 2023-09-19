@@ -55,14 +55,14 @@
       animation: animate-stroke var(--stroke-animation-speed)
         var(--stroke-animation-easing) infinite;
       stroke-linecap: round;
-      stroke: var(--csc-primary);
+      stroke: var(--c-primary-600);
     }
   }
 
   &__slot {
     line-height: 40px;
     font-size: 14px;
-    color: var(--csc-mid-grey);
+    color: var(--c-tertiary-600);
     text-align: center;
     font-weight: 500;
     display: block;
