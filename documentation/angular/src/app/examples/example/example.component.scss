@@ -21,8 +21,6 @@ pre {
   gap: 8px;
 }
 
-div {
-  --c-button-default-background: rgb(245, 26, 136);
-  // --c-button-default-text: cyan;
-  --c-button-default-hover: rgb(120, 6, 250);
+h2 {
+  color: var(--c-primary-600);
 }

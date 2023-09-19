@@ -1,5 +1,5 @@
 <div class="viewer" [class.mobile]="isMobile$ | async">
-  <h1 class="text-capitalize mb-0 text-primary">{{ componentData?.name }}</h1>
+  <h1 class="text-capitalize mb-0">{{ componentData?.name }}</h1>
   <p class="mb-0 fs-6 text-black-50">{{ componentData?.tag }}</p>
   <p class="mt-2 mb-4 mb-0 fs-6 text-black-80" *ngIf="componentData?.docs">
     {{ componentData?.docs }}

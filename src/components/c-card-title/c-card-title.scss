@@ -1,4 +1,21 @@
 :host {
+  --c-card-title-color: var(--c-text-system);
+  --c-card-title-underline: var(--c-primary-600);
+
+  color: var(--c-card-title-color);
   padding: 0 var(--c-card-gap, 24px);
   display: block;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.c-card-title {
+  &__underline {
+    background-color: var(--c-card-title-underline);
+    border-radius: 4px;
+    height: 4px;
+    margin-top: 10px;
+    width: 44px;
+  }
 }

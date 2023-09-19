@@ -1,6 +1,10 @@
+:host {
+  --c-login-card-overlay: var(--c-primary-600);
+}
+
 c-login-card {
   display: flex;
-  background: white;
+  background: var(--c-white);
   border-radius: 6px;
 }
 
@@ -23,7 +27,7 @@ c-login-card {
     width: 100%;
 
     &--overlay {
-      background-color: var(--csc-primary);
+      background-color: var(--c-login-card-overlay);
       background-blend-mode: var(--c-login-overlay-mode);
     }
   }

@@ -257,7 +257,7 @@ export class CSelect {
   private _scrollToElement() {
     if (this._items.length > this.itemsPerPage) {
       const itemRef = this._itemRefs.find(
-        (item) => item.value === this._items[this.currentIndex].value,
+        (item) => item.value === this._items[this.currentIndex]?.value,
       )?.ref;
 
       if (!!itemRef) {
@@ -633,7 +633,7 @@ export class CSelect {
         ? ', to navigate use up and down arrows'
         : '';
 
-      const isDisabled = selection.classList.contains('disabled');
+      const isDisabled = !!selection?.classList?.contains('disabled');
 
       const beginning = isDisabled ? 'Disabled option - ' : '';
 

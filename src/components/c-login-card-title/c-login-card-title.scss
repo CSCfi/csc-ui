@@ -1,6 +1,8 @@
 :host {
+  --c-login-card-title-color: var(--c-primary-600);
+
   display: block;
-  color: var(--csc-primary);
+  color: var(--c-login-card-title-color);
   font-family: var(--c-font-family);
   font-size: 40px;
   font-weight: 700;

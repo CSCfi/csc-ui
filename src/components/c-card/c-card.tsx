@@ -5,12 +5,9 @@ import {
   Host,
   h,
   Prop,
-  getAssetPath,
   State,
   Method,
 } from '@stencil/core';
-
-export type CardBackground = 'puhti' | 'mahti' | 'allas';
 
 /**
  * @group Cards
@@ -24,11 +21,6 @@ export type CardBackground = 'puhti' | 'mahti' | 'allas';
 })
 export class CCard {
   /**
-   * Card background image for login pages of specific services
-   */
-  @Prop() background: CardBackground;
-
-  /**
    * Background color
    */
   @Prop() backgroundColor = 'white';
@@ -41,8 +33,6 @@ export class CCard {
   @State() isFullscreen = false;
 
   @Element() host: HTMLCCardElement;
-
-  private _allowedBackgrounds = ['puhti', 'mahti', 'allas'];
 
   private _onFullscreen() {
     this.isFullscreen = !this.isFullscreen;
@@ -97,14 +87,6 @@ export class CCard {
       'c-card': true,
       'c-card--fullscreen': this.isFullscreen,
     };
-
-    if (this._allowedBackgrounds.includes(this.background)) {
-      style['background-image'] = `url(${getAssetPath(
-        `./assets/${this.background}.gif`,
-      )}`;
-      style['background-size'] = 'cover';
-      style['background-position-y'] = 'bottom';
-    }
 
     return (
       <Host class={hostClasses} style={style}>

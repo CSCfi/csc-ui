@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './c-switch.component.html',
   styleUrls: ['./c-switch.component.scss'],
 })
-export class CSwitchComponent {}
+export class CSwitchComponent {
+  // @example-start|usage
+  switch1 = false;
+
+  switch2 = true;
+  // @example-end
+}
