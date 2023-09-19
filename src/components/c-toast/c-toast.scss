@@ -30,19 +30,19 @@
 }
 
 :host(.info) {
-  --c-toast-color: var(--csc-link);
+  --c-toast-color: var(--c-info-600);
 }
 
 :host(.error) {
-  --c-toast-color: var(--csc-error);
+  --c-toast-color: var(--c-error-600);
 }
 
 :host(.warning) {
-  --c-toast-color: var(--csc-warning);
+  --c-toast-color: var(--c-warning-600);
 }
 
 :host(.success) {
-  --c-toast-color: var(--csc-success);
+  --c-toast-color: var(--c-success-600);
 }
 
 .c-toast__content p {
@@ -70,7 +70,7 @@
 }
 
 .c-toast__progress {
-  background-color: var(--csc-light-grey);
+  background-color: var(--c-tertiary-200);
   border-radius: 8px;
   height: 6px;
   margin-top: 8px;

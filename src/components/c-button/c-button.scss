@@ -8,7 +8,7 @@
   --c-button-outline: var(--c-primary-600);
   --c-button-border-radius: 4px;
 
-  --c-height: 44px;
+  --c-button-height: 44px;
 
   --c-tab-button-background: #fff;
 
@@ -27,7 +27,7 @@
 }
 
 :host(:host:not(.description)) {
-  height: var(--c-height);
+  height: var(--c-button-height);
 }
 
 :host(.description) {
@@ -180,12 +180,12 @@
   width: 100%;
 }
 
-:host([size="small"]) {
-  --c-height: 28px;
+:host(.small) {
+  --c-button-height: 28px;
 }
 
-:host([size="large"]) {
-  --c-height: 52px;
+:host(.large) {
+  --c-button-height: 52px;
 }
 
 ::slotted([slot='icon']) {
@@ -356,14 +356,14 @@ a {
     gap: 0;
 
     .c-button__content {
-      height: var(--c-height);
+      height: var(--c-button-height);
     }
   }
 
   &__content {
     display: flex;
     gap: 8px;
-    height: var(--c-height);
+    height: var(--c-button-height);
     align-items: center;
     justify-content: center;
     padding: var(--c-padding);
@@ -415,7 +415,7 @@ a {
 .spinner_wrapper {
   width: 100%;
   position: absolute;
-  height: var(--c-height);
+  height: var(--c-button-height);
   display: grid;
   place-content: center;
 
@@ -432,7 +432,7 @@ a {
   animation: 3s linear infinite svg-animation;
   max-width: 30px;
   position: relative;
-  height: calc(var(--c-height) - 12px);
+  height: calc(var(--c-button-height) - 12px);
 }
 
 @keyframes svg-animation {
