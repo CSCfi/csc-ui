@@ -309,21 +309,6 @@
       },
       "attributes": [
         {
-          "name": "background",
-          "description": "Card background image for login pages of specific services",
-          "values": [
-            {
-              "name": "allas"
-            },
-            {
-              "name": "mahti"
-            },
-            {
-              "name": "puhti"
-            }
-          ]
-        },
-        {
           "name": "background-color",
           "description": "Background color"
         },
@@ -1836,14 +1821,6 @@
           "description": "Value of the input"
         }
       ]
-    },
-    {
-      "name": "c-title",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": []
     },
     {
       "name": "c-toast",

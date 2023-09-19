@@ -67,6 +67,11 @@ export class CSwitch {
       'c-switch--label': this.hasLabel,
     };
 
+    const sliderClasses = {
+      'c-switch__slider': true,
+      'c-switch__slider--disabled': !!this.hostDisabled,
+    };
+
     return (
       <label class={classes} htmlFor={this.hostId}>
         <div class="c-switch__input">
@@ -79,7 +84,7 @@ export class CSwitch {
             checked={this.value}
             onInput={this._valueChangedHandler}
           />
-          <span class="c-switch__slider"></span>
+          <span class={sliderClasses}></span>
         </div>
         {this.hasLabel ? (
           <div class="c-switch__label">

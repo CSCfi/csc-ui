@@ -6,10 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSelectItem, CToastMessage } from "./types";
-import { CardBackground } from "./components/c-card/c-card";
 import { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
 export { CAlertType, CAutocompleteItem, CDataTableData, CDataTableFooterOptions, CDataTableHeader, CMenuCustomTrigger, CMenuOption, CPaginationOptions, CRadioGroupItem, CSelectItem, CToastMessage } from "./types";
-export { CardBackground } from "./components/c-card/c-card";
 export { CLoginCardBlendMode } from "./components/c-login-card/c-login-card";
 export namespace Components {
     /**
@@ -256,10 +254,6 @@ export namespace Components {
      * @group Cards
      */
     interface CCard {
-        /**
-          * Card background image for login pages of specific services
-         */
-        "background": CardBackground;
         /**
           * Background color
          */
@@ -1495,11 +1489,6 @@ export namespace Components {
         "value": string;
     }
     /**
-     * @parent None
-     */
-    interface CTitle {
-    }
-    /**
      * @parent none
      */
     interface CToast {
@@ -2139,15 +2128,6 @@ declare global {
         new (): HTMLCTextFieldElement;
     };
     /**
-     * @parent None
-     */
-    interface HTMLCTitleElement extends Components.CTitle, HTMLStencilElement {
-    }
-    var HTMLCTitleElement: {
-        prototype: HTMLCTitleElement;
-        new (): HTMLCTitleElement;
-    };
-    /**
      * @parent none
      */
     interface HTMLCToastElement extends Components.CToast, HTMLStencilElement {
@@ -2230,7 +2210,6 @@ declare global {
         "c-tabs": HTMLCTabsElement;
         "c-tag": HTMLCTagElement;
         "c-text-field": HTMLCTextFieldElement;
-        "c-title": HTMLCTitleElement;
         "c-toast": HTMLCToastElement;
         "c-toasts": HTMLCToastsElement;
         "c-toolbar": HTMLCToolbarElement;
@@ -2499,10 +2478,6 @@ declare namespace LocalJSX {
      * @group Cards
      */
     interface CCard {
-        /**
-          * Card background image for login pages of specific services
-         */
-        "background"?: CardBackground;
         /**
           * Background color
          */
@@ -3820,11 +3795,6 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     /**
-     * @parent None
-     */
-    interface CTitle {
-    }
-    /**
      * @parent none
      */
     interface CToast {
@@ -3915,7 +3885,6 @@ declare namespace LocalJSX {
         "c-tabs": CTabs;
         "c-tag": CTag;
         "c-text-field": CTextField;
-        "c-title": CTitle;
         "c-toast": CToast;
         "c-toasts": CToasts;
         "c-toolbar": CToolbar;
@@ -4151,10 +4120,6 @@ declare module "@stencil/core" {
              * @group Form
              */
             "c-text-field": LocalJSX.CTextField & JSXBase.HTMLAttributes<HTMLCTextFieldElement>;
-            /**
-             * @parent None
-             */
-            "c-title": LocalJSX.CTitle & JSXBase.HTMLAttributes<HTMLCTitleElement>;
             /**
              * @parent none
              */

@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                                                | Type                            | Default     |
-| ----------------- | ------------------ | ---------------------------------------------------------- | ------------------------------- | ----------- |
-| `background`      | `background`       | Card background image for login pages of specific services | `"allas" \| "mahti" \| "puhti"` | `undefined` |
-| `backgroundColor` | `background-color` | Background color                                           | `string`                        | `'white'`   |
-| `fullscreen`      | `fullscreen`       | Enable the fullscreen toggle button                        | `boolean`                       | `false`     |
+| Property          | Attribute          | Description                         | Type      | Default   |
+| ----------------- | ------------------ | ----------------------------------- | --------- | --------- |
+| `backgroundColor` | `background-color` | Background color                    | `string`  | `'white'` |
+| `fullscreen`      | `fullscreen`       | Enable the fullscreen toggle button | `boolean` | `false`   |
 
 
 ## Methods

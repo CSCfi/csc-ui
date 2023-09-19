@@ -3,9 +3,9 @@
 }
 
 .c-switch {
-  --c-switch-border-color: var(--c-switch-inactive-border-color);
-  --c-switch-thumb-color: var(--c-switch-inactive-thumb-color);
-  --c-switch-slider-color: var(--c-switch-inactive-slider-color);
+  --c-switch-border-color: var(--c-tertiary-600);
+  --c-switch-thumb-color: var(--c-tertiary-600);
+  --c-switch-slider-color: var(--c-transparent);
 
   --c-switch-thumb-margin: 5px;
   --c-switch-pointer: pointer;
@@ -29,17 +29,14 @@
   align-items: center;
 
   &--disabled {
-    --c-switch-thumb-color: var(--c-switch-disabled-thumb-color);
-    --c-switch-slider-color: var(--c-switch-disabled-slider-color);
-    --c-switch-border-color: transparent;
-
     --c-switch-pointer: default;
+    --c-switch-thumb-color: var(--c-tertiary-500);
+    --c-switch-slider-color: var(--c-tertiary-200);
+    --c-switch-border-color: var(--c-transparent);
 
-    // TODO:  get from theme
-    --csc-error: var(--csc-mid-grey);
+    --c-error-600: var(--c-tertiary-400);
 
-    // TODO:  get from theme
-    color: var(--csc-mid-grey);
+    color: var(--c-tertiary-500);
   }
 
   &--label {
@@ -48,8 +45,7 @@
 
   &__label {
     span.required {
-      // TODO:  get from theme
-      color: var(--csc-error);
+      color: var(--c-error-600);
     }
   }
 
@@ -95,12 +91,18 @@
       + {
         #{$this} {
           &__slider {
-            --c-switch-thumb-color: var(--c-switch-active-thumb-color);
-            --c-switch-slider-color: var(--c-switch-active-slider-color);
-            --c-switch-border-color: var(--c-switch-active-border-color);
+            --c-switch-thumb-color: var(--c-white);
+            --c-switch-slider-color: var(--c-primary-600);
+            --c-switch-border-color: var(--c-primary-600);
 
             &::before {
               transform: translateX(var(--c-switch-thumb-active-position));
+            }
+
+            &--disabled {
+              --c-switch-thumb-color: var(--c-white);
+              --c-switch-slider-color: var(--c-tertiary-400);
+              --c-switch-border-color: var(--c-tertiary-400);
             }
           }
         }
@@ -120,7 +122,7 @@
       + {
         #{$this} {
           &__slider {
-            outline: 2px var(--csc-primary) solid;
+            outline: 2px var(--c-primary-600) solid;
             outline-offset: 2px;
           }
         }

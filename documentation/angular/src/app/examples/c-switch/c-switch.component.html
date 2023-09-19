@@ -1,19 +1,11 @@
-<app-example title="Inactive state" name="inactive" component="c-switch">
-  <c-switch></c-switch>
-</app-example>
+<app-example title="Usage" name="usage" component="c-switch" rows>
+  <c-switch [(ngModel)]="switch1" cControl>{{ switch1 ? 'Active' : 'Inactive' }}</c-switch>
 
-<app-example title="Active state" name="active" component="c-switch">
-  <c-switch value="true"></c-switch>
-</app-example>
+  <c-switch [(ngModel)]="switch2" cControl>{{ switch2 ? 'Active' : 'Inactive' }}</c-switch>
 
-<app-example title="Disabled state" name="disabled" component="c-switch">
-  <c-switch disabled>Disabled</c-switch>
-</app-example>
-
-<app-example title="With label" name="labeled" component="c-switch">
-  <c-switch>Label</c-switch>
-</app-example>
-
-<app-example title="Required" name="required" component="c-switch">
   <c-switch required>Required</c-switch>
+
+  <c-switch value="true" disabled>Disabled, active</c-switch>
+
+  <c-switch disabled>Disabled</c-switch>
 </app-example>

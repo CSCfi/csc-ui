@@ -2,6 +2,14 @@
   "c": {
     "font-family": {
       "value": "'museo-sans', sans-serif"
+    },
+    "text": {
+      "body": {
+        "value": "var(--c-primary-900)"
+      },
+      "system": {
+        "value": "var(--c-tertiary-600)"
+      }
     }
   }
 }

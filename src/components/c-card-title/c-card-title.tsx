@@ -12,9 +12,8 @@ export class CCardTitle {
   render() {
     return (
       <div class="c-card-title">
-        <c-title>
-          <slot></slot>
-        </c-title>
+        <slot></slot>
+        <div class="c-card-title__underline"></div>
       </div>
     );
   }
