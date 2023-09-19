@@ -1,12 +1,13 @@
 .c-tab-buttons {
-  --c-switch-border-color: var(--csc-primary);
+  --c-tab-buttons-border-color: var(--c-primary-600);
+  --c-tab-buttons-border-radius: 4px;
 
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 0 0 2px var(--c-switch-border-color);
+  box-shadow: 0 0 0 2px var(--c-tab-buttons-border-color);
   margin: 2px;
-  border-radius: var(--csc-border-radius);
-  background-color: var(--csc-primary);
+  border-radius: var(--c-tab-buttons-border-radius);
+  background-color: var(--c-primary-600);
   gap: 2px;
 
   ::slotted(*) {
@@ -14,16 +15,16 @@
   }
 
   &--disabled {
-    --c-switch-border-color: var(--csc-light-grey);
+    --c-tab-buttons-border-color: var(--c-tertiary-200);
     pointer-events: none;
-    background-color: var(--csc-light-grey);
+    background-color: var(--c-tertiary-200);
   }
 }
 
 ::slotted(c-button:first-child) {
-  --c-radius: 4px 0 0 4px;
+  --c-button-border-radius: 4px 0 0 4px;
 }
 
 ::slotted(c-button:last-child) {
-  --c-radius: 0 4px 4px 0;
+  --c-button-border-radius: 0 4px 4px 0;
 }

@@ -153,7 +153,7 @@
 }
 
 :host(.c-button--active) {
-  --c-button-text: var(--c-primary-600);
+  --c-button-text: var(--c-white);
 }
 // TODO:  wtf?
 :host(:host:hover) {
