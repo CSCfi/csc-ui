@@ -1,6 +1,6 @@
 :host::-webkit-scrollbar {
   width: 12px;
-  background: #d8e8ea;
+  background: var(--c-primary-200);
 }
 :host::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -8,7 +8,7 @@
 :host::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  border: solid 3px #d8e8ea;
+  border: solid 3px var(--c-primary-200);
 }
 
 :host(.autoheight) {
@@ -23,11 +23,11 @@
   flex-shrink: 2;
   flex-basis: 260px;
   max-width: 320px;
-  background: var(--csc-primary);
+  background: var(--c-primary-600);
 }
 
 .c-sidenavigation {
-  background: var(--csc-primary);
+  background: var(--c-primary-600);
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
@@ -74,7 +74,7 @@
   }
 
   &__burger {
-    background-color: var(--csc-primary);
+    background-color: var(--c-primary-600);
     display: flex;
     justify-content: flex-end;
     padding: 8px 16px;

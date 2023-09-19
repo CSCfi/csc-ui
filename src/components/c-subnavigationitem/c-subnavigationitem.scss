@@ -2,7 +2,7 @@
   align-items: center;
   background-color: transparent;
   border-radius: 4px;
-  color: #595959;
+  color: var(--c-tertiary-700);
   cursor: pointer;
   display: block;
   display: flex;
@@ -30,7 +30,7 @@
 }
 
 .c-subnavigation-item__content::before {
-  background-color: var(--csc-primary);
+  background-color: var(--c-primary-600);
   content: '';
   height: 100%;
   left: 0;
@@ -42,12 +42,12 @@
 }
 
 .c-subnavigation-item:hover {
-  background-color: #f0f6f7;
-  color: var(--csc-primary);
+  background-color: var(--c-primary-100);
+  color: var(--c-primary-600);
 }
 
 :host(.active) .c-subnavigation-item {
-  background-color: #ffffff;
+  background-color: var(--c-white);
 }
 
 :host(.active) .c-subnavigation-item__content::before {
@@ -65,7 +65,7 @@
 }
 
 .c-subnavigation-item:focus-visible {
-  outline: 2px var(--csc-primary) solid;
+  outline: 2px var(--c-primary-600) solid;
   outline-offset: 0;
 }
 

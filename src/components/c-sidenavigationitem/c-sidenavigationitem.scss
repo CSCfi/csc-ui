@@ -1,9 +1,8 @@
 :host(.c-sidenavigation-item) {
   align-items: center;
   backface-visibility: hidden;
-  background-color: #d8e8ea00;
   border-radius: 4px 0 0 4px;
-  color: #fff;
+  color: var(--c-white);
   cursor: pointer;
   display: grid;
   grid-template-columns: 1fr;
@@ -16,7 +15,7 @@
 }
 
 :host(.c-sidenavigation-item:hover) {
-  background-color: #d8e8ea44;
+  background-color: var(--c-primary-500);
 }
 
 :host(.c-sidenavigation-item:focus) {
@@ -25,28 +24,28 @@
 
 :host(.c-sidenavigation-item:focus-visible) {
   border-radius: 4px 0 0 4px;
-  outline: 2px #fff solid;
+  outline: 2px var(--c-white) solid;
   outline-offset: 2px;
 }
 
 :host(.c-sidenavigation-item.active) {
-  background-color: #d8e8ea;
-  color: var(--csc-primary);
+  background-color: var(--c-primary-200);
+  color: var(--c-primary-600);
 
   .svg {
-    fill: var(--csc-primary);
+    fill: var(--c-primary-600);
     transform: rotate(90deg);
   }
 
   .c-sidenavigation-item__header {
-    color: var(--csc-primary);
+    color: var(--c-primary-600);
   }
 }
 
 .c-sidenavigation-item {
   &__header {
     align-items: center;
-    color: #fff;
+    color: var(--c-white);
     display: grid;
     gap: 8px;
     grid-template-columns: 1fr;
@@ -102,12 +101,12 @@
 
 .svg {
   align-self: center;
-  fill: #fff;
+  fill: var(--c-white);
   transition: transform 0.3s ease;
 }
 
 :host > div.active .svg {
-  fill: var(--csc-primary);
+  fill: var(--c-primary-600);
   transform: rotate(90deg);
 }
 

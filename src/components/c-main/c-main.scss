@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background: #D8E8EA;
+  background: var(--c-primary-200);
   height: 100vh;
   display: flex;
   flex-direction: column;
