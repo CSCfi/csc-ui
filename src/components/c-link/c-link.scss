@@ -1,29 +1,37 @@
-$icon-margin: 4px;
+:host {
+  --c-link-icon-margin: 8px;
+  --c-link-color: var(--c-info-700);
+  --c-link-hover: var(--c-accent-200);
+}
 
 a {
+  align-items: center;
+  color: var(--c-link-color);
+  background-color: var(--c-transparent);
   display: inline-flex;
   cursor: pointer;
-  font-size: 16px;
+  font-size: inherit;
   text-decoration: none;
-}
+  gap: var(--c-link-icon-margin);
+  transition: background-color 0.3s ease-in-out;
 
-a.icon {
-  display: flex;
-  align-items: center;
-  & svg {
-    margin-right: $icon-margin;
+  &:hover {
+    background-color: var(--c-link-hover);
   }
-}
 
-a.icon-after {
-  flex-direction: row-reverse;
-  & svg {
-    margin-left: $icon-margin;
+  @supports selector(:focus-visible) {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px var(--c-link-color) solid;
+    outline-offset: 4px;
+    border-radius: 2px;
   }
 }
 
 a.underline {
   text-decoration: underline;
 }
-
-

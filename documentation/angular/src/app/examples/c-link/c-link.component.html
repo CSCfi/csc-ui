@@ -9,32 +9,26 @@
   subtitle="Links can be configured with variant properties to help in cases where link needs to be handled programmatically"
   name="variants"
   component="c-link"
-  cols
+  rows
 >
-  <c-link href="https://csc.fi" color="primary">Primary colored link</c-link>
+  <c-link href="https://csc.fi" style="--c-link-color: var(--c-warning-600)">Link with custom color</c-link>
 
   <c-link href="https://csc.fi" weight="400">Link with custom weight</c-link>
 
   <c-link
     href="https://csc.fi"
     target="_blank"
-    [path]="mdiOpenInNew"
-    icon-fill="primary"
-    icon-after
-    [iconStyle]="{marginLeft: '8px'}"
   >
     Link with icon
+    <c-icon [path]="mdiOpenInNew" color="var(--c-primary-600)" size="18"></c-icon>
   </c-link>
 
   <c-link
     href="https://csc.fi"
     color="error"
     target="_blank"
-    [path]="mdiOpenInNew"
-    icon-fill="primary"
-    icon-after
-    [iconStyle]="{marginLeft: '8px'}"
   >
-    Link with icon
+    <c-icon [path]="mdiOpenInNew" size="18"></c-icon>
+    Link with icon in front
   </c-link>
 </app-example>

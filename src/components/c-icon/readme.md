@@ -20,7 +20,6 @@
 
  - [c-card](../c-card)
  - [c-data-table](../c-data-table)
- - [c-link](../c-link)
  - [c-toast](../c-toast)
 
 ### Graph
@@ -28,7 +27,6 @@
 graph TD;
   c-card --> c-icon
   c-data-table --> c-icon
-  c-link --> c-icon
   c-toast --> c-icon
   style c-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
