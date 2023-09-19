@@ -1,17 +1,4 @@
 header {
   padding: 0 var(--c-card-gap, 24px);
   display: block;
-  font-size: 16px;
-  text-transform: uppercase;
-  color: rgb(89, 89, 89);
-  font-weight: 500;
 }
-
-.title-underline {
-    width: 44px;
-    height: 4px;
-    border-radius: 4px;
-    background-color: var(--csc-primary);
-    margin-top: 10px;
-}
-

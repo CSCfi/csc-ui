@@ -6,7 +6,6 @@ import { Component, h, Prop } from '@stencil/core';
  */
 @Component({
   tag: 'c-login-card-actions',
-  styleUrl: 'c-login-card-actions.scss',
   shadow: true,
 })
 export class CLoginCardActions {
@@ -14,12 +13,6 @@ export class CLoginCardActions {
    * Align the actions
    */
   @Prop() align: 'start' | 'center' | 'end' = 'center';
-
-  /**
-   * Remove padding
-   * @private
-   */
-  @Prop() removePadding = false;
 
   /**
    * Justify the actions
@@ -33,18 +26,10 @@ export class CLoginCardActions {
     | 'space-around' = 'start';
 
   render() {
-    const classes = {
-      'c-login-card-actions': true,
-      [`c-login-card-actions--align-${this.align}`]: true,
-      [`c-login-card-actions--justify-${this.justify}`]: true,
-    };
-
     return (
-      <footer class={{ 'remove-padding': this.removePadding }}>
-        <menu class={classes}>
-          <slot></slot>
-        </menu>
-      </footer>
+      <c-card-actions align={this.align} justify={this.justify} remove-padding>
+        <slot></slot>
+      </c-card-actions>
     );
   }
 }
