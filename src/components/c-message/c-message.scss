@@ -24,11 +24,11 @@
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.5, 1);
 
     &--hint {
-      color: var(--csc-mid-grey);
+      color: var(--c-text-system);
     }
 
     &--error {
-      color: var(--csc-error);
+      color: var(--c-error-600);
     }
 
     span {
