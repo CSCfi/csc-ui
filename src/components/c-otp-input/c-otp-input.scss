@@ -1,4 +1,6 @@
 :host {
+  --c-otp-input-border-width: 1px;
+  --c-otp-input-border: var(--c-tertiary-500);
   --c-otp-input-height: 56px;
   --c-otp-input-width: 42px;
 
@@ -19,36 +21,39 @@
 
 .c-otp-input {
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
   display: inline-grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(auto, var(--c-otp-input-width));
   gap: 8px;
+  grid-auto-columns: minmax(auto, var(--c-otp-input-width));
+  grid-auto-flow: column;
   margin-bottom: 8px;
+  transform: translate3d(0, 0, 0);
 
   &--hide-details {
     margin-bottom: 0;
   }
 
   input {
-    height: var(--c-otp-input-height);
-    width: 100%;
-    min-width: 24px;
-    max-width: var(--c-otp-input-width);
-    text-align: center;
     border-radius: 4px;
-    font-size: 24px;
-    box-shadow: inset 0 0 0 1px var(--csc-dark-grey);
     border: none;
+    box-shadow: inset 0 0 0 var(--c-otp-input-border-width) var(--c-otp-input-border);
+    color: var(--c-text-body);
+    font-size: 24px;
+    height: var(--c-otp-input-height);
+    max-width: var(--c-otp-input-width);
+    min-width: 24px;
+    text-align: center;
+    width: 100%;
 
     &:focus {
-      box-shadow: inset 0 0 0 2px var(--csc-primary);
+      --c-otp-input-border-width: 2px;
+      --c-otp-input-border: var(--c-primary-600);
+
       outline: none;
     }
   }
 
   c-message {
-    grid-row: 2;
     grid-column: 1 / span var(--c-otp-input-count);
+    grid-row: 2;
   }
 }
