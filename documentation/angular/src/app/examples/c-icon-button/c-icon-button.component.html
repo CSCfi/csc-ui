@@ -117,3 +117,32 @@
     <c-icon [path]="mdiStar"></c-icon>
   </c-icon-button>
 </app-example>
+
+<app-example title="Inverted" name="inverted" component="c-icon-button" cols>
+  <c-row gap="8" style="background-color: var(--c-primary-600)" class="p-4">
+    <c-icon-button inverted>
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+    <c-icon-button outlined inverted badge="1">
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+    <c-icon-button ghost inverted badge="1">
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+    <c-icon-button text inverted badge="1">
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+    <c-icon-button inverted disabled>
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+    <c-icon-button outlined inverted disabled badge="1">
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+    <c-icon-button ghost inverted disabled badge="1">
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+    <c-icon-button text inverted disabled badge="1">
+      <c-icon [path]="mdiStar"></c-icon>
+    </c-icon-button>
+  </c-row>
+</app-example>

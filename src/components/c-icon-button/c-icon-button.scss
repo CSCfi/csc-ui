@@ -51,6 +51,10 @@ button.icon-button {
     justify-content: center;
   }
 
+  &:hover {
+    background: var(--c-icon-button-hover);
+  }
+
   &--small {
     width: 32px;
     height: 32px;
@@ -105,152 +109,95 @@ button.icon-button {
     outline-offset: 2px;
   }
 
+  &.inverted {
+    --c-icon-button-background: var(--c-white);
+    --c-icon-button-text: var(--c-primary-600);
+    --c-icon-button-hover: var(--c-primary-200);
+
+    c-badge {
+      --c-badge-outline: var(--c-primary-600);
+    }
+  }
+
   &.ghost {
     --c-icon-button-background: var(--c-primary-200);
     --c-icon-button-text: var(--c-primary-600);
-
-    ::slotted(*),
-    svg {
-      color: var(--c-primary-600) !important;
-      fill: var(--c-primary-600) !important;
-    }
-
-    &:hover {
-      --c-icon-button-background: var(--c-primary-100);
-    }
+    --c-icon-button-hover: var(--c-primary-100);
 
     &.inverted {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.15);
+      --c-icon-button-text: var(--c-white);
+      --c-icon-button-background: var(--c-primary-500);
+      --c-icon-button-hover: var(--c-primary-400);
+    }
 
-      ::slotted(*),
-      svg {
-        color: #fff !important;
-        fill: #fff !important;
-      }
-
-      &:hover {
-        background: rgba(255, 255, 255, 0.25);
-      }
+    &.disabled {
+      --c-icon-button-background: var(--c-tertiary-200);
+      --c-icon-button-text: var(--c-tertiary-500);
+      --c-icon-button-hover: var(--c-tertiary-100);
     }
   }
 
   &.text {
-    background: transparent;
-    color: var(--csc-primary);
-
-    ::slotted(*),
-    svg {
-      color: var(--csc-primary) !important;
-      fill: var(--csc-primary) !important;
-    }
-
-    &:hover {
-      background: var(--csc-primary-text-hover);
-    }
+    --c-icon-button-text: var(--c-primary-600);
+    --c-icon-button-background: var(--c-transparent);
+    --c-icon-button-hover: var(--c-primary-100);
 
     &.inverted {
-      color: #fff;
+      --c-icon-button-text: var(--c-white);
+      --c-icon-button-hover: var(--c-primary-500);
+    }
 
-      ::slotted(*),
-      svg {
-        color: #fff !important;
-        fill: #fff !important;
-      }
-
-      &:hover {
-        background: rgba(255, 255, 255, 0.15);
-      }
+    &.disabled {
+      --c-icon-button-background: var(--c-transparent);
+      --c-icon-button-hover: var(--c-transparent);
+      --c-icon-button-text: var(--c-tertiary-400);
     }
   }
 
   &.outlined {
-    background: transparent;
-    box-shadow: inset 0 0 0 2px var(--csc-primary);
-    color: var(--csc-primary);
+    --c-icon-button-text: var(--c-primary-600);
+    --c-icon-button-background: var(--c-transparent);
+    --c-icon-button-hover: var(--c-primary-100);
 
-    ::slotted(*),
-    svg {
-      color: var(--csc-primary) !important;
-      fill: var(--csc-primary) !important;
-    }
+    box-shadow: inset 0 0 0 2px var(--c-icon-button-outline);
 
     &.disabled {
-      background: transparent;
-      box-shadow: inset 0 0 0 2px #acacac;
-    }
-
-    &:hover {
-      background: var(--csc-primary-text-hover);
+      --c-icon-button-text: var(--c-tertiary-500);
+      --c-icon-button-background: var(--c-transparent);
+      --c-icon-button-outline: var(--c-tertiary-400);
     }
 
     &.inverted {
-      color: #fff;
-      box-shadow: inset 0 0 0 2px #fff;
+      --c-icon-button-text: var(--c-white);
+      --c-icon-button-background: var(--c-transparent);
+      --c-icon-button-outline: var(--c-white);
+      --c-icon-button-hover: var(--c-primary-500);
 
-      ::slotted(*),
-      svg {
-        color: #fff !important;
-        fill: #fff !important;
-      }
-
-      &:hover {
-        background: rgba(255, 255, 255, 0.15);
+      &.disabled {
+        --c-icon-button-text: var(--c-tertiary-400);
+        --c-icon-button-background: var(--c-transparent);
+        --c-icon-button-outline: var(--c-tertiary-400);
       }
     }
   }
 
   &.disabled {
-    background: var(--csc-lightest-grey);
+    --c-icon-button-background: var(--c-tertiary-100);
+    --c-icon-button-hover: var(--c-tertiary-100);
+    --c-icon-button-text: var(--c-tertiary-600);
+    --c-icon-button-outline: var(--c-tertiary-600);
+
     pointer-events: none;
 
-    ::slotted(*),
-    svg {
-      color: var(--csc-mid-grey) !important;
-      fill: var(--csc-mid-grey) !important;
+    c-badge {
+      --c-badge-background: var(--c-tertiary-400);
     }
-
-    &.text {
-      background: transparent;
-    }
-
-    &.ghost {
-      background: var(--csc-lightest-grey);
-    }
-
-    &:hover {
-      background: transparent;
-    }
-  }
-
-  &:hover {
-    background: var(--csc-primary-hover);
   }
 }
 
 ::slotted(*),
 svg {
-  color: rgb(255, 255, 255);
-  fill: rgb(255, 255, 255);
   pointer-events: none;
-}
-
-.icon-button-badge {
-  background: #ff5800;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 16px;
-  height: 16px;
-  color: #fff;
-  position: absolute;
-  right: -6px;
-  font-size: 12px;
-  box-shadow: 0 0 0 2px #fff;
-  top: -6px;
-  padding: 0 4px;
-  line-height: 1;
 }
 
 .inner-container {
