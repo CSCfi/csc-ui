@@ -1,6 +1,3 @@
-// TODO:  Remove and add to index.html
-@import '../../styles/css/c-icon-button.css';
-
 :host {
   display: block;
   position: relative;
@@ -13,7 +10,7 @@ button.icon-button {
   --c-icon-button-hover: var(--c-primary-400);
   --c-icon-button-outline: var(--c-primary-600);
 
-  font-family: var(--csc-font-family);
+  font-family: var(--c-font-family);
   display: flex;
   border: none;
   padding: 0;

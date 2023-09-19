@@ -122,7 +122,8 @@ module.exports = {
           format: 'scss/variables',
           filter: {
             attributes: {
-              category: tokenCategory,
+              category: 'c',
+              // category: tokenCategory,
             },
           },
         })),
@@ -160,7 +161,8 @@ module.exports = {
           format: 'css/variables',
           filter: {
             attributes: {
-              category: tokenCategory,
+              // category: tokenCategory,
+              category: 'c',
             },
           },
           options: {
