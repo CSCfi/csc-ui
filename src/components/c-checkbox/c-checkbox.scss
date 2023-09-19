@@ -1,7 +1,7 @@
 .c-checkbox {
   $this: &;
 
-  --c-checkbox-color: var(--csc-primary);
+  --c-checkbox-color: var(--c-primary-600);
 
   position: relative;
   width: fit-content;
@@ -27,11 +27,11 @@
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.5, 1);
 
     &--hint {
-      color: var(--csc-mid-grey);
+      color: var(--c-tertiary-500);
     }
 
     &--error {
-      color: var(--csc-error);
+      color: var(--c-error-600);
     }
 
     span {
@@ -57,13 +57,13 @@
     user-select: none;
 
     span.required {
-      color: var(--csc-error);
+      color: var(--c-error-600);
     }
   }
 
   &--disabled {
-    --c-checkbox-color: var(--csc-mid-grey);
-    --csc-error: var(--c-checkbox-color);
+    --c-checkbox-color: var(--c-tertiary-500);
+    --c-error-600: var(--c-checkbox-color);
 
     color: var(--c-checkbox-color);
     opacity: 0.75;
@@ -74,9 +74,9 @@
   }
 
   &--error {
-    --c-checkbox-color: var(--csc-error);
+    --c-checkbox-color: var(--c-error-600);
 
-    color: var(--csc-error);
+    color: var(--c-error-600);
   }
 
   input:focus {
@@ -99,7 +99,7 @@
 
   &:not(.c-checkbox--disabled) {
     .ripple:hover {
-      background-color: var(--csc-primary-text-hover);
+      background-color: var(--c-primary-100);
     }
   }
 
