@@ -236,6 +236,7 @@ export class CButton {
       inverted: this.inverted,
       outlined: this.outlined,
       danger: this.danger,
+      [this.size]: true,
       text: !!this.text,
       description: !!this._containerhasDescriptionSlot,
     };
