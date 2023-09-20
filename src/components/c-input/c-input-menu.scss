@@ -39,7 +39,7 @@
     width: 100%;
     top: 44px;
     z-index: 10;
-    margin-left: calc(var(--c-label-position) * -1);
+    margin-left: calc(var(--c-input-label-position) * -1);
 
     &--shadow {
       top: 47px;
@@ -48,7 +48,7 @@
 
   &__items {
     position: absolute;
-    background-color: #ffffff;
+    background-color: var(--c-white);
     min-width: calc(100% + 24px);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
@@ -72,15 +72,15 @@
       font-size: 14px;
       align-items: center;
       justify-content: flex-start;
-      color: rgba(0, 0, 0, 0.87);
+      color: var(--c-text-body);
 
       &.disabled {
-        background-color: rgba(0, 0, 0, 0.05);
-        filter: grayscale(1) opacity(0.75);
+        background-color: var(--c-tertiary-100);
+        filter: grayscale(1) opacity(0.6);
         cursor: default;
 
         &:hover {
-          background-color: rgba(0, 0, 0, 0.05);
+          background-color: var(--c-tertiary-100);
         }
       }
 
@@ -89,11 +89,15 @@
       }
 
       &:hover {
-        background-color: var(--csc-primary-text-hover);
+        background-color: var(--c-primary-100);
       }
 
       &[aria-selected='true'] {
-        background-color: var(--csc-primary-text-hover);
+        background-color: var(--c-primary-100);
+        box-shadow: inset 0 0 0 1px var(--c-primary-600);
+        border-radius: 4px;
+        backface-visibility: hidden;
+        transform: translate3d(0, 0, 0);
       }
 
       &.none {
@@ -103,13 +107,13 @@
 
     &--empty {
       li {
-        color: rgba(0, 0, 0, 0.54);
+        color: var(--c-text-system);
         cursor: default;
         gap: 8px;
         pointer-events: none;
 
         svg {
-          fill: currentColor;
+          fill: var(--c-warning-600);
           height: 18px;
           width: 18px;
         }
@@ -123,7 +127,7 @@ input {
   padding: 8px 0 8px;
   background-color: transparent;
   border: none;
-  color: rgba(0, 0, 0, 0.87);
+  color: var(--c-text-body);
   flex: 1 1 auto;
   font-family: $csc-font-family;
   font-size: 16px;
@@ -153,18 +157,18 @@ svg {
   $this: &;
 
   &--disabled {
-    color: var(--csc-mid-grey);
+    color: var(--c-tertiary-400);
   }
 
   &:focus-within {
-    color: var(--csc-primary);
+    color: var(--c-primary-600);
   }
 
   &--error {
-    color: var(--csc-error);
+    color: var(--c-error-600);
 
     &:focus-within {
-      color: var(--csc-error);
+      color: var(--c-error-600);
     }
   }
 }

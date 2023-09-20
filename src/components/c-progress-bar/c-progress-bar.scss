@@ -1,9 +1,9 @@
 :host {
-  --bar-color: var(--c-primary-600);
-  --bg-color: var(--c-tertiary-200);
-  --border-size: 4px;
-  --height: 16px;
-  --value: 0%;
+  --c-progress-bar-color: var(--c-primary-600);
+  --c-progress-bar-background: var(--c-tertiary-200);
+  --c-progress-bar-border-width: 4px;
+  --c-progress-bar-height: 16px;
+  --c-progress-bar-value: 0%;
 
   align-items: center;
   display: flex;
@@ -14,16 +14,16 @@
   $this: &;
 
   position: relative;
-  background-color: var(--bg-color);
-  border-radius: var(--height);
-  box-shadow: 0 0 0 var(--border-size) var(--bg-color);
+  background-color: var(--c-progress-bar-background);
+  border-radius: var(--c-progress-bar-height);
+  box-shadow: 0 0 0 var(--c-progress-bar-border-width) var(--c-progress-bar-background);
   flex-basis: 100%;
-  height: calc(var(--height) - calc(var(--border-size) * 2));
-  margin: var(--border-size);
+  height: calc(var(--c-progress-bar-height) - calc(var(--c-progress-bar-border-width) * 2));
+  margin: var(--c-progress-bar-border-width);
   opacity: 0.75;
   overflow: hidden;
   transform: translateZ(0); // Safari - overflow: hidden & border-radius fix
-  width: calc(100% - calc(var(--border-size) * 2));
+  width: calc(100% - calc(var(--c-progress-bar-border-width) * 2));
 
   &.adjacent-details {
     flex: 1;
@@ -47,12 +47,12 @@
   }
 
   progress {
-    background-color: var(--bar-color);
-    border-radius: var(--height);
+    background-color: var(--c-progress-bar-color);
+    border-radius: var(--c-progress-bar-height);
     width: 100%;
     background-color: transparent;
     overflow: hidden;
-    height: calc(var(--height) - calc(var(--border-size) * 2));
+    height: calc(var(--c-progress-bar-height) - calc(var(--c-progress-bar-border-width) * 2));
     position: absolute;
     border: none;
 
@@ -74,15 +74,15 @@
 
   ::-webkit-progress-value {
     transition: width 0.3s ease-in-out;
-    background-color: var(--bar-color);
-    border-radius: var(--height);
+    background-color: var(--c-progress-bar-color);
+    border-radius: var(--c-progress-bar-height);
   }
 
   ::-moz-progress-bar {
     transition: padding-bottom 1s;
     padding-left: 60px;
-    padding-bottom: var(--value);
-    background-color: var(--bar-color);
+    padding-bottom: var(--c-progress-bar-value);
+    background-color: var(--c-progress-bar-color);
     height: 0;
     transform-origin: 0 0;
     transform: rotate(-90deg) translateX(-60px);
@@ -97,11 +97,11 @@
     &::before {
       content: '';
       position: absolute;
-      background-color: var(--bar-color);
-      border-radius: var(--height);
+      background-color: var(--c-progress-bar-color);
+      border-radius: var(--c-progress-bar-height);
       left: -100%;
       height: 100%;
-      transform: translateX(var(--value, 0%));
+      transform: translateX(var(--c-progress-bar-value, 0%));
       transition: transform 0.3s ease-in-out;
       animation: indeterminateAnimation 2s infinite linear;
       width: 50%;

@@ -41,7 +41,6 @@
   }
 
   &__content {
-    --c-color: var(--c-primary-600);
     border-radius: 4px;
     background-color: var(--c-primary-200);
     color: var(--c-primary-600);
@@ -73,7 +72,6 @@
 
   &--disabled {
     #{$this}__content {
-      --c-color: var(--c-tertiary-400);
       background: var(--c-tertiary-100);
       color: var(--c-tertiary-400);
       cursor: default !important;
@@ -84,8 +82,7 @@
   &--active {
     #{$this}__content {
       background-color: var(--c-primary-600);
-      --c-color: #fff;
-      color: #fff;
+      color: var(--c-white);
       pointer-events: none;
 
       &:hover {

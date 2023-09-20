@@ -8,7 +8,7 @@
 
     &--disabled {
       cursor: not-allowed;
-      fill: rgba(0, 0, 0, 0.54);
+      fill: var(--c-tertiary-500);
     }
   }
 

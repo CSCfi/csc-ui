@@ -1,13 +1,5 @@
-:host {
-  display: block;
-  cursor: text;
-}
-
-:host([disabled]) {
-  ::slotted(input),
-  ::slotted(textarea) {
-    color: rgba(0, 0, 0, 0.5);
-  }
+:root, :host {
+  --c-input-color: var(--c-primary-600);
 }
 
 .visuallyhidden {
@@ -23,8 +15,6 @@
 }
 
 .c-input {
-  --c-color: rgba(0, 0, 0, 0.87);
-
   $this: &;
 
   --c-input-border-width: 1px;
@@ -32,7 +22,7 @@
   align-items: flex-start;
   display: flex;
   flex: 1 1 auto;
-  font-family: $csc-font-family;
+  font-family: var(--c-font-family);
   font-size: 16px;
   letter-spacing: normal;
   max-width: 100%;
@@ -53,7 +43,7 @@
 
     /* Browsers have different default form fonts */
     font-size: 16px;
-    font-family: $csc-font-family;
+    font-family: var(--c-font-family);
   }
 
   input,
@@ -73,7 +63,7 @@
 
   input[type='search'] {
     -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
+    appearance: textfield;
     box-sizing: content-box;
   }
 
@@ -104,7 +94,7 @@
     border: none;
     color: rgba(0, 0, 0, 0.87);
     flex: 1 1 auto;
-    font-family: $csc-font-family;
+    font-family: var(--c-font-family);
     font-size: 16px;
     line-height: 20px;
     max-width: 100%;
@@ -150,15 +140,6 @@
     position: relative;
     transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
     width: 100%;
-
-    .click-trap {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(128, 255, 0, 0.295);
-    }
   }
 
   &__field {
@@ -189,7 +170,7 @@
       text-overflow: ellipsis;
       top: 12px;
       transform-origin: top left;
-      transform: translateX(var(--c-label-position)) translateY(0) scale(1);
+      transform: translateX(var(--c-input-label-position)) translateY(0) scale(1);
       transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
       white-space: nowrap;
 
@@ -198,7 +179,7 @@
       }
 
       span {
-        color: var(--csc-error);
+        color: var(--c-error-600);
       }
     }
   }
@@ -236,7 +217,7 @@
       width: 0;
 
       &.active {
-        width: var(--c-legend-width);
+        width: var(--c-input-legend-width);
       }
     }
   }
@@ -244,11 +225,11 @@
   &--shadow {
     #{$this} {
       &__slot {
-        background: #fff;
+        background: var(--c-white);
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
         &:focus-within {
-          outline: 2px var(--csc-primary) solid;
+          outline: 2px var(--c-input-color) solid;
         }
       }
     }
@@ -259,9 +240,9 @@
     textarea,
     fieldset,
     label {
-      --csc-error: rgba(0, 0, 0, 0.5);
+      --c-error-600: var(--c-tertiary-500);
 
-      color: rgba(0, 0, 0, 0.5);
+      color: var(--c-tertiary-500);
     }
   }
 
@@ -274,31 +255,30 @@
   }
 
   ::placeholder {
-    color: rgba(0, 0, 0, 0.46);
+    color: var(--c-tertiary-500);
     opacity: 1;
   }
 
   &:focus-within,
   &:not(.c-input--disabled):active {
     --c-input-border-width: 2px;
-    --c-color: var(--csc-primary);
 
-    color: var(--csc-primary);
+    color: var(--c-input-color);
 
     label {
       transform: translateX(0px) translateY(-18px) scale(0.75);
     }
 
     legend {
-      width: var(--c-legend-width);
+      width: var(--c-input-legend-width);
     }
   }
 
   &--error {
-    color: var(--csc-error);
+    color: var(--c-error-600);
 
     &:focus-within {
-      color: var(--csc-error);
+      color: var(--c-error-600);
     }
   }
 }

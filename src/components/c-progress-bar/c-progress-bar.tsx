@@ -53,8 +53,8 @@ export class CProgressBar {
     const value = this._getSafeValue();
 
     const style = {
-      '--value': `${value}%`,
-      '--bar-color': this.color ? this.color : null,
+      '--c-progress-bar-value': `${value}%`,
+      '--c-progress-bar-color': this.color ? this.color : null,
     };
 
     const classes = {

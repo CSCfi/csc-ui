@@ -330,7 +330,7 @@ export class CInput {
         <legend
           class={classes}
           style={{
-            '--c-legend-width': this.labelWidth + 'px',
+            '--c-input-legend-width': this.labelWidth + 'px',
           }}
         >
           <span class="notranslate"></span>
@@ -406,7 +406,7 @@ export class CInput {
               <div
                 class="c-input__field"
                 style={{
-                  '--c-label-position': this.preSlotWidth + 'px',
+                  '--c-input-label-position': this.preSlotWidth + 'px',
                 }}
               >
                 <slot name="pre"></slot>
