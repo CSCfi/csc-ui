@@ -1,5 +1,7 @@
 <app-example title="Basic usage" name="basic" component="c-side-navigation">
   <c-side-navigation>
+    <c-side-navigation-title>Title</c-side-navigation-title>
+
     <c-side-navigation-item
       *ngFor="let item of items"
       [active]="currentItem === item"

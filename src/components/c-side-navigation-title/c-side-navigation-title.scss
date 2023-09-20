@@ -1,0 +1,12 @@
+:host {
+  --c-side-navigation-title-color: var(--c-white);
+  --c-side-navigation-title-border: var(--c-white);
+
+  align-items: center;
+  border-bottom: 1px solid var(--c-side-navigation-title-border);
+  color: var(--c-side-navigation-title-color);
+  display: flex;
+  gap: 8px;
+  margin: 1.25rem 0 1rem;
+  padding: 4px 0;
+}

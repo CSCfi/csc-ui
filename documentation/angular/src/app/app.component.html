@@ -96,7 +96,7 @@
         </div>
       </c-side-navigation-item>
 
-      <p class="text-white border-bottom mt-4 mb-3">Components</p>
+      <c-side-navigation-title>Components</c-side-navigation-title>
 
       <c-text-field
         placeholder="Search for a component"
@@ -141,7 +141,7 @@
         <div slot="main" class="text-capitalize">{{ item.name }}</div>
       </c-side-navigation-item>
 
-      <p class="text-white border-bottom mt-4 mb-3">Miscellaneous</p>
+      <c-side-navigation-title>Miscellaneous</c-side-navigation-title>
 
       <c-side-navigation-item [routerLink]="['types']" [active]="url?.startsWith('/types')">
         <div slot="main" class="text-capitalize d-flex align-items-center">

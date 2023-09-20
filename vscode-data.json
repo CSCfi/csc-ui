@@ -1429,6 +1429,14 @@
       ]
     },
     {
+      "name": "c-side-navigation-title",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": []
+    },
+    {
       "name": "c-spacer",
       "description": {
         "kind": "markdown",

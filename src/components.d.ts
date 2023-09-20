@@ -1161,6 +1161,11 @@ export namespace Components {
         "target": string;
     }
     /**
+     * @parent c-sidenavigation
+     */
+    interface CSideNavigationTitle {
+    }
+    /**
      * Spacer component for flex containers
      * @group Layout
      */
@@ -2014,6 +2019,15 @@ declare global {
         new (): HTMLCSideNavigationItemElement;
     };
     /**
+     * @parent c-sidenavigation
+     */
+    interface HTMLCSideNavigationTitleElement extends Components.CSideNavigationTitle, HTMLStencilElement {
+    }
+    var HTMLCSideNavigationTitleElement: {
+        prototype: HTMLCSideNavigationTitleElement;
+        new (): HTMLCSideNavigationTitleElement;
+    };
+    /**
      * Spacer component for flex containers
      * @group Layout
      */
@@ -2203,6 +2217,7 @@ declare global {
         "c-select": HTMLCSelectElement;
         "c-side-navigation": HTMLCSideNavigationElement;
         "c-side-navigation-item": HTMLCSideNavigationItemElement;
+        "c-side-navigation-title": HTMLCSideNavigationTitleElement;
         "c-spacer": HTMLCSpacerElement;
         "c-status": HTMLCStatusElement;
         "c-step": HTMLCStepElement;
@@ -3439,6 +3454,11 @@ declare namespace LocalJSX {
         "target"?: string;
     }
     /**
+     * @parent c-sidenavigation
+     */
+    interface CSideNavigationTitle {
+    }
+    /**
      * Spacer component for flex containers
      * @group Layout
      */
@@ -3881,6 +3901,7 @@ declare namespace LocalJSX {
         "c-select": CSelect;
         "c-side-navigation": CSideNavigation;
         "c-side-navigation-item": CSideNavigationItem;
+        "c-side-navigation-title": CSideNavigationTitle;
         "c-spacer": CSpacer;
         "c-status": CStatus;
         "c-step": CStep;
@@ -4077,6 +4098,10 @@ declare module "@stencil/core" {
              * @parent c-side-navigation
              */
             "c-side-navigation-item": LocalJSX.CSideNavigationItem & JSXBase.HTMLAttributes<HTMLCSideNavigationItemElement>;
+            /**
+             * @parent c-sidenavigation
+             */
+            "c-side-navigation-title": LocalJSX.CSideNavigationTitle & JSXBase.HTMLAttributes<HTMLCSideNavigationTitleElement>;
             /**
              * Spacer component for flex containers
              * @group Layout
