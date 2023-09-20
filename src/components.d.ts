@@ -165,6 +165,9 @@ export namespace Components {
          */
         "value": string | number | CAutocompleteItem;
     }
+    /**
+     * @parent none
+     */
     interface CBadge {
     }
     /**
@@ -1662,6 +1665,9 @@ declare global {
         prototype: HTMLCAutocompleteElement;
         new (): HTMLCAutocompleteElement;
     };
+    /**
+     * @parent none
+     */
     interface HTMLCBadgeElement extends Components.CBadge, HTMLStencilElement {
     }
     var HTMLCBadgeElement: {
@@ -2384,6 +2390,9 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | CAutocompleteItem;
     }
+    /**
+     * @parent none
+     */
     interface CBadge {
     }
     /**
@@ -3910,6 +3919,9 @@ declare module "@stencil/core" {
              * @group Form
              */
             "c-autocomplete": LocalJSX.CAutocomplete & JSXBase.HTMLAttributes<HTMLCAutocompleteElement>;
+            /**
+             * @parent none
+             */
             "c-badge": LocalJSX.CBadge & JSXBase.HTMLAttributes<HTMLCBadgeElement>;
             /**
              * @group Buttons

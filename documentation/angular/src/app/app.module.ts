@@ -35,7 +35,7 @@ import { CRadioGroupComponent } from './examples/c-radio-group/c-radio-group.com
 import { CLoaderComponent } from './examples/c-loader/c-loader.component';
 import { CSelectComponent } from './examples/c-select/c-select.component';
 import { CToolbarComponent } from './examples/c-toolbar/c-toolbar.component';
-import { CSidenavigationComponent } from './examples/c-side-navigation/c-side-navigation.component';
+import { CSideNavigationComponent } from './examples/c-side-navigation/c-side-navigation.component';
 import { CLinkComponent } from './examples/c-link/c-link.component';
 import { BasicTemplateComponent } from './basic-template/basic-template.component';
 import { GettingStartedAngularComponent } from './getting-started-angular/getting-started-angular.component';
@@ -87,7 +87,7 @@ import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component
     CSelectComponent,
     CRadioGroupComponent,
     CToolbarComponent,
-    CSidenavigationComponent,
+    CSideNavigationComponent,
     CLinkComponent,
     BasicTemplateComponent,
     GettingStartedAngularComponent,

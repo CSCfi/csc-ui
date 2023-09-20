@@ -1,5 +1,8 @@
 import { Component, Host, h } from '@stencil/core';
 
+/**
+ * @parent none
+ */
 @Component({
   tag: 'c-badge',
   styleUrl: 'c-badge.scss',

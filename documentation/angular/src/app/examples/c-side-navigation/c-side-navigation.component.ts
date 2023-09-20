@@ -6,7 +6,7 @@ import { mdiAlarm, mdiHome, mdiLogout } from '@mdi/js';
   templateUrl: './c-side-navigation.component.html',
   styleUrls: ['./c-side-navigation.component.scss'],
 })
-export class CSidenavigationComponent implements OnInit {
+export class CSideNavigationComponent implements OnInit {
   // @example-start|basic
   items = [
     {
