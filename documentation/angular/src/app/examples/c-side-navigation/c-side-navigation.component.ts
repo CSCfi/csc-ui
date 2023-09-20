@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { mdiAlarm, mdiHome, mdiLogout } from '@mdi/js';
 
 @Component({
-  selector: 'app-c-sidenavigation',
-  templateUrl: './c-sidenavigation.component.html',
-  styleUrls: ['./c-sidenavigation.component.scss'],
+  selector: 'app-c-side-navigation',
+  templateUrl: './c-side-navigation.component.html',
+  styleUrls: ['./c-side-navigation.component.scss'],
 })
 export class CSidenavigationComponent implements OnInit {
   // @example-start|basic

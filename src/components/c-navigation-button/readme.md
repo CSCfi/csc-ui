@@ -1,6 +1,4 @@
-# c-navigationbutton
-
-
+# c-navigation-button
 
 <!-- Auto Generated Below -->
 

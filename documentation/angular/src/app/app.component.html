@@ -11,30 +11,30 @@
     >
       v {{ versionService.version }}
     </c-tag>
-    <c-navigationbutton *ngIf="isMobile$ | async"></c-navigationbutton>
+    <c-navigation-button *ngIf="isMobile$ | async"></c-navigation-button>
   </c-toolbar>
 
   <c-row class="no-margin no-wrap">
-    <c-sidenavigation
+    <c-side-navigation
       class="autoheight"
       *ngIf="components.length"
       [mobile]="isMobile$ | async"
       [multiple]="false"
     >
-      <c-sidenavigationitem [routerLink]="['']" [active]="url === '/'">
+      <c-side-navigation-item [routerLink]="['']" [active]="url === '/'">
         <div slot="main" class="text-capitalize d-flex align-items-center">
           <c-icon [path]="icons.mdiInformationOutline" size="16"></c-icon>
           About
         </div>
-      </c-sidenavigationitem>
+      </c-side-navigation-item>
 
-      <c-sidenavigationitem
+      <c-side-navigation-item
         [active]="active === 'getting-started' || url?.startsWith('/getting-started')"
       >
         <div slot="main" class="text-capitalize">Getting Started</div>
 
         <div slot="subnavitem">
-          <c-subnavigationitem
+          <c-sub-navigation-item
             class="text-capitalize"
             [routerLink]="['getting-started/angular']"
             routerLinkActive="active"
@@ -42,10 +42,10 @@
           >
             <c-icon [path]="icons.mdiAngular" size="20" class="me-2"></c-icon>
             Angular
-          </c-subnavigationitem>
+          </c-sub-navigation-item>
         </div>
         <div slot="subnavitem">
-          <c-subnavigationitem
+          <c-sub-navigation-item
             class="text-capitalize"
             [routerLink]="['getting-started/html']"
             routerLinkActive="active"
@@ -53,11 +53,11 @@
           >
             <c-icon [path]="icons.mdiLanguageHtml5" size="20" class="me-2"></c-icon>
             HTML Page
-          </c-subnavigationitem>
+          </c-sub-navigation-item>
         </div>
 
         <div slot="subnavitem">
-          <c-subnavigationitem
+          <c-sub-navigation-item
             class="text-capitalize"
             [routerLink]="['getting-started/vue']"
             routerLinkActive="active"
@@ -65,11 +65,11 @@
           >
             <c-icon [path]="icons.mdiVuejs" size="20" class="me-2"></c-icon>
             Vue 3
-          </c-subnavigationitem>
+          </c-sub-navigation-item>
         </div>
 
         <div slot="subnavitem">
-          <c-subnavigationitem
+          <c-sub-navigation-item
             class="text-capitalize"
             [routerLink]="['getting-started/vue-2']"
             routerLinkActive="active"
@@ -77,24 +77,24 @@
           >
             <c-icon [path]="icons.mdiVuejs" size="20" class="me-2"></c-icon>
             Vue 2
-          </c-subnavigationitem>
+          </c-sub-navigation-item>
         </div>
-      </c-sidenavigationitem>
+      </c-side-navigation-item>
 
-      <c-sidenavigationitem [active]="active === 'templates' || url?.startsWith('/templates')">
+      <c-side-navigation-item [active]="active === 'templates' || url?.startsWith('/templates')">
         <div slot="main" class="text-capitalize">Templates</div>
 
         <div slot="subnavitem">
-          <c-subnavigationitem
+          <c-sub-navigation-item
             [routerLink]="['templates/basic-template']"
             routerLinkActive="active"
             class="text-capitalize"
             (keyup.enter)="navigate($event, 'templates/basic-template')"
           >
             Basic template
-          </c-subnavigationitem>
+          </c-sub-navigation-item>
         </div>
-      </c-sidenavigationitem>
+      </c-side-navigation-item>
 
       <p class="text-white border-bottom mt-4 mb-3">Components</p>
 
@@ -109,7 +109,7 @@
         <c-icon [path]="icons.mdiMagnify" slot="pre" size="16"></c-icon>
       </c-text-field>
 
-      <c-sidenavigationitem
+      <c-side-navigation-item
         *ngFor="let group of groupedComponents | menuGroups"
         [active]="group.visible"
       >
@@ -117,7 +117,7 @@
           {{ group.name }}
         </div>
         <div slot="subnavitem">
-          <c-subnavigationitem
+          <c-sub-navigation-item
             *ngFor="let item of group.components"
             class="text-capitalize"
             [routerLink]="['/' + item.tag]"
@@ -126,11 +126,11 @@
             (keyup.enter)="navigate($event, item.tag)"
           >
             {{ item.name }}
-          </c-subnavigationitem>
+          </c-sub-navigation-item>
         </div>
-      </c-sidenavigationitem>
+      </c-side-navigation-item>
 
-      <c-sidenavigationitem
+      <c-side-navigation-item
         *ngFor="let item of (groupedComponents | menuGroups : false)[0]?.components"
         class="text-capitalize"
         [routerLink]="['/' + item.tag]"
@@ -139,17 +139,17 @@
         (keyup.enter)="navigate($event, item.tag)"
       >
         <div slot="main" class="text-capitalize">{{ item.name }}</div>
-      </c-sidenavigationitem>
+      </c-side-navigation-item>
 
       <p class="text-white border-bottom mt-4 mb-3">Miscellaneous</p>
 
-      <c-sidenavigationitem [routerLink]="['types']" [active]="url?.startsWith('/types')">
+      <c-side-navigation-item [routerLink]="['types']" [active]="url?.startsWith('/types')">
         <div slot="main" class="text-capitalize d-flex align-items-center">
           <c-icon [path]="icons.mdiLanguageTypescript" class="me-2" size="16"></c-icon>
           Types
         </div>
-      </c-sidenavigationitem>
-    </c-sidenavigation>
+      </c-side-navigation-item>
+    </c-side-navigation>
     <c-flex class="container-height">
       <c-container>
         <router-outlet></router-outlet>

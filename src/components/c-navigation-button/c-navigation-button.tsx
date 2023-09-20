@@ -3,11 +3,11 @@ import { Component, Host, h } from '@stencil/core';
  * @parent c-toolbar
  */
 @Component({
-  tag: 'c-navigationbutton',
-  styleUrl: 'c-navigationbutton.scss',
+  tag: 'c-navigation-button',
+  styleUrl: 'c-navigation-button.scss',
   shadow: true,
 })
-export class CNavigationbutton {
+export class CNavigationButton {
   private _svg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"

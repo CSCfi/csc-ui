@@ -839,7 +839,7 @@ export namespace Components {
     /**
      * @parent c-toolbar
      */
-    interface CNavigationbutton {
+    interface CNavigationButton {
     }
     /**
      * @parent c-select
@@ -1126,7 +1126,7 @@ export namespace Components {
     /**
      * @group Navigation
      */
-    interface CSidenavigation {
+    interface CSideNavigation {
         /**
           * Mobile version menu visibility
          */
@@ -1137,9 +1137,9 @@ export namespace Components {
         "mobile": boolean;
     }
     /**
-     * @parent c-sidenavigation
+     * @parent c-side-navigation
      */
-    interface CSidenavigationitem {
+    interface CSideNavigationItem {
         /**
           * Indicate active state
          */
@@ -1198,9 +1198,9 @@ export namespace Components {
         "value": number | string;
     }
     /**
-     * @parent c-sidenavigation
+     * @parent c-side-navigation
      */
-    interface CSubnavigationitem {
+    interface CSubNavigationItem {
         /**
           * Active state
          */
@@ -1585,9 +1585,9 @@ export interface CSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCSelectElement;
 }
-export interface CSidenavigationitemCustomEvent<T> extends CustomEvent<T> {
+export interface CSideNavigationItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLCSidenavigationitemElement;
+    target: HTMLCSideNavigationItemElement;
 }
 export interface CStepsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1910,11 +1910,11 @@ declare global {
     /**
      * @parent c-toolbar
      */
-    interface HTMLCNavigationbuttonElement extends Components.CNavigationbutton, HTMLStencilElement {
+    interface HTMLCNavigationButtonElement extends Components.CNavigationButton, HTMLStencilElement {
     }
-    var HTMLCNavigationbuttonElement: {
-        prototype: HTMLCNavigationbuttonElement;
-        new (): HTMLCNavigationbuttonElement;
+    var HTMLCNavigationButtonElement: {
+        prototype: HTMLCNavigationButtonElement;
+        new (): HTMLCNavigationButtonElement;
     };
     /**
      * @parent c-select
@@ -1992,20 +1992,20 @@ declare global {
     /**
      * @group Navigation
      */
-    interface HTMLCSidenavigationElement extends Components.CSidenavigation, HTMLStencilElement {
+    interface HTMLCSideNavigationElement extends Components.CSideNavigation, HTMLStencilElement {
     }
-    var HTMLCSidenavigationElement: {
-        prototype: HTMLCSidenavigationElement;
-        new (): HTMLCSidenavigationElement;
+    var HTMLCSideNavigationElement: {
+        prototype: HTMLCSideNavigationElement;
+        new (): HTMLCSideNavigationElement;
     };
     /**
-     * @parent c-sidenavigation
+     * @parent c-side-navigation
      */
-    interface HTMLCSidenavigationitemElement extends Components.CSidenavigationitem, HTMLStencilElement {
+    interface HTMLCSideNavigationItemElement extends Components.CSideNavigationItem, HTMLStencilElement {
     }
-    var HTMLCSidenavigationitemElement: {
-        prototype: HTMLCSidenavigationitemElement;
-        new (): HTMLCSidenavigationitemElement;
+    var HTMLCSideNavigationItemElement: {
+        prototype: HTMLCSideNavigationItemElement;
+        new (): HTMLCSideNavigationItemElement;
     };
     /**
      * Spacer component for flex containers
@@ -2046,13 +2046,13 @@ declare global {
         new (): HTMLCStepsElement;
     };
     /**
-     * @parent c-sidenavigation
+     * @parent c-side-navigation
      */
-    interface HTMLCSubnavigationitemElement extends Components.CSubnavigationitem, HTMLStencilElement {
+    interface HTMLCSubNavigationItemElement extends Components.CSubNavigationItem, HTMLStencilElement {
     }
-    var HTMLCSubnavigationitemElement: {
-        prototype: HTMLCSubnavigationitemElement;
-        new (): HTMLCSubnavigationitemElement;
+    var HTMLCSubNavigationItemElement: {
+        prototype: HTMLCSubNavigationItemElement;
+        new (): HTMLCSubNavigationItemElement;
     };
     /**
      * @group Content Selectors
@@ -2186,7 +2186,7 @@ declare global {
         "c-menu-items": HTMLCMenuItemsElement;
         "c-message": HTMLCMessageElement;
         "c-modal": HTMLCModalElement;
-        "c-navigationbutton": HTMLCNavigationbuttonElement;
+        "c-navigation-button": HTMLCNavigationButtonElement;
         "c-option": HTMLCOptionElement;
         "c-otp-input": HTMLCOtpInputElement;
         "c-pagination": HTMLCPaginationElement;
@@ -2195,13 +2195,13 @@ declare global {
         "c-ripple": HTMLCRippleElement;
         "c-row": HTMLCRowElement;
         "c-select": HTMLCSelectElement;
-        "c-sidenavigation": HTMLCSidenavigationElement;
-        "c-sidenavigationitem": HTMLCSidenavigationitemElement;
+        "c-side-navigation": HTMLCSideNavigationElement;
+        "c-side-navigation-item": HTMLCSideNavigationItemElement;
         "c-spacer": HTMLCSpacerElement;
         "c-status": HTMLCStatusElement;
         "c-step": HTMLCStepElement;
         "c-steps": HTMLCStepsElement;
-        "c-subnavigationitem": HTMLCSubnavigationitemElement;
+        "c-sub-navigation-item": HTMLCSubNavigationItemElement;
         "c-swiper": HTMLCSwiperElement;
         "c-swiper-tab": HTMLCSwiperTabElement;
         "c-switch": HTMLCSwitchElement;
@@ -3090,7 +3090,7 @@ declare namespace LocalJSX {
     /**
      * @parent c-toolbar
      */
-    interface CNavigationbutton {
+    interface CNavigationButton {
     }
     /**
      * @parent c-select
@@ -3393,7 +3393,7 @@ declare namespace LocalJSX {
     /**
      * @group Navigation
      */
-    interface CSidenavigation {
+    interface CSideNavigation {
         /**
           * Mobile version menu visibility
          */
@@ -3404,9 +3404,9 @@ declare namespace LocalJSX {
         "mobile"?: boolean;
     }
     /**
-     * @parent c-sidenavigation
+     * @parent c-side-navigation
      */
-    interface CSidenavigationitem {
+    interface CSideNavigationItem {
         /**
           * Indicate active state
          */
@@ -3423,7 +3423,7 @@ declare namespace LocalJSX {
           * Emit changes to the c-accordion
           * @private
          */
-        "onItemChange"?: (event: CSidenavigationitemCustomEvent<any>) => void;
+        "onItemChange"?: (event: CSideNavigationItemCustomEvent<any>) => void;
         /**
           * Hyperlink target
          */
@@ -3474,9 +3474,9 @@ declare namespace LocalJSX {
         "value": number | string;
     }
     /**
-     * @parent c-sidenavigation
+     * @parent c-side-navigation
      */
-    interface CSubnavigationitem {
+    interface CSubNavigationItem {
         /**
           * Active state
          */
@@ -3861,7 +3861,7 @@ declare namespace LocalJSX {
         "c-menu-items": CMenuItems;
         "c-message": CMessage;
         "c-modal": CModal;
-        "c-navigationbutton": CNavigationbutton;
+        "c-navigation-button": CNavigationButton;
         "c-option": COption;
         "c-otp-input": COtpInput;
         "c-pagination": CPagination;
@@ -3870,13 +3870,13 @@ declare namespace LocalJSX {
         "c-ripple": CRipple;
         "c-row": CRow;
         "c-select": CSelect;
-        "c-sidenavigation": CSidenavigation;
-        "c-sidenavigationitem": CSidenavigationitem;
+        "c-side-navigation": CSideNavigation;
+        "c-side-navigation-item": CSideNavigationItem;
         "c-spacer": CSpacer;
         "c-status": CStatus;
         "c-step": CStep;
         "c-steps": CSteps;
-        "c-subnavigationitem": CSubnavigationitem;
+        "c-sub-navigation-item": CSubNavigationItem;
         "c-swiper": CSwiper;
         "c-swiper-tab": CSwiperTab;
         "c-switch": CSwitch;
@@ -4023,7 +4023,7 @@ declare module "@stencil/core" {
             /**
              * @parent c-toolbar
              */
-            "c-navigationbutton": LocalJSX.CNavigationbutton & JSXBase.HTMLAttributes<HTMLCNavigationbuttonElement>;
+            "c-navigation-button": LocalJSX.CNavigationButton & JSXBase.HTMLAttributes<HTMLCNavigationButtonElement>;
             /**
              * @parent c-select
              */
@@ -4060,11 +4060,11 @@ declare module "@stencil/core" {
             /**
              * @group Navigation
              */
-            "c-sidenavigation": LocalJSX.CSidenavigation & JSXBase.HTMLAttributes<HTMLCSidenavigationElement>;
+            "c-side-navigation": LocalJSX.CSideNavigation & JSXBase.HTMLAttributes<HTMLCSideNavigationElement>;
             /**
-             * @parent c-sidenavigation
+             * @parent c-side-navigation
              */
-            "c-sidenavigationitem": LocalJSX.CSidenavigationitem & JSXBase.HTMLAttributes<HTMLCSidenavigationitemElement>;
+            "c-side-navigation-item": LocalJSX.CSideNavigationItem & JSXBase.HTMLAttributes<HTMLCSideNavigationItemElement>;
             /**
              * Spacer component for flex containers
              * @group Layout
@@ -4084,9 +4084,9 @@ declare module "@stencil/core" {
              */
             "c-steps": LocalJSX.CSteps & JSXBase.HTMLAttributes<HTMLCStepsElement>;
             /**
-             * @parent c-sidenavigation
+             * @parent c-side-navigation
              */
-            "c-subnavigationitem": LocalJSX.CSubnavigationitem & JSXBase.HTMLAttributes<HTMLCSubnavigationitemElement>;
+            "c-sub-navigation-item": LocalJSX.CSubNavigationItem & JSXBase.HTMLAttributes<HTMLCSubNavigationItemElement>;
             /**
              * @group Content Selectors
              */

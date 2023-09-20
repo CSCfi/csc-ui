@@ -11,15 +11,15 @@ import {
 import { mdiChevronRight } from '@mdi/js';
 
 /**
- * @parent c-sidenavigation
+ * @parent c-side-navigation
  */
 @Component({
-  tag: 'c-sidenavigationitem',
-  styleUrl: 'c-sidenavigationitem.scss',
+  tag: 'c-side-navigation-item',
+  styleUrl: 'c-side-navigation-item.scss',
   shadow: true,
 })
-export class CSidenavigationitem {
-  @Element() hostElement: HTMLCSidenavigationitemElement;
+export class CSideNavigationItem {
+  @Element() hostElement: HTMLCSideNavigationItemElement;
 
   /**
    * Indicate active state
@@ -61,7 +61,7 @@ export class CSidenavigationitem {
       this.hostElement.querySelector('[slot="subnavitem"]').children,
     );
 
-    children.forEach((child: HTMLCSubnavigationitemElement) => {
+    children.forEach((child: HTMLCSubNavigationItemElement) => {
       child.ariaHidden = (!focusable).toString();
       child.focusable = focusable;
     });
@@ -76,7 +76,7 @@ export class CSidenavigationitem {
       this.itemChange.emit(event);
 
       if (!this._slotHasContent) {
-        const sidenav = document.querySelector('c-sidenavigation');
+        const sidenav = document.querySelector('c-side-navigation');
         sidenav.menuVisible = false;
       }
 
@@ -108,8 +108,8 @@ export class CSidenavigationitem {
 
   render() {
     const classes = {
-      'c-sidenavigation-item': true,
-      'c-sidenavigation-item--parent': this._slotHasContent,
+      'c-side-navigation-item': true,
+      'c-side-navigation-item--parent': this._slotHasContent,
       active: this.active,
     };
 
@@ -138,8 +138,8 @@ export class CSidenavigationitem {
       >
         <div
           class={{
-            'c-sidenavigation-item__header': true,
-            'c-sidenavigation-item__header--expandable': this._slotHasContent,
+            'c-side-navigation-item__header': true,
+            'c-side-navigation-item__header--expandable': this._slotHasContent,
           }}
         >
           {this._slotHasContent && (
@@ -147,7 +147,7 @@ export class CSidenavigationitem {
               <path d={mdiChevronRight} />
             </svg>
           )}
-          <div class="c-sidenavigation-item__slot">
+          <div class="c-side-navigation-item__slot">
             <slot name="main"></slot>
           </div>
         </div>

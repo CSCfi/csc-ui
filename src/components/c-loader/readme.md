@@ -1,7 +1,5 @@
 # c-loader
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -22,14 +20,14 @@ A loader component that fills the nearest containing element that has css-proper
 
 ### Used by
 
- - [c-sidenavigationitem](../c-sidenavigationitem)
- - [c-subnavigationitem](../c-subnavigationitem)
+ - [c-side-navigation-item](../c-side-navigation-item)
+ - [c-sub-navigation-item](../c-sub-navigation-item)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-sidenavigationitem --> c-loader
-  c-subnavigationitem --> c-loader
+  c-side-navigation-item --> c-loader
+  c-sub-navigation-item --> c-loader
   style c-loader fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -18,32 +18,32 @@ export class BasicTemplateComponent implements OnInit {
     <c-csc-logo></c-csc-logo>
     Application name
     <c-spacer></c-spacer>
-    <c-navigationbutton></c-navigationbutton>
+    <c-navigation-button></c-navigation-button>
   </c-toolbar>
 
   <c-row>
-    <c-sidenavigation>
-      <c-sidenavigationitem active>
+    <c-side-navigation>
+      <c-side-navigation-item active>
         <div slot="main">
           <span class="mdi mdi-home"></span>
           Home
         </div>
-      </c-sidenavigationitem>
+      </c-side-navigation-item>
 
-      <c-sidenavigationitem>
+      <c-side-navigation-item>
         <div slot="main">
           <span class="mdi mdi-alarm"></span>
           Something
         </div>
-      </c-sidenavigationitem>
+      </c-side-navigation-item>
 
-      <c-sidenavigationitem slot="bottom">
+      <c-side-navigation-item slot="bottom">
         <div slot="main">
           <span class="mdi mdi-logout"></span>
           Logout
         </div>
-      </c-sidenavigationitem>
-    </c-sidenavigation>
+      </c-side-navigation-item>
+    </c-side-navigation>
 
     <c-flex>
       <c-container class="padding">

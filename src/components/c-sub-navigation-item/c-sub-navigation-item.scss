@@ -1,4 +1,4 @@
-.c-subnavigation-item {
+.c-sub-navigation-item {
   align-items: center;
   background-color: transparent;
   border-radius: 4px;
@@ -17,11 +17,11 @@
   max-width: calc(320px - 24px - 16px);
 }
 
-.c-subnavigation-item__wrapper {
+.c-sub-navigation-item__wrapper {
   padding: 2px 0;
 }
 
-.c-subnavigation-item__content {
+.c-sub-navigation-item__content {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -29,7 +29,7 @@
   text-overflow: ellipsis;
 }
 
-.c-subnavigation-item__content::before {
+.c-sub-navigation-item__content::before {
   background-color: var(--c-primary-600);
   content: '';
   height: 100%;
@@ -41,16 +41,16 @@
   width: 8px;
 }
 
-.c-subnavigation-item:hover {
+.c-sub-navigation-item:hover {
   background-color: var(--c-primary-100);
   color: var(--c-primary-600);
 }
 
-:host(.active) .c-subnavigation-item {
+:host(.active) .c-sub-navigation-item {
   background-color: var(--c-white);
 }
 
-:host(.active) .c-subnavigation-item__content::before {
+:host(.active) .c-sub-navigation-item__content::before {
   transform: translateZ(0) translateX(0);
 }
 
@@ -60,11 +60,11 @@
   line-height: 1;
 }
 
-.c-subnavigation-item:focus {
+.c-sub-navigation-item:focus {
   outline: none;
 }
 
-.c-subnavigation-item:focus-visible {
+.c-sub-navigation-item:focus-visible {
   outline: 2px var(--c-primary-600) solid;
   outline-offset: 0;
 }
@@ -81,7 +81,7 @@
   width: 1px;
 }
 
-.c-subnavigation-item__slot {
+.c-sub-navigation-item__slot {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

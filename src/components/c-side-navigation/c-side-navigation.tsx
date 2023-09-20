@@ -4,11 +4,11 @@ import { Component, Host, h, Prop, Listen, Element } from '@stencil/core';
  * @group Navigation
  */
 @Component({
-  tag: 'c-sidenavigation',
-  styleUrl: 'c-sidenavigation.scss',
+  tag: 'c-side-navigation',
+  styleUrl: 'c-side-navigation.scss',
   shadow: true,
 })
-export class CSidenavigation {
+export class CSideNavigation {
   /**
    * Mobile version
    */
@@ -19,12 +19,12 @@ export class CSidenavigation {
    */
   @Prop({ mutable: true }) menuVisible: boolean = false; // eslint-disable-line
 
-  @Element() host: HTMLCSidenavigationElement;
+  @Element() host: HTMLCSideNavigationElement;
 
   @Listen('itemChange')
   handleChange(event: Event) {
-    const slotted = this.host.querySelectorAll('c-sidenavigationitem');
-    const target = event.target as HTMLCSidenavigationitemElement;
+    const slotted = this.host.querySelectorAll('c-side-navigation-item');
+    const target = event.target as HTMLCSideNavigationItemElement;
     const { active } = target;
 
     slotted.forEach((item) => {
@@ -45,7 +45,7 @@ export class CSidenavigation {
 
     ['click', 'keyup'].forEach((eventType) => {
       el.addEventListener(eventType, (e: MouseEvent | KeyboardEvent) => {
-        if ((e.target as HTMLElement).matches('c-navigationbutton')) {
+        if ((e.target as HTMLElement).matches('c-navigation-button')) {
           if (eventType === 'click') {
             this.menuVisible = !this.menuVisible;
           } else if (e instanceof KeyboardEvent && e.key === 'Enter') {
@@ -62,24 +62,24 @@ export class CSidenavigation {
 
   render() {
     const classes = {
-      'c-sidenavigation': true,
+      'c-side-navigation': true,
       'hide-menu': !this.menuVisible,
       mobile: !!this.mobile,
       desktop: !this.mobile,
     };
 
     const containerClasses = {
-      'c-sidenavigation__content': true,
-      'c-sidenavigation__content--hidden': !this.menuVisible,
-      'c-sidenavigation__content--mobile': !!this.mobile,
-      'c-sidenavigation__content--desktop': !this.mobile,
+      'c-side-navigation__content': true,
+      'c-side-navigation__content--hidden': !this.menuVisible,
+      'c-side-navigation__content--mobile': !!this.mobile,
+      'c-side-navigation__content--desktop': !this.mobile,
     };
 
     return (
       <Host class={{ desktop: !this.mobile }}>
         <div class={containerClasses}>
           {this.mobile && (
-            <div class="c-sidenavigation__burger">
+            <div class="c-side-navigation__burger">
               <c-icon-button inverted text onClick={() => this._closeMenu()}>
                 <span class="visuallyhidden">Close sidemenu</span>
                 <svg width="24" height="24" viewBox="0 0 24 24">

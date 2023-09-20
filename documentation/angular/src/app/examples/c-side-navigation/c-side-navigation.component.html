@@ -1,6 +1,6 @@
-<app-example title="Basic usage" name="basic" component="c-sidenavigation">
-  <c-sidenavigation>
-    <c-sidenavigationitem
+<app-example title="Basic usage" name="basic" component="c-side-navigation">
+  <c-side-navigation>
+    <c-side-navigation-item
       *ngFor="let item of items"
       [active]="currentItem === item"
       (click)="currentItem = item"
@@ -11,14 +11,14 @@
       </div>
 
       <div *ngIf="item.subs?.length" slot="subnavitem">
-        <c-subnavigationitem
+        <c-sub-navigation-item
           *ngFor="let sub of item.subs"
           href="https://www.csc.fi"
           target="_blank"
         >
           {{ sub.title }}
-        </c-subnavigationitem>
+        </c-sub-navigation-item>
       </div>
-    </c-sidenavigationitem>
-  </c-sidenavigation>
+    </c-side-navigation-item>
+  </c-side-navigation>
 </app-example>

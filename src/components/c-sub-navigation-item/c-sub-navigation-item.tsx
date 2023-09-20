@@ -1,14 +1,14 @@
 import { Component, h, Host, Element, Prop } from '@stencil/core';
 /**
- * @parent c-sidenavigation
+ * @parent c-side-navigation
  */
 @Component({
-  tag: 'c-subnavigationitem',
-  styleUrl: 'c-subnavigationitem.scss',
+  tag: 'c-sub-navigation-item',
+  styleUrl: 'c-sub-navigation-item.scss',
   shadow: true,
 })
-export class CSubnavigationitem {
-  @Element() element: HTMLCSubnavigationitemElement;
+export class CSubNavigationItem {
+  @Element() element: HTMLCSubNavigationItemElement;
 
   /**
    * Active state
@@ -43,7 +43,7 @@ export class CSubnavigationitem {
     ) {
       event.stopPropagation();
 
-      const sidenav = document.querySelector('c-sidenavigation');
+      const sidenav = document.querySelector('c-side-navigation');
       sidenav.menuVisible = false;
 
       if (this.href) {
@@ -73,10 +73,10 @@ export class CSubnavigationitem {
         onClick={(e) => this._redirect(e)}
         onKeyDown={(e) => this._redirect(e)}
       >
-        <div class="c-subnavigation-item__wrapper">
-          <div class="c-subnavigation-item">
-            <div class="c-subnavigation-item__content">
-              <div class="c-subnavigation-item__slot">
+        <div class="c-sub-navigation-item__wrapper">
+          <div class="c-sub-navigation-item">
+            <div class="c-sub-navigation-item__content">
+              <div class="c-sub-navigation-item__slot">
                 <slot></slot>
               </div>
               {this.active && (

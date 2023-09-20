@@ -1,7 +1,5 @@
 # c-icon-button
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -33,7 +31,7 @@
  - [c-card](../c-card)
  - [c-data-table](../c-data-table)
  - [c-pagination](../c-pagination)
- - [c-sidenavigation](../c-sidenavigation)
+ - [c-side-navigation](../c-side-navigation)
  - [c-swiper](../c-swiper)
 
 ### Depends on
@@ -49,7 +47,7 @@ graph TD;
   c-card --> c-icon-button
   c-data-table --> c-icon-button
   c-pagination --> c-icon-button
-  c-sidenavigation --> c-icon-button
+  c-side-navigation --> c-icon-button
   c-swiper --> c-icon-button
   style c-icon-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

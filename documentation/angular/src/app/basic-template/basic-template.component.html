@@ -7,30 +7,30 @@
         <c-csc-logo></c-csc-logo>
         Application name
         <c-spacer></c-spacer>
-        <c-navigationbutton></c-navigationbutton>
+        <c-navigation-button></c-navigation-button>
       </c-toolbar>
 
       <c-row>
-        <c-sidenavigation style="min-height: 40vh">
-          <c-sidenavigationitem active>
+        <c-side-navigation style="min-height: 40vh">
+          <c-side-navigation-item active>
             <div slot="main">
               <c-icon [path]="icons.mdiHome" slot="icon"></c-icon>
               Home
             </div>
-          </c-sidenavigationitem>
+          </c-side-navigation-item>
 
-          <c-sidenavigationitem>
+          <c-side-navigation-item>
             <div slot="main">
               <c-icon [path]="icons.mdiAlarm" slot="icon"></c-icon>
               Something
             </div>
-          </c-sidenavigationitem>
+          </c-side-navigation-item>
 
           <c-button style="margin-right: 24px" slot="bottom" ghost inverted fit>
             <c-icon [path]="icons.mdiLogout" slot="icon"></c-icon>
             Logout
           </c-button>
-        </c-sidenavigation>
+        </c-side-navigation>
 
         <c-flex>
           <c-container class="padding">

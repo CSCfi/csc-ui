@@ -1,6 +1,4 @@
-# c-subnavigationitem
-
-
+# c-sub-navigation-item
 
 <!-- Auto Generated Below -->
 
@@ -25,8 +23,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  c-subnavigationitem --> c-loader
-  style c-subnavigationitem fill:#f9f,stroke:#333,stroke-width:4px
+  c-sub-navigation-item --> c-loader
+  style c-sub-navigation-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -26,7 +26,7 @@
   background: var(--c-primary-600);
 }
 
-.c-sidenavigation {
+.c-side-navigation {
   background: var(--c-primary-600);
   display: flex;
   flex-flow: column nowrap;
@@ -127,8 +127,8 @@
   z-index: 997;
 }
 
-c-sidenavigationitem,
-c-subnavigationitem {
+c-side-navigation-item,
+c-sub-navigation-item {
   display: contents;
 }
 

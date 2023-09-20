@@ -1,6 +1,4 @@
-# c-sidenavigationitem
-
-
+# c-side-navigation-item
 
 <!-- Auto Generated Below -->
 
@@ -31,8 +29,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  c-sidenavigationitem --> c-loader
-  style c-sidenavigationitem fill:#f9f,stroke:#333,stroke-width:4px
+  c-side-navigation-item --> c-loader
+  style c-side-navigation-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

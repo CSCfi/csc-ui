@@ -1055,7 +1055,7 @@
       ]
     },
     {
-      "name": "c-navigationbutton",
+      "name": "c-navigation-button",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -1387,7 +1387,7 @@
       ]
     },
     {
-      "name": "c-sidenavigation",
+      "name": "c-side-navigation",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -1404,7 +1404,7 @@
       ]
     },
     {
-      "name": "c-sidenavigationitem",
+      "name": "c-side-navigation-item",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -1494,7 +1494,7 @@
       ]
     },
     {
-      "name": "c-subnavigationitem",
+      "name": "c-sub-navigation-item",
       "description": {
         "kind": "markdown",
         "value": ""

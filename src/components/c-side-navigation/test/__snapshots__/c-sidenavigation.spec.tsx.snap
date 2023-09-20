@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-side-navigation renders visible menu 1`] = `
+<c-side-navigation class="desktop" menu-visible="true">
+  <mock:shadow-root>
+    <div class="c-side-navigation__content c-side-navigation__content--desktop">
+      <nav class="c-side-navigation desktop" role="menubar">
+        <slot></slot>
+        <div class="vertical-spacer"></div>
+        <slot name="bottom"></slot>
+      </nav>
+    </div>
+  </mock:shadow-root>
+  <c-side-navigation-item active="" href="google.com" target="_blank">
+    Google
+  </c-side-navigation-item>
+  <c-side-navigation-item>
+    Something
+    <c-sub-navigation-item active="" focusable="" href="somewhere.com" target="_blank"></c-sub-navigation-item>
+  </c-side-navigation-item>
+  <c-side-navigation-item href="csc.fi" target="_blank">
+    CSC
+  </c-side-navigation-item>
+</c-side-navigation>
+`;
