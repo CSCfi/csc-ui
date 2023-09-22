@@ -1,4 +1,6 @@
 :host {
+  --c-loader-color: var(--c-primary-600);
+
   width: 100%;
   position: absolute;
   top: 0;
@@ -55,14 +57,14 @@
       animation: animate-stroke var(--stroke-animation-speed)
         var(--stroke-animation-easing) infinite;
       stroke-linecap: round;
-      stroke: var(--c-primary-600);
+      stroke: var(--c-loader-color);
     }
   }
 
   &__slot {
     line-height: 40px;
     font-size: 14px;
-    color: var(--c-tertiary-600);
+    color: var(--c-text-system);
     text-align: center;
     font-weight: 500;
     display: block;

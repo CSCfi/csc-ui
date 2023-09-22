@@ -16,6 +16,7 @@
   component="c-tab-buttons"
   title="Usage in Angular"
   subtitle="Using custom values"
+  rows
 >
   <c-tab-buttons cControl [(ngModel)]="currentTab">
     <c-button value="one">One</c-button>
@@ -23,9 +24,9 @@
     <c-button value="three">Three</c-button>
   </c-tab-buttons>
 
-  <c-card-content>Current tab: {{ currentTab }}</c-card-content>
+  <p>Current tab: {{ currentTab }}</p>
 
-  <c-card-actions>
+  <c-row gap="8">
     <c-button
       (keyup.enter)="currentTab = 'one'"
       (keyup.space)="currentTab = 'one'"
@@ -47,7 +48,7 @@
     >
       Select Three
     </c-button>
-  </c-card-actions>
+  </c-row>
 </app-example>
 
 <app-example
@@ -55,6 +56,7 @@
   component="c-tab-buttons"
   title="Usage in Angular"
   subtitle="Using indexes"
+  rows
 >
   <c-tab-buttons cControl [(ngModel)]="currentTabIndex">
     <c-button>One</c-button>
@@ -62,9 +64,9 @@
     <c-button>Three</c-button>
   </c-tab-buttons>
 
-  <c-card-content>Current tab: {{ currentTabIndex }}</c-card-content>
+  <p>Current tab: {{ currentTabIndex }}</p>
 
-  <c-card-actions>
+  <c-row gap="8">
     <c-button
       (keyup.enter)="currentTabIndex = 0"
       (keyup.space)="currentTabIndex = 0"
@@ -86,7 +88,7 @@
     >
       Select Three
     </c-button>
-  </c-card-actions>
+  </c-row>
 </app-example>
 
 <app-example

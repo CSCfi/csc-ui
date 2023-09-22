@@ -1,20 +1,12 @@
-// TODO:  Remove and add to index.html
-// @import '../../styles/css/c-button.css';
-
 :host {
-  --c-button-background: var(--c-primary-600);
-  --c-button-text: var(--c-white);
-  --c-button-hover: var(--c-primary-400);
-  --c-button-outline: var(--c-primary-600);
   --c-button-border-radius: 4px;
-
   --c-button-height: 44px;
+  --c-button-min-width: 88px;
+  --c-button-padding: 0 16px;
+  --c-button-font-size: 16px;
+  --c-button-icon-size: 24px;
 
-  --c-tab-button-background: #fff;
-
-  background-color: var(--c-button-background);
   border-radius: var(--c-button-border-radius);
-  color: var(--c-button-text);
   display: inline-flex;
   overflow: hidden;
   transform: translateZ(0); // Safari border-radius fix
@@ -34,133 +26,290 @@
   height: 'auto';
 }
 
-:host(.ghost) {
-  --c-button-background: var(--c-primary-200);
-  --c-button-text: var(--c-primary-600);
-  --c-button-hover: var(--c-primary-100);
+:host {
+  ::slotted(svg) {
+    fill: var(--c-button-loader-color);
+  }
 }
 
-:host(.ghost.inverted) {
-  --c-button-background: var(--c-primary-500);
+:host([disabled]) {
+  pointer-events: none;
+}
+
+// ---- default --------------------------------------------------------------
+:host {
+  --c-button-background: var(--c-primary-600);
   --c-button-text: var(--c-white);
-  --c-button-hover: var(--c-primary-400);
+
+  --c-button-loader-color: var(--c-button-text);
+  --c-button-outline: var(--c-button-background);
+
+  background-color: var(--c-button-background);
+  color: var(--c-button-text);
 }
 
-// :host(.ghost.disabled) {
-//   --c-button-background: var(--csc-lightest-grey);
-//   --c-button-hover: var(--csc-lightest-grey);
-// }
-
-:host(.disabled.inverted),
-:host(.disabled) {
-  --c-button-background: var(--c-tertiary-100);
-  --c-button-hover: var(--c-tertiary-100);
-  --c-button-text: var(--c-tertiary-600) !important;
-}
-
-:host(.disabled.outlined) {
-  --c-button-background: var(--c-transparent);
-  --c-button-hover: var(--c-transparent);
-  --c-button-text: var(--c-tertiary-500);
-}
-
-:host(.disabled.grouped) {
-  box-shadow: none !important;
-}
-
-:host(.disabled.grouped:not(.outlined)) {
-  box-shadow: none;
-}
-
-:host(.inverted) {
-  --c-button-background: var(--c-white);
-  --c-button-hover: var(--c-primary-200);
-  --c-button-text: var(--c-primary-600);
-  --c-button-outline: var(--c-white);
-}
-
-:host(.outlined) {
-  --c-button-text: var(--c-primary-600);
-  --c-button-background: var(--c-transparent);
-  --c-button-hover: var(--c-primary-200);
-}
-
-:host(.danger.disabled.inverted),
-:host(.danger) {
-  --c-button-text: var(--c-white);
-  --c-button-background: var(--c-error-600);
-  --c-button-hover: var(--c-error-400);
-}
-
-:host(.danger:not(.inverted)) {
-  --c-button-outline: var(--c-error-600);
-}
-
-:host(.danger.disabled) {
-  --c-button-text: var(--c-tertiary-600);
-  --c-button-background: var(--c-tertiary-100);
-  // TODO:  use value from the line above?
-  --c-button-hover: var(--c-tertiary-100);
-}
-
-:host(.danger.inverted) {
-  --c-button-text: var(--c-error-600);
-  --c-button-background: var(--c-white);
-  --c-button-hover: var(--c-error-100);
-}
-
-:host(.outlined.inverted) {
-  --c-button-text: var(--c-white);
-  --c-button-background: var(--c-transparent);
-  --c-button-hover: var(--c-primary-500);
-}
-
-:host(.outlined.disabled) {
-  --c-button-text: var(--c-tertiary-500);
-  --c-button-background: var(--c-transparent);
-  --c-button-hover: var(--c-transparent);
-}
-
-:host(.outlined.inverted.disabled) {
-  --c-button-text: var(--c-tertiary-400) !important;
-}
-
-:host(.outlined.grouped) {
-  --c-button-background-color: var(--c-white);
-  --c-button-hover: var(--c-primary-500);
-}
-
-:host(.text) {
-  --c-button-background: var(--c-transparent);
-  --c-button-hover: var(--c-primary-100);
-  --c-button-text: var(--c-primary-600);
-}
-
-:host(.text.inverted) {
-  --c-button-background: var(--c-transparent);
-  --c-button-hover: var(--c-primary-100);
-  --c-button-text: var(--c-primary-600);
-}
-
-:host(.text.disabled) {
-  --c-button-background: var(--c-transparent);
-  --c-button-hover: var(--c-transparent);
-  --c-button-text: var(--c-tertiary-500);
-}
-
-:host(.text.inverted.disabled) {
-  --c-button-text: var(--c-tertiary-400) !important;
-}
-
-:host(.c-button--active) {
-  --c-button-text: var(--c-white);
-}
-// TODO:  wtf?
 :host(:host:hover) {
-  --c-tab-button-background: var(--csc-primary-text-hover);
+  --c-button-hover: var(--c-primary-400);
 
   background-color: var(--c-button-hover);
 }
+
+:host([disabled]) {
+  --c-button-disabled-background: var(--c-tertiary-100);
+  --c-button-disabled-text: var(--c-tertiary-600);
+
+  background-color: var(--c-button-disabled-background);
+  color: var(--c-button-disabled-text);
+}
+
+:host([inverted]) {
+  --c-button-inverted-background: var(--c-white);
+  --c-button-inverted-text: var(--c-primary-600);
+
+  --c-button-outline: var(--c-button-inverted-background);
+
+  background-color: var(--c-button-inverted-background);
+  color: var(--c-button-inverted-text);
+}
+
+:host([inverted]:hover) {
+  --c-button-inverted-hover: var(--c-primary-200);
+
+  background-color: var(--c-button-inverted-hover);
+}
+
+:host([inverted][disabled]) {
+  --c-button-inverted-disabled-background: var(--c-button-disabled-background);
+  --c-button-inverted-disabled-text: var(--c-tertiary-500);
+
+  background-color: var(--c-button-inverted-disabled-background);
+  color: var(--c-button-inverted-disabled-text);
+}
+
+// ---- danger ----------------------------------------------------------------
+
+:host([danger]) {
+  --c-button-danger-text: var(--c-white);
+  --c-button-danger-background: var(--c-error-600);
+  --c-button-danger-loader-color: var(--c-button-danger-text);
+
+  --c-button-loader-color: var(--c-button-danger-loader-color);
+  --c-button-outline: var(--c-button-danger-background);
+
+  background-color: var(--c-button-danger-background);
+  color: var(--c-button-danger-text);
+}
+
+:host([danger]:hover) {
+  --c-button-danger-hover: var(--c-error-400);
+
+  background-color: var(--c-button-danger-hover);
+}
+
+:host([danger][disabled]) {
+  --c-button-danger-disabled-background: var(--c-button-disabled-background);
+  --c-button-danger-disabled-text: var(--c-button-disabled-text);
+
+  background-color: var(--c-button-danger-disabled-background);
+  color: var(--c-button-danger-disabled-text);
+}
+
+:host([danger][inverted]) {
+  --c-button-danger-inverted-text: var(--c-error-600);
+  --c-button-danger-inverted-background: var(--c-white);
+
+  --c-button-outline: var(--c-button-danger-inverted-background);
+
+  background-color: var(--c-button-danger-inverted-background);
+  color: var(--c-button-danger-inverted-text);
+}
+
+:host([danger][inverted]:hover) {
+  --c-button-danger-inverted-hover: var(--c-error-100);
+
+  background-color: var(--c-button-danger-inverted-hover);
+}
+
+:host([danger][inverted][disabled]) {
+  --c-button-danger-inverted-disabled-background: var(--c-button-disabled-background);
+  --c-button-danger-inverted-disabled-text: var(--c-button-disabled-text);
+
+  background-color: var(--c-button-danger-inverted-disabled-background);
+  color: var(--c-button-danger-inverted-disabled-text);
+}
+
+// ---- ghost ----------------------------------------------------------------
+
+:host([ghost]) {
+  --c-button-ghost-background: var(--c-primary-200);
+  --c-button-ghost-text: var(--c-primary-600);
+  --c-button-ghost-loader-color: var(--c-button-ghost-text);
+
+  --c-button-loader-color: var(--c-button-ghost-loader-color);
+  --c-button-outline: var(--c-button-ghost-text);
+
+  background-color: var(--c-button-ghost-background);
+  color: var(--c-button-ghost-text);
+}
+
+:host([ghost]:hover) {
+  --c-button-ghost-hover: var(--c-primary-100);
+
+  background-color: var(--c-button-ghost-hover);
+}
+
+:host([ghost][disabled]) {
+  --c-button-ghost-disabled-background: var(--c-button-disabled-background);
+  --c-button-ghost-disabled-text: var(--c-button-disabled-text);
+
+  background-color: var(--c-button-ghost-disabled-background);
+  color: var(--c-button-ghost-disabled-text);
+}
+
+:host([ghost][inverted]) {
+  --c-button-ghost-inverted-background: rgba(var(--c-white-rgb), 0.2);
+  --c-button-ghost-inverted-text: var(--c-white);
+
+  --c-button-outline: var(--c-button-ghost-inverted-text);
+
+  background-color: var(--c-button-ghost-inverted-background);
+  color: var(--c-button-ghost-inverted-text);
+}
+
+:host([ghost][inverted]:hover) {
+  --c-button-ghost-inverted-hover: rgba(var(--c-white-rgb), 0.3);
+
+  background-color: var(--c-button-ghost-inverted-hover);
+}
+
+:host([ghost][inverted][disabled]) {
+  --c-button-ghost-inverted-disabled-background: rgba(var(--c-white-rgb), 0.05);
+  --c-button-ghost-inverted-disabled-text: var(--c-tertiary-400);
+
+  background-color: var(--c-button-ghost-inverted-disabled-background);
+  color: var(--c-button-ghost-inverted-disabled-text);
+}
+
+// ---- text ----------------------------------------------------------------
+
+:host([text]) {
+  --c-button-text-background: var(--c-transparent);
+  --c-button-text-text: var(--c-primary-600);
+  --c-button-text-loader-color: var(--c-button-text-text);
+
+  --c-button-loader-color: var(--c-button-text-loader-color);
+  --c-button-outline: var(--c-button-text-text);
+
+  background-color: var(--c-button-text-background);
+  color: var(--c-button-text-text);
+}
+
+:host([text]:hover) {
+  --c-button-text-hover: var(--c-primary-100);
+
+  background-color: var(--c-button-text-hover);
+}
+
+:host([text][disabled]) {
+  --c-button-text-disabled-background: var(--c-transparent);
+  --c-button-text-disabled-text: var(--c-tertiary-500);
+
+  background-color: var(--c-button-text-disabled-background);
+  color: var(--c-button-text-disabled-text);
+}
+
+:host([text][inverted]) {
+  --c-button-text-inverted-background: var(--c-transparent);
+  --c-button-text-inverted-text: var(--c-white);
+
+  --c-button-outline: var(--c-button-text-inverted-text);
+
+  background-color: var(--c-button-text-inverted-background);
+  color: var(--c-button-text-inverted-text);
+}
+
+:host([text][inverted]:hover) {
+  --c-button-text-inverted-hover: rgba(var(--c-white-rgb), 0.3);
+
+  background-color: var(--c-button-text-inverted-hover);
+}
+
+:host([text][inverted][disabled]) {
+  --c-button-text-inverted-disabled-background: var(--c-transparent);
+  --c-button-text-inverted-disabled-text: var(--c-tertiary-400);
+
+  background-color: var(--c-button-text-inverted-disabled-background);
+  color: var(--c-button-text-inverted-disabled-text);
+}
+
+// ---- outlined ----------------------------------------------------------------
+
+:host([outlined]) {
+  --c-button-outlined-text: var(--c-primary-600);
+  --c-button-outlined-border: var(--c-button-outlined-text);
+  --c-button-outlined-background: var(--c-transparent);
+  --c-button-outlined-loader-color: var(--c-button-outlined-text);
+
+  --c-button-loader-color: var(--c-button-outlined-loader-color);
+  --outline-color: var(--c-button-outlined-border);
+  --c-button-outline: var(--c-button-outlined-border);
+
+  background-color: var(--c-button-outlined-background);
+  color: var(--c-button-outlined-text);
+  box-shadow: inset 0 0 0 2px var(--outline-color);
+}
+
+:host([outlined]:hover) {
+  --c-button-outlined-hover: var(--c-primary-200);
+
+  background-color: var(--c-button-outlined-hover);
+}
+
+:host([outlined][disabled]) {
+  --c-button-outlined-disabled-text: var(--c-tertiary-500);
+  --c-button-outlined-disabled-background: var(--c-button-outlined-background);
+  --c-button-outlined-disabled-border: var(--c-tertiary-400);
+
+  --outline-color: var(--c-button-outlined-disabled-border);
+
+  background-color: var(--c-button-outlined-disabled-background);
+  color: var(--c-button-outlined-disabled-text);
+}
+
+:host([outlined][inverted]) {
+  --c-button-outlined-inverted-text: var(--c-white);
+  --c-button-outlined-inverted-border: var(--c-button-outlined-inverted-text);
+  --c-button-outlined-inverted-background: var(--c-button-outlined-background);
+
+  --outline-color: var(--c-button-outlined-inverted-border);
+  --c-button-outline: var(--c-button-outlined-inverted-border);
+
+  background-color: var(--c-button-outlined-inverted-background);
+  color: var(--c-button-outlined-inverted-text);
+}
+
+:host([outlined][inverted]:hover) {
+  --c-button-outlined-inverted-hover: rgba(var(--c-white-rgb), 0.3);
+
+  background-color: var(--c-button-outlined-inverted-hover);
+}
+
+:host([outlined][inverted][disabled]) {
+  --c-button-outlined-inverted-disabled-border: var(--c-tertiary-400);
+  --c-button-outlined-inverted-disabled-text: var(--c-tertiary-400);
+  --c-button-outlined-inverted-disabled-background: var(--c-button-outlined-background);
+
+  --outline-color: var(--c-button-outlined-inverted-disabled-border);
+
+  background-color: var(--c-button-outlined-inverted-disabled-background);
+  color: var(--c-button-outlined-inverted-disabled-text);
+}
+
+// ==========================================================================
+
+// :host(.c-button--active) {
+//   --c-button-text: var(--c-white);
+// }
 
 :host(:host:focus:not(:host:focus-visible)) {
   outline: none;
@@ -170,10 +319,6 @@
   outline: 2px var(--c-button-outline) solid;
   outline-offset: 2px;
   z-index: 1;
-}
-
-:host(:host.grouped:focus-visible) {
-  outline-offset: 4px;
 }
 
 :host([fit]) {
@@ -193,7 +338,7 @@
 }
 
 ::slotted(svg) {
-  fill: var(--c-button-text);
+  fill: var(--c-button-loader-color);
 }
 
 a {
@@ -212,47 +357,12 @@ a {
   margin: 0;
   width: 100%;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition:
+    background-color 0.3s cubic-bezier(0.25, 0.8, 0.5, 1),
+    color 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 
   &:disabled {
     cursor: default;
-  }
-
-  &.grouped {
-    flex: 1;
-    text-align: center;
-
-    &:focus,
-    &:focus-visible {
-      outline-offset: 4px;
-      z-index: 1;
-    }
-  }
-
-  &.outlined {
-    border-radius: var(--c-button-border-radius);
-    box-shadow: inset 0 0 0 2px var(--c-button-text);
-
-    &.grouped {
-      box-shadow: none;
-
-      &::before,
-      &::after {
-        background-color: #fff;
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        transition: background-color 0.3s ease-in-out;
-        width: 100%;
-        z-index: -1;
-      }
-
-      &:hover {
-        background-color: var(--c-tab-button-background);
-      }
-    }
   }
 }
 
@@ -273,10 +383,6 @@ a {
 }
 
 .c-button {
-  --c-padding: 0 16px;
-  --c-font-size: 16px;
-  --c-button-icon-size: 24px;
-
   $this: &;
 
   border-radius: var(--c-button-border-radius);
@@ -295,11 +401,11 @@ a {
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  font-size: var(--c-font-size);
+  font-size: var(--c-button-font-size);
   font-weight: 700;
   line-height: 18px;
   user-select: none;
-  min-width: 88px;
+  min-width: var(--c-button-min-width);
   white-space: nowrap;
 
   * {
@@ -307,7 +413,7 @@ a {
   }
 
   svg {
-    fill: var(--c-button-text);
+    fill: var(--c-button-loader-color);
     height: var(--c-button-icon-size);
     width: var(--c-button-icon-size);
 
@@ -324,14 +430,14 @@ a {
   }
 
   &--small {
-    --c-padding: 0 12px;
-    --c-font-size: 14px;
+    --c-button-padding: 0 12px;
+    --c-button-font-size: 14px;
     --c-button-icon-size: 20px;
   }
 
   &--large {
-    --c-padding: 0 24px;
-    --c-font-size: 18px;
+    --c-button-padding: 0 24px;
+    --c-button-font-size: 18px;
   }
 
   &--no-radius {
@@ -342,22 +448,22 @@ a {
     width: 100%;
   }
 
-  &.grouped {
-    border-radius: 0;
-    white-space: nowrap;
-    border: none;
-    box-shadow: none;
-    flex-grow: 1;
-  }
+  // &.grouped {
+  //   border-radius: 0;
+  //   white-space: nowrap;
+  //   border: none;
+  //   box-shadow: none;
+  //   flex-grow: 1;
+  // }
 
   &--description {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
 
-    .c-button__content {
-      height: var(--c-button-height);
-    }
+    // .c-button__content {
+    //   height: var(--c-button-height);
+    // }
   }
 
   &__content {
@@ -366,7 +472,7 @@ a {
     height: var(--c-button-height);
     align-items: center;
     justify-content: center;
-    padding: var(--c-padding);
+    padding: var(--c-button-padding);
   }
 
   &__description {
@@ -384,7 +490,7 @@ a {
   animation: 2s ease-in-out infinite both circle-animation;
   display: block;
   fill: transparent;
-  stroke: var(--c-button-text);
+  stroke: var(--c-button-loader-color);
   stroke-linecap: round;
   stroke-dasharray: 283;
   stroke-dashoffset: 280;
@@ -422,43 +528,77 @@ a {
   &.dense_spinner {
     padding-top: 7px;
 
-    .spinner {
-      max-width: 24px;
-    }
+    // .spinner {
+    //   max-width: 24px;
+    // }
   }
 }
 
-.spinner {
-  animation: 3s linear infinite svg-animation;
-  max-width: 30px;
-  position: relative;
-  height: calc(var(--c-button-height) - 12px);
-}
+// .spinner {
+//   animation: 3s linear infinite svg-animation;
+//   max-width: 30px;
+//   position: relative;
+//   height: calc(var(--c-button-height) - 12px);
+// }
 
-@keyframes svg-animation {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
+// svg.spinner {
+//   fill: var(--c-button-loader-color);
+//   height: var(--c-button-icon-size);
+//   width: var(--c-button-icon-size);
 
-@keyframes circle-animation {
-  0%,
-  25% {
-    stroke-dashoffset: 280;
-    transform: rotate(0);
-  }
+//   circle {
+//       fill: transparent;
+//       stroke: var(--c-button-loader-color);
+//       stroke-width: 2;
+//       stroke-linecap: round;
+//       stroke-dasharray: calc(3.14 * var(--c-button-icon-size));
+//       transform-origin: calc(0.5px * var(--c-button-icon-size)) calc(0.5px * var(--c-button-icon-size)) 0;
 
-  50%,
-  75% {
-    stroke-dashoffset: 75;
-    transform: rotate(45deg);
-  }
+//       animation: spinner 2.5s linear infinite;
+//   }
+// }
 
-  100% {
-    stroke-dashoffset: 280;
-    transform: rotate(360deg);
-  }
-}
+// @keyframes svg-animation {
+//   0% {
+//     transform: rotateZ(0deg);
+//   }
+//   100% {
+//     transform: rotateZ(360deg);
+//   }
+// }
+
+// @keyframes circle-animation {
+//   0%,
+//   25% {
+//     stroke-dashoffset: 280;
+//     transform: rotate(0);
+//   }
+
+//   50%,
+//   75% {
+//     stroke-dashoffset: 75;
+//     transform: rotate(45deg);
+//   }
+
+//   100% {
+//     stroke-dashoffset: 280;
+//     transform: rotate(360deg);
+//   }
+// }
+
+// @keyframes spinner {
+//   0% {
+//     transform: rotate(0deg);
+//     stroke-dashoffset: calc(0.66 * var(--c-button-icon-size));
+//   }
+
+//   50% {
+//     transform: rotate(720deg);
+//     stroke-dashoffset: calc(3.14 * var(--c-button-icon-size));
+//   }
+
+//   100% {
+//     transform: rotate(1080deg);
+//     stroke-dashoffset: calc(0.66 * var(--c-button-icon-size));
+//   }
+// }

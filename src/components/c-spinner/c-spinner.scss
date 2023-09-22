@@ -1,0 +1,42 @@
+:host {
+  --c-spinner-color: var(--color);
+  --c-spinner-size: var(--size);
+
+  display: block;
+  height: var(--c-spinner-size);
+  width: var(--c-spinner-size);
+}
+
+svg.spinner {
+  fill: var(--c-spinner-color);
+  height: var(--c-spinner-size);
+  width: var(--c-spinner-size);
+
+  circle {
+    fill: transparent;
+    stroke: var(--c-spinner-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: calc(3.14 * var(--c-spinner-size));
+    transform-origin: calc(0.5px * var(--c-spinner-size)) calc(0.5px * var(--c-spinner-size)) 0;
+
+    animation: spinner 2.5s linear infinite;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+    stroke-dashoffset: calc(0.66 * var(--c-spinner-size));
+  }
+
+  50% {
+    transform: rotate(720deg);
+    stroke-dashoffset: calc(3.14 * var(--c-spinner-size));
+  }
+
+  100% {
+    transform: rotate(1080deg);
+    stroke-dashoffset: calc(0.66 * var(--c-spinner-size));
+  }
+}

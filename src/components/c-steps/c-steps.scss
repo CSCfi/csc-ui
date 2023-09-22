@@ -1,4 +1,7 @@
 :host {
+  --c-steps-line: var(--c-tertiary-500);
+  --c-steps-line-complete: var(--c-primary-600);
+
   width: 100%;
   display: grid;
   gap: 8px;
@@ -12,16 +15,13 @@
 }
 
 :host(:focus-within) {
-  outline: 2px var(--c-primary-600) solid;
+  outline: 2px var(--c-steps-line-complete) solid;
   outline-offset: 2px;
 }
 
 .c-steps {
-  --c-step-line-color: var(--c-tertiary-500);
-  --c-step-before-color: var(--c-tertiary-500);
-  --c-step-after-color: var(--c-tertiary-500);
-  --c-step-divider-width: calc(100% + 160px);
-  --c-step-divider-margin: 10px -80px 0;
+  --c-steps-divider-width: calc(100% + 160px);
+  --c-steps-divider-margin: 10px -80px 0;
 
   width: 100%;
   display: flex;
@@ -36,20 +36,20 @@
   ::slotted(.divider) {
     height: 2px;
     flex: 1;
-    background-color: var(--c-step-line-color);
-    width: var(--c-step-divider-width);
-    margin: var(--c-step-divider-margin);
+    background-color: var(--c-steps-line);
+    width: var(--c-steps-divider-width);
+    margin: var(--c-steps-divider-margin);
   }
 
   ::slotted(.divider.complete) {
-    background-color: var(--c-primary-600);
+    background-color: var(--c-steps-line-complete);
     height: 4px;
     margin-top: 9px;
   }
 
   &.mobile {
-    --c-step-divider-width: calc(100% + 11px);
-    --c-step-divider-margin: 10px -10px 0;
+    --c-steps-divider-width: calc(100% + 11px);
+    --c-steps-divider-margin: 10px -10px 0;
   }
 }
 

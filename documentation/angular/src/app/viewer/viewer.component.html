@@ -61,5 +61,15 @@
         </div>
       </div>
     </div>
+
+    <div *ngIf="activeTab === 'Styles'">
+      <app-viewer-styles [data]="componentData"></app-viewer-styles>
+
+      <div *ngFor="let child of componentData?.children">
+        <div *ngIf="child?.events.length">
+          <app-viewer-styles [data]="child"></app-viewer-styles>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

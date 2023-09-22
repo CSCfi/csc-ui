@@ -1,10 +1,15 @@
 :host {
-  --c-link-icon-margin: 8px;
+  /**
+   * @prop --c-link-color: Link color
+   * @prop --c-link-hover: Link hover background color
+   */
   --c-link-color: var(--c-info-700);
   --c-link-hover: var(--c-accent-200);
 }
 
 a {
+  --c-link-icon-margin: 8px;
+
   align-items: center;
   color: var(--c-link-color);
   background-color: var(--c-transparent);

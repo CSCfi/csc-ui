@@ -1,3 +1,9 @@
+:host {
+  --c-side-navigation-item-hover: var(--c-primary-500);
+  --c-side-navigation-item-active-background: var(--c-primary-200);
+  --c-side-navigation-item-active-text: var(--c-primary-600);
+}
+
 :host(.c-side-navigation-item) {
   align-items: center;
   backface-visibility: hidden;
@@ -15,7 +21,7 @@
 }
 
 :host(.c-side-navigation-item:hover) {
-  background-color: var(--c-primary-500);
+  background-color: var(--c-side-navigation-item-hover);
 }
 
 :host(.c-side-navigation-item:focus) {
@@ -29,16 +35,16 @@
 }
 
 :host(.c-side-navigation-item.active) {
-  background-color: var(--c-primary-200);
-  color: var(--c-primary-600);
+  background-color: var(--c-side-navigation-item-active-background);
+  color: var(--c-side-navigation-item-active-text);
 
   .svg {
-    fill: var(--c-primary-600);
+    fill: var(--c-side-navigation-item-active-text);
     transform: rotate(90deg);
   }
 
   .c-side-navigation-item__header {
-    color: var(--c-primary-600);
+    color: var(--c-side-navigation-item-active-text);
   }
 }
 
@@ -106,7 +112,7 @@
 }
 
 :host > div.active .svg {
-  fill: var(--c-primary-600);
+  fill: var(--c-side-navigation-item-active);
   transform: rotate(90deg);
 }
 

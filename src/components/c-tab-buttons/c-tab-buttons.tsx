@@ -7,6 +7,7 @@ import {
   EventEmitter,
   Watch,
   Listen,
+  Host,
 } from '@stencil/core';
 
 /**
@@ -51,14 +52,20 @@ export class CTabButtons {
   @Watch('value')
   onValueChange(value: string | number) {
     this.el.childNodes.forEach((button: HTMLCButtonElement) => {
-      button.outlined = true;
+      button.setAttribute('outlined', 'true');
     });
 
     if (value !== null) {
+      this.buttons.forEach((button: HTMLCButtonElement) => {
+        button.setAttribute('outlined', 'true');
+      });
+
       const button =
         this.buttons.find((btn) => btn.value === value) || this.buttons[value];
 
-      if (button) button.outlined = false;
+      if (button) {
+        button.removeAttribute('outlined');
+      }
     }
 
     this.changeValue.emit(this.buttons[value]?.value ?? value);
@@ -96,7 +103,9 @@ export class CTabButtons {
 
     this.buttons.forEach((button: HTMLCButtonElement, index) => {
       button.setAttribute('data-index', String(index));
-      button.grouped = true;
+      button.setAttribute('outlined', 'true');
+
+      button.outlined = true;
       button.disabled = this.hostDisabled;
       button.size = this.size;
 
@@ -106,24 +115,22 @@ export class CTabButtons {
           ? index === +this.value
           : button.value === this.value);
 
-      button.outlined = !isActive;
-
-      const buttonElement = button.shadowRoot.querySelector('.c-button');
-
-      buttonElement.classList.add('grouped');
+      if (isActive) {
+        button.removeAttribute('outlined');
+      }
     });
   }
 
   render() {
     const classes = {
       'c-tab-buttons': true,
-      'c-tab-buttons--disabled': this.hostDisabled,
+      disabled: this.hostDisabled,
     };
 
     return (
-      <div class={classes}>
+      <Host class={classes}>
         <slot></slot>
-      </div>
+      </Host>
     );
   }
 }

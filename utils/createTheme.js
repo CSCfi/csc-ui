@@ -1,4 +1,5 @@
 const setValue = require('./setValue');
+const getRgbValue = require('./getRgbValue');
 
 const formats = {
   css: {
@@ -14,6 +15,8 @@ const formats = {
     postfix: '\n',
   },
 };
+
+const baseColor = '600';
 
 module.exports = (dictionary, type) => {
   const config = formats[type];
@@ -32,8 +35,21 @@ module.exports = (dictionary, type) => {
         if (!cache.has(token.name)) {
           cache.add(token.name);
 
-          theme += `${config.prefix}-${token.name.replace('theme-', '')}: `;
+          const isBaseValue = (name) => {
+            const baseValues = [baseColor, 'white', 'black']
+
+            return baseValues.some(value => name.endsWith(value));
+          };
+
+          const name = token.name.replace('theme-', '');
+
+          theme += `${config.prefix}-${name}: `;
           theme += `${token.value};${config.postfix}`;
+
+          if (isBaseValue(name)) {
+            theme += `${config.prefix}-${name.replace(`-${baseColor}`, '')}-rgb: `;
+            theme += `${getRgbValue(token.value)};${config.postfix}`;
+          }
         }
       });
   });

@@ -1,5 +1,15 @@
 @import '~swiper/swiper.scss';
 
+:host, :root {
+  --c-swiper-background: var(--c-primary-200);
+  --c-swiper-hover: var(--c-primary-100);
+  --c-swiper-text: var(--c-primary-600);
+  --c-swiper-active-background: var(--c-primary-600);
+  --c-swiper-active-text: var(--c-white);
+  --c-swiper-disabled-background: var(--c-tertiary-100);
+  --c-swiper-disabled-text: var(--c-tertiary-600);
+}
+
 .c-swiper {
   &__navigation {
     display: grid;

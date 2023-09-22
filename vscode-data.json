@@ -46,24 +46,6 @@
           "description": "Heading of the accordion item"
         },
         {
-          "name": "icon",
-          "description": "Icon",
-          "values": [
-            {
-              "name": "bell"
-            },
-            {
-              "name": "disabled"
-            },
-            {
-              "name": "enabled"
-            },
-            {
-              "name": "pending"
-            }
-          ]
-        },
-        {
           "name": "outlined",
           "description": "Show an outline around the expanded item"
         },
@@ -217,24 +199,6 @@
         {
           "name": "href",
           "description": "Hyperlink url"
-        },
-        {
-          "name": "icon",
-          "description": "Name of the icon to be displayed in the button",
-          "values": [
-            {
-              "name": "account"
-            },
-            {
-              "name": "edit"
-            },
-            {
-              "name": "minus"
-            },
-            {
-              "name": "plus"
-            }
-          ]
         },
         {
           "name": "icon-end",
@@ -779,7 +743,7 @@
         },
         {
           "name": "href",
-          "description": "Login provider link"
+          "description": "Login provider link. Do not set if using a click handler like @click in Vue or (click) in Angular"
         },
         {
           "name": "src",
@@ -1445,6 +1409,23 @@
       "attributes": []
     },
     {
+      "name": "c-spinner",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "description": "Color of the spinner"
+        },
+        {
+          "name": "size",
+          "description": "Size of the spinner"
+        }
+      ]
+    },
+    {
       "name": "c-status",
       "description": {
         "kind": "markdown",
@@ -1537,6 +1518,10 @@
         "value": ""
       },
       "attributes": [
+        {
+          "name": "id",
+          "description": "Id of the swiper element"
+        },
         {
           "name": "value",
           "description": "Value of the swiper"

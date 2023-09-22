@@ -7,7 +7,6 @@ import {
   h,
   Host,
 } from '@stencil/core';
-import { mdiPlus, mdiMinus, mdiAccount, mdiPencil } from '@mdi/js';
 
 /**
  * @group Buttons
@@ -81,13 +80,6 @@ export class CButton {
    * Disable the button
    */
   @Prop({ reflect: true }) disabled = false;
-
-  /**
-   * Name of the icon to be displayed in the button
-   *
-   * @deprecated Please use the icon slot instead
-   */
-  @Prop() icon: 'plus' | 'minus' | 'account' | 'edit';
 
   /**
    * Value for the button
@@ -179,33 +171,13 @@ export class CButton {
   }
 
   render() {
-    const SPINNER_SMALL: SVGImageElement = (
-      <svg
-        class="spinner"
-        viewBox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle class="spinner__circle" cx="50" cy="50" r="45" />
-      </svg>
-    );
+    // const SPINNER_SMALL: SVGImageElement = (
+    //   <svg class="spinner">
+    //     <circle {...iconParams}></circle>
+    //   </svg>
+    // );
 
-    let selectedIcon = null;
     let svg: SVGImageElement;
-
-    if (this.icon) {
-      const icons = {
-        plus: mdiPlus,
-        minus: mdiMinus,
-        account: mdiAccount,
-        edit: mdiPencil,
-      };
-      selectedIcon = icons[this.icon];
-      svg = (
-        <svg class="button-icon" width="16" height="16" viewBox="0 0 22 22">
-          <path d={selectedIcon} />
-        </svg>
-      );
-    }
 
     const contentClasses = {
       'c-button': true,
@@ -230,14 +202,7 @@ export class CButton {
     const hostClasses = {
       'c-button--active': this.grouped && !this.outlined,
       'no-radius': !!this.noRadius,
-      disabled: !!this.disabled,
-      ghost: !!this.ghost,
-      grouped: this.grouped,
-      inverted: this.inverted,
-      outlined: this.outlined,
-      danger: this.danger,
       [this.size]: true,
-      text: !!this.text,
       description: !!this._containerhasDescriptionSlot,
     };
 
@@ -276,6 +241,12 @@ export class CButton {
       </slot>
     );
 
+    const spinnerSizes = {
+      small: 20,
+      default: 24,
+      large: 28,
+    };
+
     return (
       <Host
         class={hostClasses}
@@ -287,7 +258,14 @@ export class CButton {
             class={contentClasses}
             ref={(el) => (this._container = el as HTMLDivElement)}
           >
-            {this.loading && <div class="spinner_wrapper">{SPINNER_SMALL}</div>}
+            {this.loading && (
+              <div class="spinner_wrapper">
+                <c-spinner
+                  color="var(--c-button-loader-color)"
+                  size={spinnerSizes[this.size]}
+                />
+              </div>
+            )}
             <div class={innerClasses}>
               {!this.iconEnd && renderIcon}
 

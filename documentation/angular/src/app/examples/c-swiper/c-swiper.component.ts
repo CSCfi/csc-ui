@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { mdiServer } from '@mdi/js';
+
+interface Tab {
+  label: string;
+  value: string | number;
+  disabled: boolean;
+}
+
 @Component({
   selector: 'app-c-swiper',
   templateUrl: './c-swiper.component.html',
@@ -9,16 +16,45 @@ export class CSwiperComponent implements OnInit {
   mdiServer = mdiServer;
 
   // @example-start|basic
-  selectedTab = '1';
+  currentTab = '';
+
+  selectedTab = 1;
+
+  selectionText = 'Nothing is selected';
 
   tabs = [
-    { label: 'One', value: '1' },
-    { label: 'Two', value: '2' },
-    { label: 'Three', value: '3' },
-    { label: 'Four', value: '4' },
-    { label: 'Five', value: '5' },
-    { label: 'Six', value: '6' },
+    { label: 'One', value: 1, disabled: false },
+    { label: 'Two', value: 2, disabled: false },
+    { label: 'Three', value: 3, disabled: false },
+    { label: 'Four', value: 4, disabled: true },
+    { label: 'Five', value: 5, disabled: false },
+    { label: 'Six', value: 6, disabled: false },
   ];
+
+  currentTab2 = '';
+
+  selectedTab2 = 'tab2';
+
+  selectionText2 = 'Nothing is selected';
+
+  tabs2 = [
+    { label: 'Onex', value: 'tab1', disabled: true },
+    { label: 'Twox', value: 'tab2', disabled: false },
+    { label: 'Threex', value: 'tab3', disabled: false },
+    { label: 'Fourx', value: 'tab4', disabled: true },
+    { label: 'Fivex', value: 'tab5', disabled: false },
+    { label: 'Sixx', value: 'tab6', disabled: false },
+  ];
+
+  selectTab(tab: Tab) {
+    this.selectedTab = tab.value as number;
+    this.selectionText = `Tab "${tab.label}" selected`;
+  }
+
+  selectTab2(tab: Tab) {
+    this.selectedTab2 = tab.value as string;
+    this.selectionText2 = `Tab "${tab.label}" selected`;
+  }
   // @example-end
 
   constructor() {}

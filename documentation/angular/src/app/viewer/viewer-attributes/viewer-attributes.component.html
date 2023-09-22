@@ -13,9 +13,9 @@
       <td class="col-3">
         {{ prop.attr || prop.name }}
         <div class="attribute-tags">
-          <span class="badge bg-danger" *ngIf="prop.deprecation">Deprecated</span>
-          <span class="badge bg-info" *ngIf="prop.optional">Optional</span>
-          <span class="badge bg-primary" *ngIf="prop.required">Required</span>
+          <c-status type="error" *ngIf="prop.deprecation">Deprecated</c-status>
+          <c-status type="info" *ngIf="prop.optional">Optional</c-status>
+          <c-status *ngIf="prop.required">Required</c-status>
         </div>
       </td>
       <td class="col-3 monospace">

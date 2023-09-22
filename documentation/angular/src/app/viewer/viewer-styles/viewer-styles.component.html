@@ -1,0 +1,23 @@
+<p class="fs-5 fw-bold my-1 text-primary">{{ data?.tag }}</p>
+
+<table class="table">
+  <thead>
+    <tr class="d-flex">
+      <th class="col-6">Property</th>
+
+      <th class="col-6">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let style of data?.styles" class="d-flex">
+      <td class="col-6">
+        {{ style.name }}
+      </td>
+
+      <td class="col-6">
+        {{ style.docs }}
+      </td>
+    </tr>
+  </tbody>
+</table>

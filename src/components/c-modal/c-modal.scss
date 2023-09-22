@@ -1,3 +1,7 @@
+:host {
+  --c-modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
 .modal-wrapper {
   display: flex;
   position: absolute;
@@ -36,7 +40,7 @@
 }
 
 .c-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background-color: var(--c-modal-overlay);
   position: fixed;
   top: 0;
   bottom: 0;

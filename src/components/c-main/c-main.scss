@@ -1,14 +1,14 @@
 :host {
   --c-main-background: var(--c-primary-200);
-  --c-main-color: var(--c-text-body);
+  --c-main-text: var(--c-text-body);
 
   background: var(--c-main-background);
-  color: var(--c-main-color);
+  color: var(--c-main-text);
   display: flex;
   flex-direction: column;
   height: 100vh;
 
   :slotted(*) {
-    color: var(--c-main-color);
+    color: var(--c-main-text);
   }
 }

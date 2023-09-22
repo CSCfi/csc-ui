@@ -1,15 +1,49 @@
 <app-example title="Usage" name="basic" component="c-swiper">
-  <c-swiper [(ngModel)]="selectedTab" cControl>
+  <c-swiper [(ngModel)]="currentTab" cControl>
     <c-swiper-tab
       *ngFor="let tab of tabs; let i = index"
       icon="storage"
+      [active]="selectedTab === tab.value"
       [label]="tab.label"
       [value]="tab.value"
+      [disabled]="tab.disabled"
+      (click)="!tab.disabled && selectTab(tab)"
+      (keyup.enter)="!tab.disabled && selectTab(tab)"
     >
       <c-icon [path]="mdiServer" slot="icon"></c-icon>
+
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
       <span *ngIf="i % 2 === 0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
     </c-swiper-tab>
   </c-swiper>
-  <p class="mt-3">Active tab: {{ selectedTab }}</p>
+
+  <p class="mt-3">Focused tab: {{ currentTab }}</p>
+
+  <p class="mt-2">Selection: {{ selectionText }}</p>
+</app-example>
+
+<app-example title="Usage" name="string" component="c-swiper">
+  <c-swiper [(ngModel)]="currentTab2" cControl>
+    <c-swiper-tab
+      *ngFor="let tab of tabs2; let i = index"
+      icon="storage"
+      (changeValue)="selectedTab2 === tab.value"
+      [label]="tab.label"
+      [value]="tab.value"
+      [disabled]="tab.disabled"
+      (click)="!tab.disabled && selectTab2(tab)"
+      (keyup.enter)="!tab.disabled && selectTab2(tab)"
+    >
+      <c-icon [path]="mdiServer" slot="icon"></c-icon>
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+      <span *ngIf="i % 2 === 0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+    </c-swiper-tab>
+  </c-swiper>
+
+  <p class="mt-3">Focused tab: {{ currentTab2 }}</p>
+
+  <p class="mt-2">Selection: {{ selectionText2 }}</p>
 </app-example>

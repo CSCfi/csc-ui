@@ -1,15 +1,15 @@
 :host {
+  --c-icon-button-background: var(--c-primary-600);
+  --c-icon-button-text: var(--c-white);
+  --c-icon-button-hover: var(--c-primary-400);
+  --c-icon-button-outline: var(--c-primary-600);
+
   display: block;
   position: relative;
   border-radius: 50%;
 }
 
 button.icon-button {
-  --c-icon-button-background: var(--c-primary-600);
-  --c-icon-button-text: var(--c-white);
-  --c-icon-button-hover: var(--c-primary-400);
-  --c-icon-button-outline: var(--c-primary-600);
-
   font-family: var(--c-font-family);
   display: flex;
   border: none;

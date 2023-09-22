@@ -1,56 +1,60 @@
 :host {
-  --c-accordion-text: var(--c-primary-600);
-  --c-accordion-outline: var(--c-primary-600);
-  --c-accordion-border: var(--c-primary-200);
+  --c-accordion-item-text: var(--c-primary-600);
+  --c-accordion-item-outline: var(--c-primary-600);
+  --c-accordion-item-border: var(--c-primary-200);
 
   max-width: 100%;
+
+  summary::-webkit-details-marker {
+    display:none;
+  }
 }
 
 .c-accordion-item {
   $this: &;
 
-  --c-accordion-indicator-rotation: rotate(180deg);
-  --c-accordion-content-height: 0px;
-  --c-accordion-min-height: 46px;
-  --c-accordion-border-radius: 6px;
-  --c-accordion-padding: 12px;
-  --c-accordion-overflow: visible;
-  --c-accordion-outline-offset: 4px;
+  --c-accordion-item-indicator-rotation: rotate(0deg);
+  --c-accordion-item-content-height: 0px;
+  --c-accordion-item-min-height: 46px;
+  --c-accordion-item-border-radius: 6px;
+  --c-accordion-item-padding: 12px;
+  --c-accordion-item-overflow: visible;
+  --c-accordion-item-outline-offset: 4px;
 
   display: block;
-  overflow: var(--c-accordion-overflow);
+  overflow: var(--c-accordion-item-overflow);
 
   &--expanding {
-    --c-accordion-overflow: hidden !important;
-    --c-accordion-outline: transparent;
+    --c-accordion-item-overflow: hidden !important;
+    --c-accordion-item-outline: transparent;
   }
 
   &--expanded {
-    --c-accordion-content-height: auto;
-    --c-accordion-indicator-rotation: rotate(0deg);
-    --c-accordion-overflow: visible;
+    --c-accordion-item-content-height: auto;
+    --c-accordion-item-indicator-rotation: rotate(90deg);
+    --c-accordion-item-overflow: visible;
   }
 
   &--outlined {
-    --c-accordion-min-height: 42px;
-    --c-accordion-border-radius: 4px;
-    --c-accordion-padding: 10px;
-    --c-accordion-outline-offset: 6px;
+    --c-accordion-item-min-height: 42px;
+    --c-accordion-item-border-radius: 4px;
+    --c-accordion-item-padding: 10px;
+    --c-accordion-item-outline-offset: 6px;
 
-    box-shadow: inset 0 0 0 2px var(--c-accordion-border);
+    box-shadow: inset 0 0 0 2px var(--c-accordion-item-border);
     border-radius: 6px;
     padding: 2px;
   }
 
   &__header {
-    min-height: var(--c-accordion-min-height);
+    min-height: var(--c-accordion-item-min-height);
     user-select: none;
-    background: var(--c-accordion-border);
+    background: var(--c-accordion-item-border);
     display: grid;
     column-gap: 8px;
     align-items: center;
-    padding: 0 var(--c-accordion-padding);
-    border-radius: var(--c-accordion-border-radius);
+    padding: 0 var(--c-accordion-item-padding);
+    border-radius: var(--c-accordion-item-border-radius);
     cursor: pointer;
     grid-template-columns: auto 1fr auto;
     gap: 8px;
@@ -61,8 +65,8 @@
     position: relative;
 
     &:focus {
-      outline: 2px var(--c-accordion-outline) solid;
-      outline-offset: var(--c-accordion-outline-offset);
+      outline: 2px var(--c-accordion-item-outline) solid;
+      outline-offset: var(--c-accordion-item-outline-offset);
     }
 
     @supports selector(:focus-visible) {
@@ -72,8 +76,8 @@
     }
 
     &:focus-visible {
-      outline: 2px var(--c-accordion-outline) solid;
-      outline-offset: var(--c-accordion-outline-offset);
+      outline: 2px var(--c-accordion-item-outline) solid;
+      outline-offset: var(--c-accordion-item-outline-offset);
     }
   }
 
@@ -83,7 +87,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 1;
-    color: var(--c-accordion-text);
+    color: var(--c-accordion-item-text);
   }
 
   &__content {
@@ -97,7 +101,7 @@
   &__icon {
     height: 24px;
     font-size: 24px;
-    color: var(--c-accordion-text);
+    color: var(--c-accordion-item-text);
     display: flex;
     align-items: center;
 
@@ -112,12 +116,12 @@
     display: flex;
     align-items: center;
 
-    svg {
-      fill: var(--c-accordion-text);
+    c-icon {
+      fill: var(--c-accordion-item-text);
       width: 24px;
       height: 24px !important;
-      transform: var(--c-accordion-indicator-rotation);
-      transition: transform 0.3s ease-in-out;
+      transform: var(--c-accordion-item-indicator-rotation);
+      transition: transform 0.3s ease;
     }
   }
 }

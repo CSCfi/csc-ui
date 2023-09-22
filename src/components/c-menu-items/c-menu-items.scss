@@ -1,5 +1,7 @@
 :host {
-  --c-menu-item-font-size: 14px;
+  --c-menu-items-hover: var(--c-primary-200);
+  --c-menu-items-text: var(--c-text-body);
+  --c-menu-items-text-active: var(--c-primary-600);
 
   position: absolute;
   border-radius: inherit;
@@ -13,9 +15,11 @@
 }
 
 ul.c-menu-items {
+  --c-menu-item-font-size: 14px;
+
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: var(--c-white);
   list-style: none;
   animation: 0.1s 1 fadeIn cubic-bezier(0.25, 0.8, 0.5, 1);
   box-shadow: 2px 4px 10px #00000029;
@@ -36,7 +40,7 @@ ul.c-menu-items {
 
 li {
   align-items: center;
-  background: #fff;
+  background: var(--c-white);
   column-gap: 12px;
   cursor: pointer;
   display: flex;
@@ -51,8 +55,8 @@ li {
 
   &:not(.disabled):hover,
   &.active {
-    background: #d8e8ea;
-    color: var(--csc-primary);
+    background: var(--c-menu-items-hover);
+    color: var(--c-menu-items-text-active);
   }
 
   &.icon-start {
@@ -66,7 +70,7 @@ li {
 
   &.disabled {
     cursor: default;
-    color: rgba(0, 0, 0, 0.4);
+    color: var(--c-tertiary-400);
   }
 }
 

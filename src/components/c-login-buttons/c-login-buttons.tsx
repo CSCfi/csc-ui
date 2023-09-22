@@ -1,8 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
 
-/**
- * @parent none
- */
 @Component({
   tag: 'c-login-buttons',
   styleUrl: 'c-login-buttons.scss',

@@ -74,7 +74,7 @@ export class CSwiperTab {
 
   @Listen('click', { passive: true })
   onTabClick(event) {
-    if (this.active) return;
+    if (this.active || this.disabled) return;
 
     this._rippleElement.createRipple(event, this._container);
 

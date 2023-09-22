@@ -25,9 +25,16 @@ export class CSwiper {
    */
   @Prop({ reflect: true, mutable: true }) value: number | string;
 
+  /**
+   * Id of the swiper element
+   */
+  @Prop({ attribute: 'id' }) elementId!: string;
+
   @State() isBeginning = true;
 
   @State() isEnd = false;
+
+  @State() statusText = '';
 
   /**
    * Emit value change to the parent
@@ -42,47 +49,45 @@ export class CSwiper {
 
   private _options: SwiperOptions;
 
+  private _debounce = null;
+
+  private static _uniqueId = 0;
+
   @Listen('changeValue')
   onTabClick(event: MouseEvent) {
     this.value = event.detail;
 
-    this.slotItems.forEach((child) => {
-      child.active = child.value === event.detail;
-    });
-  }
-
-  @Listen('focusTab', { passive: true })
-  onTabFocus(event: CustomEvent<number | string>) {
-    const index = (event.target as HTMLCSwiperTabElement).dataset.index;
-
-    this._slideToTab(index);
+    this._updateStatusText();
   }
 
   @Listen('keyup', { capture: true })
   handleKeyUp(ev: KeyboardEvent) {
+    const index = +(ev.target as HTMLCSwiperTabElement).dataset.index;
     const isArrowLeft = ev.key === 'ArrowLeft';
     const isArrowRight = ev.key === 'ArrowRight';
-    const isBeginning = +this.value === 1;
-    const isEnd = +this.value === this.slotItems.length;
+    const isBeginning = index === 0;
+    const isEnd = index === this.slotItems.length - 1;
 
     if (!isArrowRight && !isArrowLeft) return;
 
     if (isArrowLeft) {
-      this.value = (
-        isBeginning ? this.slotItems.length : +this.value - 1
-      ).toString();
+      if (isBeginning) return;
+
+      this.value = this.slotItems[index - 1].value.toString();
     }
 
     if (isArrowRight) {
-      this.value = (isEnd ? 1 : +this.value + 1).toString();
+      if (isEnd) return;
+
+      this.value = this.slotItems[index + 1].value.toString();
     }
 
-    this._slideToTab(+this.value - 1);
+    this._slideToTab(index - 1);
 
     this.slotItems.forEach((child) => {
       const isActive = child.value === this.value;
 
-      child.active = isActive;
+      // child.active = isActive;
 
       if (isActive) {
         child.focus();
@@ -90,6 +95,10 @@ export class CSwiper {
     });
 
     this.changeValue.emit(this.value);
+  }
+
+  get id() {
+    return this.elementId || `c-swiper--${CSwiper._uniqueId}`;
   }
 
   get slotItems() {
@@ -129,17 +138,22 @@ export class CSwiper {
       keyboard: true,
     };
 
-    this._initSwiper();
+    this._initializeSwiper();
   }
 
-  private _initSwiper() {
+  private _initializeSwiper() {
     for (const [index, slide] of this.slotItems.entries()) {
       slide.classList.add('swiper-slide');
       slide.setAttribute('data-index', index.toString());
+
       slide.value = slide.value ?? index;
       slide.active = this.value === slide.value;
       slide.position = index + 1;
       slide.setsize = this.slotItems.length;
+
+      if (slide.active) {
+        slide.click();
+      }
     }
 
     this._swiper = new Swiper(this._container, {
@@ -156,9 +170,41 @@ export class CSwiper {
     );
   }
 
+  private _updateStatusText() {
+    this.statusText = '';
+
+    if (this._debounce !== null) {
+      clearTimeout(this._debounce);
+      this._debounce = null;
+    }
+
+    this._debounce = window.setTimeout(() => {
+      const selection = this.slotItems?.find(
+        (item) => item.value === this.value,
+      );
+
+      this.statusText += `Currently selected - ${selection?.label}`;
+
+      this._debounce = null;
+    }, 1400);
+  }
+
+  componentWillLoad() {
+    CSwiper._uniqueId += 1;
+  }
+
   render() {
     return (
       <div class="c-swiper swiper">
+        <div
+          id={'announce-' + this.id}
+          class="visuallyhidden"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {this.statusText}
+        </div>
+
         <div
           class="swiper-container"
           ref={(el) => (this._container = el as HTMLDivElement)}

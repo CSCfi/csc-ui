@@ -1,7 +1,10 @@
+:host {
+  --c-checkbox-color: var(--c-primary-600);
+  --c-checkbox-hover: rgba(var(--c-primary-rgb), 0.1);
+}
+
 .c-checkbox {
   $this: &;
-
-  --c-checkbox-color: var(--c-primary-600);
 
   position: relative;
   width: fit-content;
@@ -99,7 +102,7 @@
 
   &:not(.c-checkbox--disabled) {
     .ripple:hover {
-      background-color: var(--c-primary-100);
+      background-color: var(--c-checkbox-hover);
     }
   }
 

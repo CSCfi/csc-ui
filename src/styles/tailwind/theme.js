@@ -12,6 +12,7 @@ export const theme = {
       900: "#005047ff",
       DEFAULT: "#00c7b2ff",
     },
+    black: "#000000ff",
     error: {
       100: "#f8e6e9ff",
       200: "#f1cdd4ff",

@@ -1,4 +1,6 @@
 :host {
+  --c-navigation-button-color: var(--c-text-system);
+
   display: block;
   margin-right: 0px;
   padding-right: 12px;
@@ -7,4 +9,8 @@
   padding-bottom: 10px;
   cursor: pointer;
   user-select: none;
+
+  line {
+    stroke: var(--c-navigation-button-color);
+  }
 }

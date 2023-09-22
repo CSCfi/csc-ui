@@ -1,8 +1,15 @@
+:host {
+  --c-sub-navigation-item-text: var(--c-text-body);
+  --c-sub-navigation-item-hover: var(--c-primary-100);
+  --c-sub-navigation-item-active-text: var(--c-primary-600);
+  --c-sub-navigation-item-active-background: var(--c-white);
+}
+
 .c-sub-navigation-item {
   align-items: center;
   background-color: transparent;
   border-radius: 4px;
-  color: var(--c-tertiary-700);
+  color: var(--c-sub-navigation-item-text);
   cursor: pointer;
   display: block;
   display: flex;
@@ -30,7 +37,7 @@
 }
 
 .c-sub-navigation-item__content::before {
-  background-color: var(--c-primary-600);
+  background-color: var(--c-sub-navigation-item-active-text);
   content: '';
   height: 100%;
   left: 0;
@@ -42,12 +49,12 @@
 }
 
 .c-sub-navigation-item:hover {
-  background-color: var(--c-primary-100);
-  color: var(--c-primary-600);
+  background-color: var(--c-sub-navigation-item-hover);
+  color: var(--c-sub-navigation-item-active-text);
 }
 
 :host(.active) .c-sub-navigation-item {
-  background-color: var(--c-white);
+  background-color: var(--c-sub-navigation-item-active-background);
 }
 
 :host(.active) .c-sub-navigation-item__content::before {
@@ -60,13 +67,14 @@
   line-height: 1;
 }
 
-.c-sub-navigation-item:focus {
+:host(:host:focus),
+:host(:host:focus) .c-sub-navigation-item {
   outline: none;
 }
 
-.c-sub-navigation-item:focus-visible {
-  outline: 2px var(--c-primary-600) solid;
-  outline-offset: 0;
+:host(:host:focus-visible) .c-sub-navigation-item {
+  outline: 2px var(--c-sub-navigation-item-active-text) solid;
+  outline-offset: 2px;
 }
 
 .visuallyhidden {

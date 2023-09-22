@@ -22,6 +22,7 @@ import { ViewerAttributesComponent } from './viewer/viewer-attributes/viewer-att
 import { ViewerComponent } from './viewer/viewer.component';
 import { ViewerEventsComponent } from './viewer/viewer-events/viewer-events.component';
 import { ViewerSlotsComponent } from './viewer/viewer-slots/viewer-slots.component';
+import { ViewerStylesComponent } from './viewer/viewer-styles/viewer-styles.component';
 import { CAutocompleteComponent } from './examples/c-autocomplete/c-autocomplete.component';
 import { CCheckboxComponent } from './examples/c-checkbox/c-checkbox.component';
 import { CSwiperComponent } from './examples/c-swiper/c-swiper.component';
@@ -55,6 +56,8 @@ import { CStepsComponent } from './examples/c-steps/c-steps.component';
 import { GettingStartedVueLegacyComponent } from './getting-started-vue-legacy/getting-started-vue-legacy.component';
 import { CIconComponent } from './examples/c-icon/c-icon.component';
 import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component';
+import { CLoginButtonsComponent } from './examples/c-login-buttons/c-login-buttons.component';
+import { CSpinnerComponent } from './examples/c-spinner/c-spinner.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +77,7 @@ import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component
     ViewerComponent,
     ViewerEventsComponent,
     ViewerSlotsComponent,
+    ViewerStylesComponent,
     CCheckboxComponent,
     CAutocompleteComponent,
     CSwiperComponent,
@@ -107,6 +111,8 @@ import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component
     GettingStartedVueLegacyComponent,
     CIconComponent,
     COtpInputComponent,
+    CLoginButtonsComponent,
+    CSpinnerComponent,
   ],
   imports: [
     BrowserModule,

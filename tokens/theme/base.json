@@ -29,6 +29,9 @@
         "value": "#005047ff"
       }
     },
+    "black": {
+      "value": "#000000ff"
+    },
     "error": {
       "100": {
         "value": "#f8e6e9ff"

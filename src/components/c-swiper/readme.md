@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description         | Type               | Default     |
-| -------- | --------- | ------------------- | ------------------ | ----------- |
-| `value`  | `value`   | Value of the swiper | `number \| string` | `undefined` |
+| Property                 | Attribute | Description              | Type               | Default     |
+| ------------------------ | --------- | ------------------------ | ------------------ | ----------- |
+| `elementId` _(required)_ | `id`      | Id of the swiper element | `string`           | `undefined` |
+| `value`                  | `value`   | Value of the swiper      | `number \| string` | `undefined` |
 
 
 ## Events

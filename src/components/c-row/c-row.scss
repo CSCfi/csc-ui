@@ -2,13 +2,13 @@
   display: flex;
   flex: 1 1 auto;
   flex-wrap: wrap;
-  gap: var(--row-gap);
+  gap: var(--c-row-gap);
 
   slot {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: var(--row-gap);
+    gap: var(--c-row-gap);
   }
 
   &--nowrap slot {

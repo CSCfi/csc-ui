@@ -46,7 +46,7 @@ export class CRow {
     };
 
     return (
-      <div class={classes} style={{ '--row-gap': `${this.gap}px` }}>
+      <div class={classes} style={{ '--c-row-gap': `${this.gap}px` }}>
         <slot></slot>
       </div>
     );

@@ -13,8 +13,6 @@
 }
 
 .c-step {
-  --c-step-line-color: var(--c-tertiary-500);
-
   display: grid;
   justify-items: center;
   padding: 0;
@@ -26,24 +24,22 @@
     box-sizing: border-box;
 
     .dot {
-      background-color: #fff;
-      box-shadow: inset 0 0 0 2px var(--c-step-line-color);
+      background-color: var(--c-white);
+      box-shadow: inset 0 0 0 2px var(--c-steps-line);
       border-radius: 22px;
       height: 22px;
       width: 22px;
       position: relative;
 
       &.current {
-        --c-step-line-color: var(--c-primary-600);
-
-        box-shadow: inset 0 0 0 3px var(--c-step-line-color);
+        box-shadow: inset 0 0 0 3px var(--c-steps-line-complete);
 
         &::before {
           content: '';
           border-radius: 14px;
           height: 10px;
           width: 10px;
-          background-color: var(--c-step-line-color);
+          background-color: var(--c-steps-line-complete);
           position: absolute;
           top: 6px;
           left: 6px;
@@ -52,6 +48,7 @@
     }
 
     .complete {
+      background-color: var(--c-steps-line-complete);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -67,22 +64,20 @@
   &--complete {
     .c-step__indicator {
       > div {
-        --c-step-line-color: var(--c-primary-600);
-
         position: relative;
         border-radius: 22px;
         height: 22px;
         width: 22px;
-        background-color: var(--c-step-line-color);
+        background-color: var(--c-steps-line-complete);
         padding: 4px;
 
         svg {
           position: relative;
-          fill: #fff;
+          fill: var(--c-white);
 
           .path {
             fill: none;
-            stroke: #fff;
+            stroke: var(--c-white);
             stroke-dashoffset: 0;
             stroke-width: 13;
             stroke-linecap: round;

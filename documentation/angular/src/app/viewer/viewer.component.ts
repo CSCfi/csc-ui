@@ -115,6 +115,15 @@ export class ViewerComponent implements OnInit, OnDestroy {
               tab: 'events',
             },
           },
+          {
+            label: 'Styles',
+            enabled:
+              !!this.componentData?.styles?.length ||
+              !!this.componentData?.children?.some((child) => child.styles?.length),
+            query: {
+              tab: 'styles',
+            },
+          },
         ];
       }),
     );

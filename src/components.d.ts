@@ -49,11 +49,6 @@ export namespace Components {
          */
         "heading": string;
         /**
-          * Icon
-          * @deprecated Please use the icon slot instead
-         */
-        "icon": 'enabled' | 'disabled' | 'bell' | 'pending';
-        /**
           * Show an outline around the expanded item
           * @private
          */
@@ -203,11 +198,6 @@ export namespace Components {
           * Hyperlink url
          */
         "href": string;
-        /**
-          * Name of the icon to be displayed in the button
-          * @deprecated Please use the icon slot instead
-         */
-        "icon": 'plus' | 'minus' | 'account' | 'edit';
         /**
           * Icon after text
          */
@@ -612,6 +602,8 @@ export namespace Components {
     /**
      * Basic hyperlink component
      * @group Buttons
+     * @css --c-link-color: var(--c-info-700)
+     * @css --c-link-hover: var(--c-accent-200)
      */
     interface CLink {
         /**
@@ -658,17 +650,14 @@ export namespace Components {
          */
         "alt": string;
         /**
-          * Login provider link
+          * Login provider link. Do not set if using a click handler like @click in Vue or (click) in Angular
          */
-        "href": string;
+        "href"?: string;
         /**
           * Login provider logo url
          */
         "src": string;
     }
-    /**
-     * @parent none
-     */
     interface CLoginButtons {
     }
     /**
@@ -1172,6 +1161,19 @@ export namespace Components {
     interface CSpacer {
     }
     /**
+     * @group indicators
+     */
+    interface CSpinner {
+        /**
+          * Color of the spinner
+         */
+        "color": string;
+        /**
+          * Size of the spinner
+         */
+        "size": number;
+    }
+    /**
      * @group Indicators
      */
     interface CStatus {
@@ -1234,6 +1236,10 @@ export namespace Components {
      * @group Content Selectors
      */
     interface CSwiper {
+        /**
+          * Id of the swiper element
+         */
+        "elementId": string;
         /**
           * Value of the swiper
          */
@@ -1801,6 +1807,8 @@ declare global {
     /**
      * Basic hyperlink component
      * @group Buttons
+     * @css --c-link-color: var(--c-info-700)
+     * @css --c-link-hover: var(--c-accent-200)
      */
     interface HTMLCLinkElement extends Components.CLink, HTMLStencilElement {
     }
@@ -1827,9 +1835,6 @@ declare global {
         prototype: HTMLCLoginButtonElement;
         new (): HTMLCLoginButtonElement;
     };
-    /**
-     * @parent none
-     */
     interface HTMLCLoginButtonsElement extends Components.CLoginButtons, HTMLStencilElement {
     }
     var HTMLCLoginButtonsElement: {
@@ -2038,6 +2043,15 @@ declare global {
         new (): HTMLCSpacerElement;
     };
     /**
+     * @group indicators
+     */
+    interface HTMLCSpinnerElement extends Components.CSpinner, HTMLStencilElement {
+    }
+    var HTMLCSpinnerElement: {
+        prototype: HTMLCSpinnerElement;
+        new (): HTMLCSpinnerElement;
+    };
+    /**
      * @group Indicators
      */
     interface HTMLCStatusElement extends Components.CStatus, HTMLStencilElement {
@@ -2219,6 +2233,7 @@ declare global {
         "c-side-navigation-item": HTMLCSideNavigationItemElement;
         "c-side-navigation-title": HTMLCSideNavigationTitleElement;
         "c-spacer": HTMLCSpacerElement;
+        "c-spinner": HTMLCSpinnerElement;
         "c-status": HTMLCStatusElement;
         "c-step": HTMLCStepElement;
         "c-steps": HTMLCStepsElement;
@@ -2279,11 +2294,6 @@ declare namespace LocalJSX {
           * Heading of the accordion item
          */
         "heading"?: string;
-        /**
-          * Icon
-          * @deprecated Please use the icon slot instead
-         */
-        "icon"?: 'enabled' | 'disabled' | 'bell' | 'pending';
         /**
           * Emit changes to the c-accordion
           * @private
@@ -2443,11 +2453,6 @@ declare namespace LocalJSX {
           * Hyperlink url
          */
         "href"?: string;
-        /**
-          * Name of the icon to be displayed in the button
-          * @deprecated Please use the icon slot instead
-         */
-        "icon"?: 'plus' | 'minus' | 'account' | 'edit';
         /**
           * Icon after text
          */
@@ -2865,6 +2870,8 @@ declare namespace LocalJSX {
     /**
      * Basic hyperlink component
      * @group Buttons
+     * @css --c-link-color: var(--c-info-700)
+     * @css --c-link-hover: var(--c-accent-200)
      */
     interface CLink {
         /**
@@ -2911,17 +2918,14 @@ declare namespace LocalJSX {
          */
         "alt"?: string;
         /**
-          * Login provider link
+          * Login provider link. Do not set if using a click handler like @click in Vue or (click) in Angular
          */
         "href"?: string;
         /**
           * Login provider logo url
          */
-        "src"?: string;
+        "src": string;
     }
-    /**
-     * @parent none
-     */
     interface CLoginButtons {
     }
     /**
@@ -3465,6 +3469,19 @@ declare namespace LocalJSX {
     interface CSpacer {
     }
     /**
+     * @group indicators
+     */
+    interface CSpinner {
+        /**
+          * Color of the spinner
+         */
+        "color"?: string;
+        /**
+          * Size of the spinner
+         */
+        "size"?: number;
+    }
+    /**
      * @group Indicators
      */
     interface CStatus {
@@ -3531,6 +3548,10 @@ declare namespace LocalJSX {
      * @group Content Selectors
      */
     interface CSwiper {
+        /**
+          * Id of the swiper element
+         */
+        "elementId": string;
         /**
           * Emit value change to the parent
          */
@@ -3903,6 +3924,7 @@ declare namespace LocalJSX {
         "c-side-navigation-item": CSideNavigationItem;
         "c-side-navigation-title": CSideNavigationTitle;
         "c-spacer": CSpacer;
+        "c-spinner": CSpinner;
         "c-status": CStatus;
         "c-step": CStep;
         "c-steps": CSteps;
@@ -4001,6 +4023,8 @@ declare module "@stencil/core" {
             /**
              * Basic hyperlink component
              * @group Buttons
+             * @css --c-link-color: var(--c-info-700)
+             * @css --c-link-hover: var(--c-accent-200)
              */
             "c-link": LocalJSX.CLink & JSXBase.HTMLAttributes<HTMLCLinkElement>;
             /**
@@ -4012,9 +4036,6 @@ declare module "@stencil/core" {
              * @parent c-login-buttons
              */
             "c-login-button": LocalJSX.CLoginButton & JSXBase.HTMLAttributes<HTMLCLoginButtonElement>;
-            /**
-             * @parent none
-             */
             "c-login-buttons": LocalJSX.CLoginButtons & JSXBase.HTMLAttributes<HTMLCLoginButtonsElement>;
             /**
              * @group Cards
@@ -4107,6 +4128,10 @@ declare module "@stencil/core" {
              * @group Layout
              */
             "c-spacer": LocalJSX.CSpacer & JSXBase.HTMLAttributes<HTMLCSpacerElement>;
+            /**
+             * @group indicators
+             */
+            "c-spinner": LocalJSX.CSpinner & JSXBase.HTMLAttributes<HTMLCSpinnerElement>;
             /**
              * @group Indicators
              */
