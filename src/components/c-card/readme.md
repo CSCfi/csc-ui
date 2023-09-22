@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                         | Type      | Default   |
-| ----------------- | ------------------ | ----------------------------------- | --------- | --------- |
-| `backgroundColor` | `background-color` | Background color                    | `string`  | `'white'` |
-| `fullscreen`      | `fullscreen`       | Enable the fullscreen toggle button | `boolean` | `false`   |
+| Property     | Attribute    | Description                         | Type      | Default |
+| ------------ | ------------ | ----------------------------------- | --------- | ------- |
+| `fullscreen` | `fullscreen` | Enable the fullscreen toggle button | `boolean` | `false` |
 
 
 ## Methods
@@ -41,6 +40,14 @@ Type: `Promise<void>`
 | Slot             | Description     |
 | ---------------- | --------------- |
 | `"Default slot"` | Card components |
+
+
+## CSS Custom Properties
+
+| Name                        | Description               |
+| --------------------------- | ------------------------- |
+| `--c-card-background-color` | Card background color     |
+| `--c-card-gap`              | Card column gap / padding |
 
 
 ## Dependencies

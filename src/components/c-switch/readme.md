@@ -29,15 +29,6 @@
 | `"label"` | Label text for the switch |
 
 
-## CSS Custom Properties
-
-| Name                          | Description                       |
-| ----------------------------- | --------------------------------- |
-| `--c-switch-background-color` | Background color (inactive state) |
-| `--c-switch-border-color`     | Border color (inactive state)     |
-| `--c-switch-handle-color`     | Handle color (inactive state)     |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

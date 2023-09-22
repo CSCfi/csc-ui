@@ -126,6 +126,23 @@ c-tab {
   --c-tab-text: var(--c-secondary-600);
 }
 
+c-login-card {
+  --c-login-card-overlay-color: var(--c-secondary-600);
+}
+
+c-login-card-title {
+  --c-login-card-title-color: var(--c-secondary-600);
+}
+
+c-card {
+  --c-card-background-color: var(--c-secondary-100);
+}
+
+c-card-title {
+  --c-card-title-color: var(--c-secondary-600);
+  --c-card-title-underline-color: var(--c-secondary-600);
+}
+
 c-button {
   // default
   --c-button-background: var(--c-secondary-600);

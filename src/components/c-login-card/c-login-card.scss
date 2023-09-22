@@ -1,5 +1,8 @@
-:host {
-  --c-login-card-overlay: var(--c-primary-600);
+:root {
+  /**
+   * @prop --c-login-card-overlay-color: Login card overlay blend color
+   */
+  --c-login-card-overlay-color: var(--c-primary-600);
 }
 
 c-login-card {
@@ -27,7 +30,7 @@ c-login-card {
     width: 100%;
 
     &--overlay {
-      background-color: var(--c-login-card-overlay);
+      background-color: var(--c-login-card-overlay-color);
       background-blend-mode: var(--c-login-overlay-mode);
     }
   }

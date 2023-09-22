@@ -21,11 +21,6 @@ import {
 })
 export class CCard {
   /**
-   * Background color
-   */
-  @Prop() backgroundColor = 'white';
-
-  /**
    * Enable the fullscreen toggle button
    */
   @Prop() fullscreen = false;
@@ -79,17 +74,13 @@ export class CCard {
   }
 
   render() {
-    const style = {
-      'background-color': this.backgroundColor,
-    };
-
     const hostClasses = {
       'c-card': true,
       'c-card--fullscreen': this.isFullscreen,
     };
 
     return (
-      <Host class={hostClasses} style={style}>
+      <Host class={hostClasses}>
         {this.fullscreen && (
           <c-icon-button
             aria-hidden="true"

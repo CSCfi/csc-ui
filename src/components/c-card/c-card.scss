@@ -1,5 +1,10 @@
 :host {
+  /**
+   * @prop --c-card-gap: Card column gap / padding
+   * @prop --c-card-background-color: Card background color
+   */
   --c-card-gap: 24px;
+  --c-card-background-color: var(--c-white);
 
   border-radius: 6px;
   box-shadow: rgb(0 0 0 / 15%) 0px 10px 20px, rgb(0 0 0 / 20%) 0px 5px 5px;
@@ -8,6 +13,7 @@
   gap: var(--c-card-gap);
   padding: var(--c-card-gap) 0;
   position: relative;
+  background-color: var(--c-card-background-color);
 }
 
 ::slotted(c-loader) {
