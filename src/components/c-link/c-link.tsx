@@ -4,9 +4,6 @@ import { Component, h, Prop } from '@stencil/core';
  * Basic hyperlink component
  *
  * @group Buttons
- *
- * @css --c-link-color: var(--c-info-700)
- * @css --c-link-hover: var(--c-accent-200)
  */
 @Component({
   tag: 'c-link',

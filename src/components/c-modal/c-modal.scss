@@ -1,5 +1,5 @@
 :host {
-  --c-modal-overlay: rgba(0, 0, 0, 0.5);
+  --c-modal-overlay-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-wrapper {
@@ -40,7 +40,7 @@
 }
 
 .c-overlay {
-  background-color: var(--c-modal-overlay);
+  background-color: var(--c-modal-overlay-color);
   position: fixed;
   top: 0;
   bottom: 0;

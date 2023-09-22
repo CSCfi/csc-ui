@@ -1,5 +1,10 @@
 :host {
-  --c-side-navigation-background: var(--c-primary-600);
+  /**
+   * @prop --c-side-navigation-background-color: Side navigation background color
+   * @prop --c-side-navigation-overlay-color: Side navigation overlay color
+   */
+  --c-side-navigation-background-color: var(--c-primary-600);
+  --c-side-navigation-overlay-color: rgba(0, 0, 0, 0.5);
 }
 
 :host(.autoheight) {
@@ -14,11 +19,11 @@
   flex-shrink: 2;
   flex-basis: 260px;
   max-width: 320px;
-  background-color: var(--c-side-navigation-background);
+  background-color: var(--c-side-navigation-background-color);
 }
 
 .c-side-navigation {
-  background-color: var(--c-side-navigation-background);
+  background-color: var(--c-side-navigation-background-color);
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
@@ -65,7 +70,7 @@
   }
 
   &__burger {
-    background-color: var(--c-side-navigation-background);
+    background-color: var(--c-side-navigation-background-color);
     display: flex;
     justify-content: flex-end;
     padding: 8px 16px;
@@ -93,7 +98,8 @@
 }
 
 .c-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--c-side-navigation-overlay-color);
+  backdrop-filter: blur(4px);
   bottom: 0;
   left: 0;
   position: fixed;
@@ -104,10 +110,10 @@
 
 @keyframes fadeIn {
   0% {
-    background: rgba(0, 0, 0, 0);
+    opacity: 0;
   }
   100% {
-    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
   }
 }
 

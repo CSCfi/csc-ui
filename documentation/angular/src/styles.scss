@@ -84,18 +84,19 @@ c-loader {
 // }
 
 c-side-navigation {
-  --c-side-navigation-background: var(--c-secondary-600);
+  --c-side-navigation-background-color: var(--c-secondary-600);
+  --c-side-navigation-overlay-color: rgba(var(--c-secondary-rgb), 0.5);
 }
 
 c-side-navigation-item {
-  --c-side-navigation-item-hover: var(--c-secondary-500);
-  --c-side-navigation-item-active-background: var(--c-secondary-200);
-  --c-side-navigation-item-active-text: var(--c-secondary-600);
+  --c-side-navigation-item-hover-background-color: var(--c-secondary-500);
+  --c-side-navigation-item-active-background-color: var(--c-secondary-200);
+  --c-side-navigation-item-active-text-color: var(--c-secondary-600);
 }
 
 c-sub-navigation-item {
-  --c-sub-navigation-item-hover: var(--c-secondary-100);
-  --c-sub-navigation-item-active-text: var(--c-secondary-600);
+  --c-sub-navigation-item-hover-background-color: var(--c-secondary-100);
+  --c-sub-navigation-item-active-text-color: var(--c-secondary-600);
 }
 
 c-steps {

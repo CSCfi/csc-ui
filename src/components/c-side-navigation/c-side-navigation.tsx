@@ -82,9 +82,7 @@ export class CSideNavigation {
             <div class="c-side-navigation__burger">
               <c-icon-button inverted text onClick={() => this._closeMenu()}>
                 <span class="visuallyhidden">Close sidemenu</span>
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <path d={mdiArrowRight} />
-                </svg>
+                <c-icon path={mdiArrowRight}></c-icon>
               </c-icon-button>
             </div>
           )}

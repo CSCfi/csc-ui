@@ -21,6 +21,7 @@
  - [c-accordion-item](../c-accordion-item)
  - [c-card](../c-card)
  - [c-data-table](../c-data-table)
+ - [c-side-navigation](../c-side-navigation)
  - [c-toast](../c-toast)
 
 ### Graph
@@ -29,6 +30,7 @@ graph TD;
   c-accordion-item --> c-icon
   c-card --> c-icon
   c-data-table --> c-icon
+  c-side-navigation --> c-icon
   c-toast --> c-icon
   style c-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

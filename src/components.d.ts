@@ -602,8 +602,6 @@ export namespace Components {
     /**
      * Basic hyperlink component
      * @group Buttons
-     * @css --c-link-color: var(--c-info-700)
-     * @css --c-link-hover: var(--c-accent-200)
      */
     interface CLink {
         /**
@@ -1807,8 +1805,6 @@ declare global {
     /**
      * Basic hyperlink component
      * @group Buttons
-     * @css --c-link-color: var(--c-info-700)
-     * @css --c-link-hover: var(--c-accent-200)
      */
     interface HTMLCLinkElement extends Components.CLink, HTMLStencilElement {
     }
@@ -2870,8 +2866,6 @@ declare namespace LocalJSX {
     /**
      * Basic hyperlink component
      * @group Buttons
-     * @css --c-link-color: var(--c-info-700)
-     * @css --c-link-hover: var(--c-accent-200)
      */
     interface CLink {
         /**
@@ -4023,8 +4017,6 @@ declare module "@stencil/core" {
             /**
              * Basic hyperlink component
              * @group Buttons
-             * @css --c-link-color: var(--c-info-700)
-             * @css --c-link-hover: var(--c-accent-200)
              */
             "c-link": LocalJSX.CLink & JSXBase.HTMLAttributes<HTMLCLinkElement>;
             /**
