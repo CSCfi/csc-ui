@@ -33,6 +33,7 @@ jobs:
         run: |
           npm ci
           npm run build
+          npm run style-dictionary:build:prod
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
