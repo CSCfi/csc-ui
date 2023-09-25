@@ -652,6 +652,9 @@ export namespace Components {
          */
         "src": string;
     }
+    /**
+     * @group buttons
+     */
     interface CLoginButtons {
     }
     /**
@@ -1840,6 +1843,9 @@ declare global {
         prototype: HTMLCLoginButtonElement;
         new (): HTMLCLoginButtonElement;
     };
+    /**
+     * @group buttons
+     */
     interface HTMLCLoginButtonsElement extends Components.CLoginButtons, HTMLStencilElement {
     }
     var HTMLCLoginButtonsElement: {
@@ -2935,6 +2941,9 @@ declare namespace LocalJSX {
          */
         "src": string;
     }
+    /**
+     * @group buttons
+     */
     interface CLoginButtons {
     }
     /**
@@ -4057,6 +4066,9 @@ declare module "@stencil/core" {
              * @parent c-login-buttons
              */
             "c-login-button": LocalJSX.CLoginButton & JSXBase.HTMLAttributes<HTMLCLoginButtonElement>;
+            /**
+             * @group buttons
+             */
             "c-login-buttons": LocalJSX.CLoginButtons & JSXBase.HTMLAttributes<HTMLCLoginButtonsElement>;
             /**
              * @group Cards

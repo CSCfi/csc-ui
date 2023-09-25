@@ -11,6 +11,14 @@
 | `mobile`      | `mobile`       | Mobile version                 | `boolean` | `undefined` |
 
 
+## CSS Custom Properties
+
+| Name                                   | Description                      |
+| -------------------------------------- | -------------------------------- |
+| `--c-side-navigation-background-color` | Side navigation background color |
+| `--c-side-navigation-overlay-color`    | Side navigation overlay color    |
+
+
 ## Dependencies
 
 ### Depends on
