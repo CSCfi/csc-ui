@@ -217,9 +217,8 @@ export class CPagination {
           onClick={this._decreasePageNumber}
         >
           <span class="visuallyhidden">{this._getText('prevPage')}</span>
-          <svg width="24" height="24" viewBox="0 0 24 24">
-            <path d={mdiChevronLeft} />
-          </svg>
+
+          <c-icon path={mdiChevronLeft}></c-icon>
         </c-icon-button>
       </li>
     );
@@ -239,9 +238,8 @@ export class CPagination {
           onClick={this._increasePageNumber}
         >
           <span class="visuallyhidden">{this._getText('nextPage')}</span>
-          <svg width="24" height="24" viewBox="0 0 24 24">
-            <path d={mdiChevronRight} />
-          </svg>
+
+          <c-icon path={mdiChevronRight}></c-icon>
         </c-icon-button>
       </li>
     );

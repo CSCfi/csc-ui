@@ -82,6 +82,7 @@ graph TD;
   c-checkbox --> c-ripple
   c-pagination --> c-menu
   c-pagination --> c-icon-button
+  c-pagination --> c-icon
   c-menu --> c-menu-items
   c-icon-button --> c-badge
   c-icon-button --> c-ripple

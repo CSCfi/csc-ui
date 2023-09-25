@@ -34,12 +34,14 @@
 
 - [c-menu](../c-menu)
 - [c-icon-button](../c-icon-button)
+- [c-icon](../c-icon)
 
 ### Graph
 ```mermaid
 graph TD;
   c-pagination --> c-menu
   c-pagination --> c-icon-button
+  c-pagination --> c-icon
   c-menu --> c-menu-items
   c-icon-button --> c-badge
   c-icon-button --> c-ripple
