@@ -1,6 +1,10 @@
 :host {
-  --c-steps-line: var(--c-tertiary-500);
-  --c-steps-line-complete: var(--c-primary-600);
+  /**
+   * @prop --c-steps-line-color: Steps line color
+   * @prop --c-steps-line-complete-color: Steps line complete color
+   */
+  --c-steps-line-color: var(--c-tertiary-500);
+  --c-steps-line-complete-color: var(--c-primary-600);
 
   width: 100%;
   display: grid;
@@ -15,7 +19,7 @@
 }
 
 :host(:focus-within) {
-  outline: 2px var(--c-steps-line-complete) solid;
+  outline: 2px var(--c-steps-line-complete-color) solid;
   outline-offset: 2px;
 }
 
@@ -36,13 +40,13 @@
   ::slotted(.divider) {
     height: 2px;
     flex: 1;
-    background-color: var(--c-steps-line);
+    background-color: var(--c-steps-line-color);
     width: var(--c-steps-divider-width);
     margin: var(--c-steps-divider-margin);
   }
 
   ::slotted(.divider.complete) {
-    background-color: var(--c-steps-line-complete);
+    background-color: var(--c-steps-line-complete-color);
     height: 4px;
     margin-top: 9px;
   }

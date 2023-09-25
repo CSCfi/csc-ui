@@ -17,6 +17,17 @@
 | `value`         | `value`         | Progress bar value in percentage (0 to 100)         | `number`  | `0`         |
 
 
+## CSS Custom Properties
+
+| Name                                | Description                     |
+| ----------------------------------- | ------------------------------- |
+| `--c-progress-bar-background-color` | Progress bar background color   |
+| `--c-progress-bar-border-width`     | Progress bar border width in px |
+| `--c-progress-bar-color`            | Progress bar color              |
+| `--c-progress-bar-height`           | Progress bar height in px       |
+| `--c-progress-bar-value`            | Progress bar value in %         |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
