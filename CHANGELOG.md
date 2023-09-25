@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.3](https://github.com/CSCfi/csc-ui/compare/v0.9.2...v0.9.3) (2023-09-25)
+
+
+### Bug Fixes
+
+* Include styles in the released package ([7ff1d9d](https://github.com/CSCfi/csc-ui/commit/7ff1d9d4294df7bc735ed4a5175f75ccb29ff34f))
+
 ## [0.9.2](https://github.com/CSCfi/csc-ui/compare/v0.9.1...v0.9.2) (2023-09-18)
 
 
