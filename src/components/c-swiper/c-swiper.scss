@@ -1,13 +1,23 @@
 @import '~swiper/swiper.scss';
 
-:host, :root {
-  --c-swiper-background: var(--c-primary-200);
-  --c-swiper-hover: var(--c-primary-100);
-  --c-swiper-text: var(--c-primary-600);
-  --c-swiper-active-background: var(--c-primary-600);
-  --c-swiper-active-text: var(--c-white);
-  --c-swiper-disabled-background: var(--c-tertiary-100);
-  --c-swiper-disabled-text: var(--c-tertiary-600);
+:host,
+:root {
+  /**
+   * @prop --c-swiper-background-color: Swiper background color
+   * @prop --c-swiper-hover-color: Swiper hover color
+   * @prop --c-swiper-text-color: Swiper text color
+   * @prop --c-swiper-active-background-color: Swiper active background color
+   * @prop --c-swiper-active-text-color: Swiper active text color
+   * @prop --c-swiper-disabled-background-color: Swiper disabled background color
+   * @prop --c-swiper-disabled-text-color: Swiper disabled text color
+   */
+  --c-swiper-background-color: var(--c-primary-200);
+  --c-swiper-hover-color: var(--c-primary-100);
+  --c-swiper-text-color: var(--c-primary-600);
+  --c-swiper-active-background-color: var(--c-primary-600);
+  --c-swiper-active-text-color: var(--c-white);
+  --c-swiper-disabled-background-color: var(--c-tertiary-100);
+  --c-swiper-disabled-text-color: var(--c-tertiary-600);
 }
 
 .c-swiper {

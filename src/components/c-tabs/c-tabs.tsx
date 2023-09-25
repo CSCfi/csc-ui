@@ -93,10 +93,6 @@ export class CTabs {
     this._handleActiveTab();
   }
 
-  componentDidRender() {
-    console.log('JAAAAAAAHA');
-  }
-
   get tabs() {
     return (Array.from(this.el.childNodes) as HTMLCTabElement[]).filter(
       (tab) => tab.tagName === 'C-TAB',
@@ -136,8 +132,6 @@ export class CTabs {
         if (isActive && isUserAction) {
           tab.focus();
         }
-
-        console.log(isActive, tab.value);
       });
     });
   }
