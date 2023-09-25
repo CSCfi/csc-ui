@@ -1378,7 +1378,7 @@ export namespace Components {
         "value": number | string;
     }
     /**
-     * @group Buttons
+     * @parent c-tags
      */
     interface CTag {
         /**
@@ -1389,6 +1389,10 @@ export namespace Components {
           * Display an optional badge at the start of the tag
          */
         "badge": string | number;
+        /**
+          * Stretch to fill the container row
+         */
+        "block": boolean;
         /**
           * Mark tag as closeable
          */
@@ -1401,6 +1405,11 @@ export namespace Components {
           * Remove the hover effect
          */
         "flat": boolean;
+    }
+    /**
+     * @group buttons
+     */
+    interface CTags {
     }
     /**
      * @group Form
@@ -1640,6 +1649,10 @@ export interface CTabButtonsCustomEvent<T> extends CustomEvent<T> {
 export interface CTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCTabsElement;
+}
+export interface CTagCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCTagElement;
 }
 export interface CTextFieldCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2164,13 +2177,22 @@ declare global {
         new (): HTMLCTabsElement;
     };
     /**
-     * @group Buttons
+     * @parent c-tags
      */
     interface HTMLCTagElement extends Components.CTag, HTMLStencilElement {
     }
     var HTMLCTagElement: {
         prototype: HTMLCTagElement;
         new (): HTMLCTagElement;
+    };
+    /**
+     * @group buttons
+     */
+    interface HTMLCTagsElement extends Components.CTags, HTMLStencilElement {
+    }
+    var HTMLCTagsElement: {
+        prototype: HTMLCTagsElement;
+        new (): HTMLCTagsElement;
     };
     /**
      * @group Form
@@ -2266,6 +2288,7 @@ declare global {
         "c-table": HTMLCTableElement;
         "c-tabs": HTMLCTabsElement;
         "c-tag": HTMLCTagElement;
+        "c-tags": HTMLCTagsElement;
         "c-text-field": HTMLCTextFieldElement;
         "c-toast": HTMLCToastElement;
         "c-toasts": HTMLCToastsElement;
@@ -3737,7 +3760,7 @@ declare namespace LocalJSX {
         "value": number | string;
     }
     /**
-     * @group Buttons
+     * @parent c-tags
      */
     interface CTag {
         /**
@@ -3748,6 +3771,10 @@ declare namespace LocalJSX {
           * Display an optional badge at the start of the tag
          */
         "badge"?: string | number;
+        /**
+          * Stretch to fill the container row
+         */
+        "block"?: boolean;
         /**
           * Mark tag as closeable
          */
@@ -3760,6 +3787,15 @@ declare namespace LocalJSX {
           * Remove the hover effect
          */
         "flat"?: boolean;
+        /**
+          * Emit close event on close icon click
+         */
+        "onClose"?: (event: CTagCustomEvent<any>) => void;
+    }
+    /**
+     * @group buttons
+     */
+    interface CTags {
     }
     /**
      * @group Form
@@ -3968,6 +4004,7 @@ declare namespace LocalJSX {
         "c-table": CTable;
         "c-tabs": CTabs;
         "c-tag": CTag;
+        "c-tags": CTags;
         "c-text-field": CTextField;
         "c-toast": CToast;
         "c-toasts": CToasts;
@@ -4212,9 +4249,13 @@ declare module "@stencil/core" {
              */
             "c-tabs": LocalJSX.CTabs & JSXBase.HTMLAttributes<HTMLCTabsElement>;
             /**
-             * @group Buttons
+             * @parent c-tags
              */
             "c-tag": LocalJSX.CTag & JSXBase.HTMLAttributes<HTMLCTagElement>;
+            /**
+             * @group buttons
+             */
+            "c-tags": LocalJSX.CTags & JSXBase.HTMLAttributes<HTMLCTagsElement>;
             /**
              * @group Form
              */

@@ -1,0 +1,65 @@
+<app-example title="Usage" flex name="basic" component="c-tags">
+  <c-tags>
+    <c-tag [active]="active[0]" (click)="toggleActive(0)">One</c-tag>
+    <c-tag [active]="active[1]" (click)="toggleActive(1)">Two</c-tag>
+    <c-tag [active]="active[2]" (click)="toggleActive(2)">Three</c-tag>
+  </c-tags>
+</app-example>
+
+<app-example
+  title="Flat"
+  subtitle="Use when there is no interaction with the user"
+  name="flat"
+  component="c-tags"
+  flex
+>
+  <c-tags>
+    <c-tag flat>One</c-tag>
+    <c-tag flat>Two</c-tag>
+    <c-tag flat>Three</c-tag>
+  </c-tags>
+</app-example>
+
+<app-example title="Closeable" component="c-tags" name="closeable" rows>
+  <c-tags>
+    <c-tag
+      *ngFor="let tag of tags"
+      [active]="tag.active"
+      closeable
+      (click)="toggleActiveTag(tag.id)"
+      (close)="removeTag(tag.id)"
+    >
+      {{ tag.label }}
+    </c-tag>
+  </c-tags>
+
+  <div>
+    <c-button (click)="resetTags()">Reset tags</c-button>
+  </div>
+</app-example>
+
+<app-example title="With badges" component="c-tags" name="badges" flex>
+  <c-tags>
+    <c-tag badge="0">Orange</c-tag>
+    <c-tag badge="4" active>Pineapple</c-tag>
+    <c-tag badge="2" closeable active>Banana split</c-tag>
+    <c-tag badge="1" closeable active>Apple pie</c-tag>
+    <c-tag badge="12" closeable>Strawberry</c-tag>
+  </c-tags>
+</app-example>
+
+<app-example title="Fit" subtitle="Stretch to fill the container" component="c-tags" name="fit" flex>
+  <c-tags>
+    <c-tag fit>One</c-tag>
+    <c-tag fit active>Two</c-tag>
+    <c-tag fit>Three</c-tag>
+  </c-tags>
+</app-example>
+
+<app-example title="Block" subtitle="Full width tags" component="c-tags" name="block" flex>
+  <c-tags>
+    <c-tag block>One</c-tag>
+    <c-tag block active>Two</c-tag>
+    <c-tag block>Three</c-tag>
+  </c-tags>
+</app-example>

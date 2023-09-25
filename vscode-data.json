@@ -1702,6 +1702,10 @@
           "description": "Display an optional badge at the start of the tag"
         },
         {
+          "name": "block",
+          "description": "Stretch to fill the container row"
+        },
+        {
           "name": "closeable",
           "description": "Mark tag as closeable"
         },
@@ -1714,6 +1718,14 @@
           "description": "Remove the hover effect"
         }
       ]
+    },
+    {
+      "name": "c-tags",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": []
     },
     {
       "name": "c-text-field",

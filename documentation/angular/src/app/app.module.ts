@@ -13,7 +13,6 @@ import { CTabButtonsComponent } from './examples/c-tab-buttons/c-tab-buttons.com
 import { CIconButtonComponent } from './examples/c-icon-button/c-icon-button.component';
 import { CSwitchComponent } from './examples/c-switch/c-switch.component';
 import { CTabsComponent } from './examples/c-tabs/c-tabs.component';
-import { CTagComponent } from './examples/c-tag/c-tag.component';
 import { CTextFieldComponent } from './examples/c-text-field/c-text-field.component';
 import { CTitleComponent } from './examples/c-title/c-title.component';
 import { DynamicComponentDirective } from './directives/dynamic-component.directive';
@@ -59,6 +58,7 @@ import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component
 import { CLoginButtonsComponent } from './examples/c-login-buttons/c-login-buttons.component';
 import { CSpinnerComponent } from './examples/c-spinner/c-spinner.component';
 import { CTableComponent } from './examples/c-table/c-table.component';
+import { CTagsComponent } from './examples/c-tags/c-tags.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +69,6 @@ import { CTableComponent } from './examples/c-table/c-table.component';
     CIconButtonComponent,
     CSwitchComponent,
     CTabsComponent,
-    CTagComponent,
     CTextFieldComponent,
     CTitleComponent,
     DynamicComponentDirective,
@@ -115,6 +114,7 @@ import { CTableComponent } from './examples/c-table/c-table.component';
     CLoginButtonsComponent,
     CSpinnerComponent,
     CTableComponent,
+    CTagsComponent,
   ],
   imports: [
     BrowserModule,
