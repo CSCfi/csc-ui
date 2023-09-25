@@ -1,0 +1,52 @@
+<app-example title="Basic usage" name="basic" component="c-table">
+  <c-table>
+    <thead>
+      <tr>
+        <th highlighted>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>user-id-1</td>
+        <td>Jason Miller</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td>user-id-2</td>
+        <td>Silvia Nyholm</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td>user-id-3</td>
+        <td>Mark Samsonov</td>
+        <td>56</td>
+      </tr>
+      <tr>
+        <td>user-id-4</td>
+        <td>Michael Nielsen</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </c-table>
+</app-example>
+
+<app-example title="Responsive" name="responsive" component="c-table">
+  <c-table responsive>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers">{{ header }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.ssn }}</td>
+      </tr>
+    </tbody>
+  </c-table>
+</app-example>

@@ -1657,6 +1657,23 @@
       ]
     },
     {
+      "name": "c-table",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "mobile-breakpoint",
+          "description": "Mobile breakpoint in pixels"
+        },
+        {
+          "name": "responsive",
+          "description": "Should the table be responsive"
+        }
+      ]
+    },
+    {
       "name": "c-tabs",
       "description": {
         "kind": "markdown",

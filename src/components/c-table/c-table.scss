@@ -1,0 +1,146 @@
+:host, :root {
+  /**
+   * @prop --c-table-border-color: Table border color
+   * @prop --c-table-header-color: Table border color
+   * @prop --c-table-row-background-mobile: Background color for table rows (even) in mobile
+   */
+  --c-table-border-color: var(--c-tertiary-200);
+  --c-table-header-color: var(--c-text-system);
+  --c-table-row-background-mobile: rgba(var(--c-primary-rgb), 0.05);
+}
+
+table.c-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  thead {
+    background-color: var(--c-white);
+    position: relative;
+
+    th {
+      border-bottom: 2px solid var(--c-table-border-color);
+    }
+  }
+
+  tbody {
+    box-shadow:
+      inset 1px 0 0 0 var(--c-table-border-color),
+      inset -1px 0 0 0 var(--c-table-border-color),
+      inset 0 1px 0 0 var(--c-table-border-color),
+      inset 0 -1px 0 0 var(--c-table-border-color);
+
+    /* Safari box shadow replacement */
+    @supports (-webkit-hyphens: none) {
+      border: 1px solid var(--c-table-border-color);
+
+      tr {
+        border-bottom: 1px solid var(--c-table-border-color);
+      }
+    }
+
+    tr {
+      box-shadow: inset 0 1px 0 0 var(--c-table-border-color);
+    }
+  }
+
+  tfoot {
+    background-color: var(--c-white);
+
+    tr {
+      box-shadow: inset 0 1px 0 0 var(--c-table-border-color);
+    }
+
+    td {
+      min-height: 48px;
+
+      c-pagination {
+        flex: 1;
+      }
+    }
+  }
+
+  th,
+  td {
+    font-weight: 400;
+    box-sizing: border-box;
+    line-height: normal;
+    padding: 16px;
+  }
+
+  th {
+    height: 48px;
+    font-size: 14px;
+    color: var(--c-table-header-color);
+  }
+
+  td {
+    font-size: 16px;
+    color: var(--c-text-body);
+  }
+
+  &--mobile {
+    border-spacing: 0 16px;
+    border-collapse: separate;
+
+    tbody {
+      box-shadow: none;
+
+      tr {
+        border-radius: 4px;
+
+        /* Safari box shadow replacement */
+        @supports (-webkit-hyphens: none) {
+          display: grid;
+          margin-bottom: 16px;
+          border: none;
+        }
+
+        box-shadow: inset 0 0 0 1px var(--c-table-border-color);
+      }
+    }
+
+    thead {
+      display: none;
+    }
+
+    td {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      text-align: end;
+
+      &::before {
+        font-size: 14px;
+        color: var(--c-table-header-color);
+        content: attr(data-title);
+        display: inline-block;
+        text-align: start;
+        padding-right: 8px;
+      }
+
+      &:nth-of-type(even) {
+        background-color: var(--c-table-row-background-mobile);
+      }
+    }
+  }
+}

@@ -58,6 +58,7 @@ import { CIconComponent } from './examples/c-icon/c-icon.component';
 import { COtpInputComponent } from './examples/c-otp-input/c-otp-input.component';
 import { CLoginButtonsComponent } from './examples/c-login-buttons/c-login-buttons.component';
 import { CSpinnerComponent } from './examples/c-spinner/c-spinner.component';
+import { CTableComponent } from './examples/c-table/c-table.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { CSpinnerComponent } from './examples/c-spinner/c-spinner.component';
     COtpInputComponent,
     CLoginButtonsComponent,
     CSpinnerComponent,
+    CTableComponent,
   ],
   imports: [
     BrowserModule,

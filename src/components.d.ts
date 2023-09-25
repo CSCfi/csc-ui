@@ -1355,6 +1355,19 @@ export namespace Components {
         "value": number | string;
     }
     /**
+     * @group tables
+     */
+    interface CTable {
+        /**
+          * Mobile breakpoint in pixels
+         */
+        "mobileBreakpoint": number;
+        /**
+          * Should the table be responsive
+         */
+        "responsive": boolean;
+    }
+    /**
      * @group Content Selectors
      */
     interface CTabs {
@@ -2135,6 +2148,15 @@ declare global {
         new (): HTMLCTabButtonsElement;
     };
     /**
+     * @group tables
+     */
+    interface HTMLCTableElement extends Components.CTable, HTMLStencilElement {
+    }
+    var HTMLCTableElement: {
+        prototype: HTMLCTableElement;
+        new (): HTMLCTableElement;
+    };
+    /**
      * @group Content Selectors
      */
     interface HTMLCTabsElement extends Components.CTabs, HTMLStencilElement {
@@ -2243,6 +2265,7 @@ declare global {
         "c-switch": HTMLCSwitchElement;
         "c-tab": HTMLCTabElement;
         "c-tab-buttons": HTMLCTabButtonsElement;
+        "c-table": HTMLCTableElement;
         "c-tabs": HTMLCTabsElement;
         "c-tag": HTMLCTagElement;
         "c-text-field": HTMLCTextFieldElement;
@@ -3689,6 +3712,19 @@ declare namespace LocalJSX {
         "value"?: number | string;
     }
     /**
+     * @group tables
+     */
+    interface CTable {
+        /**
+          * Mobile breakpoint in pixels
+         */
+        "mobileBreakpoint"?: number;
+        /**
+          * Should the table be responsive
+         */
+        "responsive"?: boolean;
+    }
+    /**
      * @group Content Selectors
      */
     interface CTabs {
@@ -3934,6 +3970,7 @@ declare namespace LocalJSX {
         "c-switch": CSwitch;
         "c-tab": CTab;
         "c-tab-buttons": CTabButtons;
+        "c-table": CTable;
         "c-tabs": CTabs;
         "c-tag": CTag;
         "c-text-field": CTextField;
@@ -4170,6 +4207,10 @@ declare module "@stencil/core" {
              * @group Content Selectors
              */
             "c-tab-buttons": LocalJSX.CTabButtons & JSXBase.HTMLAttributes<HTMLCTabButtonsElement>;
+            /**
+             * @group tables
+             */
+            "c-table": LocalJSX.CTable & JSXBase.HTMLAttributes<HTMLCTableElement>;
             /**
              * @group Content Selectors
              */

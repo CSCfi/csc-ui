@@ -93,6 +93,10 @@ export class CTabs {
     this._handleActiveTab();
   }
 
+  componentDidRender() {
+    console.log('JAAAAAAAHA');
+  }
+
   get tabs() {
     return (Array.from(this.el.childNodes) as HTMLCTabElement[]).filter(
       (tab) => tab.tagName === 'C-TAB',
@@ -112,25 +116,29 @@ export class CTabs {
   }
 
   private _handleActiveTab(isUserAction = false) {
-    let position = 0;
+    requestAnimationFrame(() => {
+      let position = 0;
 
-    this.tabs.forEach((tab: HTMLCTabElement) => {
-      if (!tab.disabled) {
-        position += 1;
-      }
+      this.tabs.forEach((tab: HTMLCTabElement) => {
+        if (!tab.disabled) {
+          position += 1;
+        }
 
-      const isActive = tab.value === this.value;
+        const isActive = tab.value === this.value;
 
-      tab.active = isActive;
+        tab.active = isActive;
 
-      if (!isUserAction && !tab.disabled) {
-        tab.position = position;
-        tab.setsize = this.availableValues.length;
-      }
+        if (!isUserAction && !tab.disabled) {
+          tab.position = position;
+          tab.setsize = this.availableValues.length;
+        }
 
-      if (isActive && isUserAction) {
-        tab.focus();
-      }
+        if (isActive && isUserAction) {
+          tab.focus();
+        }
+
+        console.log(isActive, tab.value);
+      });
     });
   }
 
