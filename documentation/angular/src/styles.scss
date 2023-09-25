@@ -82,6 +82,22 @@ c-link {
   --c-link-color: var(--c-accent-700);
 }
 
+c-progress-bar {
+  --c-progress-bar-color: var(--c-secondary-600);
+  --c-progress-bar-background-color: var(--c-success-200);
+  --c-progress-bar-border-width: 18px;
+  --c-progress-bar-height: 86px;
+}
+
+// c-spinner {
+//   --c-spinner-color: red;
+// }
+
+// c-radio-group {
+//   --c-radio-group-color: var(--c-secondary-600);
+//   --c-radio-group-hover: var(--c-secondary-100);
+// }
+
 c-radio-group {
   --c-radio-group-color: var(--c-secondary-600);
   --c-radio-group-hover: rgba(var(--c-secondary-rgb), 0.1);
@@ -104,7 +120,19 @@ c-sub-navigation-item {
 }
 
 c-steps {
-  --c-steps-line-complete: var(--c-secondary-600);
+  --c-steps-line-complete-color: var(--c-secondary-600);
+}
+
+c-status {
+  --c-status-background-color: var(--c-secondary-200);
+  --c-status-info-text-color: var(--c-primary-800);
+  --c-status-info-background-color: var(--c-primary-200);
+  --c-status-warning-text-color: var(--c-link-800);
+  --c-status-warning-background-color: var(--c-link-200);
+  --c-status-error-text-color: var(--c-success-800);
+  --c-status-error-background-color: var(--c-success-200);
+  --c-status-success-text-color: var(--c-error-800);
+  --c-status-success-background-color: var(--c-error-200);
 }
 
 c-main {
@@ -112,10 +140,10 @@ c-main {
 }
 
 c-swiper {
-  --c-swiper-background: var(--c-secondary-200);
-  --c-swiper-hover: var(--c-secondary-100);
-  --c-swiper-text: var(--c-secondary-600);
-  --c-swiper-active-background: var(--c-secondary-600);
+  --c-swiper-background-color: var(--c-secondary-200);
+  --c-swiper-hover-color: var(--c-secondary-100);
+  --c-swiper-text-color: var(--c-secondary-600);
+  --c-swiper-active-background-color: var(--c-secondary-600);
 }
 
 c-accordion-item {

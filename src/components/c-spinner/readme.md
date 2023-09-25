@@ -13,6 +13,13 @@
 | `size`   | `size`    | Size of the spinner  | `number` | `24`                     |
 
 
+## CSS Custom Properties
+
+| Name                | Description   |
+| ------------------- | ------------- |
+| `--c-spinner-color` | Spinner color |
+
+
 ## Dependencies
 
 ### Used by

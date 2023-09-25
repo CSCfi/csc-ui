@@ -1,4 +1,7 @@
 :host {
+  /**
+   * @prop --c-spinner-color: Spinner color
+   */
   --c-spinner-color: var(--color);
   --c-spinner-size: var(--size);
 
@@ -18,7 +21,8 @@ svg.spinner {
     stroke-width: 2;
     stroke-linecap: round;
     stroke-dasharray: calc(3.14 * var(--c-spinner-size));
-    transform-origin: calc(0.5px * var(--c-spinner-size)) calc(0.5px * var(--c-spinner-size)) 0;
+    transform-origin: calc(0.5px * var(--c-spinner-size))
+      calc(0.5px * var(--c-spinner-size)) 0;
 
     animation: spinner 2.5s linear infinite;
   }

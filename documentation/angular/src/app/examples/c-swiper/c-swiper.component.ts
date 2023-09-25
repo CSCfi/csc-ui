@@ -20,7 +20,7 @@ export class CSwiperComponent implements OnInit {
 
   selectedTab = 1;
 
-  selectionText = 'Nothing is selected';
+  selectionText = `Tab "One" selected`;
 
   tabs = [
     { label: 'One', value: 1, disabled: false },
@@ -33,17 +33,17 @@ export class CSwiperComponent implements OnInit {
 
   currentTab2 = '';
 
-  selectedTab2 = 'tab2';
+  selectedTab2 = 'tab6';
 
-  selectionText2 = 'Nothing is selected';
+  selectionText2 = 'Tab "Six" selected';
 
   tabs2 = [
-    { label: 'Onex', value: 'tab1', disabled: true },
-    { label: 'Twox', value: 'tab2', disabled: false },
-    { label: 'Threex', value: 'tab3', disabled: false },
-    { label: 'Fourx', value: 'tab4', disabled: true },
-    { label: 'Fivex', value: 'tab5', disabled: false },
-    { label: 'Sixx', value: 'tab6', disabled: false },
+    { label: 'One', value: 'tab1', disabled: true },
+    { label: 'Two', value: 'tab2', disabled: false },
+    { label: 'Three', value: 'tab3', disabled: false },
+    { label: 'Four', value: 'tab4', disabled: true },
+    { label: 'Five', value: 'tab5', disabled: false },
+    { label: 'Six', value: 'tab6', disabled: false },
   ];
 
   selectTab(tab: Tab) {

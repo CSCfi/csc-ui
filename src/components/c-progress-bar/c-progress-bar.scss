@@ -1,6 +1,13 @@
 :host {
+  /**
+   * @prop --c-progress-bar-color: Progress bar color
+   * @prop --c-progress-bar-background-color: Progress bar background color
+   * @prop --c-progress-bar-border-width: Progress bar border width in px
+   * @prop --c-progress-bar-height: Progress bar height in px
+   * @prop --c-progress-bar-value: Progress bar value in %
+   */
   --c-progress-bar-color: var(--c-primary-600);
-  --c-progress-bar-background: var(--c-tertiary-200);
+  --c-progress-bar-background-color: var(--c-tertiary-200);
   --c-progress-bar-border-width: 4px;
   --c-progress-bar-height: 16px;
   --c-progress-bar-value: 0%;
@@ -14,11 +21,14 @@
   $this: &;
 
   position: relative;
-  background-color: var(--c-progress-bar-background);
+  background-color: var(--c-progress-bar-background-color);
   border-radius: var(--c-progress-bar-height);
-  box-shadow: 0 0 0 var(--c-progress-bar-border-width) var(--c-progress-bar-background);
+  box-shadow: 0 0 0 var(--c-progress-bar-border-width)
+    var(--c-progress-bar-background-color);
   flex-basis: 100%;
-  height: calc(var(--c-progress-bar-height) - calc(var(--c-progress-bar-border-width) * 2));
+  height: calc(
+    var(--c-progress-bar-height) - calc(var(--c-progress-bar-border-width) * 2)
+  );
   margin: var(--c-progress-bar-border-width);
   opacity: 0.75;
   overflow: hidden;
@@ -52,7 +62,10 @@
     width: 100%;
     background-color: transparent;
     overflow: hidden;
-    height: calc(var(--c-progress-bar-height) - calc(var(--c-progress-bar-border-width) * 2));
+    height: calc(
+      var(--c-progress-bar-height) -
+        calc(var(--c-progress-bar-border-width) * 2)
+    );
     position: absolute;
     border: none;
 

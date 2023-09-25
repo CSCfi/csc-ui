@@ -14,7 +14,7 @@
 }
 
 :host(:focus) {
-  outline: 2px var(--c-swiper-active-background) solid;
+  outline: 2px var(--c-swiper-active-background-color) solid;
   outline-offset: -2px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 :host(:focus-visible) {
-  outline: 2px var(--c-swiper-active-background) solid;
+  outline: 2px var(--c-swiper-active-background-color) solid;
   outline-offset: -2px;
 }
 
@@ -36,14 +36,14 @@
 
   &:hover:not(#{$this}--active):not(#{$this}--disabled) {
     #{$this}__content {
-      background-color: var(--c-swiper-hover);
+      background-color: var(--c-swiper-hover-color);
     }
   }
 
   &__content {
     border-radius: 6px;
-    background-color: var(--c-swiper-background);
-    color: var(--c-swiper-text);
+    background-color: var(--c-swiper-background-color);
+    color: var(--c-swiper-text-color);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     display: grid;
@@ -72,8 +72,8 @@
 
   &--disabled {
     #{$this}__content {
-      background: var(--c-swiper-disabled-background);
-      color: var(--c-swiper-disabled-text);
+      background: var(--c-swiper-disabled-background-color);
+      color: var(--c-swiper-disabled-text-color);
       cursor: default !important;
       pointer-events: none;
     }
@@ -81,12 +81,12 @@
 
   &--active {
     #{$this}__content {
-      background-color: var(--c-swiper-active-background);
-      color: var(--c-swiper-active-text);
+      background-color: var(--c-swiper-active-background-color);
+      color: var(--c-swiper-active-text-color);
       pointer-events: none;
 
       &:hover {
-        background-color: var(--c-swiper-active-background);
+        background-color: var(--c-swiper-active-background-color);
       }
     }
   }

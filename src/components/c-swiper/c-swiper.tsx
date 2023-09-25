@@ -73,13 +73,13 @@ export class CSwiper {
     if (isArrowLeft) {
       if (isBeginning) return;
 
-      this.value = this.slotItems[index - 1].value.toString();
+      this.value = this.slotItems[index - 1].value;
     }
 
     if (isArrowRight) {
       if (isEnd) return;
 
-      this.value = this.slotItems[index + 1].value.toString();
+      this.value = this.slotItems[index + 1].value;
     }
 
     this._slideToTab(index - 1);
@@ -147,12 +147,13 @@ export class CSwiper {
       slide.setAttribute('data-index', index.toString());
 
       slide.value = slide.value ?? index;
-      slide.active = this.value === slide.value;
       slide.position = index + 1;
       slide.setsize = this.slotItems.length;
 
       if (slide.active) {
-        slide.click();
+        requestAnimationFrame(() => {
+          this._slideToTab(index);
+        });
       }
     }
 
@@ -164,10 +165,6 @@ export class CSwiper {
       this.isBeginning = isBeginning;
       this.isEnd = isEnd;
     });
-
-    this._slideToTab(
-      this.slotItems?.findIndex((item) => item.value === this.value) || 0,
-    );
   }
 
   private _updateStatusText() {
