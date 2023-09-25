@@ -1,16 +1,18 @@
 <p class="fs-5 fw-bold my-1 text-primary">{{ data?.tag }}</p>
-<table class="table">
+
+<c-table responsive>
   <thead>
-    <tr class="d-flex">
-      <th class="col-3">Attribute</th>
-      <th class="col-3">Type</th>
-      <th class="col-3">Default</th>
-      <th class="col-3">Description</th>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
     </tr>
   </thead>
+
   <tbody>
-    <tr *ngFor="let prop of data?.props" class="d-flex">
-      <td class="col-3">
+    <tr *ngFor="let prop of data?.props">
+      <td>
         {{ prop.attr || prop.name }}
         <div class="attribute-tags">
           <c-status type="error" *ngIf="prop.deprecation">Deprecated</c-status>
@@ -18,7 +20,7 @@
           <c-status *ngIf="prop.required">Required</c-status>
         </div>
       </td>
-      <td class="col-3 monospace">
+      <td class="monospace">
         <div class="type-item" *ngIf="hasType(prop.type); else noType">
           <div *ngFor="let type of sanitizedTypeNames(prop.type); let i = index">
             <a *ngIf="type.type" routerLink="/types" [fragment]="type.fragment">
@@ -33,11 +35,11 @@
 
         <ng-template #noType>{{ prop.type }}</ng-template>
       </td>
-      <td class="col-3">{{ prop.default }}</td>
-      <td class="col-3">
+      <td>{{ prop.default }}</td>
+      <td>
         {{ prop.docs }}
         <p class="text-danger mb-0 fst-italic" *ngIf="prop.deprecation">{{ prop.deprecation }}</p>
       </td>
     </tr>
   </tbody>
-</table>
+</c-table>

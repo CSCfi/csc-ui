@@ -1,23 +1,23 @@
 <p class="fs-5 fw-bold my-1 text-primary">{{ data?.tag }}</p>
 
-<table class="table">
+<c-table responsive>
   <thead>
-    <tr class="d-flex">
-      <th class="col-6">Property</th>
+    <tr>
+      <th>Property</th>
 
-      <th class="col-6">Description</th>
+      <th>Description</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let style of data?.styles" class="d-flex">
-      <td class="col-6">
+    <tr *ngFor="let style of data?.styles">
+      <td>
         {{ style.name }}
       </td>
 
-      <td class="col-6">
+      <td>
         {{ style.docs }}
       </td>
     </tr>
   </tbody>
-</table>
+</c-table>

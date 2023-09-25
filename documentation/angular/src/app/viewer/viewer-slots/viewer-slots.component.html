@@ -1,15 +1,16 @@
 <p class="fs-5 fw-bold my-1 text-primary">{{ data?.tag }}</p>
-<table class="table">
+
+<c-table responsive>
   <thead>
-    <tr class="d-flex">
-      <th class="col-6">Name</th>
-      <th class="col-6">Description</th>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let slot of data?.slots" class="d-flex">
-      <td class="col-6">{{ slot.name || '-' }}</td>
-      <td class="col-6">{{ slot.docs }}</td>
+    <tr *ngFor="let slot of data?.slots">
+      <td>{{ slot.name || '-' }}</td>
+      <td>{{ slot.docs }}</td>
     </tr>
   </tbody>
-</table>
+</c-table>

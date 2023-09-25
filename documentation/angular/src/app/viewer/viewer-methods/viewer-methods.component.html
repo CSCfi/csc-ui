@@ -1,17 +1,19 @@
 <p class="fs-5 fw-bold my-1 text-primary">{{ data?.tag }}</p>
-<table class="table">
+
+<c-table responsive>
   <thead>
-    <tr class="d-flex">
-      <th class="col-2">Name</th>
-      <th class="col-4">Description</th>
-      <th class="col-6">Signature</th>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Signature</th>
     </tr>
   </thead>
+
   <tbody>
-    <tr *ngFor="let method of data?.methods" class="d-flex">
-      <td class="col-2">{{ method.name || '-' }}</td>
-      <td class="col-4">{{ method.docs }}</td>
-      <td class="col-6">
+    <tr *ngFor="let method of data?.methods">
+      <td>{{ method.name || '-' }}</td>
+      <td>{{ method.docs }}</td>
+      <td>
         <div class="method font-monospace" *ngIf="hasType(method.signature); else noType">
           <ng-template ngFor let-part let-i="index" [ngForOf]="getParts(method.signature)">
             <a *ngIf="part.type" routerLink="/types" [fragment]="part.fragment">
@@ -27,4 +29,4 @@
       </td>
     </tr>
   </tbody>
-</table>
+</c-table>
