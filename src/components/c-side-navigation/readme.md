@@ -16,11 +16,13 @@
 ### Depends on
 
 - [c-icon-button](../c-icon-button)
+- [c-icon](../c-icon)
 
 ### Graph
 ```mermaid
 graph TD;
   c-side-navigation --> c-icon-button
+  c-side-navigation --> c-icon
   c-icon-button --> c-badge
   c-icon-button --> c-ripple
   style c-side-navigation fill:#f9f,stroke:#333,stroke-width:4px

@@ -1,15 +1,21 @@
+/**
+   * @prop --c-sub-navigation-item-text-color: Sub navigation item text color
+   * @prop --c-sub-navigation-item-hover-background-color: Sub navigation item hover background color
+   * @prop --c-sub-navigation-item-active-text-color: Sub navigation item active text color
+   * @prop --c-sub-navigation-item-active-background-color: Sub navigation item active background color
+   */
 :host {
-  --c-sub-navigation-item-text: var(--c-text-body);
-  --c-sub-navigation-item-hover: var(--c-primary-100);
-  --c-sub-navigation-item-active-text: var(--c-primary-600);
-  --c-sub-navigation-item-active-background: var(--c-white);
+  --c-sub-navigation-item-text-color: var(--c-text-body);
+  --c-sub-navigation-item-hover-background-color: var(--c-primary-100);
+  --c-sub-navigation-item-active-text-color: var(--c-primary-600);
+  --c-sub-navigation-item-active-background-color: var(--c-white);
 }
 
 .c-sub-navigation-item {
   align-items: center;
   background-color: transparent;
   border-radius: 4px;
-  color: var(--c-sub-navigation-item-text);
+  color: var(--c-sub-navigation-item-text-color);
   cursor: pointer;
   display: block;
   display: flex;
@@ -37,7 +43,7 @@
 }
 
 .c-sub-navigation-item__content::before {
-  background-color: var(--c-sub-navigation-item-active-text);
+  background-color: var(--c-sub-navigation-item-active-text-color);
   content: '';
   height: 100%;
   left: 0;
@@ -49,12 +55,12 @@
 }
 
 .c-sub-navigation-item:hover {
-  background-color: var(--c-sub-navigation-item-hover);
-  color: var(--c-sub-navigation-item-active-text);
+  background-color: var(--c-sub-navigation-item-hover-background-color);
+  color: var(--c-sub-navigation-item-active-text-color);
 }
 
 :host(.active) .c-sub-navigation-item {
-  background-color: var(--c-sub-navigation-item-active-background);
+  background-color: var(--c-sub-navigation-item-active-background-color);
 }
 
 :host(.active) .c-sub-navigation-item__content::before {
@@ -73,7 +79,7 @@
 }
 
 :host(:host:focus-visible) .c-sub-navigation-item {
-  outline: 2px var(--c-sub-navigation-item-active-text) solid;
+  outline: 2px var(--c-sub-navigation-item-active-text-color) solid;
   outline-offset: 2px;
 }
 

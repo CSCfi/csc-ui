@@ -1,6 +1,10 @@
 :host {
+  /**
+   * @prop --c-card-title-color: Card title color
+   * @prop --c-card-title-underline-color: Card title underline color
+   */
   --c-card-title-color: var(--c-text-system);
-  --c-card-title-underline: var(--c-primary-600);
+  --c-card-title-underline-color: var(--c-primary-600);
 
   color: var(--c-card-title-color);
   padding: 0 var(--c-card-gap, 24px);
@@ -12,7 +16,7 @@
 
 .c-card-title {
   &__underline {
-    background-color: var(--c-card-title-underline);
+    background-color: var(--c-card-title-underline-color);
     border-radius: 4px;
     height: 4px;
     margin-top: 10px;

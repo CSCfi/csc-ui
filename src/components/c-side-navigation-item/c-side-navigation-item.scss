@@ -1,7 +1,12 @@
 :host {
-  --c-side-navigation-item-hover: var(--c-primary-500);
-  --c-side-navigation-item-active-background: var(--c-primary-200);
-  --c-side-navigation-item-active-text: var(--c-primary-600);
+  /**
+   * @prop --c-side-navigation-item-hover-background-color: Side navigation item hover background color
+   * @prop --c-side-navigation-item-active-background-color: Side navigation item active background color
+   * @prop --c-side-navigation-item-active-text-color: Side navigation item active text color
+   */
+  --c-side-navigation-item-hover-background-color: var(--c-primary-500);
+  --c-side-navigation-item-active-background-color: var(--c-primary-200);
+  --c-side-navigation-item-active-text-color: var(--c-primary-600);
 }
 
 :host(.c-side-navigation-item) {
@@ -21,7 +26,7 @@
 }
 
 :host(.c-side-navigation-item:hover) {
-  background-color: var(--c-side-navigation-item-hover);
+  background-color: var(--c-side-navigation-item-hover-background-color);
 }
 
 :host(.c-side-navigation-item:focus) {
@@ -35,16 +40,16 @@
 }
 
 :host(.c-side-navigation-item.active) {
-  background-color: var(--c-side-navigation-item-active-background);
-  color: var(--c-side-navigation-item-active-text);
+  background-color: var(--c-side-navigation-item-active-background-color);
+  color: var(--c-side-navigation-item-active-text-color);
 
   .svg {
-    fill: var(--c-side-navigation-item-active-text);
+    fill: var(--c-side-navigation-item-active-text-color);
     transform: rotate(90deg);
   }
 
   .c-side-navigation-item__header {
-    color: var(--c-side-navigation-item-active-text);
+    color: var(--c-side-navigation-item-active-text-color);
   }
 }
 
