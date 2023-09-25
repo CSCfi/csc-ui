@@ -58,16 +58,16 @@ export class CIconButton {
     return <c-badge>{this.badge}</c-badge>;
   }
 
-  private _outerClasses() {
+  private _hostClasses() {
     return {
-      'icon-button': true,
-      disabled: !!this.disabled,
-      text: !!this.text,
-      ghost: !!this.ghost,
-      outlined: !!this.outlined,
-      inverted: !!this.inverted,
-      'icon-button--small': this.size === 'small',
-      'icon-button--x-small': this.size === 'x-small',
+      'c-icon-button': true,
+      'c-icon-button--disabled': !!this.disabled,
+      'c-icon-button--text': !!this.text,
+      'c-icon-button--ghost': !!this.ghost,
+      'c-icon-button--outlined': !!this.outlined,
+      'c-icon-button--inverted': !!this.inverted,
+      'c-icon-button--small': this.size === 'small',
+      'c-icon-button--x-small': this.size === 'x-small',
     };
   }
 
@@ -77,8 +77,8 @@ export class CIconButton {
 
   render() {
     return (
-      <Host>
-        <button class={this._outerClasses()} onClick={this._onClick}>
+      <Host class={this._hostClasses()}>
+        <button disabled={this.disabled} onClick={this._onClick}>
           <div
             class="inner-container"
             ref={(el) => (this._container = el as HTMLDivElement)}
@@ -91,6 +91,7 @@ export class CIconButton {
               )}
             </slot>
           </div>
+
           {this.badge && this._renderBadge()}
 
           <c-ripple

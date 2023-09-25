@@ -27,6 +27,13 @@
 | `"Default slot"` | Default slot |
 
 
+## CSS Custom Properties
+
+| Name                    | Description       |
+| ----------------------- | ----------------- |
+| `--c-tabs-border-color` | Tabs border color |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -1,23 +1,55 @@
 :host {
-  --c-icon-button-background: var(--c-primary-600);
-  --c-icon-button-text: var(--c-white);
-  --c-icon-button-hover: var(--c-primary-400);
-  --c-icon-button-outline: var(--c-primary-600);
+  --c-icon-button-background-color: var(--c-primary-600);
+  --c-icon-button-text-color: var(--c-white);
+  --c-icon-button-background-hover: var(--c-primary-400);
+  --c-icon-button-outline-color: var(--c-primary-600);
+
+  --c-icon-button-height: 40px;
+  --c-icon-button-width: 40px;
+  --c-icon-button-border-radius: 50%;
 
   display: block;
   position: relative;
-  border-radius: 50%;
+  border-radius: var(--c-icon-button-border-radius);
+
+  button {
+    background-color: transparent;
+    color: currentColor;
+    display: inline-grid;
+    place-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition:
+      background-color 0.3s cubic-bezier(0.25, 0.8, 0.5, 1),
+      color 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+
+    outline: none;
+    border-radius: var(--c-icon-button-border-radius);
+
+    &:disabled {
+      cursor: default;
+    }
+  }
 }
 
-button.icon-button {
+:host(.c-icon-button) button {
+  appearance: none;
+}
+
+:host(.c-icon-button) {
   font-family: var(--c-font-family);
   display: flex;
   border: none;
   padding: 0;
-  width: 40px;
-  height: 40px;
-  background-color: var(--c-icon-button-background);
-  color: var(--c-icon-button-text);
+  width: var(--c-icon-button-width);
+  height: var(--c-icon-button-height);
+  background-color: var(--c-icon-button-background-color);
+  color: var(--c-icon-button-text-color);
   transition: background-color 0.3s ease;
   border-radius: 50%;
   cursor: pointer;
@@ -48,149 +80,190 @@ button.icon-button {
     justify-content: center;
   }
 
-  &:hover {
-    background: var(--c-icon-button-hover);
+}
+
+:host(:host:hover) {
+  background: var(--c-icon-button-background-hover);
+}
+
+:host(.c-icon-button--small) {
+  --c-icon-button-height: 32px;
+  --c-icon-button-width: 32px;
+
+  ::slotted(c-icon) {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 20px !important;
   }
 
-  &--small {
-    width: 32px;
-    height: 32px;
+  ::slotted(svg),
+  ::slotted(i),
+  ::slotted(span) {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 16px !important;
+  }
+}
 
-    ::slotted(c-icon) {
-      width: 20px !important;
-      height: 20px !important;
-      font-size: 20px !important;
-    }
+:host(.c-icon-button--x-small) {
+  --c-icon-button-height: 28px;
+  --c-icon-button-width: 28px;
 
-    ::slotted(svg),
-    ::slotted(i),
-    ::slotted(span) {
-      width: 22px !important;
-      height: 22px !important;
-      font-size: 16px !important;
-    }
+  ::slotted(c-icon) {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 14px !important;
   }
 
-  &--x-small {
-    width: 28px;
-    height: 28px;
-
-    ::slotted(c-icon) {
-      width: 14px !important;
-      height: 14px !important;
-      font-size: 14px !important;
-    }
-
-    ::slotted(svg),
-    ::slotted(i),
-    ::slotted(span) {
-      width: 18px !important;
-      height: 18px !important;
-      font-size: 14px !important;
-    }
+  ::slotted(svg),
+  ::slotted(i),
+  ::slotted(span) {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 14px !important;
   }
+}
 
-  &:focus {
-    outline: 2px var(--c-icon-button-outline) solid;
-    outline-offset: 2px;
+:host(.c-icon-button) button:focus {
+  outline: none;
+}
+
+:host(.c-icon-button) button:focus-visible {
+  outline: 2px var(--c-icon-button-outline-color) solid;
+  outline-offset: 2px;
+}
+
+:host(.c-icon-button--inverted) {
+  --c-icon-button-background-color: var(--c-white);
+  --c-icon-button-text-color: var(--c-primary-600);
+  --c-icon-button-background-hover: var(--c-primary-200);
+
+  c-badge {
+    --c-badge-outline: var(--c-primary-600);
   }
+}
 
-  @supports selector(:focus-visible) {
-    &:focus {
-      outline: none;
-    }
-  }
+:host(.c-icon-button--ghost) {
+  --c-icon-button-background-color: var(--c-primary-200);
+  --c-icon-button-text-color: var(--c-primary-600);
+  --c-icon-button-background-hover: var(--c-primary-100);
 
-  &:focus-visible {
-    outline: 2px var(--c-icon-button-outline) solid;
-    outline-offset: 2px;
-  }
-
-  &.inverted {
-    --c-icon-button-background: var(--c-white);
-    --c-icon-button-text: var(--c-primary-600);
-    --c-icon-button-hover: var(--c-primary-200);
-
-    c-badge {
-      --c-badge-outline: var(--c-primary-600);
-    }
-  }
-
-  &.ghost {
-    --c-icon-button-background: var(--c-primary-200);
-    --c-icon-button-text: var(--c-primary-600);
-    --c-icon-button-hover: var(--c-primary-100);
-
-    &.inverted {
-      --c-icon-button-text: var(--c-white);
-      --c-icon-button-background: var(--c-primary-500);
-      --c-icon-button-hover: var(--c-primary-400);
+  .ripple {
+    &:hover {
+      background: rgba(0, 103, 120, 0)
+        radial-gradient(circle, transparent 1%, rgba(0, 103, 120, 0.05) 1%)
+        center/15000%;
     }
 
-    &.disabled {
-      --c-icon-button-background: var(--c-tertiary-200);
-      --c-icon-button-text: var(--c-tertiary-500);
-      --c-icon-button-hover: var(--c-tertiary-100);
-    }
-  }
-
-  &.text {
-    --c-icon-button-text: var(--c-primary-600);
-    --c-icon-button-background: var(--c-transparent);
-    --c-icon-button-hover: var(--c-primary-100);
-
-    &.inverted {
-      --c-icon-button-text: var(--c-white);
-      --c-icon-button-hover: var(--c-primary-500);
-    }
-
-    &.disabled {
-      --c-icon-button-background: var(--c-transparent);
-      --c-icon-button-hover: var(--c-transparent);
-      --c-icon-button-text: var(--c-tertiary-400);
-    }
-  }
-
-  &.outlined {
-    --c-icon-button-text: var(--c-primary-600);
-    --c-icon-button-background: var(--c-transparent);
-    --c-icon-button-hover: var(--c-primary-100);
-
-    box-shadow: inset 0 0 0 2px var(--c-icon-button-outline);
-
-    &.disabled {
-      --c-icon-button-text: var(--c-tertiary-500);
-      --c-icon-button-background: var(--c-transparent);
-      --c-icon-button-outline: var(--c-tertiary-400);
-    }
-
-    &.inverted {
-      --c-icon-button-text: var(--c-white);
-      --c-icon-button-background: var(--c-transparent);
-      --c-icon-button-outline: var(--c-white);
-      --c-icon-button-hover: var(--c-primary-500);
-
-      &.disabled {
-        --c-icon-button-text: var(--c-tertiary-400);
-        --c-icon-button-background: var(--c-transparent);
-        --c-icon-button-outline: var(--c-tertiary-400);
-      }
-    }
-  }
-
-  &.disabled {
-    --c-icon-button-background: var(--c-tertiary-100);
-    --c-icon-button-hover: var(--c-tertiary-100);
-    --c-icon-button-text: var(--c-tertiary-600);
-    --c-icon-button-outline: var(--c-tertiary-600);
-
-    pointer-events: none;
-
-    c-badge {
-      --c-badge-background: var(--c-tertiary-400);
+    &:active {
+      background-color: rgba(0, 103, 120, 0.15);
+      background-size: 100%;
+      transition: background 0s;
     }
   }
 }
+
+:host(.c-icon-button--ghost.c-icon-button--inverted) {
+  --c-icon-button-text-color: var(--c-white);
+  --c-icon-button-background-color: var(--c-primary-500);
+  --c-icon-button-background-hover: var(--c-primary-400);
+}
+
+:host(.c-icon-button--ghost.c-icon-button--disabled) {
+  --c-icon-button-background-color: var(--c-tertiary-200);
+  --c-icon-button-text-color: var(--c-tertiary-500);
+  --c-icon-button-background-hover: var(--c-tertiary-100);
+}
+
+:host(.c-icon-button--text) {
+  --c-icon-button-text-color: var(--c-primary-600);
+  --c-icon-button-background-color: var(--c-transparent);
+  --c-icon-button-background-hover: var(--c-primary-100);
+
+  .ripple {
+    &:hover {
+      background: rgba(0, 103, 120, 0)
+        radial-gradient(circle, transparent 1%, rgba(0, 103, 120, 0.05) 1%)
+        center/15000%;
+    }
+
+    &:active {
+      background-color: rgba(0, 103, 120, 0.15);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+}
+
+:host(.c-icon-button--text.c-icon-button--inverted) {
+  --c-icon-button-text-color: var(--c-white);
+  --c-icon-button-background-hover: var(--c-primary-500);
+}
+
+:host(.c-icon-button--text.c-icon-button--disabled) {
+  --c-icon-button-background-color: var(--c-transparent);
+  --c-icon-button-background-hover: var(--c-transparent);
+  --c-icon-button-text-color: var(--c-tertiary-400);
+}
+
+:host(.c-icon-button--outlined) {
+  --c-icon-button-text-color: var(--c-primary-600);
+  --c-icon-button-background-color: var(--c-transparent);
+  --c-icon-button-background-hover: var(--c-primary-100);
+
+  box-shadow: inset 0 0 0 2px var(--c-icon-button-outline-color);
+
+  .ripple {
+    &:hover {
+      background: rgba(0, 103, 120, 0)
+        radial-gradient(circle, transparent 1%, rgba(0, 103, 120, 0.05) 1%)
+        center/15000%;
+    }
+
+    &:active {
+      background-color: rgba(0, 103, 120, 0.15);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+}
+
+:host(.c-icon-button--outlined.c-icon-button--disabled) {
+  --c-icon-button-text-color: var(--c-tertiary-500);
+  --c-icon-button-background-color: var(--c-transparent);
+  --c-icon-button-outline-color: var(--c-tertiary-400);
+}
+
+:host(.c-icon-button--outlined.c-icon-button--inverted) {
+  --c-icon-button-text-color: var(--c-white);
+  --c-icon-button-background-color: var(--c-transparent);
+  --c-icon-button-outline-color: var(--c-white);
+  --c-icon-button-background-hover: var(--c-primary-500);
+}
+
+:host(.c-icon-button--outlined.c-icon-button--disabled) {
+  --c-icon-button-text-color: var(--c-tertiary-400);
+  --c-icon-button-background-color: var(--c-transparent);
+  --c-icon-button-outline-color: var(--c-tertiary-400);
+}
+
+:host(.c-icon-button--disabled) {
+  --c-icon-button-background-color: var(--c-tertiary-100);
+  --c-icon-button-background-hover: var(--c-tertiary-100);
+  --c-icon-button-text-color: var(--c-tertiary-600);
+  --c-icon-button-outline-color: var(--c-tertiary-600);
+
+  pointer-events: none;
+
+  c-badge {
+    --c-badge-background: var(--c-tertiary-400);
+  }
+
+  .icon-button-badge {
+    background: #acacac;
+  }
+}
+
 
 ::slotted(*),
 svg {
@@ -227,52 +300,6 @@ svg {
 
   &:active {
     background-color: rgba(255, 255, 255, 0.25);
-    background-size: 100%;
-    transition: background 0s;
-  }
-}
-
-.disabled .icon-button-badge {
-  background: #acacac;
-}
-
-.outlined .ripple {
-  &:hover {
-    background: rgba(0, 103, 120, 0)
-      radial-gradient(circle, transparent 1%, rgba(0, 103, 120, 0.05) 1%)
-      center/15000%;
-  }
-
-  &:active {
-    background-color: rgba(0, 103, 120, 0.15);
-    background-size: 100%;
-    transition: background 0s;
-  }
-}
-
-.text .ripple {
-  &:hover {
-    background: rgba(0, 103, 120, 0)
-      radial-gradient(circle, transparent 1%, rgba(0, 103, 120, 0.05) 1%)
-      center/15000%;
-  }
-
-  &:active {
-    background-color: rgba(0, 103, 120, 0.15);
-    background-size: 100%;
-    transition: background 0s;
-  }
-}
-
-.ghost .ripple {
-  &:hover {
-    background: rgba(0, 103, 120, 0)
-      radial-gradient(circle, transparent 1%, rgba(0, 103, 120, 0.05) 1%)
-      center/15000%;
-  }
-
-  &:active {
-    background-color: rgba(0, 103, 120, 0.15);
     background-size: 100%;
     transition: background 0s;
   }

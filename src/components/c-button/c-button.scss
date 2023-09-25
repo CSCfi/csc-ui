@@ -8,21 +8,19 @@
 
   border-radius: var(--c-button-border-radius);
   display: inline-flex;
-  overflow: hidden;
   transform: translateZ(0); // Safari border-radius fix
   transition: background-color 0.3s ease-in-out;
 }
 
-:host(.grouped),
-:host(.no-radius) {
+:host(.c-button--no-radius) {
   --c-button-border-radius: 0;
 }
 
-:host(:host:not(.description)) {
+:host(:host:not(.c-button--description)) {
   height: var(--c-button-height);
 }
 
-:host(.description) {
+:host(.c-button--description) {
   height: 'auto';
 }
 
@@ -32,305 +30,430 @@
   }
 }
 
-:host([disabled]) {
+:host(.c-button--disabled) {
   pointer-events: none;
 }
 
 // ---- default --------------------------------------------------------------
 :host {
-  --c-button-background: var(--c-primary-600);
-  --c-button-text: var(--c-white);
+  /**
+   * @prop --c-button-background-color: Default button background color
+   * @prop --c-button-text-color: Default button text color
+   * @prop --c-button-loader-color: Default button loader color
+   */
+  --c-button-background-color: var(--c-primary-600);
+  --c-button-text-color: var(--c-white);
+  --c-button-loader-color: var(--c-button-text-color);
 
-  --c-button-loader-color: var(--c-button-text);
-  --c-button-outline: var(--c-button-background);
+  --c-button-outline-color: var(--c-button-background-color);
 
-  background-color: var(--c-button-background);
-  color: var(--c-button-text);
+  background-color: var(--c-button-background-color);
+  color: var(--c-button-text-color);
 }
 
 :host(:host:hover) {
-  --c-button-hover: var(--c-primary-400);
+  /**
+   * @prop --c-button-background-color-hover: Default button hover background color
+   */
+  --c-button-background-color-hover: var(--c-primary-400);
 
-  background-color: var(--c-button-hover);
+  background-color: var(--c-button-background-color-hover);
 }
 
-:host([disabled]) {
-  --c-button-disabled-background: var(--c-tertiary-100);
-  --c-button-disabled-text: var(--c-tertiary-600);
+:host(.c-button--disabled) {
+  /**
+   * @prop --c-button-disabled-background-color: Disabled button background color
+   * @prop --c-button-disabled-text-color: Disabled button text color
+   */
+  --c-button-disabled-background-color: var(--c-tertiary-100);
+  --c-button-disabled-text-color: var(--c-tertiary-600);
 
-  background-color: var(--c-button-disabled-background);
-  color: var(--c-button-disabled-text);
+  background-color: var(--c-button-disabled-background-color);
+  color: var(--c-button-disabled-text-color);
 }
 
-:host([inverted]) {
-  --c-button-inverted-background: var(--c-white);
-  --c-button-inverted-text: var(--c-primary-600);
+:host(.c-button--inverted) {
+  /**
+   * @prop --c-button-inverted-background-color: Inverted default button background color
+   * @prop --c-button-inverted-text-color: Inverted default button text color
+   */
+  --c-button-inverted-background-color: var(--c-white);
+  --c-button-inverted-text-color: var(--c-primary-600);
 
-  --c-button-outline: var(--c-button-inverted-background);
+  --c-button-outline-color: var(--c-button-inverted-background-color);
 
-  background-color: var(--c-button-inverted-background);
-  color: var(--c-button-inverted-text);
+  background-color: var(--c-button-inverted-background-color);
+  color: var(--c-button-inverted-text-color);
 }
 
-:host([inverted]:hover) {
-  --c-button-inverted-hover: var(--c-primary-200);
+:host(.c-button--inverted:hover) {
+  /**
+   * @prop --c-button-inverted-background-color-hover: Inverted default button hover background color
+   */
+  --c-button-inverted-background-color-hover: var(--c-primary-200);
 
-  background-color: var(--c-button-inverted-hover);
+  background-color: var(--c-button-inverted-background-color-hover);
 }
 
-:host([inverted][disabled]) {
-  --c-button-inverted-disabled-background: var(--c-button-disabled-background);
-  --c-button-inverted-disabled-text: var(--c-tertiary-500);
+:host(.c-button--inverted.c-button--disabled) {
+  /**
+   * @prop --c-button-inverted-disabled-background-color: Inverted disabled default button background color
+   * @prop --c-button-inverted-disabled-text-color: Inverted disabled default button text color
+   */
+  --c-button-inverted-disabled-background-color: var(--c-button-disabled-background-color);
+  --c-button-inverted-disabled-text-color: var(--c-tertiary-500);
 
-  background-color: var(--c-button-inverted-disabled-background);
-  color: var(--c-button-inverted-disabled-text);
+  background-color: var(--c-button-inverted-disabled-background-color);
+  color: var(--c-button-inverted-disabled-text-color);
 }
 
 // ---- danger ----------------------------------------------------------------
 
-:host([danger]) {
-  --c-button-danger-text: var(--c-white);
-  --c-button-danger-background: var(--c-error-600);
-  --c-button-danger-loader-color: var(--c-button-danger-text);
+:host(.c-button--danger) {
+  /**
+   * @prop --c-button-danger-background-color: Danger button background color
+   * @prop --c-button-danger-text-color: Danger button text color
+   * @prop --c-button-danger-loader-color: Danger button loader color
+   */
+  --c-button-danger-background-color: var(--c-error-600);
+  --c-button-danger-text-color: var(--c-white);
+  --c-button-danger-loader-color: var(--c-button-danger-text-color);
 
   --c-button-loader-color: var(--c-button-danger-loader-color);
-  --c-button-outline: var(--c-button-danger-background);
+  --c-button-outline-color: var(--c-button-danger-background-color);
 
-  background-color: var(--c-button-danger-background);
-  color: var(--c-button-danger-text);
+  background-color: var(--c-button-danger-background-color);
+  color: var(--c-button-danger-text-color);
 }
 
-:host([danger]:hover) {
-  --c-button-danger-hover: var(--c-error-400);
+:host(.c-button--danger:hover) {
+  /**
+   * @prop --c-button-danger-background-color-hover: Danger button hover background color
+   */
+  --c-button-danger-background-color-hover: var(--c-error-400);
 
-  background-color: var(--c-button-danger-hover);
+  background-color: var(--c-button-danger-background-color-hover);
 }
 
-:host([danger][disabled]) {
-  --c-button-danger-disabled-background: var(--c-button-disabled-background);
-  --c-button-danger-disabled-text: var(--c-button-disabled-text);
+:host(.c-button--danger.c-button--disabled) {
+  /**
+   * @prop --c-button-danger-disabled-background-color: Disabled danger button background color
+   * @prop --c-button-danger-disabled-text-color: Disabled danger button text color
+   */
+  --c-button-danger-disabled-background-color: var(--c-button-disabled-background-color);
+  --c-button-danger-disabled-text-color: var(--c-button-disabled-text-color);
 
-  background-color: var(--c-button-danger-disabled-background);
-  color: var(--c-button-danger-disabled-text);
+  background-color: var(--c-button-danger-disabled-background-color);
+  color: var(--c-button-danger-disabled-text-color);
 }
 
-:host([danger][inverted]) {
-  --c-button-danger-inverted-text: var(--c-error-600);
-  --c-button-danger-inverted-background: var(--c-white);
+:host(.c-button--danger.c-button--inverted) {
+  /**
+   * @prop --c-button-danger-inverted-background-color: Inverted danger button background color
+   * @prop --c-button-danger-inverted-text-color: Inverted danger button text color
+   */
+  --c-button-danger-inverted-text-color: var(--c-error-600);
+  --c-button-danger-inverted-background-color: var(--c-white);
 
-  --c-button-outline: var(--c-button-danger-inverted-background);
+  --c-button-outline-color: var(--c-button-danger-inverted-background-color);
 
-  background-color: var(--c-button-danger-inverted-background);
-  color: var(--c-button-danger-inverted-text);
+  background-color: var(--c-button-danger-inverted-background-color);
+  color: var(--c-button-danger-inverted-text-color);
 }
 
-:host([danger][inverted]:hover) {
-  --c-button-danger-inverted-hover: var(--c-error-100);
+:host(.c-button--danger.c-button--inverted:hover) {
+  /**
+   * @prop --c-button-danger-inverted-background-color-hover: Inverted danger button hover background color
+   */
+  --c-button-danger-inverted-background-color-hover: var(--c-error-100);
 
-  background-color: var(--c-button-danger-inverted-hover);
+  background-color: var(--c-button-danger-inverted-background-color-hover);
 }
 
-:host([danger][inverted][disabled]) {
-  --c-button-danger-inverted-disabled-background: var(--c-button-disabled-background);
-  --c-button-danger-inverted-disabled-text: var(--c-button-disabled-text);
+:host(.c-button--danger.c-button--inverted.c-button--disabled) {
+  /**
+   * @prop --c-button-danger-inverted-disabled-background-color: Disabled inverted danger button background color
+   * @prop --c-button-danger-inverted-disabled-text-color: Disabled inverted danger button text color
+   */
+  --c-button-danger-inverted-disabled-background-color: var(--c-button-disabled-background-color);
+  --c-button-danger-inverted-disabled-text-color: var(--c-button-disabled-text-color);
 
-  background-color: var(--c-button-danger-inverted-disabled-background);
-  color: var(--c-button-danger-inverted-disabled-text);
+  background-color: var(--c-button-danger-inverted-disabled-background-color);
+  color: var(--c-button-danger-inverted-disabled-text-color);
 }
 
 // ---- ghost ----------------------------------------------------------------
 
-:host([ghost]) {
-  --c-button-ghost-background: var(--c-primary-200);
-  --c-button-ghost-text: var(--c-primary-600);
-  --c-button-ghost-loader-color: var(--c-button-ghost-text);
+:host(.c-button--ghost) {
+  /**
+   * @prop --c-button-ghost-background-color: Ghost button background color
+   * @prop --c-button-ghost-text-color: Ghost button text color
+   * @prop --c-button-ghost-loader-color: Ghost button loader color
+   */
+  --c-button-ghost-background-color: var(--c-primary-200);
+  --c-button-ghost-text-color: var(--c-primary-600);
+  --c-button-ghost-loader-color: var(--c-button-ghost-text-color);
 
   --c-button-loader-color: var(--c-button-ghost-loader-color);
-  --c-button-outline: var(--c-button-ghost-text);
+  --c-button-outline-color: var(--c-button-ghost-text-color);
 
-  background-color: var(--c-button-ghost-background);
-  color: var(--c-button-ghost-text);
+  background-color: var(--c-button-ghost-background-color);
+  color: var(--c-button-ghost-text-color);
 }
 
-:host([ghost]:hover) {
-  --c-button-ghost-hover: var(--c-primary-100);
+:host(.c-button--ghost:hover) {
+  /**
+   * @prop --c-button-ghost-background-color-hover: Ghost button hover background color
+   */
+  --c-button-ghost-background-color-hover: var(--c-primary-100);
 
-  background-color: var(--c-button-ghost-hover);
+  background-color: var(--c-button-ghost-background-color-hover);
 }
 
-:host([ghost][disabled]) {
-  --c-button-ghost-disabled-background: var(--c-button-disabled-background);
-  --c-button-ghost-disabled-text: var(--c-button-disabled-text);
+:host(.c-button--ghost.c-button--disabled) {
+  /**
+   * @prop --c-button-ghost-disabled-background-color: Disabled ghost button background color
+   * @prop --c-button-ghost-disabled-text-color: Disabled ghost button text color
+   */
+  --c-button-ghost-disabled-background-color: var(--c-button-disabled-background-color);
+  --c-button-ghost-disabled-text-color: var(--c-button-disabled-text-color);
 
-  background-color: var(--c-button-ghost-disabled-background);
-  color: var(--c-button-ghost-disabled-text);
+  background-color: var(--c-button-ghost-disabled-background-color);
+  color: var(--c-button-ghost-disabled-text-color);
 }
 
-:host([ghost][inverted]) {
-  --c-button-ghost-inverted-background: rgba(var(--c-white-rgb), 0.2);
-  --c-button-ghost-inverted-text: var(--c-white);
+:host(.c-button--ghost.c-button--inverted) {
+  /**
+   * @prop --c-button-ghost-inverted-background-color: Inverted ghost button background color
+   * @prop --c-button-ghost-inverted-text-color: Inverted ghost button text color
+   */
+  --c-button-ghost-inverted-background-color: rgba(var(--c-white-rgb), 0.2);
+  --c-button-ghost-inverted-text-color: var(--c-white);
 
-  --c-button-outline: var(--c-button-ghost-inverted-text);
+  --c-button-outline-color: var(--c-button-ghost-inverted-text-color);
 
-  background-color: var(--c-button-ghost-inverted-background);
-  color: var(--c-button-ghost-inverted-text);
+  background-color: var(--c-button-ghost-inverted-background-color);
+  color: var(--c-button-ghost-inverted-text-color);
 }
 
-:host([ghost][inverted]:hover) {
-  --c-button-ghost-inverted-hover: rgba(var(--c-white-rgb), 0.3);
+:host(.c-button--ghost.c-button--inverted:hover) {
+  /**
+   * @prop --c-button-ghost-inverted-background-color-hover: Inverted ghost button hover text color
+   */
+  --c-button-ghost-inverted-background-color-hover: rgba(var(--c-white-rgb), 0.3);
 
-  background-color: var(--c-button-ghost-inverted-hover);
+  background-color: var(--c-button-ghost-inverted-background-color-hover);
 }
 
-:host([ghost][inverted][disabled]) {
-  --c-button-ghost-inverted-disabled-background: rgba(var(--c-white-rgb), 0.05);
-  --c-button-ghost-inverted-disabled-text: var(--c-tertiary-400);
+:host(.c-button--ghost.c-button--inverted.c-button--disabled) {
+  /**
+   * @prop --c-button-ghost-inverted-disabled-background-color: Disabled inverted ghost button background color
+   * @prop --c-button-ghost-inverted-disabled-text-color: Disabled inverted ghost button text color
+   */
+  --c-button-ghost-inverted-disabled-background-color: rgba(var(--c-white-rgb), 0.05);
+  --c-button-ghost-inverted-disabled-text-color: var(--c-tertiary-400);
 
-  background-color: var(--c-button-ghost-inverted-disabled-background);
-  color: var(--c-button-ghost-inverted-disabled-text);
+  background-color: var(--c-button-ghost-inverted-disabled-background-color);
+  color: var(--c-button-ghost-inverted-disabled-text-color);
 }
 
 // ---- text ----------------------------------------------------------------
 
-:host([text]) {
-  --c-button-text-background: var(--c-transparent);
-  --c-button-text-text: var(--c-primary-600);
-  --c-button-text-loader-color: var(--c-button-text-text);
+:host(.c-button--text) {
+  /**
+   * @prop --c-button-text-background-color: Text button background color
+   * @prop --c-button-text-text-color: Text button text color
+   * @prop --c-button-text-loader-color: Text button loader color
+   */
+  --c-button-text-background-color: var(--c-transparent);
+  --c-button-text-text-color: var(--c-primary-600);
+  --c-button-text-loader-color: var(--c-button-text-text-color);
 
   --c-button-loader-color: var(--c-button-text-loader-color);
-  --c-button-outline: var(--c-button-text-text);
+  --c-button-outline-color: var(--c-button-text-text-color);
 
-  background-color: var(--c-button-text-background);
-  color: var(--c-button-text-text);
+  background-color: var(--c-button-text-background-color);
+  color: var(--c-button-text-text-color);
 }
 
-:host([text]:hover) {
-  --c-button-text-hover: var(--c-primary-100);
+:host(.c-button--text:hover) {
+  /**
+   * @prop --c-button-text-background-color-hover: Text button hover background color
+   */
+  --c-button-text-background-color-hover: var(--c-primary-100);
 
-  background-color: var(--c-button-text-hover);
+  background-color: var(--c-button-text-background-color-hover);
 }
 
-:host([text][disabled]) {
-  --c-button-text-disabled-background: var(--c-transparent);
-  --c-button-text-disabled-text: var(--c-tertiary-500);
+:host(.c-button--text.c-button--disabled) {
+  /**
+   * @prop --c-button-text-disabled-background-color: Disabled text button background color
+   * @prop --c-button-text-disabled-text-color: Disabled text button text color
+   */
+  --c-button-text-disabled-background-color: var(--c-transparent);
+  --c-button-text-disabled-text-color: var(--c-tertiary-500);
 
-  background-color: var(--c-button-text-disabled-background);
-  color: var(--c-button-text-disabled-text);
+  background-color: var(--c-button-text-disabled-background-color);
+  color: var(--c-button-text-disabled-text-color);
 }
 
-:host([text][inverted]) {
-  --c-button-text-inverted-background: var(--c-transparent);
-  --c-button-text-inverted-text: var(--c-white);
+:host(.c-button--text.c-button--inverted) {
+  /**
+   * @prop --c-button-text-inverted-background-color: Inverted text button background color
+   * @prop --c-button-text-inverted-text-color: Inverted text button text color
+   */
+  --c-button-text-inverted-background-color: var(--c-transparent);
+  --c-button-text-inverted-text-color: var(--c-white);
 
-  --c-button-outline: var(--c-button-text-inverted-text);
+  --c-button-outline-color: var(--c-button-text-inverted-text-color);
 
-  background-color: var(--c-button-text-inverted-background);
-  color: var(--c-button-text-inverted-text);
+  background-color: var(--c-button-text-inverted-background-color);
+  color: var(--c-button-text-inverted-text-color);
 }
 
-:host([text][inverted]:hover) {
-  --c-button-text-inverted-hover: rgba(var(--c-white-rgb), 0.3);
+:host(.c-button--text.c-button--inverted:hover) {
+  /**
+   * @prop --c-button-text-inverted-background-color-hover: Inverted text button hover background color
+   */
+  --c-button-text-inverted-background-color-hover: rgba(var(--c-white-rgb), 0.3);
 
-  background-color: var(--c-button-text-inverted-hover);
+  background-color: var(--c-button-text-inverted-background-color-hover);
 }
 
-:host([text][inverted][disabled]) {
-  --c-button-text-inverted-disabled-background: var(--c-transparent);
-  --c-button-text-inverted-disabled-text: var(--c-tertiary-400);
+:host(.c-button--text.c-button--inverted.c-button--disabled) {
+  /**
+   * @prop --c-button-text-inverted-disabled-background-color: Disabled inverted text button background color
+   * @prop --c-button-text-inverted-disabled-text-color: Disabled inverted text button text color
+   */
+  --c-button-text-inverted-disabled-background-color: var(--c-transparent);
+  --c-button-text-inverted-disabled-text-color: var(--c-tertiary-400);
 
-  background-color: var(--c-button-text-inverted-disabled-background);
-  color: var(--c-button-text-inverted-disabled-text);
+  background-color: var(--c-button-text-inverted-disabled-background-color);
+  color: var(--c-button-text-inverted-disabled-text-color);
 }
 
 // ---- outlined ----------------------------------------------------------------
 
-:host([outlined]) {
-  --c-button-outlined-text: var(--c-primary-600);
-  --c-button-outlined-border: var(--c-button-outlined-text);
-  --c-button-outlined-background: var(--c-transparent);
-  --c-button-outlined-loader-color: var(--c-button-outlined-text);
+:host(.c-button--outlined) {
+  /**
+   * @prop --c-button-outlined-background-color: Outlined button background color
+   * @prop --c-button-outlined-border-color: Outlined button border color
+   * @prop --c-button-outlined-text-color: Outlined button text color
+   * @prop --c-button-outlined-loader-color: Outlined button loader color
+   */
+  --c-button-outlined-text-color: var(--c-primary-600);
+  --c-button-outlined-border-color: var(--c-button-outlined-text-color);
+  --c-button-outlined-background-color: var(--c-transparent);
+  --c-button-outlined-loader-color: var(--c-button-outlined-text-color);
 
   --c-button-loader-color: var(--c-button-outlined-loader-color);
-  --outline-color: var(--c-button-outlined-border);
-  --c-button-outline: var(--c-button-outlined-border);
+  --outline-color: var(--c-button-outlined-border-color);
+  --c-button-outline-color: var(--c-button-outlined-border-color);
 
-  background-color: var(--c-button-outlined-background);
-  color: var(--c-button-outlined-text);
+  background-color: var(--c-button-outlined-background-color);
+  color: var(--c-button-outlined-text-color);
   box-shadow: inset 0 0 0 2px var(--outline-color);
 }
 
-:host([outlined]:hover) {
-  --c-button-outlined-hover: var(--c-primary-200);
+:host(.c-button--outlined:hover) {
+  /**
+   * @prop --c-button-outlined-background-color-hover: Outlined button hover background color
+   */
+  --c-button-outlined-background-color-hover: var(--c-primary-200);
 
-  background-color: var(--c-button-outlined-hover);
+  background-color: var(--c-button-outlined-background-color-hover);
 }
 
-:host([outlined][disabled]) {
-  --c-button-outlined-disabled-text: var(--c-tertiary-500);
-  --c-button-outlined-disabled-background: var(--c-button-outlined-background);
-  --c-button-outlined-disabled-border: var(--c-tertiary-400);
+:host(.c-button--outlined.c-button--disabled) {
+  /**
+   * @prop --c-button-outlined-disabled-background-color: Disabled outlined button background color
+   * @prop --c-button-outlined-disabled-border-color: Disabled outlined button border color
+   * @prop --c-button-outlined-disabled-text-color: Disabled outlined button text color
+   */
+  --c-button-outlined-disabled-text-color: var(--c-tertiary-500);
+  --c-button-outlined-disabled-background-color: var(--c-button-outlined-background-color);
+  --c-button-outlined-disabled-border-color: var(--c-tertiary-400);
 
-  --outline-color: var(--c-button-outlined-disabled-border);
+  --outline-color: var(--c-button-outlined-disabled-border-color);
 
-  background-color: var(--c-button-outlined-disabled-background);
-  color: var(--c-button-outlined-disabled-text);
+  background-color: var(--c-button-outlined-disabled-background-color);
+  color: var(--c-button-outlined-disabled-text-color);
 }
 
-:host([outlined][inverted]) {
-  --c-button-outlined-inverted-text: var(--c-white);
-  --c-button-outlined-inverted-border: var(--c-button-outlined-inverted-text);
-  --c-button-outlined-inverted-background: var(--c-button-outlined-background);
+:host(.c-button--outlined.c-button--inverted) {
+  /**
+   * @prop --c-button-outlined-inverted-background-color: Inverted outlined button background color
+   * @prop --c-button-outlined-inverted-border-color: Inverted outlined button border color
+   * @prop --c-button-outlined-inverted-text-color: Inverted outlined button text color
+   */
+  --c-button-outlined-inverted-text-color: var(--c-white);
+  --c-button-outlined-inverted-border-color: var(--c-button-outlined-inverted-text-color);
+  --c-button-outlined-inverted-background-color: var(--c-button-outlined-background-color);
 
-  --outline-color: var(--c-button-outlined-inverted-border);
-  --c-button-outline: var(--c-button-outlined-inverted-border);
+  --outline-color: var(--c-button-outlined-inverted-border-color);
+  --c-button-outline-color: var(--c-button-outlined-inverted-border-color);
 
-  background-color: var(--c-button-outlined-inverted-background);
-  color: var(--c-button-outlined-inverted-text);
+  background-color: var(--c-button-outlined-inverted-background-color);
+  color: var(--c-button-outlined-inverted-text-color);
 }
 
-:host([outlined][inverted]:hover) {
-  --c-button-outlined-inverted-hover: rgba(var(--c-white-rgb), 0.3);
+:host(.c-button--outlined.c-button--inverted:hover) {
+  /**
+   * @prop --c-button-outlined-background-color-hover: Outlined button hover background color
+   */
+  --c-button-outlined-inverted-background-color-hover: rgba(var(--c-white-rgb), 0.3);
 
-  background-color: var(--c-button-outlined-inverted-hover);
+  background-color: var(--c-button-outlined-inverted-background-color-hover);
 }
 
-:host([outlined][inverted][disabled]) {
-  --c-button-outlined-inverted-disabled-border: var(--c-tertiary-400);
-  --c-button-outlined-inverted-disabled-text: var(--c-tertiary-400);
-  --c-button-outlined-inverted-disabled-background: var(--c-button-outlined-background);
+:host(.c-button--outlined.c-button--inverted.c-button--disabled) {
+  /**
+   * @prop --c-button-outlined-inverted-disabled-background-color: Disabled inverted outlined button background color
+   * @prop --c-button-outlined-inverted-disabled-border-color: Disabled inverted outlined button border color
+   * @prop --c-button-outlined-inverted-disabled-text-color: Disabled inverted outlined button text color
+   */
+  --c-button-outlined-inverted-disabled-border-color: var(--c-tertiary-400);
+  --c-button-outlined-inverted-disabled-text-color: var(--c-tertiary-400);
+  --c-button-outlined-inverted-disabled-background-color: var(--c-button-outlined-background-color);
 
-  --outline-color: var(--c-button-outlined-inverted-disabled-border);
+  --outline-color: var(--c-button-outlined-inverted-disabled-border-color);
 
-  background-color: var(--c-button-outlined-inverted-disabled-background);
-  color: var(--c-button-outlined-inverted-disabled-text);
+  background-color: var(--c-button-outlined-inverted-disabled-background-color);
+  color: var(--c-button-outlined-inverted-disabled-text-color);
 }
 
 // ==========================================================================
 
 // :host(.c-button--active) {
-//   --c-button-text: var(--c-white);
+//   --c-button-text-color: var(--c-white);
 // }
 
-:host(:host:focus:not(:host:focus-visible)) {
+:host(.c-button) a:focus,
+:host(.c-button) button:focus {
   outline: none;
 }
 
-:host(:host:focus-visible) {
-  outline: 2px var(--c-button-outline) solid;
+:host(.c-button) a:focus-visible,
+:host(.c-button) button:focus-visible {
+  outline: 2px var(--c-button-outline-color) solid;
   outline-offset: 2px;
   z-index: 1;
 }
 
-:host([fit]) {
+:host(.c-button--fit) {
   width: 100%;
 }
 
-:host(.small) {
+:host(.c-button--small) {
   --c-button-height: 28px;
 }
 
-:host(.large) {
+:host(.c-button--large) {
   --c-button-height: 52px;
+}
+
+:host(.c-button--fitted) {
+  width: 100%;
 }
 
 ::slotted([slot='icon']) {
@@ -348,9 +471,11 @@ a {
 button,
 a {
   background-color: transparent;
+  border-radius: var(--c-button-border-radius);
   color: currentColor;
   font-family: var(--c-font-family);
   display: inline-grid;
+  place-items: center;
   border: none;
   padding: 0;
   position: relative;
@@ -382,7 +507,7 @@ a {
   }
 }
 
-.c-button {
+.c-button__content {
   $this: &;
 
   border-radius: var(--c-button-border-radius);
@@ -399,7 +524,7 @@ a {
   color: currentColor;
   margin: 0;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   text-align: center;
   font-size: var(--c-button-font-size);
   font-weight: 700;
@@ -407,6 +532,9 @@ a {
   user-select: none;
   min-width: var(--c-button-min-width);
   white-space: nowrap;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 
   * {
     pointer-events: none;
@@ -448,25 +576,13 @@ a {
     width: 100%;
   }
 
-  // &.grouped {
-  //   border-radius: 0;
-  //   white-space: nowrap;
-  //   border: none;
-  //   box-shadow: none;
-  //   flex-grow: 1;
-  // }
-
   &--description {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
-
-    // .c-button__content {
-    //   height: var(--c-button-height);
-    // }
   }
 
-  &__content {
+  &__inner {
     display: flex;
     gap: 8px;
     height: var(--c-button-height);
@@ -486,22 +602,6 @@ a {
   }
 }
 
-.spinner__circle {
-  animation: 2s ease-in-out infinite both circle-animation;
-  display: block;
-  fill: transparent;
-  stroke: var(--c-button-loader-color);
-  stroke-linecap: round;
-  stroke-dasharray: 283;
-  stroke-dashoffset: 280;
-  stroke-width: 10px;
-  transform-origin: 50% 50%;
-}
-
-.fit {
-  width: 100%;
-}
-
 .hide-text {
   color: transparent !important;
 
@@ -518,7 +618,7 @@ a {
   }
 }
 
-.spinner_wrapper {
+.c-button__loader {
   width: 100%;
   position: absolute;
   height: var(--c-button-height);
@@ -527,78 +627,5 @@ a {
 
   &.dense_spinner {
     padding-top: 7px;
-
-    // .spinner {
-    //   max-width: 24px;
-    // }
   }
 }
-
-// .spinner {
-//   animation: 3s linear infinite svg-animation;
-//   max-width: 30px;
-//   position: relative;
-//   height: calc(var(--c-button-height) - 12px);
-// }
-
-// svg.spinner {
-//   fill: var(--c-button-loader-color);
-//   height: var(--c-button-icon-size);
-//   width: var(--c-button-icon-size);
-
-//   circle {
-//       fill: transparent;
-//       stroke: var(--c-button-loader-color);
-//       stroke-width: 2;
-//       stroke-linecap: round;
-//       stroke-dasharray: calc(3.14 * var(--c-button-icon-size));
-//       transform-origin: calc(0.5px * var(--c-button-icon-size)) calc(0.5px * var(--c-button-icon-size)) 0;
-
-//       animation: spinner 2.5s linear infinite;
-//   }
-// }
-
-// @keyframes svg-animation {
-//   0% {
-//     transform: rotateZ(0deg);
-//   }
-//   100% {
-//     transform: rotateZ(360deg);
-//   }
-// }
-
-// @keyframes circle-animation {
-//   0%,
-//   25% {
-//     stroke-dashoffset: 280;
-//     transform: rotate(0);
-//   }
-
-//   50%,
-//   75% {
-//     stroke-dashoffset: 75;
-//     transform: rotate(45deg);
-//   }
-
-//   100% {
-//     stroke-dashoffset: 280;
-//     transform: rotate(360deg);
-//   }
-// }
-
-// @keyframes spinner {
-//   0% {
-//     transform: rotate(0deg);
-//     stroke-dashoffset: calc(0.66 * var(--c-button-icon-size));
-//   }
-
-//   50% {
-//     transform: rotate(720deg);
-//     stroke-dashoffset: calc(3.14 * var(--c-button-icon-size));
-//   }
-
-//   100% {
-//     transform: rotate(1080deg);
-//     stroke-dashoffset: calc(0.66 * var(--c-button-icon-size));
-//   }
-// }

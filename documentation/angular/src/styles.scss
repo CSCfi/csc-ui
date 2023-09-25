@@ -69,19 +69,23 @@ body {
   border-radius: 6px;
 }
 
-// c-checkbox {
-//   --c-checkbox-color: var(--c-secondary-600);
-//   --c-checkbox-hover: rgba(var(--c-secondary-rgb), 0.1);;
-// }
+c-checkbox {
+  --c-checkbox-color: var(--c-secondary-600);
+  --c-checkbox-hover: rgba(var(--c-secondary-rgb), 0.1);
+}
 
 c-loader {
   --c-loader-color: var(--c-secondary-600);
 }
 
-// c-radio-group {
-//   --c-radio-group-color: var(--c-secondary-600);
-//   --c-radio-group-hover: var(--c-secondary-100);
-// }
+c-link {
+  --c-link-color: var(--c-accent-700);
+}
+
+c-radio-group {
+  --c-radio-group-color: var(--c-secondary-600);
+  --c-radio-group-hover: rgba(var(--c-secondary-rgb), 0.1);
+}
 
 c-side-navigation {
   --c-side-navigation-background-color: var(--c-secondary-600);
@@ -145,32 +149,32 @@ c-card-title {
 
 c-button {
   // default
-  --c-button-background: var(--c-secondary-600);
-  --c-button-hover: var(--c-secondary-400);
+  --c-button-background-color: var(--c-secondary-600);
+  --c-button-background-color-hover: var(--c-secondary-400);
 
   // ghost
-  --c-button-ghost-background: var(--c-secondary-200);
-  --c-button-ghost-text: var(--c-secondary-600);
-  --c-button-ghost-hover: var(--c-secondary-100);
+  --c-button-ghost-background-color: var(--c-secondary-200);
+  --c-button-ghost-text-color: var(--c-secondary-600);
+  --c-button-ghost-background-color-hover: var(--c-secondary-100);
 
   // outlined
-  --c-button-outlined-text: var(--c-secondary-600);
-  --c-button-outlined-hover: var(--c-secondary-200);
+  --c-button-outlined-text-color: var(--c-secondary-600);
+  --c-button-outlined-background-color-hover: var(--c-secondary-200);
 
-  --c-button-outlined-inverted-text: var(--c-secondary-400);
-  --c-button-outlined-inverted-hover: var(--c-secondary-600);
+  --c-button-outlined-inverted-text-color: var(--c-secondary-400);
+  --c-button-outlined-inverted-background-color-hover: var(--c-secondary-600);
 
   // danger
-  --c-button-danger-background: var(--c-info-600);
-  --c-button-danger-hover: var(--c-info-400);
+  --c-button-danger-background-color: var(--c-info-600);
+  --c-button-danger-background-color-hover: var(--c-info-400);
 
-  --c-button-danger-inverted-background: var(--c-link-600);
-  --c-button-danger-inverted-hover: var(--c-link-700);
-  --c-button-danger-inverted-text: var(--c-info-600);
+  --c-button-danger-inverted-background-color: var(--c-link-600);
+  --c-button-danger-inverted-background-color-hover: var(--c-link-700);
+  --c-button-danger-inverted-text-color: var(--c-info-600);
 
   // text
-  --c-button-text-text: var(--c-secondary-600);
-  --c-button-text-hover: var(--c-secondary-200);
+  --c-button-text-text-color: var(--c-secondary-600);
+  --c-button-text-background-color-hover: var(--c-secondary-200);
 }
 
 c-tab-buttons {
@@ -185,4 +189,28 @@ c-tab-buttons {
 c-switch {
   --c-switch-active-slider-color: var(--c-secondary-600);
   --c-switch-active-border-color: var(--c-secondary-600);
+}
+
+c-table {
+  --c-table-border-color: var(--c-secondary-200);
+  --c-table-header-color: var(--c-secondary-600);
+  --c-table-row-background-mobile: rgba(var(--c-secondary-rgb), 0.05);
+}
+
+c-login-button {
+  --c-login-button-border-color: var(--c-secondary-200);
+  --c-login-button-outline-color: var(--c-secondary-600);
+  --c-login-button-text-color: var(--c-secondary-800);
+  --c-login-button-title-background-color: rgba(var(--c-secondary-rgb), 0.2);
+}
+
+c-tag {
+  --c-tag-text-color: var(--c-secondary-600);
+  --c-tag-background-color-hover: rgba(var(--c-secondary-rgb), 0.1);
+  --c-tag-background-color-hover-active: var(--c-secondary-400);
+}
+
+c-tab {
+  --c-tab-background-color-hover: var(--c-secondary-100);
+  --c-tab-text-color: var(--c-secondary-600);
 }

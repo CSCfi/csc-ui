@@ -1,5 +1,12 @@
+:host {
+  /**
+   * @prop --c-tabs-border-color: Tabs border color
+   */
+  --c-tabs-border-color: var(--c-tertiary-200);
+}
+
 :host(.c-tabs) {
-  box-shadow: inset 0 -1px 0 0 var(--c-tertiary-200);
+  box-shadow: inset 0 -1px 0 0 var(--c-tabs-border-color);
   display: flex;
   list-style: none;
   margin: 0;

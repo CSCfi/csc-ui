@@ -1,7 +1,14 @@
 :host {
-  --c-tab-hover: var(--c-primary-100);
-  --c-tab-outline: var(--c-primary-600);
-  --c-tab-text: var(--c-primary-600);
+  /**
+   * @prop --c-tab-background-color-hover: Tab hover background color
+   * @prop --c-tab-outline-color: Tab outline color
+   * @prop --c-tab-text-color: Tab text color
+   * @prop --c-tab-active-border-color: Active tab bottom border color
+   */
+  --c-tab-background-color-hover: var(--c-primary-100);
+  --c-tab-outline-color: var(--c-tab-text-color);
+  --c-tab-text-color: var(--c-primary-600);
+  --c-tab-active-border-color: var(--c-tab-text-color);
 
   display: block;
   flex-grow: 1;
@@ -14,7 +21,7 @@
 
 :host(:focus-visible) {
   border-radius: 4px;
-  outline: 2px var(--c-tab-outline) solid;
+  outline: 2px var(--c-tab-outline-color) solid;
   outline-offset: 2px;
 }
 
@@ -28,7 +35,7 @@ slot {
 
 :host(.c-tab) {
   box-shadow: inset 0 0 0 transparent;
-  color: var(--c-tab-text);
+  color: var(--c-tab-text-color);
   cursor: pointer;
   display: block;
   font-weight: 600;
@@ -41,11 +48,11 @@ slot {
 }
 
 :host(.c-tab:hover) {
-  background-color: var(--c-tab-hover);
+  background-color: var(--c-tab-background-color-hover);
 }
 
 :host(.c-tab--active) {
-  box-shadow: inset 0 -15px 0 -12px var(--c-tab-outline);
+  box-shadow: inset 0 -3px 0 0 var(--c-tab-active-border-color);
 }
 
 :host(.c-tab--active:hover) {

@@ -23,52 +23,42 @@
     </div>
 
     <div *ngIf="activeTab === 'Attributes'">
-      <app-viewer-attributes [data]="componentData"></app-viewer-attributes>
+      <app-viewer-attributes *ngIf="componentData?.props.length" [data]="componentData"></app-viewer-attributes>
 
       <div *ngFor="let child of componentData?.children">
-        <div *ngIf="child?.props.length">
-          <app-viewer-attributes [data]="child"></app-viewer-attributes>
-        </div>
+        <app-viewer-attributes *ngIf="child?.props.length" [data]="child"></app-viewer-attributes>
       </div>
     </div>
 
     <div *ngIf="activeTab === 'Methods'">
-      <app-viewer-methods [data]="componentData"></app-viewer-methods>
+      <app-viewer-methods *ngIf="componentData?.methods.length" [data]="componentData"></app-viewer-methods>
 
       <div *ngFor="let child of componentData?.children">
-        <div *ngIf="child?.methods.length">
-          <app-viewer-methods [data]="child"></app-viewer-methods>
-        </div>
+        <app-viewer-methods *ngIf="child?.methods.length" [data]="child"></app-viewer-methods>
       </div>
     </div>
 
     <div *ngIf="activeTab === 'Slots'">
-      <app-viewer-slots [data]="componentData"></app-viewer-slots>
+      <app-viewer-slots *ngIf="componentData.slots.length" [data]="componentData"></app-viewer-slots>
 
       <div *ngFor="let child of componentData?.children">
-        <div *ngIf="child?.slots.length">
-          <app-viewer-slots [data]="child"></app-viewer-slots>
-        </div>
+        <app-viewer-slots *ngIf="child?.slots.length" [data]="child"></app-viewer-slots>
       </div>
     </div>
 
     <div *ngIf="activeTab === 'Events'">
-      <app-viewer-events [data]="componentData"></app-viewer-events>
+      <app-viewer-events *ngIf="componentData.events.length" [data]="componentData"></app-viewer-events>
 
       <div *ngFor="let child of componentData?.children">
-        <div *ngIf="child?.events.length">
-          <app-viewer-events [data]="child"></app-viewer-events>
-        </div>
+        <app-viewer-events *ngIf="child?.events.length" [data]="child"></app-viewer-events>
       </div>
     </div>
 
     <div *ngIf="activeTab === 'Styles'">
-      <app-viewer-styles [data]="componentData"></app-viewer-styles>
+      <app-viewer-styles *ngIf="componentData?.styles.length" [data]="componentData"></app-viewer-styles>
 
       <div *ngFor="let child of componentData?.children">
-        <div *ngIf="child?.styles.length">
-          <app-viewer-styles [data]="child"></app-viewer-styles>
-        </div>
+        <app-viewer-styles *ngIf="child?.styles.length" [data]="child"></app-viewer-styles>
       </div>
     </div>
   </div>

@@ -171,25 +171,19 @@ export class CButton {
   }
 
   render() {
-    // const SPINNER_SMALL: SVGImageElement = (
-    //   <svg class="spinner">
-    //     <circle {...iconParams}></circle>
-    //   </svg>
-    // );
-
     let svg: SVGImageElement;
 
     const contentClasses = {
-      'c-button': true,
-      'c-button--description': this._containerhasDescriptionSlot,
-      'c-button--fitted': !!this.fit,
-      'c-button--large': this.size === 'large',
-      'c-button--no-radius': !!this.noRadius,
-      'c-button--small': this.size === 'small',
+      'c-button__content': true,
+      'c-button__content--description': this._containerhasDescriptionSlot,
+      'c-button__content--fitted': !!this.fit,
+      'c-button__content--large': this.size === 'large',
+      'c-button__content--no-radius': !!this.noRadius,
+      'c-button__content--small': this.size === 'small',
     };
 
     const innerClasses = {
-      'c-button__content': true,
+      'c-button__content__inner': true,
       'hide-text': this.loading,
     };
 
@@ -200,15 +194,23 @@ export class CButton {
     };
 
     const hostClasses = {
+      'c-button': true,
+      'c-button--ghost': this.ghost,
+      'c-button--outlined': this.outlined,
+      'c-button--danger': this.danger,
+      'c-button--disabled': this.disabled,
+      'c-button--inverted': this.inverted,
+      'c-button--text': this.text,
+      'c-button--fitted': !!this.fit,
+      'c-button--description': !!this._containerhasDescriptionSlot,
       'c-button--active': this.grouped && !this.outlined,
-      'no-radius': !!this.noRadius,
-      [this.size]: true,
-      description: !!this._containerhasDescriptionSlot,
+      'c-button--no-radius': !!this.noRadius,
+      [`c-button--${this.size}`]: true,
     };
 
     const descriptionSlotClasses = {
-      'c-button__description': this._containerhasDescriptionSlot,
-      'c-button__description--loading': this.loading,
+      'c-button__content__description': this._containerhasDescriptionSlot,
+      'c-button__content__description--loading': this.loading,
     };
 
     const Tag = !!this.href ? 'a' : 'button';
@@ -220,7 +222,6 @@ export class CButton {
     const attributes = {
       id: this.hostId,
       class: buttonClasses,
-      tabindex: '-1',
       disabled: this.disabled,
       onClick: this._onClick,
     };
@@ -248,25 +249,22 @@ export class CButton {
     };
 
     return (
-      <Host
-        class={hostClasses}
-        tabindex={!!this.disabled ? '-1' : '0'}
-        {...hostAttributes}
-      >
+      <Host class={hostClasses} {...hostAttributes}>
         <Tag {...attributes} {...linkAttributes}>
           <div
             class={contentClasses}
             ref={(el) => (this._container = el as HTMLDivElement)}
           >
-            {this.loading && (
-              <div class="spinner_wrapper">
-                <c-spinner
-                  color="var(--c-button-loader-color)"
-                  size={spinnerSizes[this.size]}
-                />
-              </div>
-            )}
             <div class={innerClasses}>
+              {this.loading && (
+                <div class="c-button__loader">
+                  <c-spinner
+                    color="var(--c-button-loader-color)"
+                    size={spinnerSizes[this.size]}
+                  />
+                </div>
+              )}
+
               {!this.iconEnd && renderIcon}
 
               {svg}
