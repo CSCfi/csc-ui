@@ -1,8 +1,12 @@
 :host {
   /**
    * @prop --c-tabs-border-color: Tabs border color
+   * @prop --c-tabs-indicator-color: Tab indicator color
    */
   --c-tabs-border-color: var(--c-tertiary-200);
+  --c-tabs-indicator-color: var(--c-primary-600);
+
+  --_transition-speed: 1ms;
 }
 
 :host(.c-tabs) {
@@ -11,8 +15,28 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 :host(.c-tabs--borderless) {
   box-shadow: none;
+}
+
+:host(.c-tabs.c-tabs--initialized)::after {
+  opacity: 1;
+}
+
+:host(.c-tabs)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  scale: var(--c-tabs-indicator-width, 0.125) 1;
+  opacity: 0.01;
+  translate: var(--c-tabs-indicator-left, 0) 0;
+  transform-origin: left;
+  transition: scale var(--_transition-speed), translate var(--_transition-speed);
+  background: var(--c-tabs-indicator-color);
 }

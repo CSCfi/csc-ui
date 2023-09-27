@@ -1,0 +1,27 @@
+:host {
+  /**
+   * @prop --c-select-active-color: Active text field color
+   * @prop --c-select-inactive-color: Inactive text field color
+   * @prop --c-select-background-color: Inactive text field background color
+   * @prop --c-select-text-color: Text field text color
+   * @prop --c-select-placeholder-color:Text field placeholder color
+   * @prop --c-select-option-background-color: Select option background color
+   * @prop --c-select-option-background-color-hover: Select option hover background color
+   */
+  --c-select-active-color: var(--c-primary-600);
+  --c-select-inactive-color: var(--c-tertiary-600);
+  --c-select-background-color: var(--c-transparent);
+  --c-select-text-color: var(--c-text-body);
+  --c-select-placeholder-color: var(--c-tertiary-500);
+  --c-select-option-background-color: var(--c-white);
+  --c-select-option-background-color-hover: var(--c-primary-100);
+
+  --c-input-text-color: var(--c-select-active-color);
+  --c-input-active-color: var(--c-select-active-color);
+  --c-input-inactive-color: var(--c-select-inactive-color);
+  --c-input-background-color: var(--c-select-background-color);
+  --c-input-text-color: var(--c-select-text-color);
+  --c-input-placeholder-color: var(--c-select-placeholder-color);
+}
+
+@import '../c-input/c-input-menu.scss';

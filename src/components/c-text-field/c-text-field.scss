@@ -1,4 +1,38 @@
+:root, :host {
+  /**
+   * @prop --c-text-field-active-color: Active text field color
+   * @prop --c-text-field-inactive-color: Inactive text field color
+   * @prop --c-text-field-background-color: Inactive text field background color
+   * @prop --c-text-field-text-color: Text field text color
+   * @prop --c-text-field-placeholder-color:Text field placeholder color
+   * @prop --c-text-field-shadow-active-color: Shadow text field active color
+   * @prop --c-text-field-shadow-background-color: Shadow text field background color
+   * @prop --c-text-field-shadow-text-color: Shadow text field text color
+   * @prop --c-text-field-shadow-placeholder-color: Shadow text field placeholder color
+   */
+  --c-text-field-active-color: var(--c-primary-600);
+  --c-text-field-inactive-color: var(--c-tertiary-600);
+  --c-text-field-background-color: var(--c-transparent);
+  --c-text-field-text-color: var(--c-text-body);
+  --c-text-field-placeholder-color: var(--c-tertiary-500);
+  --c-text-field-shadow-active-color: var(--c-text-field-active-color);
+  --c-text-field-shadow-background-color: var(--c-white);
+  --c-text-field-shadow-text-color: var(--c-text-field-text-color);
+  --c-text-field-shadow-placeholder-color: var(--c-text-field-placeholder-color);
+}
+
 .c-input {
+  --c-input-color: var(--c-text-field-active-color);
+  --c-input-active-color: var(--c-text-field-active-color);
+  --c-input-inactive-color: var(--c-text-field-inactive-color);
+  --c-input-background-color: var(--c-text-field-background-color);
+  --c-input-text-color: var(--c-text-field-text-color);
+  --c-input-placeholder-color: var(--c-text-field-placeholder-color);
+  --c-input-shadow-active-color: var(--c-text-field-shadow-active-color);
+  --c-input-shadow-background-color: var(--c-text-field-shadow-background-color);
+  --c-input-shadow-text-color: var(--c-text-field-shadow-text-color);
+  --c-input-shadow-placeholder-color: var(--c-text-field-shadow-placeholder-color);
+
   &__password-toggle,
   &__date-toggle {
     cursor: pointer;

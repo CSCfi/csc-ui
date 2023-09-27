@@ -5,13 +5,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property   | Attribute  | Description              | Type      | Default |
-| ---------- | ---------- | ------------------------ | --------- | ------- |
-| `circular` | `circular` | Create a circular ripple | `boolean` | `false` |
-
-
 ## Methods
 
 ### `createRipple(event: MouseEvent, parent: HTMLElement, center?: boolean) => Promise<void>`

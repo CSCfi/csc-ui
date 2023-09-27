@@ -523,6 +523,10 @@
           "description": "Show a badge on top of the icon"
         },
         {
+          "name": "danger",
+          "description": "Danger variant of the button"
+        },
+        {
           "name": "disabled",
           "description": "Disable the button"
         },
@@ -1205,12 +1209,7 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [
-        {
-          "name": "circular",
-          "description": "Create a circular ripple"
-        }
-      ]
+      "attributes": []
     },
     {
       "name": "c-row",

@@ -29,9 +29,10 @@
 
 ## CSS Custom Properties
 
-| Name                    | Description       |
-| ----------------------- | ----------------- |
-| `--c-tabs-border-color` | Tabs border color |
+| Name                       | Description         |
+| -------------------------- | ------------------- |
+| `--c-tabs-border-color`    | Tabs border color   |
+| `--c-tabs-indicator-color` | Tab indicator color |
 
 
 ----------------------------------------------

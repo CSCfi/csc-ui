@@ -210,10 +210,7 @@ export class CCheckbox {
                 )}
               </svg>
 
-              <c-ripple
-                ref={(el) => (this._rippleElement = el)}
-                circular
-              ></c-ripple>
+              <c-ripple ref={(el) => (this._rippleElement = el)}></c-ripple>
             </div>
 
             <div class="c-checkbox__label-content">

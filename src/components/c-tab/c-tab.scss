@@ -52,7 +52,7 @@ slot {
 }
 
 :host(.c-tab--active) {
-  box-shadow: inset 0 -3px 0 0 var(--c-tab-active-border-color);
+  // box-shadow: inset 0 -3px 0 0 var(--c-tab-active-border-color);
 }
 
 :host(.c-tab--active:hover) {

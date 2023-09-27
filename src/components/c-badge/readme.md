@@ -5,6 +5,15 @@
 <!-- Auto Generated Below -->
 
 
+## CSS Custom Properties
+
+| Name                         | Description            |
+| ---------------------------- | ---------------------- |
+| `--c-badge-background-color` | Badge background color |
+| `--c-badge-border-color`     | Badge border color     |
+| `--c-badge-text-color`       | Badge text color       |
+
+
 ## Dependencies
 
 ### Used by

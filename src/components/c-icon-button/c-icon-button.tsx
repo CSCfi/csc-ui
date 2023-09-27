@@ -16,6 +16,11 @@ export class CIconButton {
   @Prop() badge: string;
 
   /**
+   * Danger variant of the button
+   */
+  @Prop() danger = false;
+
+  /**
    * Text variant of the button
    */
   @Prop() text = false;
@@ -62,6 +67,7 @@ export class CIconButton {
     return {
       'c-icon-button': true,
       'c-icon-button--disabled': !!this.disabled,
+      'c-icon-button--danger': !!this.danger,
       'c-icon-button--text': !!this.text,
       'c-icon-button--ghost': !!this.ghost,
       'c-icon-button--outlined': !!this.outlined,
@@ -94,10 +100,7 @@ export class CIconButton {
 
           {this.badge && this._renderBadge()}
 
-          <c-ripple
-            ref={(el) => (this._rippleElement = el)}
-            circular
-          ></c-ripple>
+          <c-ripple ref={(el) => (this._rippleElement = el)}></c-ripple>
         </button>
       </Host>
     );

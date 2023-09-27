@@ -14,7 +14,7 @@
     <tr *ngFor="let prop of data?.props">
       <td>
         {{ prop.attr || prop.name }}
-        <div class="attribute-tags">
+        <div class="attribute-tags mt-2">
           <c-status type="error" *ngIf="prop.deprecation">Deprecated</c-status>
           <c-status type="info" *ngIf="prop.optional">Optional</c-status>
           <c-status *ngIf="prop.required">Required</c-status>
@@ -27,7 +27,7 @@
               {{ type.value }}
             </a>
 
-            <span class="mx-1" *ngIf="i > 0">|</span>
+            <span class="mx-1" *ngIf="i > 0 ">|</span>
 
             <span *ngIf="!type.type">{{ type.value }}</span>
           </div>

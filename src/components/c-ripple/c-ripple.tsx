@@ -1,4 +1,4 @@
-import { Component, Element, Host, Method, Prop, h } from '@stencil/core';
+import { Component, Element, Host, Method, h } from '@stencil/core';
 
 /**
  * @parent None
@@ -10,12 +10,6 @@ import { Component, Element, Host, Method, Prop, h } from '@stencil/core';
 })
 export class CRipple {
   @Element() el: HTMLCRippleElement;
-
-  /**
-   *Create a circular ripple
-   *
-   */
-  @Prop() circular = false;
 
   private _rippleElement: HTMLDivElement;
 
@@ -31,7 +25,10 @@ export class CRipple {
     const height = parent.offsetHeight;
     const rect = (event.target as HTMLElement).getBoundingClientRect();
 
-    const maxDimension = Math.max(parent.offsetWidth, parent.offsetHeight);
+    const maxDimension = this._calculateHeight(
+      Math.max(parent.offsetWidth, parent.offsetHeight),
+    );
+
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
@@ -65,13 +62,15 @@ export class CRipple {
     }, 500);
   }
 
-  render() {
-    const props = {
-      circular: this.circular,
-    };
+  private _calculateHeight(height: number) {
+    const radius = (height / 2) * Math.sqrt(2);
 
+    return radius * 2;
+  }
+
+  render() {
     return (
-      <Host {...props} aria-hidden="true">
+      <Host aria-hidden="true">
         <div ref={(el) => (this._rippleElement = el)} class="c-ripple" />
       </Host>
     );

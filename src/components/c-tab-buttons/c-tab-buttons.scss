@@ -1,21 +1,38 @@
 :host {
-  --c-tab-buttons-background-active: var(--c-primary-600);
-  --c-tab-buttons-hover-active: var(--c-primary-400);
-  --c-tab-buttons-text-active: var(--c-white);
+  /**
+   * @prop --c-tab-buttons-active-background-color: Active tab button background color
+   * @prop --c-tab-buttons-active-background-color-hover: Active tab button hover background color
+   * @prop --c-tab-buttons-active-text-color: Active tab button text color
+   */
+  --c-tab-buttons-active-background-color: var(--c-primary-600);
+  --c-tab-buttons-active-background-color-hover: var(--c-primary-400);
+  --c-tab-buttons-active-text-color: var(--c-white);
 
-  --c-tab-buttons-background: var(--c-white);
-  --c-tab-buttons-hover: var(--c-primary-200);
-  --c-tab-buttons-text: var(--c-primary-600);
-  --c-tab-buttons-border: var(--c-primary-600);
+  /**
+   * @prop --c-tab-buttons-background-color: Tab button background color
+   * @prop --c-tab-buttons-background-color-hover: Tab button hover background color
+   * @prop --c-tab-buttons-text-color: Tab button text color
+   * @prop --c-tab-buttons-border-color: Tab button border color
+   */
+  --c-tab-buttons-background-color: var(--c-white);
+  --c-tab-buttons-background-color-hover: var(--c-primary-200);
+  --c-tab-buttons-text-color: var(--c-primary-600);
+  --c-tab-buttons-border-color: var(--c-primary-600);
 
-  --c-tab-buttons-disabled-border: var(--c-tertiary-400);
+  /**
+   * @prop --c-tab-buttons-background-color: Disabled tab buttons border color
+   */
+   --c-tab-buttons-disabled-border: var(--c-tertiary-400);
 
+  /**
+   * @prop --c-tab-buttons-border-radius: Tab buttons border radius
+   */
   --c-tab-buttons-border-radius: 4px;
 
   ::slotted(c-button) {
-    --c-button-background: var(--c-tab-buttons-background-active);
-    --c-button-hover: var(--c-tab-buttons-hover-active);
-    --c-button-text: var(--c-tab-buttons-text-active);
+    --c-button-background-color: var(--c-tab-buttons-active-background-color) !important;
+    --c-button-background-color-hover: var(--c-tab-buttons-active-background-color-hover) !important;
+    --c-button-text-color: var(--c-tab-buttons-active-text-color) !important;
 
     --c-button-border-radius: 0;
     --c-button-min-width: auto;
@@ -24,17 +41,18 @@
     flex-grow: 1;
   }
 
-  ::slotted(c-button[outlined]) {
-    --c-button-outlined-background: var(--c-tab-buttons-background);
-    --c-button-outlined-hover: var(--c-tab-buttons-hover);
-    --c-button-outlined-text: var(--c-tab-buttons-text);
-    --c-button-outlined-border: var(--c-tab-buttons-border);
+  ::slotted(c-button.c-button--outlined) {
+    --c-button-outlined-background-color: var(--c-tab-buttons-background-color) !important;
+    --c-button-outlined-background-color-hover: var(--c-tab-buttons-background-color-hover) !important;
+    --c-button-outlined-text-color: var(--c-tab-buttons-text-color) !important;
+    --c-button-outlined-border-color: var(--c-tab-buttons-border-color) !important;
 
     box-shadow: none;
 
     &::before,
     &::after {
       background-color: #fff;
+      border-radius: inherit;
       content: '';
       height: 100%;
       left: 0;
@@ -46,7 +64,7 @@
     }
 
     &:hover {
-      background-color: var(--c-tab-button-background);
+      background-color: var(--c-tab-button-background-color);
     }
   }
 
@@ -64,15 +82,15 @@
 
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 0 0 2px var(--c-tab-buttons-border);
+  box-shadow: 0 0 0 2px var(--c-tab-buttons-border-color);
   margin: 2px;
   border-radius: var(--c-tab-buttons-border-radius);
-  background-color: var(--c-tab-buttons-border);
+  background-color: var(--c-tab-buttons-border-color);
   gap: 2px;
 }
 
 :host(.disabled) {
-  --c-tab-buttons-border: var(--c-tab-buttons-disabled-border) !important;
+  --c-tab-buttons-border-color: var(--c-tab-buttons-disabled-border) !important;
 
   pointer-events: none;
 }
@@ -83,7 +101,7 @@
   }
 
   ::slotted(c-button:focus-visible) {
-    outline: 2px var(--c-tab-buttons-border) solid;
+    outline: 2px var(--c-tab-buttons-border-color) solid;
     outline-offset: 4px;
     z-index: 1;
   }

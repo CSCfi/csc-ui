@@ -1,4 +1,12 @@
 :host {
+  --c-icon-color: currentColor;
+
   display: inline-flex;
   align-items: center;
+
+  svg {
+    path {
+      fill: var(--c-icon-color);
+    }
+  }
 }

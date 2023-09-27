@@ -1,5 +1,15 @@
 :root, :host {
-  --c-input-color: var(--c-primary-600);
+  --c-input-active-color: var(--c-primary-600);
+  --c-input-inactive-color: var(--c-tertiary-600);
+  --c-input-background-color: var(--c-transparent);
+  --c-input-text-color: var(--c-text-body);
+  --c-input-placeholder-color: var(--c-tertiary-500);
+  --c-input-shadow-active-color: var(--c-input-active-color);
+  --c-input-shadow-background-color: var(--c-white);
+  --c-input-shadow-text-color: var(--c-input-text-color);
+  --c-input-shadow-placeholder-color: var(--c-input-placeholder-color);
+
+  --c-input-error-color: var(--c-error-600);
 }
 
 .visuallyhidden {
@@ -20,6 +30,7 @@
   --c-input-border-width: 1px;
 
   align-items: flex-start;
+  border-radius: 4px;
   display: flex;
   flex: 1 1 auto;
   font-family: var(--c-font-family);
@@ -27,42 +38,34 @@
   letter-spacing: normal;
   max-width: 100%;
   text-align: left;
-  border-radius: 4px;
 
   input,
   select,
   textarea {
-    margin: 0;
+    background: none;
     border: 0;
-    padding: 0;
     display: inline-block;
+    font-family: var(--c-font-family);
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
     vertical-align: middle;
     white-space: normal;
-    background: none;
-    line-height: 1;
-
-    /* Browsers have different default form fonts */
-    font-size: 16px;
-    font-family: var(--c-font-family);
   }
 
   input,
   textarea {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
   }
 
   input[type='checkbox'],
   input[type='radio'],
   select {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
 
   input[type='search'] {
-    -webkit-appearance: textfield;
     appearance: textfield;
     box-sizing: content-box;
   }
@@ -92,7 +95,7 @@
   textarea {
     background-color: transparent;
     border: none;
-    color: rgba(0, 0, 0, 0.87);
+    color: var(--c-input-text-color);
     flex: 1 1 auto;
     font-family: var(--c-font-family);
     font-size: 16px;
@@ -175,11 +178,12 @@
       white-space: nowrap;
 
       &.active {
+        color: var(--c-input-active-color);
         transform: translateY(-18px) scale(0.75);
       }
 
       span {
-        color: var(--c-error-600);
+        color: var(--c-input-error-color);
       }
     }
   }
@@ -189,8 +193,9 @@
   }
 
   fieldset {
+    background-color: var(--c-input-background-color);
     border-collapse: collapse;
-    border-color: currentColor;
+    border-color: var(--c-input-active-color);
     border-radius: inherit;
     border-style: solid;
     border-width: var(--c-input-border-width);
@@ -225,13 +230,28 @@
   &--shadow {
     #{$this} {
       &__slot {
-        background: var(--c-white);
+        background-color: var(--c-input-shadow-background-color);
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
+        input,
+        textarea {
+          color: var(--c-input-shadow-text-color);
+        }
+
         &:focus-within {
-          outline: 2px var(--c-input-color) solid;
+          outline: 2px var(--c-input-active-color) solid;
+
+          c-icon {
+            --c-icon-color: var(--c-input-shadow-active-color) !important;
+          }
         }
       }
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--c-input-shadow-placeholder-color);
+      opacity: 1;
     }
   }
 
@@ -240,7 +260,7 @@
     textarea,
     fieldset,
     label {
-      --c-error-600: var(--c-tertiary-500);
+      --c-input-error-color: var(--c-tertiary-500);
 
       color: var(--c-tertiary-500);
     }
@@ -255,7 +275,7 @@
   }
 
   ::placeholder {
-    color: var(--c-tertiary-500);
+    color: var(--c-input-placeholder-color);
     opacity: 1;
   }
 
@@ -263,7 +283,7 @@
   &:not(.c-input--disabled):active {
     --c-input-border-width: 2px;
 
-    color: var(--c-input-color);
+    color: var(--c-input-active-color);
 
     label {
       transform: translateX(0px) translateY(-18px) scale(0.75);
@@ -275,10 +295,10 @@
   }
 
   &--error {
-    color: var(--c-error-600);
+    color: var(--c-input-error-color);
 
     &:focus-within {
-      color: var(--c-error-600);
+      color: var(--c-input-error-color);
     }
   }
 }

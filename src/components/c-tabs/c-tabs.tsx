@@ -37,6 +37,12 @@ export class CTabs {
 
   @Element() el: HTMLCTabsElement;
 
+  private _initialized = false;
+
+  private _resizeObserver: ResizeObserver;
+
+  private _debounce = null;
+
   @Watch('value')
   onExternalValueChange() {
     this._handleActiveTab();
@@ -90,7 +96,13 @@ export class CTabs {
   }
 
   componentDidLoad() {
-    this._handleActiveTab();
+    this._observer.observe(this.el);
+
+    this._resizeObserver = new ResizeObserver(() => {
+      this._handleResize();
+    });
+
+    this._resizeObserver.observe(this.el);
   }
 
   get tabs() {
@@ -107,13 +119,38 @@ export class CTabs {
     return this.tabs.filter((tab) => !tab.disabled).map((tab) => tab.value);
   }
 
+  private _observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this._handleActiveTab();
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 1 },
+  );
+
   private _getTabIndex(value: string | number) {
     return this.availableValues.findIndex((tab) => tab === value);
+  }
+
+  private _setIndicatorLeft(value: number) {
+    this.el.style.setProperty('--c-tabs-indicator-left', `${value}px`);
+  }
+
+  private _setIndicatorWidth(value: number) {
+    this.el.style.setProperty('--c-tabs-indicator-width', value.toString());
   }
 
   private _handleActiveTab(isUserAction = false) {
     requestAnimationFrame(() => {
       let position = 0;
+
+      const oldTab =
+        (this.el.querySelector('[aria-selected="true"]') as HTMLCTabElement) ??
+        this.tabs[0];
 
       this.tabs.forEach((tab: HTMLCTabElement) => {
         if (!tab.disabled) {
@@ -129,10 +166,71 @@ export class CTabs {
           tab.setsize = this.availableValues.length;
         }
 
+        if (isActive) {
+          this._moveIndicator(oldTab, tab);
+        }
+
         if (isActive && isUserAction) {
           tab.focus();
         }
       });
+    });
+  }
+
+  private _handleResize() {
+    if (this._debounce !== null) {
+      clearTimeout(this._debounce);
+      this._debounce = null;
+    }
+
+    this._debounce = setTimeout(() => {
+      this._handleActiveTab();
+    }, 200);
+  }
+
+  private _moveIndicator(oldTab: HTMLCTabElement, newTab: HTMLCTabElement) {
+    requestAnimationFrame(() => {
+      if (this._initialized) {
+        this.el.style.setProperty('--_transition-speed', '200ms');
+      }
+
+      const newTabWidth = newTab.offsetWidth / this.el.offsetWidth;
+
+      const newTabPosition = oldTab.compareDocumentPosition(newTab);
+
+      let transitionWidth = 0;
+
+      // if the new tab is to the right
+      if (newTabPosition === 4) {
+        transitionWidth =
+          newTab.offsetLeft + newTab.offsetWidth - oldTab.offsetLeft;
+      } else {
+        // if the tab is to the left
+        transitionWidth =
+          oldTab.offsetLeft + oldTab.offsetWidth - newTab.offsetLeft;
+
+        this._setIndicatorLeft(newTab.offsetLeft);
+      }
+
+      this._setIndicatorWidth(transitionWidth / this.el.offsetWidth);
+
+      const onTransitionEnd = (event) => {
+        if (event.propertyName !== 'scale') return;
+
+        this._setIndicatorLeft(newTab.offsetLeft);
+
+        this._setIndicatorWidth(newTabWidth);
+
+        this.el.removeEventListener('transitionend', onTransitionEnd);
+
+        if (!this._initialized) {
+          this.el.classList.add('c-tabs--initialized');
+        }
+
+        this._initialized = true;
+      };
+
+      this.el.addEventListener('transitionend', onTransitionEnd);
     });
   }
 

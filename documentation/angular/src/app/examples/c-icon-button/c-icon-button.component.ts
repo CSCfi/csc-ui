@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { mdiStar } from '@mdi/js';
+import { mdiStar, mdiFire } from '@mdi/js';
 @Component({
   selector: 'app-c-icon-button',
   templateUrl: './c-icon-button.component.html',
@@ -7,6 +7,8 @@ import { mdiStar } from '@mdi/js';
 })
 export class CIconButtonComponent implements OnInit {
   mdiStar = mdiStar;
+
+  mdiAlert = mdiFire;
 
   constructor() {}
 

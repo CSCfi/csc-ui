@@ -1,4 +1,7 @@
 :host {
+  --c-message-error-color: var(--c-error-600);
+  --c-message-hint-color: var(--c-text-system);
+
   display: block;
   line-height: 1;
   padding: 0 12px;
@@ -24,11 +27,11 @@
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.5, 1);
 
     &--hint {
-      color: var(--c-text-system);
+      color: var(--c-message-hint-color);
     }
 
     &--error {
-      color: var(--c-error-600);
+      color: var(--c-message-error-color);
     }
 
     span {

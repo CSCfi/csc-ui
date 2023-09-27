@@ -461,6 +461,10 @@ export namespace Components {
          */
         "badge": string;
         /**
+          * Danger variant of the button
+         */
+        "danger": boolean;
+        /**
           * Disable the button
          */
         "disabled": boolean;
@@ -996,10 +1000,6 @@ export namespace Components {
      * @parent None
      */
     interface CRipple {
-        /**
-          * Create a circular ripple
-         */
-        "circular": boolean;
         /**
           * Creates a ripple
          */
@@ -2769,6 +2769,10 @@ declare namespace LocalJSX {
          */
         "badge"?: string;
         /**
+          * Danger variant of the button
+         */
+        "danger"?: boolean;
+        /**
           * Disable the button
          */
         "disabled"?: boolean;
@@ -3343,10 +3347,6 @@ declare namespace LocalJSX {
      * @parent None
      */
     interface CRipple {
-        /**
-          * Create a circular ripple
-         */
-        "circular"?: boolean;
     }
     /**
      * Generic flex row component

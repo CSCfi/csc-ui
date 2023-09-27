@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CTabsComponent {
   // @example-start|angular
-  tab = 'tab1';
+  tab = 'tab2';
 
   onTabChange() {
     this.tab = 'tab2';

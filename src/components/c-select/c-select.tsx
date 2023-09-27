@@ -20,7 +20,7 @@ import { CSelectItem } from '../../types';
  */
 @Component({
   tag: 'c-select',
-  styleUrl: '../c-input/c-input-menu.scss',
+  styleUrl: 'c-select.scss',
   shadow: true,
 })
 export class CSelect {

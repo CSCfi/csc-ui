@@ -1,24 +1,31 @@
 :host {
-  --c-badge-background: var(--c-warning-600);
+  /**
+   * @prop --c-badge-background-color: Badge background color
+   * @prop --c-badge-text-color: Badge text color
+   * @prop --c-badge-border-color: Badge border color
+   */
+  --c-badge-background-color: var(--c-warning-600);
   --c-badge-color: var(--c-white);
-  --c-badge-outline: var(--c-white);
+  --c-badge-border-color: var(--c-white);
 
   display: flex;
   align-items: center;
   justify-items: center;
-  background-color: var(--c-badge-background);
+  background-color: var(--c-badge-background-color);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 16px;
   height: 16px;
-  color: var(--c-badge-color);
+  color: var(--c-badge-text-color);
   position: absolute;
   right: -6px;
   font-size: 12px;
-  box-shadow: 0 0 0 2px var(--c-badge-outline);
+  box-shadow: 0 0 0 2px var(--c-badge-border-color);
   top: -6px;
   padding: 0 4px;
   line-height: 1;
+  z-index: 2;
+  pointer-events: none;
 }

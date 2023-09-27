@@ -191,10 +191,7 @@ export class CRadioGroup {
         >
           <span class="selection"></span>
 
-          <c-ripple
-            ref={(el) => (this._rippleElements[index] = el)}
-            circular
-          ></c-ripple>
+          <c-ripple ref={(el) => (this._rippleElements[index] = el)}></c-ripple>
         </span>
 
         <div class="c-radio__label">{item.label}</div>
