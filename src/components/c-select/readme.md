@@ -44,6 +44,19 @@
 | `"Default slot"` | Use c-option elements only |
 
 
+## CSS Custom Properties
+
+| Name                                       | Description                          |
+| ------------------------------------------ | ------------------------------------ |
+| `--c-select-active-color`                  | Active text field color              |
+| `--c-select-background-color`              | Inactive text field background color |
+| `--c-select-inactive-color`                | Inactive text field color            |
+| `--c-select-option-background-color`       | Select option background color       |
+| `--c-select-option-background-color-hover` | Select option hover background color |
+| `--c-select-placeholder-color`             | Text field placeholder color         |
+| `--c-select-text-color`                    | Text field text color                |
+
+
 ## Dependencies
 
 ### Depends on

@@ -25,6 +25,18 @@
 | `completion`  | Run on completion - returns the current value | `CustomEvent<string>` |
 
 
+## CSS Custom Properties
+
+| Name                                | Description                   |
+| ----------------------------------- | ----------------------------- |
+| `--c-otp-input-border-color`        | OTP input border color        |
+| `--c-otp-input-border-color-active` | Active OTP input border color |
+| `--c-otp-input-font-size`           | OTP input font size           |
+| `--c-otp-input-height`              | OTP input height              |
+| `--c-otp-input-text-color`          | OTP input text color          |
+| `--c-otp-input-width`               | OTP input width               |
+
+
 ## Dependencies
 
 ### Depends on

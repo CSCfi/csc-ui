@@ -288,3 +288,12 @@ c-select {
   --c-select-text-color: var(--c-secondary-600);
   // --c-select-placeholder-color: var(--c-tertiary-500);
 }
+
+c-otp-input {
+  --c-otp-input-border-color: var(--c-secondary-600);
+  --c-otp-input-border-color-active: var(--c-accent-600);
+  --c-otp-input-text-color: var(--c-warning-600);
+  --c-otp-input-height: 96px;
+  --c-otp-input-width: 72px;
+  --c-otp-input-font-size: 42px;
+}
