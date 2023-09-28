@@ -26,15 +26,20 @@ export class CLoader {
    */
   @Prop() size = 48;
 
+  /**
+   * Width of the loader
+   */
+  @Prop() width = 4;
+
   @Element() el: HTMLCLoaderElement;
 
   @Watch('hide')
   onElementHide(hide) {
-    this.el.classList.toggle('active', !hide);
+    requestAnimationFrame(() => this.el.classList.toggle('active', !hide));
   }
 
   componentDidLoad() {
-    this.el.classList.toggle('active', !this.hide);
+    requestAnimationFrame(() => this.el.classList.toggle('active', !this.hide));
   }
 
   render() {
@@ -47,14 +52,11 @@ export class CLoader {
     return (
       <Host>
         <div class="c-loader" style={styles}>
-          <svg class="c-loader__loader" viewBox="25 25 50 50">
-            <circle
-              class="c-loader__loader-path"
-              cx="50"
-              cy="50"
-              r="20"
-            ></circle>
-          </svg>
+          <c-spinner
+            color="var(--c-loader-color)"
+            size={this.size}
+            width={this.width}
+          ></c-spinner>
 
           {slotHasContent && (
             <div

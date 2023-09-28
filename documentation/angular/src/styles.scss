@@ -131,10 +131,6 @@ c-status {
   --c-status-success-background-color: var(--c-error-200);
 }
 
-c-main {
-  --c-main-background: var(--c-secondary-200);
-}
-
 c-swiper {
   --c-swiper-background-color: var(--c-secondary-200);
   --c-swiper-hover-color: var(--c-secondary-100);
@@ -213,11 +209,11 @@ c-login-button {
   --c-login-button-title-background-color: rgba(var(--c-secondary-rgb), 0.2);
 }
 
-// c-tag {
-//   --c-tag-text-color: var(--c-secondary-600);
-//   --c-tag-background-color-hover: rgba(var(--c-secondary-rgb), 0.1);
-//   --c-tag-background-color-hover-active: var(--c-secondary-400);
-// }
+c-tag {
+  --c-tag-text-color: var(--c-secondary-600);
+  --c-tag-background-color-hover: rgba(var(--c-secondary-rgb), 0.1);
+  --c-tag-background-color-hover-active: var(--c-secondary-400);
+}
 
 c-select ::slotted(c-tag) {
   --c-tag-text-color: var(--c-accent-600);
@@ -296,4 +292,22 @@ c-otp-input {
   --c-otp-input-height: 96px;
   --c-otp-input-width: 72px;
   --c-otp-input-font-size: 42px;
+}
+
+c-loader {
+  --c-loader-color: var(--c-secondary-600);
+}
+
+c-main {
+  --c-main-background-color: var(--c-secondary-200);
+  --c-main-text-color: var(--c-success-600);
+}
+
+c-pagination {
+  --c-pagination-button-active-background-color: rgb(255, 217, 0);
+  --c-pagination-button-active-background-color-hover: orange;
+  --c-pagination-button-active-text-color: red;
+  --c-pagination-button-background-color: var(--c-transparent);
+  --c-pagination-button-background-color-hover: rgb(138, 230, 133);
+  --c-pagination-button-text-color: blue;
 }

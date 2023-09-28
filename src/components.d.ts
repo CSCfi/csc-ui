@@ -638,6 +638,10 @@ export namespace Components {
           * Size of the loader
          */
         "size": number;
+        /**
+          * Width of the loader
+         */
+        "width": number;
     }
     /**
      * @parent c-login-buttons
@@ -1169,6 +1173,10 @@ export namespace Components {
           * Size of the spinner
          */
         "size": number;
+        /**
+          * Width of the spinner
+         */
+        "width": number;
     }
     /**
      * @group Indicators
@@ -2950,6 +2958,10 @@ declare namespace LocalJSX {
           * Size of the loader
          */
         "size"?: number;
+        /**
+          * Width of the loader
+         */
+        "width"?: number;
     }
     /**
      * @parent c-login-buttons
@@ -3521,6 +3533,10 @@ declare namespace LocalJSX {
           * Size of the spinner
          */
         "size"?: number;
+        /**
+          * Width of the spinner
+         */
+        "width"?: number;
     }
     /**
      * @group Indicators

@@ -16,7 +16,7 @@
   visibility: hidden;
 
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 :host(.active) {
@@ -47,22 +47,6 @@
   justify-content: center;
   transform: scale(0.5);
   transition: transform 0.3s ease-in-out;
-
-  &__loader {
-    height: var(--c-loader-size);
-    width: var(--c-loader-size);
-    animation: rotate var(--rotation-animation-speed)
-      var(--rotation-animation-easing) infinite;
-
-    &-path {
-      fill: none;
-      stroke-width: var(--stroke-width);
-      animation: animate-stroke var(--stroke-animation-speed)
-        var(--stroke-animation-easing) infinite;
-      stroke-linecap: round;
-      stroke: var(--c-loader-color);
-    }
-  }
 
   &__slot {
     line-height: 40px;

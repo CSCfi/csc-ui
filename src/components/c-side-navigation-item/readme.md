@@ -39,6 +39,7 @@
 ```mermaid
 graph TD;
   c-side-navigation-item --> c-loader
+  c-loader --> c-spinner
   style c-side-navigation-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
