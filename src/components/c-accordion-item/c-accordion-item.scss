@@ -69,6 +69,14 @@
     font-family: var(--c-font-family);
     position: relative;
 
+    &--expanded {
+      cursor: default;
+
+      &#{$this}__header--collapsable {
+        cursor: pointer;
+      }
+    }
+
     &:focus {
       outline: 2px var(--c-accordion-item-outline-color) solid;
       outline-offset: var(--c-accordion-item-outline-color-offset);
