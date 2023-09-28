@@ -4,43 +4,46 @@
    */
   --c-spinner-color: var(--color);
   --c-spinner-size: var(--size);
+  --c-spinner-width: var(--width);
 
   display: block;
   height: var(--c-spinner-size);
   width: var(--c-spinner-size);
 }
 
-svg.spinner {
-  fill: var(--c-spinner-color);
-  height: var(--c-spinner-size);
-  width: var(--c-spinner-size);
+:host(.c-spinner) {
+  svg {
+    fill: var(--c-spinner-color);
+    height: var(--c-spinner-size);
+    overflow: visible;
+    width: var(--c-spinner-size);
 
-  circle {
-    fill: transparent;
-    stroke: var(--c-spinner-color);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-dasharray: calc(3.14 * var(--c-spinner-size));
-    transform-origin: calc(0.5px * var(--c-spinner-size))
-      calc(0.5px * var(--c-spinner-size)) 0;
-
-    animation: spinner 2.5s linear infinite;
-  }
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-    stroke-dashoffset: calc(0.66 * var(--c-spinner-size));
+    circle {
+      animation: spinner 2.5s linear infinite;
+      fill: transparent;
+      stroke-dasharray: calc(3.14 * var(--c-spinner-size));
+      stroke-linecap: round;
+      stroke-width: var(--c-spinner-width);
+      stroke: var(--c-spinner-color);
+      transform-origin: calc(0.5px * var(--c-spinner-size))
+        calc(0.5px * var(--c-spinner-size)) 0;
+    }
   }
 
-  50% {
-    transform: rotate(720deg);
-    stroke-dashoffset: calc(3.14 * var(--c-spinner-size));
-  }
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+      stroke-dashoffset: calc(0.66 * var(--c-spinner-size));
+    }
 
-  100% {
-    transform: rotate(1080deg);
-    stroke-dashoffset: calc(0.66 * var(--c-spinner-size));
+    50% {
+      transform: rotate(720deg);
+      stroke-dashoffset: calc(3.14 * var(--c-spinner-size));
+    }
+
+    100% {
+      transform: rotate(1080deg);
+      stroke-dashoffset: calc(0.66 * var(--c-spinner-size));
+    }
   }
 }

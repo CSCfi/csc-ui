@@ -1,9 +1,13 @@
 :host {
-  --c-main-background: var(--c-primary-200);
-  --c-main-text: var(--c-text-body);
+  /**
+   * @prop --c-main-background-color: Background color
+   * @prop --c-main-text-color: Text color
+   */
+  --c-main-background-color: var(--c-primary-200);
+  --c-main-text-color: var(--c-text-body);
 
-  background: var(--c-main-background);
-  color: var(--c-main-text);
+  background: var(--c-main-background-color);
+  color: var(--c-main-text-color);
   display: flex;
   flex-direction: column;
   height: 100vh;

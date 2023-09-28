@@ -24,6 +24,18 @@
 | `changeValue` | Triggered when values are changed | `CustomEvent<CPaginationOptions>` |
 
 
+## CSS Custom Properties
+
+| Name                                                  | Description                                     |
+| ----------------------------------------------------- | ----------------------------------------------- |
+| `--c-pagination-button-active-background-color`       | Active pagination button background color       |
+| `--c-pagination-button-active-background-color-hover` | Active pagination button hover background color |
+| `--c-pagination-button-active-text-color`             | Active pagination button text color             |
+| `--c-pagination-button-background-color`              | Pagination button background color              |
+| `--c-pagination-button-background-color-hover`        | Pagination button hover background color        |
+| `--c-pagination-button-text-color`                    | Pagination button text color                    |
+
+
 ## Dependencies
 
 ### Used by

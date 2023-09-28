@@ -19,6 +19,11 @@ export class CSpinner {
    */
   @Prop() size = 24;
 
+  /**
+   * Width of the spinner
+   */
+  @Prop() width = 2;
+
   render() {
     const iconParams = {
       cx: this.size / 2,
@@ -28,12 +33,13 @@ export class CSpinner {
 
     const style = {
       '--size': `${this.size}px`,
+      '--width': `${this.width}px`,
       '--color': this.color,
     };
 
     return (
-      <Host style={style}>
-        <svg class="spinner">
+      <Host class="c-spinner" style={style}>
+        <svg>
           <circle {...iconParams}></circle>
         </svg>
       </Host>

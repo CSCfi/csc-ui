@@ -1,4 +1,28 @@
 :host {
+  /**
+   * @prop --c-pagination-button-active-background-color: Active pagination button background color
+   * @prop --c-pagination-button-active-background-color-hover: Active pagination button hover background color
+   * @prop --c-pagination-button-active-text-color: Active pagination button text color
+   * @prop --c-pagination-button-background-color: Pagination button background color
+   * @prop --c-pagination-button-background-color-hover:  Pagination button hover background color
+   * @prop --c-pagination-button-text-color: Pagination button text color
+   */
+  --c-pagination-button-active-background-color: var(--c-primary-600);
+  --c-pagination-button-active-background-color-hover: var(--c-primary-400);
+  --c-pagination-button-active-text-color: var(--c-white);
+  --c-pagination-button-background-color: var(--c-transparent);
+  --c-pagination-button-background-color-hover: rgba(var(--c-primary-rgb), 0.1);
+  --c-pagination-button-text-color: var(--c-pagination-button-active-background-color);
+
+  c-icon-button {
+    --c-icon-button-background-color: var(--c-pagination-button-active-background-color);
+    --c-icon-button-background-color-hover: var(--c-pagination-button-active-background-color-hover);
+    --c-icon-button-text-color: var(--c-pagination-button-active-text-color);
+    --c-icon-button-text-background-color: var(--c-pagination-button-background-color);
+    --c-icon-button-text-background-color-hover: var(--c-pagination-button-background-color-hover);
+    --c-icon-button-text-text-color: var(--c-pagination-button-text-color);
+  }
+
   display: block;
 }
 
