@@ -62,6 +62,20 @@ Type: `Promise<void>`
 | `"pre"`        | Content added before the input |
 
 
+## CSS Custom Properties
+
+| Name                                             | Description                                |
+| ------------------------------------------------ | ------------------------------------------ |
+| `--c-autocomplete-active-color`                  | Autocomplete active color                  |
+| `--c-autocomplete-background-color`              | Autocomplete background color              |
+| `--c-autocomplete-inactive-color`                | Autocomplete inactive color                |
+| `--c-autocomplete-option-background-color`       | Autocomplete option background color       |
+| `--c-autocomplete-option-background-hover-color` | Autocomplete option background hover color |
+| `--c-autocomplete-option-text-color`             | Autocomplete option text color             |
+| `--c-autocomplete-placeholder-color`             | Autocomplete placeholder color             |
+| `--c-autocomplete-text-color`                    | Autocomplete text color                    |
+
+
 ## Dependencies
 
 ### Depends on

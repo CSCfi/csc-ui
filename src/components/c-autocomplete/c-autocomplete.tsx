@@ -22,7 +22,7 @@ import { CAutocompleteItem } from '../../types';
  */
 @Component({
   tag: 'c-autocomplete',
-  styleUrl: '../c-input/c-input-menu.scss',
+  styleUrl: 'c-autocomplete.scss',
   shadow: true,
 })
 export class CAutocomplete {

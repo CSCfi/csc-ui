@@ -1,6 +1,7 @@
-:root, :host {
-  --c-input-active-color: var(--c-primary-600);
+:root,
+:host {
   --c-input-inactive-color: var(--c-tertiary-600);
+  --c-input-active-color: var(--c-primary-600);
   --c-input-background-color: var(--c-transparent);
   --c-input-text-color: var(--c-text-body);
   --c-input-placeholder-color: var(--c-tertiary-500);
@@ -173,12 +174,12 @@
       text-overflow: ellipsis;
       top: 12px;
       transform-origin: top left;
-      transform: translateX(var(--c-input-label-position)) translateY(0) scale(1);
+      transform: translateX(var(--c-input-label-position)) translateY(0)
+        scale(1);
       transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
       white-space: nowrap;
 
       &.active {
-        color: var(--c-input-active-color);
         transform: translateY(-18px) scale(0.75);
       }
 
@@ -195,7 +196,7 @@
   fieldset {
     background-color: var(--c-input-background-color);
     border-collapse: collapse;
-    border-color: var(--c-input-active-color);
+    border-color: var(--c-input-inactive-color);
     border-radius: inherit;
     border-style: solid;
     border-width: var(--c-input-border-width);
@@ -285,7 +286,12 @@
 
     color: var(--c-input-active-color);
 
+    fieldset {
+      border-color: var(--c-input-active-color);
+    }
+
     label {
+      color: var(--c-input-active-color);
       transform: translateX(0px) translateY(-18px) scale(0.75);
     }
 
