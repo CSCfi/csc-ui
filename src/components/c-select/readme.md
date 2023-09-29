@@ -48,13 +48,14 @@
 
 | Name                                       | Description                          |
 | ------------------------------------------ | ------------------------------------ |
-| `--c-select-active-color`                  | Active text field color              |
-| `--c-select-background-color`              | Inactive text field background color |
-| `--c-select-inactive-color`                | Inactive text field color            |
+| `--c-select-active-color`                  | Active select color                  |
+| `--c-select-background-color`              | Inactive select background color     |
+| `--c-select-inactive-color`                | Inactive select color                |
 | `--c-select-option-background-color`       | Select option background color       |
 | `--c-select-option-background-color-hover` | Select option hover background color |
-| `--c-select-placeholder-color`             | Text field placeholder color         |
-| `--c-select-text-color`                    | Text field text color                |
+| `--c-select-option-text-color`             | Select option text color             |
+| `--c-select-placeholder-color`             | Select placeholder color             |
+| `--c-select-text-color`                    | Select text color                    |
 
 
 ## Dependencies

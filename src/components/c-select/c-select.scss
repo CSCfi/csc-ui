@@ -1,12 +1,13 @@
 :host {
   /**
-   * @prop --c-select-active-color: Active text field color
-   * @prop --c-select-inactive-color: Inactive text field color
-   * @prop --c-select-background-color: Inactive text field background color
-   * @prop --c-select-text-color: Text field text color
-   * @prop --c-select-placeholder-color:Text field placeholder color
+   * @prop --c-select-active-color: Active select color
+   * @prop --c-select-inactive-color: Inactive select color
+   * @prop --c-select-background-color: Inactive select background color
+   * @prop --c-select-text-color: Select text color
+   * @prop --c-select-placeholder-color: Select placeholder color
    * @prop --c-select-option-background-color: Select option background color
    * @prop --c-select-option-background-color-hover: Select option hover background color
+   * @prop --c-select-option-text-color: Select option text color
    */
   --c-select-active-color: var(--c-primary-600);
   --c-select-inactive-color: var(--c-tertiary-600);
@@ -15,6 +16,7 @@
   --c-select-placeholder-color: var(--c-tertiary-500);
   --c-select-option-background-color: var(--c-white);
   --c-select-option-background-color-hover: var(--c-primary-100);
+  --c-select-option-text-color: var(--c-text-body);
 
   --c-input-text-color: var(--c-select-active-color);
   --c-input-active-color: var(--c-select-active-color);
