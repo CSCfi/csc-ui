@@ -729,6 +729,10 @@ export namespace Components {
      */
     interface CMenu {
         /**
+          * Menu content css class
+         */
+        "contentClass": string;
+        /**
           * Programmatic trigger component
          */
         "customTrigger": CMenuCustomTrigger;
@@ -754,7 +758,8 @@ export namespace Components {
         "small": boolean;
     }
     /**
-     * @parent none
+     * @parent c-menu
+     * @private 
      */
     interface CMenuItems {
         /**
@@ -1929,7 +1934,8 @@ declare global {
         new (): HTMLCMenuElement;
     };
     /**
-     * @parent none
+     * @parent c-menu
+     * @private 
      */
     interface HTMLCMenuItemsElement extends Components.CMenuItems, HTMLStencilElement {
     }
@@ -3049,6 +3055,10 @@ declare namespace LocalJSX {
      */
     interface CMenu {
         /**
+          * Menu content css class
+         */
+        "contentClass"?: string;
+        /**
           * Programmatic trigger component
          */
         "customTrigger"?: CMenuCustomTrigger;
@@ -3074,7 +3084,8 @@ declare namespace LocalJSX {
         "small"?: boolean;
     }
     /**
-     * @parent none
+     * @parent c-menu
+     * @private 
      */
     interface CMenuItems {
         /**
@@ -4149,7 +4160,8 @@ declare module "@stencil/core" {
              */
             "c-menu": LocalJSX.CMenu & JSXBase.HTMLAttributes<HTMLCMenuElement>;
             /**
-             * @parent none
+             * @parent c-menu
+             * @private 
              */
             "c-menu-items": LocalJSX.CMenuItems & JSXBase.HTMLAttributes<HTMLCMenuItemsElement>;
             /**

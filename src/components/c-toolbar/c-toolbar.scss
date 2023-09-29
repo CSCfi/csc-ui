@@ -1,0 +1,33 @@
+:host {
+  /**
+   * @prop --c-toolbar-background-color: Toolbar background color
+   * @prop --c-toolbar-text-color: Toolbar text color
+   */
+  --c-toolbar-background-color: var(--c-white);
+  --c-toolbar-text-color: var(--c-text-system);
+
+  .c-toolbar {
+    color: var(--c-toolbar-text-color);
+    height: 60px;
+    background: var(--c-toolbar-background-color);
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    box-shadow: 2px 4px 10px #00000029;
+  }
+
+  .spacer {
+    height: 60px;
+    width: 100%;
+  }
+}
+
+:host(.relative) .c-toolbar {
+  position: relative;
+  margin-bottom: -60px;
+}

@@ -198,8 +198,8 @@ c-switch {
 
 c-table {
   --c-table-border-color: var(--c-secondary-200);
-  --c-table-header-color: var(--c-secondary-600);
-  --c-table-row-background-mobile: rgba(var(--c-secondary-rgb), 0.05);
+  --c-table-header-text-color: var(--c-secondary-600);
+  --c-table-row-background-color-mobile: rgba(var(--c-secondary-rgb), 0.05);
 }
 
 c-login-button {
@@ -300,7 +300,7 @@ c-loader {
 
 c-main {
   --c-main-background-color: var(--c-secondary-200);
-  --c-main-text-color: var(--c-success-600);
+  // --c-main-text-color: var(--c-success-600);
 }
 
 c-pagination {
@@ -310,4 +310,45 @@ c-pagination {
   --c-pagination-button-background-color: var(--c-transparent);
   --c-pagination-button-background-color-hover: rgb(138, 230, 133);
   --c-pagination-button-text-color: blue;
+}
+
+c-pagination .c-menu,
+c-menu {
+  --c-menu-active-color: var(--c-secondary-600);
+  --c-menu-hover-color: var(--c-secondary-200);
+  --c-menu-outline-color: var(--c-secondary-600);
+}
+
+c-menu-items {
+  --c-menu-items-background-color-hover: var(--c-secondary-100);
+  --c-menu-items-text-color-active: var(--c-secondary-600);
+}
+
+.custom-class {
+  --c-menu-items-background-color-hover: var(--c-accent-100);
+  --c-menu-items-text-color-active: var(--c-accent-600);
+}
+
+c-toolbar {
+  --c-toolbar-background-color: var(--c-secondary-100);
+  --c-toolbar-text-color: var(--c-secondary-600);
+}
+
+c-data-table {
+  --c-data-table-border-color: rgba(var(--c-secondary-rgb), 0.1);
+  --c-data-table-background-color-hover: rgba(var(--c-secondary-rgb), 0.1);
+  --c-data-table-active: var(--c-secondary-600);
+  --c-data-table-selected-row-background-color: rgba(var(--c-secondary-rgb), 0.1);
+  --c-data-table-highlighted-column-background-color: rgba(var(--c-secondary-rgb), 0.05);
+
+  --c-data-table-checkbox-color: var(--c-secondary-600);
+  --c-data-table-checkbox-background-color-hover: rgba(var(--c-secondary-rgb), 0.1);
+
+  --c-data-table-pagination-button-active-background-color: var(--c-secondary-600);
+  --c-data-table-pagination-button-active-background-color-hover: var(--c-secondary-400);
+  --c-data-table-pagination-button-background-color-hover: rgba(var(--c-secondary-rgb), 0.1);
+
+  --c-data-table-menu-text-color-active: var(--c-secondary-600);
+  --c-data-table-menu-background-color-hover: var(--c-secondary-200);
+  --c-data-table-menu-outline-color: var(--c-secondary-600);
 }

@@ -34,6 +34,10 @@
 | `--c-pagination-button-background-color`              | Pagination button background color              |
 | `--c-pagination-button-background-color-hover`        | Pagination button hover background color        |
 | `--c-pagination-button-text-color`                    | Pagination button text color                    |
+| `--c-pagination-menu-background-color-hover`          | Pagination menu hover background color          |
+| `--c-pagination-menu-outline-color`                   | Pagination menu outline color                   |
+| `--c-pagination-menu-text-color`                      | Pagination menu text color                      |
+| `--c-pagination-menu-text-color-active`               | Active pagination menu text color               |
 
 
 ## Dependencies
@@ -55,6 +59,7 @@ graph TD;
   c-pagination --> c-icon-button
   c-pagination --> c-icon
   c-menu --> c-menu-items
+  c-menu --> c-icon
   c-icon-button --> c-badge
   c-icon-button --> c-ripple
   c-data-table --> c-pagination

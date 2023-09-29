@@ -26,7 +26,7 @@
       <app-viewer-attributes *ngIf="componentData?.props.length" [data]="componentData"></app-viewer-attributes>
 
       <div *ngFor="let child of componentData?.children" class="mt-5">
-        <app-viewer-attributes *ngIf="child?.props.length" [data]="child"></app-viewer-attributes>
+        <app-viewer-attributes *ngIf="child?.props.length && !isPrivate(child)" [data]="child"></app-viewer-attributes>
       </div>
     </div>
 
@@ -34,7 +34,7 @@
       <app-viewer-methods *ngIf="componentData?.methods.length" [data]="componentData"></app-viewer-methods>
 
       <div *ngFor="let child of componentData?.children" class="mt-5">
-        <app-viewer-methods *ngIf="child?.methods.length" [data]="child"></app-viewer-methods>
+        <app-viewer-methods *ngIf="child?.methods.length && !isPrivate(child)" [data]="child"></app-viewer-methods>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
       <app-viewer-slots *ngIf="componentData.slots.length" [data]="componentData"></app-viewer-slots>
 
       <div *ngFor="let child of componentData?.children" class="mt-5">
-        <app-viewer-slots *ngIf="child?.slots.length" [data]="child"></app-viewer-slots>
+        <app-viewer-slots *ngIf="child?.slots.length && !isPrivate(child)" [data]="child"></app-viewer-slots>
       </div>
     </div>
 
@@ -50,7 +50,7 @@
       <app-viewer-events *ngIf="componentData.events.length" [data]="componentData"></app-viewer-events>
 
       <div *ngFor="let child of componentData?.children" class="mt-5">
-        <app-viewer-events *ngIf="child?.events.length" [data]="child"></app-viewer-events>
+        <app-viewer-events *ngIf="child?.events.length && !isPrivate(child)" [data]="child"></app-viewer-events>
       </div>
     </div>
 

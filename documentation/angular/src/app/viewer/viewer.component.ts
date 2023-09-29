@@ -68,10 +68,21 @@ export class ViewerComponent implements OnInit, OnDestroy {
     } catch (error) {}
   }
 
+  isPrivate(child: ComponentData) {
+    return child.docsTags.some((tag) => tag.name !== 'private');
+  }
+
   ngOnInit(): void {
     this._subscriptions.push(
       this._activatedRoute.data.subscribe((data) => {
         this.componentData = data[0];
+
+        console.log(this.componentData);
+
+        const isChildPrivate = this.componentData.children.some(this.isPrivate);
+
+        console.log(isChildPrivate);
+
         this.loadDynamicComponent(this.componentData.tag);
         this.tabs = [
           {
@@ -83,7 +94,8 @@ export class ViewerComponent implements OnInit, OnDestroy {
             label: 'Attributes',
             enabled:
               !!this.componentData?.props?.length ||
-              !!this.componentData?.children?.some((child) => child.props?.length),
+              (!!this.componentData?.children?.some((child) => child.props?.length) &&
+                !isChildPrivate),
             query: {
               tab: 'attrs',
             },
@@ -92,7 +104,8 @@ export class ViewerComponent implements OnInit, OnDestroy {
             label: 'Methods',
             enabled:
               !!this.componentData?.methods?.length ||
-              !!this.componentData?.children?.some((child) => child.methods?.length),
+              (!!this.componentData?.children?.some((child) => child.methods?.length) &&
+                !isChildPrivate),
             query: {
               tab: 'methods',
             },
@@ -101,7 +114,8 @@ export class ViewerComponent implements OnInit, OnDestroy {
             label: 'Slots',
             enabled:
               !!this.componentData?.slots?.length ||
-              !!this.componentData?.children?.some((child) => child.slots?.length),
+              (!!this.componentData?.children?.some((child) => child.slots?.length) &&
+                !isChildPrivate),
             query: {
               tab: 'slots',
             },
@@ -110,7 +124,8 @@ export class ViewerComponent implements OnInit, OnDestroy {
             label: 'Events',
             enabled:
               !!this.componentData?.events?.length ||
-              !!this.componentData?.children?.some((child) => child.events?.length),
+              (!!this.componentData?.children?.some((child) => child.events?.length) &&
+                !isChildPrivate),
             query: {
               tab: 'events',
             },

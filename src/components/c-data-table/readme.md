@@ -61,6 +61,31 @@ Type: `Promise<Record<string, string | number | boolean>[]>`
 
 
 
+## CSS Custom Properties
+
+| Name                                                             | Description                                                                   |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `--c-data-table-active`                                          | Table active color (used in variety of places)                                |
+| `--c-data-table-background-color`                                | Table background color                                                        |
+| `--c-data-table-background-color-hover`                          | Table background color (affects row color, header cell background color etc.) |
+| `--c-data-table-border-color`                                    | Table border color                                                            |
+| `--c-data-table-checkbox-background-color-hover`                 | Table checkbox hover background color                                         |
+| `--c-data-table-checkbox-color`                                  | Table checkbox color                                                          |
+| `--c-data-table-checkbox-color-active`                           | Active table checkbox color                                                   |
+| `--c-data-table-highlighted-column-background-color`             | Table highlighted column background color                                     |
+| `--c-data-table-menu-background-color-hover`                     | Table pagination menu hover background color                                  |
+| `--c-data-table-menu-outline-color`                              | Table pagination menu outline color                                           |
+| `--c-data-table-menu-text-color`                                 | Table pagination menu text color                                              |
+| `--c-data-table-menu-text-color-active`                          | Active table pagination menu text color                                       |
+| `--c-data-table-pagination-button-active-background-color`       | Table pagination button background color                                      |
+| `--c-data-table-pagination-button-active-background-color-hover` | Table pagination button hover background color                                |
+| `--c-data-table-pagination-button-active-text-color`             | Active table pagination button text color                                     |
+| `--c-data-table-pagination-button-background-color`              | Table pagination button background color                                      |
+| `--c-data-table-pagination-button-background-color-hover`        | Table pagination button hover background color                                |
+| `--c-data-table-pagination-button-text-color`                    | Table pagination button text color                                            |
+| `--c-data-table-selected-row-background-color`                   | Table selected row background color                                           |
+
+
 ## Dependencies
 
 ### Depends on
@@ -84,6 +109,7 @@ graph TD;
   c-pagination --> c-icon-button
   c-pagination --> c-icon
   c-menu --> c-menu-items
+  c-menu --> c-icon
   c-icon-button --> c-badge
   c-icon-button --> c-ripple
   style c-data-table fill:#f9f,stroke:#333,stroke-width:4px

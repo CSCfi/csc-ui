@@ -1,6 +1,7 @@
 import {
   Component,
   h,
+  Host,
   Prop,
   Event,
   EventEmitter,
@@ -129,7 +130,7 @@ export class CPagination {
     this._setRange();
   }
 
-  private _getItemsPerPage() {
+  private _renderMenu() {
     const itemsPerPageOptions: CMenuOption[] = this.itemsPerPageOptions.map(
       (i) => ({
         name: i.toString(),
@@ -146,13 +147,15 @@ export class CPagination {
     };
 
     return (
-      <c-menu items={itemsPerPageOptions} nohover onClick={onMenuClick}>
-        <div>
-          <span class="items-per-page">
-            {this._getText('itemsPerPageText')} {this._itemsPerPage}
-          </span>
-        </div>
-      </c-menu>
+      <div class="c-pagination__items-per-page">
+        {this._getText('itemsPerPageText')}
+
+        <c-menu items={itemsPerPageOptions} onClick={onMenuClick}>
+          <div>
+            <span class="items-per-page">{this._itemsPerPage}</span>
+          </div>
+        </c-menu>
+      </div>
     );
   }
 
@@ -358,7 +361,7 @@ export class CPagination {
     return this._buttons;
   }
 
-  private _renderButtons() {
+  private _renderPaginationButtons() {
     if (!this.value.itemCount) return '';
 
     const buttonsize = this.size === 'small' ? 'x-small' : 'small';
@@ -380,17 +383,17 @@ export class CPagination {
     };
 
     return (
-      <nav class={classes} role="navigation" aria-label="pagination">
-        {!this.hideDetails && (
-          <div class="c-pagination__details">
-            {this._getItemsPerPage()}
-
-            <span class={{ range: !this.simple }}>{this._getRange()}</span>
-          </div>
-        )}
-
-        {this._renderButtons()}
-      </nav>
+      <Host class={classes}>
+        <nav role="navigation" aria-label="pagination">
+          {!this.hideDetails && (
+            <div class="c-pagination__details">
+              {this._renderMenu()}
+              <span class={{ range: !this.simple }}>{this._getRange()}</span>
+            </div>
+          )}
+          {this._renderPaginationButtons()}
+        </nav>
+      </Host>
     );
   }
 }

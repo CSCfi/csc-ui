@@ -1,12 +1,12 @@
 :host, :root {
   /**
    * @prop --c-table-border-color: Table border color
-   * @prop --c-table-header-color: Table border color
-   * @prop --c-table-row-background-mobile: Background color for table rows (even) in mobile
+   * @prop --c-table-header-text-color: Table header text color
+   * @prop --c-table-row-background-color-mobile: Background color for table rows (even) in mobile
    */
   --c-table-border-color: var(--c-tertiary-200);
-  --c-table-header-color: var(--c-text-system);
-  --c-table-row-background-mobile: rgba(var(--c-primary-rgb), 0.05);
+  --c-table-header-text-color: var(--c-text-system);
+  --c-table-row-background-color-mobile: rgba(var(--c-primary-rgb), 0.05);
 }
 
 table.c-table {
@@ -90,7 +90,7 @@ table.c-table {
   th {
     height: 48px;
     font-size: 14px;
-    color: var(--c-table-header-color);
+    color: var(--c-table-header-text-color);
   }
 
   td {
@@ -131,7 +131,7 @@ table.c-table {
 
       &::before {
         font-size: 14px;
-        color: var(--c-table-header-color);
+        color: var(--c-table-header-text-color);
         content: attr(data-title);
         display: inline-block;
         text-align: start;
@@ -139,7 +139,7 @@ table.c-table {
       }
 
       &:nth-of-type(even) {
-        background-color: var(--c-table-row-background-mobile);
+        background-color: var(--c-table-row-background-color-mobile);
       }
     }
   }

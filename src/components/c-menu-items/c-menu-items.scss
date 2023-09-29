@@ -1,7 +1,12 @@
-:host {
-  --c-menu-items-hover: var(--c-primary-200);
-  --c-menu-items-text: var(--c-text-body);
-  --c-menu-items-text-active: var(--c-primary-600);
+:host, :root {
+  /**
+   * @prop --c-menu-items-background-color-hover: Menu item hover background color
+   * @prop --c-menu-items-text-color: Menu item text color
+   * @prop --c-menu-items-text-color-active: Active menu item text color
+   */
+  --c-menu-items-background-color-hover: var(--c-primary-200);
+  --c-menu-items-text-color: var(--c-text-body);
+  --c-menu-items-text-color-active: var(--c-primary-600);
 
   position: absolute;
   border-radius: inherit;
@@ -55,8 +60,8 @@ li {
 
   &:not(.disabled):hover,
   &.active {
-    background: var(--c-menu-items-hover);
-    color: var(--c-menu-items-text-active);
+    background: var(--c-menu-items-background-color-hover);
+    color: var(--c-menu-items-text-color-active);
   }
 
   &.icon-start {

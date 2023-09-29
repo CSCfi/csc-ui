@@ -13,7 +13,8 @@ import {
 import { CMenuOption } from '../../types';
 
 /**
- * @parent none
+ * @parent c-menu
+ * @private
  */
 @Component({
   tag: 'c-menu-items',

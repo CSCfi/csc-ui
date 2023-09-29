@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
  */
 @Component({
   tag: 'c-toolbar',
-  styleUrl: 'c-toolbar.css',
+  styleUrl: 'c-toolbar.scss',
   shadow: true,
 })
 export class CToolbar {

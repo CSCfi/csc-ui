@@ -1,4 +1,4 @@
-# c-muna-items
+# c-menu-items
 
 
 
@@ -25,6 +25,15 @@
 | ------- | --------------------------------- | ---------------------------------------------------------------------------------------- |
 | `close` | Triggered when the menu is closed | `CustomEvent<any>`                                                                       |
 | `open`  | Triggered when the menu is opened | `CustomEvent<{ height: number; width: number; isInView: { x: boolean; y: boolean; }; }>` |
+
+
+## CSS Custom Properties
+
+| Name                                    | Description                      |
+| --------------------------------------- | -------------------------------- |
+| `--c-menu-items-background-color-hover` | Menu item hover background color |
+| `--c-menu-items-text-color`             | Menu item text color             |
+| `--c-menu-items-text-color-active`      | Active menu item text color      |
 
 
 ## Dependencies

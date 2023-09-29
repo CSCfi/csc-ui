@@ -15,11 +15,11 @@
 
 ## CSS Custom Properties
 
-| Name                              | Description                                      |
-| --------------------------------- | ------------------------------------------------ |
-| `--c-table-border-color`          | Table border color                               |
-| `--c-table-header-color`          | Table border color                               |
-| `--c-table-row-background-mobile` | Background color for table rows (even) in mobile |
+| Name                                    | Description                                      |
+| --------------------------------------- | ------------------------------------------------ |
+| `--c-table-border-color`                | Table border color                               |
+| `--c-table-header-text-color`           | Table header text color                          |
+| `--c-table-row-background-color-mobile` | Background color for table rows (even) in mobile |
 
 
 ----------------------------------------------

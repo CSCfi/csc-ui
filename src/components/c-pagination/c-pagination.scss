@@ -14,6 +14,17 @@
   --c-pagination-button-background-color-hover: rgba(var(--c-primary-rgb), 0.1);
   --c-pagination-button-text-color: var(--c-pagination-button-active-background-color);
 
+  /**
+   * @prop --c-pagination-menu-text-color: Pagination menu text color
+   * @prop --c-pagination-menu-text-color-active: Active pagination menu text color
+   * @prop --c-pagination-menu-background-color-hover: Pagination menu hover background color
+   * @prop --c-pagination-menu-outline-color: Pagination menu outline color
+   */
+  --c-pagination-menu-text-color: var(--c-text-system);
+  --c-pagination-menu-text-color-active: var(--c-primary-600);
+  --c-pagination-menu-background-color-hover: var(--c-primary-200);
+  --c-pagination-menu-outline-color: var(--c-primary-600);
+
   c-icon-button {
     --c-icon-button-background-color: var(--c-pagination-button-active-background-color);
     --c-icon-button-background-color-hover: var(--c-pagination-button-active-background-color-hover);
@@ -24,36 +35,40 @@
   }
 
   display: block;
+
+  span {
+    font-size: 14px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .range {
+    min-width: 132px;
+  }
+
+  .visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 }
 
-span {
-  font-size: 14px;
-  text-align: right;
-  white-space: nowrap;
-}
 
-.range {
-  min-width: 132px;
-}
-
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.c-pagination {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 24px;
-  justify-content: center;
+:host(.c-pagination) {
+  nav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+    justify-content: center;
+    width: 100%;
+  }
 
   ul {
     align-items: center;
@@ -65,24 +80,41 @@ span {
     padding: 0;
   }
 
-  &--simple {
-    ul {
-      flex: 1;
-      justify-content: flex-end;
-    }
-  }
-
-  &--small {
-    ul {
-      gap: 2px;
-    }
-  }
-
-  &__details {
+  .c-pagination__details {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     flex: auto;
     justify-content: space-between;
+  }
+
+  .c-pagination__items-per-page {
+    color: var(--c-text-system);
+    font-size: 14px;
+    text-align: right;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  c-menu {
+    --c-menu-text-color: var(--c-pagination-menu-text-color);
+    --c-menu-text-color-active: var(--c-pagination-menu-text-color-active);
+    --c-menu-background-color-hover: var(--c-pagination-menu-background-color-hover);
+    --c-menu-outline-color: var(--c-pagination-menu-outline-color);
+  }
+}
+
+:host(.c-pagination--simple) {
+  ul {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+
+:host(.c-pagination--small) {
+  ul {
+    gap: 2px;
   }
 }

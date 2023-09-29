@@ -727,6 +727,10 @@
         {
           "name": "size",
           "description": "Size of the loader"
+        },
+        {
+          "name": "width",
+          "description": "Width of the loader"
         }
       ]
     },
@@ -917,6 +921,10 @@
         "value": ""
       },
       "attributes": [
+        {
+          "name": "content-class",
+          "description": "Menu content css class"
+        },
         {
           "name": "items-per-page",
           "description": "Items per page before adding scroll"
@@ -1417,6 +1425,10 @@
         {
           "name": "size",
           "description": "Size of the spinner"
+        },
+        {
+          "name": "width",
+          "description": "Width of the spinner"
         }
       ]
     },

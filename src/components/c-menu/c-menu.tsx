@@ -28,6 +28,11 @@ export class CMenu {
   @Prop() items: CMenuOption[] = [];
 
   /**
+   * Menu content css class
+   */
+  @Prop() contentClass = '';
+
+  /**
    * Simple variant without chevron and background, E.g. when a button is the activator
    */
   @Prop() simple = false;
@@ -190,6 +195,10 @@ export class CMenu {
     this.menuItemsComponent.setAttribute('tabindex', '-1');
     this.menuItemsComponent.setAttribute('role', 'listbox');
 
+    if (this.contentClass) {
+      this.menuItemsComponent.classList.add(this.contentClass);
+    }
+
     this._addMenuItemsComponentListeners(height, width);
 
     this._createWrapperElement().appendChild(this.menuItemsComponent);
@@ -261,18 +270,15 @@ export class CMenu {
             ) : (
               <div class="c-menu__header">
                 <slot></slot>
-                <svg
-                  width={this.small ? '16' : '22'}
-                  height={this.small ? '16' : '22'}
-                  viewBox="0 0 24 24"
+
+                <c-icon
+                  path={mdiChevronDown}
                   class={
                     this.active
                       ? 'c-menu__icon c-menu__icon--rotated'
                       : 'c-menu__icon'
                   }
-                >
-                  <path d={mdiChevronDown} />
-                </svg>
+                />
               </div>
             )}
           </button>
