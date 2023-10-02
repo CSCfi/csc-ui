@@ -1,8 +1,21 @@
-<c-main>
+<c-main [class]="currentTheme">
   <c-toolbar>
     <c-csc-logo></c-csc-logo>
     CSC Design System
     <c-spacer></c-spacer>
+
+    <c-row align="center" gap="4">
+      <c-icon-button
+        *ngFor="let theme of themes"
+        size="small"
+        [style]="theme.styles"
+        [text]="currentTheme !== theme.name"
+        (click)="currentTheme = theme.name"
+      >
+        <c-icon [path]="icons.mdiWater"></c-icon>
+      </c-icon-button>
+    </c-row>
+
     <c-tag
       [ariaLabel]="'Version ' + versionService.versionLabel"
       [active]="true"
@@ -93,6 +106,13 @@
           >
             Basic template
           </c-sub-navigation-item>
+        </div>
+      </c-side-navigation-item>
+
+      <c-side-navigation-item [routerLink]="['/migration-guide']" [active]="url === '/migration-guide'">
+        <div slot="main" class="text-capitalize d-flex align-items-center">
+          <c-icon [path]="icons.mdiAlertDecagram" size="16"></c-icon>
+          Migration guide
         </div>
       </c-side-navigation-item>
 

@@ -32,10 +32,5 @@ export class CTagsComponent {
   resetTags() {
     this.tags = this.createTags();
   }
-
-  toggleActiveTag(id: number) {
-    const tag = this.tags.find((tag) => tag.id === id);
-    tag.active = !tag.active;
-  }
   // @example-end
 }

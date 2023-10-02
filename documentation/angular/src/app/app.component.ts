@@ -14,6 +14,8 @@ import {
   mdiLanguageHtml5,
   mdiVuejs,
   mdiLanguageTypescript,
+  mdiAlertDecagram,
+  mdiWater,
 } from '@mdi/js';
 
 interface ComponentGroup {
@@ -31,6 +33,8 @@ export class AppComponent implements OnInit {
   routeSubscription: Subscription;
 
   selectedComponent = {};
+
+  currentTheme = 'primary';
 
   components = [];
 
@@ -51,7 +55,66 @@ export class AppComponent implements OnInit {
     mdiLanguageHtml5,
     mdiVuejs,
     mdiLanguageTypescript,
+    mdiAlertDecagram,
+    mdiWater,
   };
+
+  themes = [
+    {
+      name: 'primary',
+      styles: {
+        '--c-icon-button-background-color': '#006778',
+        '--c-icon-button-background-color-hover': '#66a4ae',
+        '--c-icon-button-text-text-color': '#006778',
+        '--c-icon-button-text-background-color-hover': 'grba(#006778, 0.1)',
+      },
+    },
+    {
+      name: 'secondary',
+      styles: {
+        '--c-icon-button-background-color': 'var(--c-secondary-600)',
+        '--c-icon-button-background-color-hover': 'var(--c-secondary-400)',
+        '--c-icon-button-text-text-color': 'var(--c-secondary-600)',
+        '--c-icon-button-text-background-color-hover': 'var(--c-secondary-100)',
+      },
+    },
+    {
+      name: 'info',
+      styles: {
+        '--c-icon-button-background-color': 'var(--c-info-600)',
+        '--c-icon-button-background-color-hover': 'var(--c-info-400)',
+        '--c-icon-button-text-text-color': 'var(--c-info-600)',
+        '--c-icon-button-text-background-color-hover': 'var(--c-info-100)',
+      },
+    },
+    {
+      name: 'link',
+      styles: {
+        '--c-icon-button-background-color': 'var(--c-link-600)',
+        '--c-icon-button-background-color-hover': 'var(--c-link-400)',
+        '--c-icon-button-text-text-color': 'var(--c-link-600)',
+        '--c-icon-button-text-background-color-hover': 'var(--c-link-100)',
+      },
+    },
+    {
+      name: 'success',
+      styles: {
+        '--c-icon-button-background-color': 'var(--c-success-600)',
+        '--c-icon-button-background-color-hover': 'var(--c-success-400)',
+        '--c-icon-button-text-text-color': 'var(--c-success-600)',
+        '--c-icon-button-text-background-color-hover': 'var(--c-success-100)',
+      },
+    },
+    {
+      name: 'error',
+      styles: {
+        '--c-icon-button-background-color': 'var(--c-error-600)',
+        '--c-icon-button-background-color-hover': 'var(--c-error-400)',
+        '--c-icon-button-text-text-color': 'var(--c-error-600)',
+        '--c-icon-button-text-background-color-hover': 'var(--c-error-100)',
+      },
+    },
+  ];
 
   constructor(
     public componentDataService: ComponentDataService,

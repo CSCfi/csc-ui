@@ -6,7 +6,7 @@
 
   svg {
     path {
-      fill: var(--c-icon-color);
+      fill: var(--c-icon-color, currentColor);
     }
   }
 }

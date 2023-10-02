@@ -1,0 +1,86 @@
+<div class="documentation-card">
+  <h1 class="c-primary mb-0">Migration Guide</h1>
+  <h2 class="c-primary mb-0 mt-2">Migrating to CSC-UI 1.0.0</h2>
+
+  <p class="pt-4">
+    <strong>
+      This guide details the changes and how to change your code to migrate to CSC UI version 1.0.0.
+      See the full changelog <c-link>here</c-link>.
+    </strong>
+  </p>
+
+  <h3 class="c-primary mt-4">Breaking changes</h3>
+
+  <div class="pt-4">
+    <h4 class="c-primary">c-link</h4>
+
+    <p>
+      Icon usage is simplified
+    </p>
+
+    <ul>
+      <li><code>path</code> attribute has been removed</li>
+      <li><code>icon-fill</code> attribute has been removed</li>
+      <li><code>icon-after</code> attribute has been removed</li>
+      <li><code>icon-style</code> attribute has been removed</li>
+    </ul>
+
+    <span>Before 1.0</span>
+    <pre class="rounded">
+      <code [highlight]="cLinkIconUsage"></code>
+    </pre>
+
+    <span>After 1.0</span>
+    <pre class="rounded">
+      <code [highlight]="cLinkIconUsageNew"></code>
+    </pre>
+  </div>
+
+  <div class="pt-4">
+    <h4 class="c-primary">c-tag</h4>
+
+    <ul>
+      <li>
+        New wrapper component <code>c-tags</code>
+        <ul>
+          <li>Handles spaces between the tags without margins defined in the <code>c-tag</code> component</li>
+          <li><code>c-tag</code> components can be used without the wrapper component with no need to remove the extra margins</li>
+        </ul>
+      </li>
+      <li>
+        New attribute <code>block</code>
+        <ul>
+          <li>Replaces the functionality of <code>fit</code> attribute prior to 1.0</li>
+        </ul>
+      </li>
+      <li>
+        Functionality change with <code>fit</code> attribute
+        <ul>
+          <li>Stretches the tags to take all available space in a row instead of each tag being full width</li>
+        </ul>
+      </li>
+      <li>
+        New event <code>close</code>
+        <ul>
+          <li>Emitted on clicking the close button if the tag has a <code>closeable</code> attribute</li>
+          <li>Closeable tags can now be set active on click</li>
+        </ul>
+      </li>
+    </ul>
+
+    <span>Before 1.0</span>
+    <pre class="rounded">
+      <code [highlight]="cTagsUsage"></code>
+    </pre>
+
+    <span>After 1.0</span>
+    <pre class="rounded">
+      <code [highlight]="cTagsUsageNew"></code>
+    </pre>
+  </div>
+</div>
+<!-- <div class="documentation-card">
+  <h2 class="text-capitalize mb-4 text-primary">Example project</h2>
+
+  <div id="simple-example"></div>
+</div> -->

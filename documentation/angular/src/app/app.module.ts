@@ -59,6 +59,7 @@ import { CLoginButtonsComponent } from './examples/c-login-buttons/c-login-butto
 import { CSpinnerComponent } from './examples/c-spinner/c-spinner.component';
 import { CTableComponent } from './examples/c-table/c-table.component';
 import { CTagsComponent } from './examples/c-tags/c-tags.component';
+import { MigrationGuideComponent } from './migration-guide/migration-guide.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +116,7 @@ import { CTagsComponent } from './examples/c-tags/c-tags.component';
     CSpinnerComponent,
     CTableComponent,
     CTagsComponent,
+    MigrationGuideComponent,
   ],
   imports: [
     BrowserModule,

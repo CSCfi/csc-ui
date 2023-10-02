@@ -28,8 +28,13 @@ export class CIcon {
 
   render() {
     return (
-      <Host style={{ height: `${this.size}px`, '--c-icon-color': this.color }}>
-        <svg width={this.size} height={this.size} viewBox="0 0 24 24">
+      <Host style={{ height: `${this.size}px` }}>
+        <svg
+          width={this.size}
+          height={this.size}
+          style={{ '--c-icon-color': this.color }}
+          viewBox="0 0 24 24"
+        >
           <path d={this.path} />
         </svg>
       </Host>

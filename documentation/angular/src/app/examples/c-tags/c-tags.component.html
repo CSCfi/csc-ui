@@ -26,7 +26,7 @@
       *ngFor="let tag of tags"
       [active]="tag.active"
       closeable
-      (click)="toggleActiveTag(tag.id)"
+      (click)="tag.active = !tag.active"
       (close)="removeTag(tag.id)"
     >
       {{ tag.label }}
