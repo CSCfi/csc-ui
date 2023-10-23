@@ -43,6 +43,7 @@
   --c-color: var(--csc-mid-grey) !important;
   --c-background-color: var(--csc-light-grey);
   --c-hover-background: var(--csc-light-grey);
+  pointer-events: none;
 }
 
 :host(.disabled.outlined) {
