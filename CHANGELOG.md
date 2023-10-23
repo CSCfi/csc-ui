@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.4](https://github.com/CSCfi/csc-ui/compare/v0.9.3...v0.9.4) (2023-10-23)
+
+
+### Bug Fixes
+
+* Handle Safari bug when button is disabled ([ed5399f](https://github.com/CSCfi/csc-ui/commit/ed5399f496a3acdc1fe82a39fc2c65445461db1a))
+
 ## [0.9.3](https://github.com/CSCfi/csc-ui/compare/v0.9.2...v0.9.3) (2023-09-25)
 
 
